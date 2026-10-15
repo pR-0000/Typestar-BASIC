@@ -1,0 +1,8 @@
+{
+  "latest_validated_version": "0.4.45-dev",
+  "model": "Canon S-70 / Typestar 7",
+  "nh7_sha256": "a0a0dacab614f86dbd5d9008ef51d1df4f384a6ec3ab7038ff1a157f3d2b9575",
+  "reported_by": "Pierre Raimbault",
+  "date": "2026-09-24",
+  "result": "User confirms accelerated transfer works and LCDTRI no longer errors, but reports changed glyph shapes for D, N, slash and A. Native CGROM comparison is still needed."
+}

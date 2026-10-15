@@ -1,0 +1,13 @@
+{
+  "method": "image_gen (outil intégré), référence illustration.png, fonds transparents",
+  "jobs": [
+    {
+      "id": "printy-projet",
+      "prompt": "Use case: identity-preserve. Reference image: the supplied original Canon instruction-book mascot, use only as a character identity and line-art style reference. Create a new horizontal spot illustration for a French beginners BASIC manual. Preserve Printy's exact friendly white 1980s typewriter body, black round eyes, C-shaped nose, smile, keyboard on body, side platen knobs, tan gloves and tan shoes, two arms and two legs, thick slightly irregular black pen outlines. No star eyes. Printy stands at the left and happily arranges three simple small cards on a tabletop to plan a project: a light bulb drawing on the first card, a short checklist on the second, a tick on the third. Cards and connecting arrows make a clear left-to-right sequence. No words, no letters, no numbers, no brands or watermark. Flat warm tan and cream with tiny muted rust accents. Retro printed instruction-manual ink drawing; no gradients, shadows, photorealism or 3D. Generous margin, all objects inside frame, compact wide composition about 2:1, suitable for a modest illustration on an A4 page. Genuine transparent background."
+    },
+    {
+      "id": "printy-jeux",
+      "prompt": "Use case: identity-preserve. Use the supplied original Canon instruction-book mascot solely as character and style reference. Create a new wide spot illustration for the games chapter of a French vintage BASIC user manual. Keep Printy's exact identity: white electronic typewriter, black round eyes, small C-shaped nose and smile, body keyboard, two platen knobs, tan gloves and shoes, thick slightly irregular black ink contours, only two arms and two legs, no star eyes. Printy is cheerfully playing: one hand points to a tiny astronaut icon on its own small LCD, while its other hand presents a sheet coming from its platen showing a simple two-row square game grid and a small satellite sketch. Make the LCD, paper and character recognizable without tiny text. No words or lettering, no digits, logos or watermark. Uncluttered flat warm cream/tan line drawing, a little muted rust accent. Retro instructional book illustration, no realistic textures, gradients or 3D. All elements fully in frame, comfortable margins, horizontal composition, genuine transparent background."
+    }
+  ]
+}

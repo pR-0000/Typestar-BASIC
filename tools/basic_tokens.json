@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "first_token": 128,
+  "keywords": [
+    "PRINT",
+    "LET",
+    "REM",
+    "RUN",
+    "LIST",
+    "NEW",
+    "GOTO",
+    "IF",
+    "THEN",
+    "END",
+    "LLIST",
+    "LOCATE",
+    "CLS",
+    "FOR",
+    "NEXT",
+    "TO",
+    "STEP",
+    "GOSUB",
+    "RETURN",
+    "INPUT",
+    "PEEK",
+    "POKE",
+    "ABS",
+    "SGN",
+    "MEM",
+    "SAVE",
+    "LOAD",
+    "BEEP",
+    "SOUND",
+    "KEYS",
+    "CURSOR",
+    "ICON",
+    "LCDTRI",
+    "LCDLINE",
+    "INT"
+  ],
+  "reassigned_slots": {
+    "138": {
+      "from": "HELP",
+      "to": "LLIST",
+      "since": "0.4.88-dev"
+    }
+  }
+}

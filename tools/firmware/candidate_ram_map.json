@@ -1,0 +1,172 @@
+{
+  "scope": "Candidate working RAM after native startup; printer compatibility remains unaudited",
+  "blocks": [
+    [
+      "retention bootstrap/CRC",
+      "1B00",
+      "1B09"
+    ],
+    [
+      "INPUT metadata",
+      "1B40",
+      "1B44"
+    ],
+    [
+      "LCD composite metadata and scratch",
+      "1B44",
+      "1B5B"
+    ],
+    [
+      "LCD lower-bank shadow",
+      "1B60",
+      "1B80"
+    ],
+    [
+      "token retention validator",
+      "1B80",
+      "1B8A"
+    ],
+    [
+      "SCI selected Timer2 constant",
+      "1B8A",
+      "1B8B"
+    ],
+    [
+      "SCI selected parity and stop",
+      "1B8B",
+      "1B8C"
+    ],
+    [
+      "INKEY pending translated event",
+      "1B90",
+      "1B91"
+    ],
+    [
+      "GOSUB continuations",
+      "1BA0",
+      "1BB0"
+    ],
+    [
+      "GOSUB loop depths",
+      "1BB0",
+      "1BB8"
+    ],
+    [
+      "expanded statement",
+      "1C00",
+      "1C40"
+    ],
+    [
+      "decimal FOR frames",
+      "1C40",
+      "1CA8"
+    ],
+    [
+      "decimal FOR scratch",
+      "1CB0",
+      "1CD3"
+    ],
+    [
+      "statement/direct pointers",
+      "1CD3",
+      "1CDE"
+    ],
+    [
+      "direct command copy",
+      "1D00",
+      "1D40"
+    ],
+    [
+      "token codec/editor scratch",
+      "1D40",
+      "1D5E"
+    ],
+    [
+      "runtime/list pointers",
+      "1D60",
+      "1D70"
+    ],
+    [
+      "LIST/SAVE text buffer",
+      "1D80",
+      "1DC6"
+    ],
+    [
+      "native arithmetic workspace",
+      "1DCB",
+      "1E94"
+    ],
+    [
+      "decimal expression workspace",
+      "1E94",
+      "1EC6"
+    ],
+    [
+      "exact integer conversion",
+      "1ECA",
+      "1ED0"
+    ],
+    [
+      "decimal comparison workspace",
+      "1ED0",
+      "1EE0"
+    ],
+    [
+      "native arithmetic byte",
+      "1EE6",
+      "1EE7"
+    ],
+    [
+      "LCDCHAR staged rows and index",
+      "1B10",
+      "1B19"
+    ],
+    [
+      "SQR operand, estimate and iteration count",
+      "1B19",
+      "1B2C"
+    ]
+  ],
+  "bindings": [
+    [
+      "src/token-records.asm",
+      "TEND",
+      "1D40"
+    ],
+    [
+      "src/token-records.asm",
+      "TMOVLOW",
+      "1D5C"
+    ],
+    [
+      "src/token-runtime.inc",
+      "RECORD",
+      "1D60"
+    ],
+    [
+      "src/token-runtime.inc",
+      "RFSTART",
+      "1D6F"
+    ],
+    [
+      "src/lcd-triangle.inc",
+      "TRICHARS",
+      "1B44"
+    ],
+    [
+      "src/lcd-triangle.inc",
+      "LOWSHADOW",
+      "1B60"
+    ],
+    [
+      "src/decimal-for.inc",
+      "DFRAMES",
+      "1C40"
+    ],
+    [
+      "src/direct-statements.inc",
+      "DCBUFFER",
+      "1D00"
+    ]
+  ]
+}

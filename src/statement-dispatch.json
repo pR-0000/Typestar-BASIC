@@ -1,0 +1,462 @@
+[
+  {
+    "name": "SERCFG",
+    "key": 36843,
+    "handler": 36784,
+    "retire": [
+      36773,
+      36784
+    ],
+    "match_return": 36779
+  },
+  {
+    "name": "BAUD",
+    "key": 37123,
+    "handler": 36956,
+    "retire": [
+      36948,
+      36956
+    ],
+    "match_return": 36954
+  },
+  {
+    "name": "SEROPEN",
+    "key": 37128,
+    "handler": 36974,
+    "retire": [
+      36966,
+      36974
+    ],
+    "match_return": 36972
+  },
+  {
+    "name": "SERCLOSE",
+    "key": 37136,
+    "handler": 36994,
+    "retire": [
+      36986,
+      36994
+    ],
+    "match_return": 36992
+  },
+  {
+    "name": "SEROUT",
+    "key": 37145,
+    "handler": 37017,
+    "retire": [
+      37009,
+      37017
+    ],
+    "match_return": 37015
+  },
+  {
+    "name": "DIM",
+    "key": 39541,
+    "handler": 39369,
+    "retire": [
+      39355,
+      39363
+    ],
+    "match_return": 39361
+  },
+  {
+    "name": "PRINT",
+    "key": 23035,
+    "handler": 21804,
+    "retire": [
+      21317,
+      21328
+    ],
+    "match_return": 21323
+  },
+  {
+    "name": "LOCATE",
+    "key": 23024,
+    "handler": 23084,
+    "retire": [
+      21328,
+      21339
+    ],
+    "match_return": 21334
+  },
+  {
+    "name": "CLS",
+    "key": 23031,
+    "handler": 23137,
+    "retire": [
+      21339,
+      21350
+    ],
+    "match_return": 21345
+  },
+  {
+    "name": "LET",
+    "key": 23041,
+    "handler": 42285,
+    "retire": [
+      21350,
+      21361
+    ],
+    "match_return": 21356
+  },
+  {
+    "name": "REM",
+    "key": 23045,
+    "handler": 21444,
+    "retire": [
+      21361,
+      21369
+    ],
+    "match_return": 21367
+  },
+  {
+    "name": "RUN",
+    "key": 23049,
+    "handler": 42112,
+    "retire": [
+      21369,
+      21380
+    ],
+    "match_return": 21375
+  },
+  {
+    "name": "LIST",
+    "key": 23053,
+    "handler": 41776,
+    "retire": [
+      21380,
+      21391
+    ],
+    "match_return": 21386
+  },
+  {
+    "name": "NEW",
+    "key": 23058,
+    "handler": 22336,
+    "retire": [
+      21391,
+      21402
+    ],
+    "match_return": 21397
+  },
+  {
+    "name": "GOTO",
+    "key": 23062,
+    "handler": 42942,
+    "retire": [
+      21402,
+      21413
+    ],
+    "match_return": 21408
+  },
+  {
+    "name": "IF",
+    "key": 23067,
+    "handler": 16914,
+    "retire": [
+      21413,
+      21424
+    ],
+    "match_return": 21419
+  },
+  {
+    "name": "END",
+    "key": 23075,
+    "handler": 21432,
+    "retire": [
+      21424,
+      21432
+    ],
+    "match_return": 21430
+  },
+  {
+    "name": "HELP",
+    "key": 23079,
+    "handler": 21453,
+    "retire": [
+      21445,
+      21453
+    ],
+    "match_return": 21451
+  },
+  {
+    "name": "KEYS",
+    "key": 23618,
+    "handler": 23623,
+    "retire": [
+      21462,
+      21473
+    ],
+    "match_return": 21468
+  },
+  {
+    "name": "LPRINT",
+    "key": 34213,
+    "handler": 32898,
+    "retire": [
+      34202,
+      34213
+    ],
+    "match_return": 34208
+  },
+  {
+    "name": "PSET",
+    "key": 32648,
+    "handler": 32653,
+    "retire": [
+      32637,
+      32648
+    ],
+    "match_return": 32643
+  },
+  {
+    "name": "CIRCLE",
+    "key": 32286,
+    "handler": 32293,
+    "retire": [
+      32275,
+      32286
+    ],
+    "match_return": 32281
+  },
+  {
+    "name": "ORIGIN",
+    "key": 32010,
+    "handler": 32032,
+    "retire": [
+      31975,
+      31983
+    ],
+    "match_return": 31981
+  },
+  {
+    "name": "MOVE",
+    "key": 32017,
+    "handler": 32041,
+    "retire": [
+      31983,
+      31991
+    ],
+    "match_return": 31989
+  },
+  {
+    "name": "HEAD",
+    "key": 32022,
+    "handler": 32069,
+    "retire": [
+      31991,
+      31999
+    ],
+    "match_return": 31997
+  },
+  {
+    "name": "FEED",
+    "key": 32027,
+    "handler": 32115,
+    "retire": [
+      31999,
+      32010
+    ],
+    "match_return": 32005
+  },
+  {
+    "name": "DRAW",
+    "key": 31243,
+    "handler": 31248,
+    "retire": [
+      31232,
+      31243
+    ],
+    "match_return": 31238
+  },
+  {
+    "name": "LINE",
+    "key": 24824,
+    "handler": 24829,
+    "retire": [
+      24813,
+      24824
+    ],
+    "match_return": 24819
+  },
+  {
+    "name": "BOX",
+    "key": 19395,
+    "handler": 16737,
+    "retire": [
+      16726,
+      16737
+    ],
+    "match_return": 16732
+  },
+  {
+    "name": "RANDOMIZE",
+    "key": 36665,
+    "handler": 36638,
+    "retire": [
+      36627,
+      36638
+    ],
+    "match_return": 36633
+  },
+  {
+    "name": "LCDCHAR",
+    "key": 19146,
+    "handler": 19154,
+    "retire": [
+      19132,
+      19140
+    ],
+    "match_return": 19138
+  },
+  {
+    "name": "LCDTRI",
+    "key": 18493,
+    "handler": 18569,
+    "retire": [
+      18471,
+      18479
+    ],
+    "match_return": 18474
+  },
+  {
+    "name": "LCDLINE",
+    "key": 18500,
+    "handler": 18578,
+    "retire": [
+      18479,
+      18490
+    ],
+    "match_return": 18485
+  },
+  {
+    "name": "BEEP",
+    "key": 19503,
+    "handler": 19539,
+    "retire": [
+      19514,
+      19525
+    ],
+    "match_return": 19520
+  },
+  {
+    "name": "SOUND",
+    "key": 19508,
+    "handler": 19559,
+    "retire": [
+      19525,
+      19536
+    ],
+    "match_return": 19531
+  },
+  {
+    "name": "FOR",
+    "key": 17743,
+    "handler": 40195,
+    "retire": [
+      17760,
+      17771
+    ],
+    "match_return": 17766
+  },
+  {
+    "name": "NEXT",
+    "key": 17747,
+    "handler": 42499,
+    "retire": [
+      17771,
+      17782
+    ],
+    "match_return": 17777
+  },
+  {
+    "name": "GOSUB",
+    "key": 20153,
+    "handler": 18067,
+    "retire": [
+      20166,
+      20177
+    ],
+    "match_return": 20172
+  },
+  {
+    "name": "RETURN",
+    "key": 20159,
+    "handler": 18115,
+    "retire": [
+      20177,
+      20188
+    ],
+    "match_return": 20183
+  },
+  {
+    "name": "INPUT",
+    "key": 18242,
+    "handler": 42752,
+    "retire": [
+      18248,
+      18259
+    ],
+    "match_return": 18254
+  },
+  {
+    "name": "CURSOR",
+    "key": 20933,
+    "handler": 19861,
+    "retire": [
+      21476,
+      21487
+    ],
+    "match_return": 21482
+  },
+  {
+    "name": "POKE",
+    "key": 26399,
+    "handler": 26404,
+    "retire": [
+      21487,
+      21498
+    ],
+    "match_return": 21493
+  },
+  {
+    "name": "MEM",
+    "key": 25555,
+    "handler": 42339,
+    "retire": [
+      21498,
+      21509
+    ],
+    "match_return": 21504
+  },
+  {
+    "name": "SAVE",
+    "key": 25559,
+    "handler": 26133,
+    "retire": [
+      21509,
+      21520
+    ],
+    "match_return": 21515
+  },
+  {
+    "name": "LOAD",
+    "key": 25564,
+    "handler": 26244,
+    "retire": [
+      21520,
+      21531
+    ],
+    "match_return": 21526
+  },
+  {
+    "name": "ICON",
+    "key": 25471,
+    "handler": 25476,
+    "retire": [
+      21531,
+      21542
+    ],
+    "match_return": 21537
+  }
+]

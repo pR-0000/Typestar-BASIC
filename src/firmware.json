@@ -1,0 +1,6 @@
+{
+  "name": "Typestar BASIC",
+  "version": "0.4.34-dev",
+  "dialect": "Microsoft BASIC-inspired; not fully compatible",
+  "stage": "Console, ranged LIST, MEM, 1200/7E1 LOAD/SAVE, LCD graphics, blocking BEEP/SOUND; printer graphics, strings and arrays not integrated"
+}

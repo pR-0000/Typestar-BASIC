@@ -1,0 +1,678 @@
+{
+  "notes": "Les vues LCD sont des rendus du firmware exécuté dans l'émulateur de Typestar BASIC Studio. Les dessins de la mascotte sont des illustrations pédagogiques, pas des captures du matériel.",
+  "assets": [
+    {
+      "file": "illustration.png",
+      "origin": "Illustration de la documentation Canon fournie par Pierre Raimbault; référence d'identité du personnage."
+    },
+    {
+      "file": "illustration_BASIC_firmware.png",
+      "origin": "Illustration du projet déjà préparée et fournie par Pierre Raimbault; utilisée en couverture."
+    },
+    {
+      "file": "illustration-variables.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "illustration.png",
+      "transparent_background": true,
+      "prompt": "Use case: identity-preserve. Create a new educational scene by adapting the mascot shown in the provided image. Keep its identity exactly: a friendly anthropomorphic white 1980s electronic typewriter, black round eyes, small curved C-shaped nose and smiling mouth, keyboard on its body, two side platen knobs, tan gloves and tan shoes, thick slightly irregular black ink outlines. No star-shaped eyes. Keep the simple vintage instruction-manual drawing style with flat cream, tan and a little muted dark green, no photorealism or gradients. Scene: the mascot stands beside three open small storage boxes illustrating BASIC variables, placing a single large tile bearing the digit 5 into the nearest box labelled A. Other boxes simply labelled B and C and empty. Keep labels exactly A, B, C and 5; no other text. A clear uncluttered horizontal composition, everything fully within frame, generous empty margins, suitable as a modest spot illustration on a printed beginners' BASIC manual page. Genuine transparent background, no checkerboard or drawn paper background. Reuse the mascot shape from the reference, do not paste the reference scene. Keep anatomy coherent with only two arms and two legs."
+    },
+    {
+      "file": "illustration-dessins-papier.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "illustration.png",
+      "transparent_background": true,
+      "prompt": "Use case: identity-preserve. Adapt the supplied friendly anthropomorphic white 1980s electronic typewriter mascot into a new small spot illustration for a vintage French beginners' BASIC user manual. Preserve the exact character design: black round eyes, tiny curved C-shaped nose, smiling mouth, white typewriter body with keyboard, side platen knobs, tan gloves and tan shoes, two arms and two legs. Preserve thick slightly irregular black ink contours and flat warm tan/cream accents; no star eyes, no photorealism, no glossy 3D. Scene: the mascot happily presents a single sheet coming from its own platen with three simple clear black geometric drawings on the paper: an outlined square, a circle and a diagonal line. Its left gloved hand points to the drawing, right hand holds the edge of the sheet. The keyboard and face remain identifiable. No additional computer or people. Horizontal compact composition, generous margin, everything fully in frame, genuine transparent background. No words, labels, letters, logos, watermarks or checkerboard. Friendly and didactic, as an illustration of the BASIC commands BOX, CIRCLE and LINE, with real drawings on the sheet rather than floating shapes."
+    },
+    {
+      "file": "lcd-calcul.png",
+      "generator": "render_manual_lcd.py + Studio lcd_glass.render_glass",
+      "method": "Capture de l'état LCD après exécution d'un exemple par le firmware 0.4.87-dev; polices et segments natifs de Studio.",
+      "report": "build/user-manual/lcd-illustrations.json"
+    },
+    {
+      "file": "lcd-score.png",
+      "generator": "render_manual_lcd.py + Studio lcd_glass.render_glass",
+      "method": "Capture de l'état LCD après exécution d'un exemple par le firmware 0.4.87-dev; polices et segments natifs de Studio.",
+      "report": "build/user-manual/lcd-illustrations.json"
+    },
+    {
+      "file": "lcd-personnage.png",
+      "generator": "render_manual_lcd.py + Studio lcd_glass.render_glass",
+      "method": "Capture de l'état LCD après exécution d'un exemple par le firmware 0.4.87-dev; polices et segments natifs de Studio.",
+      "report": "build/user-manual/lcd-illustrations.json"
+    },
+    {
+      "file": "lcd-triangle.png",
+      "generator": "render_manual_lcd.py + Studio lcd_glass.render_glass",
+      "method": "Capture de l'état LCD après exécution d'un exemple par le firmware 0.4.87-dev; polices et segments natifs de Studio.",
+      "report": "build/user-manual/lcd-illustrations.json"
+    },
+    {
+      "file": "lcd-ligne.png",
+      "generator": "render_manual_lcd.py + Studio lcd_glass.render_glass",
+      "method": "Capture de l'état LCD après exécution d'un exemple par le firmware 0.4.87-dev; polices et segments natifs de Studio.",
+      "report": "build/user-manual/lcd-illustrations.json"
+    },
+    {
+      "file": "lcd-accents.png",
+      "generator": "render_manual_lcd.py + Studio lcd_glass.render_glass",
+      "method": "Capture de l'état LCD après exécution d'un exemple par le firmware 0.4.87-dev; polices et segments natifs de Studio.",
+      "report": "build/user-manual/lcd-illustrations.json"
+    },
+    {
+      "file": "studio-transferts.png",
+      "generator": "Typestar BASIC Studio / widgets Qt natifs",
+      "method": "Rendu hors écran des boutons français Envoyer → LOAD et Recevoir ← SAVE, avec réglages isolés ; aucun transfert démarré."
+    },
+    {
+      "file": "illustration-sons.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "illustration.png",
+      "transparent_background": true,
+      "prompt": "Use case: identity-preserve. Generate one new educational spot illustration using the provided image only as an identity and vintage drawing-style reference. Preserve the friendly white electronic typewriter mascot: round black eyes, small C-shaped nose, keyboard on its body, side platen knobs, tan gloves and shoes, two arms and two legs. Keep thick slightly irregular black ink outlines, flat warm cream and tan with very limited muted dark green accents, as in a 1980s beginner's BASIC manual. No star eyes, no photorealism, no 3D, no gradients. All objects fully within the frame with margins, compact landscape composition. Genuine transparent background, no checkerboard, no drawn white rectangular background, no logo or watermark. Scene: the typewriter mascot sings happily into a small old-fashioned microphone on a short stand. Its mouth is open in a cheerful singing expression, one hand holds the microphone, the other marks the rhythm. Three simple musical notes float beside it. This is a playful illustration for learning BEEP and SOUND, not a technical claim that the machine produces speech. No words or numbers.",
+      "sha256": "1a0bca76c9edad951b34e5929f24d6ae1f5a87973480e2b7bd1228612975b3e1"
+    },
+    {
+      "file": "illustration-calculs.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "illustration.png",
+      "transparent_background": true,
+      "prompt": "Use case: identity-preserve. Generate one new educational spot illustration using the provided image only as an identity and vintage drawing-style reference. Preserve the friendly white electronic typewriter mascot: round black eyes, small C-shaped nose, keyboard on its body, side platen knobs, tan gloves and shoes, two arms and two legs. Keep thick slightly irregular black ink outlines, flat warm cream and tan with very limited muted dark green accents, as in a 1980s beginner's BASIC manual. No star eyes, no photorealism, no 3D, no gradients. All objects fully within the frame with margins, compact landscape composition. Genuine transparent background, no checkerboard, no drawn white rectangular background, no logo or watermark. Scene: the typewriter mascot thinks like a mathematician, one hand resting on its chin, the other holding a pencil over a small sheet of paper bearing ONLY the simple calculation 2 + 3 = 5. A small thought bubble contains an outlined triangle and a circle, without other symbols. Keep its face recognizable, thoughtful but friendly. No costumes, extra people or complex background. Exact text on paper: 2 + 3 = 5.",
+      "sha256": "b6c198e311af5666231dd0c74bb4efcf1b6c787c6e3e1b2136c77af409c1ba23"
+    },
+    {
+      "file": "illustration-decisions.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "illustration.png",
+      "transparent_background": true,
+      "prompt": "Use case: identity-preserve. Generate one new educational spot illustration using the provided image only as an identity and vintage drawing-style reference. Preserve the friendly white electronic typewriter mascot: round black eyes, small C-shaped nose, keyboard on its body, side platen knobs, tan gloves and shoes, two arms and two legs. Keep thick slightly irregular black ink outlines, flat warm cream and tan with very limited muted dark green accents, as in a 1980s beginner's BASIC manual. No star eyes, no photorealism, no 3D, no gradients. All objects fully within the frame with margins, compact landscape composition. Genuine transparent background, no checkerboard, no drawn white rectangular background, no logo or watermark. Scene: the typewriter mascot stands at a fork between two short paths, pointing to a simple signpost with exactly two readable arrows labelled OUI and NON. The mascot looks curious and is about to choose a direction. This teaches IF/THEN/ELSE decisions. Do not add decorative scenery, trees or animals. The only text is OUI and NON on the arrows.",
+      "sha256": "501e26179204ea22dd5e23190ca5fe6228afcb387ecee39a44fcc40e753fac77"
+    },
+    {
+      "file": "illustration-liaison.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "illustration.png",
+      "transparent_background": true,
+      "prompt": "Use case: identity-preserve. Generate one new educational spot illustration using the provided image only as an identity and vintage drawing-style reference. Preserve the friendly white electronic typewriter mascot: round black eyes, small C-shaped nose, keyboard on its body, side platen knobs, tan gloves and shoes, two arms and two legs. Keep thick slightly irregular black ink outlines, flat warm cream and tan with very limited muted dark green accents, as in a 1980s beginner's BASIC manual. No star eyes, no photorealism, no 3D, no gradients. All objects fully within the frame with margins, compact landscape composition. Genuine transparent background, no checkerboard, no drawn white rectangular background, no logo or watermark. Scene: the typewriter mascot happily passes a sheet with simple black program-like horizontal lines to a small unbranded laptop through a clearly visible single connecting cable. One glove gestures toward the cable; the other holds the sheet. This teaches loading and saving a BASIC program with Studio. No human, no second mascot, no text on the laptop, no words or labels. Keep both devices clearly recognizable and side by side.",
+      "sha256": "3edc4c90a835ddb635826be2bd0847ea2c1404ff90e9496eb5c054bfbac48a04"
+    },
+    {
+      "file": "Typestar 5 advert.jpg",
+      "origin": "Scan publicitaire fourni par Pierre Raimbault.",
+      "credit": "Canon U.S.A., Inc., copyright 1984 visible dans le document.",
+      "source_date": "1984",
+      "notes": "Année de copyright ; numéro et page de la revue non identifiés. Scan original conservé.",
+      "sha256": "ceadaad98fe403a780acceb078dabf7cf130bae6b70d2a7bc71d377bae3a4c49"
+    },
+    {
+      "file": "Typestar 5 & 6 advert.jpg",
+      "origin": "Scan publicitaire fourni par Pierre Raimbault.",
+      "credit": "Canon U.S.A., Inc., copyright 1985 visible dans le document.",
+      "source_date": "1985",
+      "notes": "Année de copyright ; numéro et page de la revue non identifiés. Scan original conservé.",
+      "sha256": "ed5caa1b6cca17f65f5b323220b7e9e52f371eb1d8b187fa7f950d2137de2c33"
+    },
+    {
+      "file": "hd6301_advert.png",
+      "origin": "Scan publicitaire Hitachi fourni par Pierre Raimbault.",
+      "credit": "Hitachi America, Ltd.",
+      "notes": "Famille HD6301/HD6303 ; variante à 4K de ROM et 128 octets de RAM. Ne pas confondre avec Y0. Datation de revue non confirmée.",
+      "sha256": "165214a2378f39b8dec840242a488ea074a2f099be703ad1d3429636c065beb0"
+    },
+    {
+      "file": "VTech_Laser_50.png",
+      "origin": "Brochure VTech fournie par Pierre Raimbault.",
+      "credit": "VTech, copyright 1986 ; JAN/86 et référence 95-2000-02 visibles.",
+      "notes": "Source de la comparaison de la fiche machine ; capacité annoncée de RAM, pas une mesure de RAM libre. Image originale conservée, non recomposée.",
+      "sha256": "e205a4202dc26490cf83d849329e66a9fe46c50699ccb25f7b6b465250b195bb"
+    },
+    {
+      "file": "hitachi-motorola-1974.jpg",
+      "origin": "Image embarquée extraite sans modification du PDF fourni.",
+      "source": "makimoto_E_01_14.pdf",
+      "page": 2,
+      "figure": "14.1",
+      "credit": "Makimoto Library, Exhibit I, Episode 14, Tsugio Makimoto.",
+      "identification": "De gauche à droite : Tohru Abe, Yoshinobu Imamura, Tsugio Makimoto.",
+      "notes": "Photographie authentique, pas une image générée.",
+      "sha256": "f32394113df176c1c269825ad1d27c4d1512883c8362463ba6494d820e4d85c0"
+    },
+    {
+      "file": "hitachi-sh-1993.jpg",
+      "origin": "Image embarquée extraite sans modification du PDF fourni.",
+      "source": "makimoto_E_01_14.pdf",
+      "page": 5,
+      "figure": "14.2",
+      "credit": "Makimoto Library, Exhibit I, Episode 14, Tsugio Makimoto.",
+      "identification": "Tsugio Makimoto ; publicité SuperH de 1993, postérieure au HD6301.",
+      "notes": "Photographie authentique, pas une image générée.",
+      "sha256": "064d890d995b68f9dea9a220126ad2a3ff1fde038c739845ef9265e7e08733fe"
+    },
+    {
+      "file": "canon-design-attribution.png",
+      "origin": "Extrait documentaire recadré du rendu Poppler à 150 dpi.",
+      "source": "USD299930.pdf",
+      "page": 1,
+      "crop_pixels": [
+        140,
+        100,
+        1080,
+        455
+      ],
+      "credit": "Dessin D299930, Richard Nibley et Noriaki Haranishi ; Canon Kabushiki Kaisha.",
+      "notes": "Dessin extérieur, modèle commercial non nommé. Aucun portrait de ces inventeurs authentifié.",
+      "sha256": "5f475a020fb944f56dd4cafeeed641cd1ed75866f1afc591ca6a66844a89b70d",
+      "revision": "Nettoyage des pixels tronqués fourni par l’utilisateur, conservé le 13 octobre 2026."
+    },
+    {
+      "file": "canon-design-perspective.png",
+      "origin": "Extrait documentaire recadré du rendu Poppler à 150 dpi.",
+      "source": "USD299930.pdf",
+      "page": 4,
+      "crop_pixels": [
+        300,
+        405,
+        950,
+        990
+      ],
+      "credit": "Dessin D299930, Richard Nibley et Noriaki Haranishi ; Canon Kabushiki Kaisha.",
+      "notes": "Dessin extérieur, modèle commercial non nommé. Aucun portrait de ces inventeurs authentifié.",
+      "sha256": "bc313b93d277ed9de0ffc784e3fa02b24b066e7708d0aa1ac6dd3e6f3b1e7ef1"
+    },
+    {
+      "file": "installation-demontage.png",
+      "generator": "image_gen (outil intégré)",
+      "origin": "Photographie de Pierre Raimbault, adaptée en dessin technique de mode d’emploi.",
+      "reference": "illustration_démontage.jpg",
+      "reference_sha256": "e1540738fab8bf3ef701ba4f7c9853f18fd01177f259b7f6345f20437a76c6c1",
+      "transparent_background": false,
+      "prompt_set": "prompts-installation.json",
+      "sha256": "185816c7bc719258f9da518e091516f1bb38aa32ed8545ac67041919f8c52d1e",
+      "notes": "Photo originale conservée ; emplacement des repères utiles et sens de la puce comparés à la photographie. Quatre vis directement cerclées en rouge, cinq clips indiqués par des flèches jaunes vers l’intérieur.",
+      "prompt": "Use case: style-transfer. Edit the supplied photograph into a clear technical pen-and-ink illustration for a French vintage typewriter installation manual, like a patent drawing or an original 1980s instruction manual. The photo is the mechanical source of truth. Preserve its viewing direction, proportions, and the positions of the real parts; do not mirror or redesign anything. Black contours on a plain white opaque background, restrained fine hatching only for depth, no photorealistic texture, no tablecloth, no shadows or dirt. The keyboard, case, sockets and relevant parts must remain recognizable. Only annotation arrows may use color. Avoid tiny unreadable labels: simplify unimportant legends instead of inventing text. Preserve complete requested assembly within the frame, with margins. No invented hands, tools, screws or clips. This is the complete typewriter with its paper support raised and printing mechanism exposed. Precisely preserve the FOUR red arrows and their screw-hole targets: rear-left, rear-right, left beside the LCD and right beside the LCD. Label these arrows A, B, C, D respectively, in small clear black letters. Precisely preserve the FIVE yellow arrows and their plastic clip targets and inward pressure directions: left side inward, right side inward, front-left inward, front-middle inward, front-right inward. Label them 1, 2, 3, 4, 5 respectively. Re-render arrows as clean simple technical arrows; do not add more arrows, screws, or clips. Keep red and yellow saturated and easy to distinguish. White keyboard key tops and black outlines, not a dark textured photographic keyboard. No headline or paragraph text. Exactly 4 red arrows and 5 yellow arrows.",
+      "final_prompt": "Edit this technical drawing, keeping all black-and-white mechanical geometry and the five numbered yellow arrows unchanged. Replace ALL FOUR red screw arrows with FOUR RED CIRCULAR RINGS that surround the actual round screw heads, labelled A, B, C and D nearby in black. Ring A: the round recessed screw on the upper rear horizontal rail, below old arrow A. Ring B: the round recessed screw on the upper rear rail, below old arrow B. Ring C: the ROUND recessed screw immediately left of the two left control-button pairs and left of the LCD, to the RIGHT of the old arrow C tip. Ring D: the ROUND recessed screw immediately right of the two right control-button pairs, to the LEFT of the old arrow D tip. For C and D do NOT mark the rectangular slots in the outer frame, which are clips, not screws. Delete the old red arrows completely. Each red ring should surround the outer circular screw recess without covering its hole, leaving the screw readable. Exactly four red rings, two at the rear and two beside the LCD, and five yellow clip arrows. No new mechanical features. Plain opaque white background. These red rings will give novice readers an unambiguous screw location."
+    },
+    {
+      "file": "installation-clips-vue.png",
+      "generator": "image_gen (outil intégré)",
+      "origin": "Photographie de Pierre Raimbault, adaptée en dessin technique de mode d’emploi.",
+      "reference": "photo_clips_1.jpg",
+      "reference_sha256": "80f4010d336567fdb6c660f54b37c188c5281a0a09c853e3e1dbcc2daabb3324",
+      "transparent_background": false,
+      "prompt_set": "prompts-installation.json",
+      "sha256": "535e0b06799c6a478b9d42cded522e7a5beb63965b67f0e2461829f8dbdb4a72",
+      "notes": "Photo originale conservée ; emplacement des repères utiles et sens de la puce comparés à la photographie. Vue de coque retournée : indices supprimés pour éviter de confondre gauche et droite avec la vue extérieure.",
+      "prompt": "Use case: style-transfer. Edit the supplied photograph into a clear technical pen-and-ink illustration for a French vintage typewriter installation manual, like a patent drawing or an original 1980s instruction manual. The photo is the mechanical source of truth. Preserve its viewing direction, proportions, and the positions of the real parts; do not mirror or redesign anything. Black contours on a plain white opaque background, restrained fine hatching only for depth, no photorealistic texture, no tablecloth, no shadows or dirt. The keyboard, case, sockets and relevant parts must remain recognizable. Only annotation arrows may use color. Avoid tiny unreadable labels: simplify unimportant legends instead of inventing text. Preserve complete requested assembly within the frame, with margins. No invented hands, tools, screws or clips. Show the inside of the removed upper plastic case exactly as in this photograph, with its five retention clips. Keep exactly FIVE yellow arrows pointing to the two lateral clips and the three clips along the front edge. Number them 1 through 5 consistently: left side 1, right side 2, front-left 3, front-middle 4, front-right 5. Preserve the real plastic hooks, cutouts and screw mounting pillars. Draw interior contours and small plastic clips sharply, not as vague blocks. No other annotations or invented clips.",
+      "correction_prompt": "Edit this existing patent-style drawing only by removing the 5 circular number labels (1, 2, 3, 4, 5) at the tails of the yellow arrows. Keep the FIVE yellow arrows themselves, their original directions and exact tips on the clips. Keep every black-and-white plastic case detail unchanged. The removed labels must be replaced with plain white background. Do not add words, number labels, extra arrows or anything else. Preserve the frame and orientation."
+    },
+    {
+      "file": "installation-clip-lateral.png",
+      "generator": "image_gen (outil intégré)",
+      "origin": "Photographie de Pierre Raimbault, adaptée en dessin technique de mode d’emploi.",
+      "reference": "photo_clips_2.jpg",
+      "reference_sha256": "cbf0f6c153f29f7aacf46091ebdac4168946b695dd6bd3f6d706e61ae77946eb",
+      "transparent_background": false,
+      "prompt_set": "prompts-installation.json",
+      "sha256": "d3f4ddcd167a858bf47cc369764e61f6e5703500a13aa327e7f713f307fda732",
+      "notes": "Photo originale conservée ; emplacement des repères utiles et sens de la puce comparés à la photographie.",
+      "prompt": "Use case: style-transfer. Edit the supplied photograph into a clear technical pen-and-ink illustration for a French vintage typewriter installation manual, like a patent drawing or an original 1980s instruction manual. The photo is the mechanical source of truth. Preserve its viewing direction, proportions, and the positions of the real parts; do not mirror or redesign anything. Black contours on a plain white opaque background, restrained fine hatching only for depth, no photorealistic texture, no tablecloth, no shadows or dirt. The keyboard, case, sockets and relevant parts must remain recognizable. Only annotation arrows may use color. Avoid tiny unreadable labels: simplify unimportant legends instead of inventing text. Preserve complete requested assembly within the frame, with margins. No invented hands, tools, screws or clips. Keep this exact close-up view of a lateral clip on the removed upper case. Emphasize the real small hook/latch shape and surrounding edge. Preserve the yellow arrow indicating pressure on the outer edge toward the inside of the case. Remove background fabric and blurred irrelevant detail. Do not show the arrow as a direction to bend the hook outwards or to pull it up. No labels or words. This is a close-up of the existing geometry, not a schematic substitute."
+    },
+    {
+      "file": "installation-clips-avant.png",
+      "generator": "image_gen (outil intégré)",
+      "origin": "Photographie de Pierre Raimbault, adaptée en dessin technique de mode d’emploi.",
+      "reference": "photo_clips_3.jpg",
+      "reference_sha256": "f63653af20e61273f8546602f1cbb847870d858dcfd581b47d5498e0b6023c9d",
+      "transparent_background": false,
+      "prompt_set": "prompts-installation.json",
+      "sha256": "909c9117b573baac6746aa9aaa2472477af37be7b79335415bb33d348fe80b34",
+      "notes": "Photo originale conservée ; emplacement des repères utiles et sens de la puce comparés à la photographie.",
+      "prompt": "Use case: style-transfer. Edit the supplied photograph into a clear technical pen-and-ink illustration for a French vintage typewriter installation manual, like a patent drawing or an original 1980s instruction manual. The photo is the mechanical source of truth. Preserve its viewing direction, proportions, and the positions of the real parts; do not mirror or redesign anything. Black contours on a plain white opaque background, restrained fine hatching only for depth, no photorealistic texture, no tablecloth, no shadows or dirt. The keyboard, case, sockets and relevant parts must remain recognizable. Only annotation arrows may use color. Avoid tiny unreadable labels: simplify unimportant legends instead of inventing text. Preserve complete requested assembly within the frame, with margins. No invented hands, tools, screws or clips. Keep this exact close-up view of the front edge of the removed upper case, showing the visible real retention tabs and their shape. Keep the TWO yellow arrows at their exact targets and direction toward the inside of the case. Remove background fabric and blurred rear assembly, retaining the relevant plastic edge and tabs. Do not invent extra tabs or turn them into screws. No labels or words."
+    },
+    {
+      "file": "installation-ic8-original.png",
+      "generator": "image_gen (outil intégré)",
+      "origin": "Photographie de Pierre Raimbault, adaptée en dessin technique de mode d’emploi.",
+      "reference": "illustration_remplacement_IC8_1.jpg",
+      "reference_sha256": "8ec72d86dad1bb6b3a15ad0794b530b414afb6d12f86d4af397603f836b1f79e",
+      "transparent_background": false,
+      "prompt_set": "prompts-installation.json",
+      "sha256": "7f825fa2fac13a97c67ced1e9d291421477d4efde5d8624eea74fadc9ff9fd0d",
+      "notes": "Photo originale conservée ; emplacement des repères utiles et sens de la puce comparés à la photographie. IC7 corrigé pour montrer le support vide ; encoche IC8 à gauche.",
+      "prompt": "Use case: style-transfer. Edit the supplied photograph into a clear technical pen-and-ink illustration for a French vintage typewriter installation manual, like a patent drawing or an original 1980s instruction manual. The photo is the mechanical source of truth. Preserve its viewing direction, proportions, and the positions of the real parts; do not mirror or redesign anything. Black contours on a plain white opaque background, restrained fine hatching only for depth, no photorealistic texture, no tablecloth, no shadows or dirt. The keyboard, case, sockets and relevant parts must remain recognizable. Only annotation arrows may use color. Avoid tiny unreadable labels: simplify unimportant legends instead of inventing text. Preserve complete requested assembly within the frame, with margins. No invented hands, tools, screws or clips. Keep the open typewriter view with keyboard above and motherboard below. Retain the real motherboard layout, the ribbon cable, the large horizontal MCU to the right, the empty IC7 socket at lower-left, and the original 28-pin horizontal NEC ROM at lower-center, just right of empty IC7 and below the square controller. This original NEC ROM is IC8: redraw the BLUE arrow so its tip directly touches this exact IC8 chip, not a nearby resistor, the board border, IC7 or the large MCU. Add only the clear label IC8 beside this arrow. Show IC8 with its long axis horizontal and its semicircular notch at the LEFT end, preserving the photograph's orientation. Simplify the traces and components into clear technical outlines; do not rearrange or invent them. No other text or numbered callouts.",
+      "correction_prompt": "Edit this existing technical motherboard drawing only at the IC7 socket, lower left: the small horizontal 28-pin socket immediately BELOW the longer rectangular RAM chip, and immediately to the LEFT of the chip indicated by the BLUE IC8 arrow. IC7 MUST be EMPTY: remove the white chip-like insert with two circles inside that socket and instead clearly show an open recessed empty rectangular socket with its contact rows visible. Preserve the socket's outer border and footprint. Preserve the IC8 chip and blue arrow, the large MCU, square controller, keyboard, wires, and all other parts exactly. Do not change any other chip. Keep a plain opaque white background, the same pen line style, and no additional labels."
+    },
+    {
+      "file": "installation-ic8-onerom.png",
+      "generator": "image_gen (outil intégré)",
+      "origin": "Photographie de Pierre Raimbault, adaptée en dessin technique de mode d’emploi.",
+      "reference": "illustration_remplacement_IC8_2.jpg",
+      "reference_sha256": "07c9ba83d012454cd8a1ab5d224b010c446c9e3d2e101da31c5833233abab7b8",
+      "transparent_background": false,
+      "prompt_set": "prompts-installation.json",
+      "sha256": "60df8d3978b290492e3ab534c25838b94725cacc7aa43130e48d5a63e730c2b5",
+      "notes": "Photo originale conservée ; emplacement des repères utiles et sens de la puce comparés à la photographie. Le connecteur USB reprend cette carte photographiée ; il ne constitue pas un repère universel d’orientation.",
+      "prompt": "Use case: style-transfer. Edit the supplied photograph into a clear technical pen-and-ink illustration for a French vintage typewriter installation manual, like a patent drawing or an original 1980s instruction manual. The photo is the mechanical source of truth. Preserve its viewing direction, proportions, and the positions of the real parts; do not mirror or redesign anything. Black contours on a plain white opaque background, restrained fine hatching only for depth, no photorealistic texture, no tablecloth, no shadows or dirt. The keyboard, case, sockets and relevant parts must remain recognizable. Only annotation arrows may use color. Avoid tiny unreadable labels: simplify unimportant legends instead of inventing text. Preserve complete requested assembly within the frame, with margins. No invented hands, tools, screws or clips. Keep the same open typewriter view and the actual motherboard layout from the photograph. Preserve the small OneROM replacement board in IC8 at lower-center, immediately right of the empty IC7 socket and below the square controller. Preserve the small board's components and its USB connector on the RIGHT exactly as visible. The BLUE arrow must point directly to this small OneROM board, not the surrounding main board, IC7 or the large MCU. Add only label IC8 beside this arrow. Render the OneROM board in black-and-white line art, not red. Do not change its rotation or substitute a generic chip. No other words or labels."
+    },
+    {
+      "file": "installation-sens-rom.png",
+      "generator": "render_installation_diagram.py (schéma original)",
+      "origin": "Schéma pédagogique du brochage DIP 28, sans modification des photographies.",
+      "notes": "Encoche à gauche, clavier en bas, 14 broches par rangée ; broche 1 en bas à gauche, suivant la numérotation DIP vue de dessus.",
+      "source": "https://media.digikey.com/pdf/Data%20Sheets/Winbond%20PDFs/W27C512.pdf, page 3",
+      "sha256": "e522d3e0ab371ec40e2159c6058d859681450897babd6fbd71042a79a2c5f8d6"
+    },
+    {
+      "file": "printy-projet.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "illustration.png",
+      "transparent_background": true,
+      "prompt": "Use case: identity-preserve. Reference image: the supplied original Canon instruction-book mascot, use only as a character identity and line-art style reference. Create a new horizontal spot illustration for a French beginners BASIC manual. Preserve Printy's exact friendly white 1980s typewriter body, black round eyes, C-shaped nose, smile, keyboard on body, side platen knobs, tan gloves and tan shoes, two arms and two legs, thick slightly irregular black pen outlines. No star eyes. Printy stands at the left and happily arranges three simple small cards on a tabletop to plan a project: a light bulb drawing on the first card, a short checklist on the second, a tick on the third. Cards and connecting arrows make a clear left-to-right sequence. No words, no letters, no numbers, no brands or watermark. Flat warm tan and cream with tiny muted rust accents. Retro printed instruction-manual ink drawing; no gradients, shadows, photorealism or 3D. Generous margin, all objects inside frame, compact wide composition about 2:1, suitable for a modest illustration on an A4 page. Genuine transparent background.",
+      "prompt_set": "prompts-printy-2026-10-12.json",
+      "notes": "Scène pédagogique originale avec Printy ; fond transparent conservé.",
+      "sha256": "8fad691ba336ab9e90f2e1459b6b616b58a75df0c38088961a2babe824030fd0"
+    },
+    {
+      "file": "printy-jeux.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "illustration.png",
+      "transparent_background": true,
+      "prompt": "Use case: identity-preserve. Use the supplied original Canon instruction-book mascot solely as character and style reference. Create a new wide spot illustration for the games chapter of a French vintage BASIC user manual. Keep Printy's exact identity: white electronic typewriter, black round eyes, small C-shaped nose and smile, body keyboard, two platen knobs, tan gloves and shoes, thick slightly irregular black ink contours, only two arms and two legs, no star eyes. Printy is cheerfully playing: one hand points to a tiny astronaut icon on its own small LCD, while its other hand presents a sheet coming from its platen showing a simple two-row square game grid and a small satellite sketch. Make the LCD, paper and character recognizable without tiny text. No words or lettering, no digits, logos or watermark. Uncluttered flat warm cream/tan line drawing, a little muted rust accent. Retro instructional book illustration, no realistic textures, gradients or 3D. All elements fully in frame, comfortable margins, horizontal composition, genuine transparent background.",
+      "prompt_set": "prompts-printy-2026-10-12.json",
+      "notes": "Scène pédagogique originale avec Printy ; fond transparent conservé.",
+      "sha256": "96cc9dc330a092a120dd30c15e587ac86eeaf163466e4e52f0c4f0262b94abc6"
+    },
+    {
+      "file": "printy-salut.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "printy-projet.png",
+      "transparent_background": true,
+      "prompt": "Create a fresh original illustration for a friendly French retro BASIC computer manual. The provided image is a STYLE AND MASCOT REFERENCE, not an edit target. Show Printy, an anthropomorphic compact cream thermal typewriter with two round paper feed wheels, keyboard, smiling face and gloves and shoes. Printy stands alone, waves one raised open gloved hand hello directly to the reader; the other hand rests at its side. Redraw the character in a visibly NEW pose and silhouette, do not trace or repeat the reference composition. No table, no signs, no text, no logos. Warm brown and cream tones, confident hand drawn black ink contours, very light vintage print texture, clear silhouette. Entire character and fingertips inside canvas, isolated on genuinely transparent background. Friendly 1980s instruction manual illustration, readable at small printed size.",
+      "sha256": "bf1eb03c6b851b93312a3e2ec995948c660f43d11939fe3e95727886f0a8d9d3"
+    },
+    {
+      "file": "printy-firmware.png",
+      "generator": "image_gen (outil intégré)",
+      "reference": "printy-projet.png",
+      "transparent_background": true,
+      "prompt": "Create a fresh original editorial illustration for a French retro BASIC manual, matching the ink and cream/brown style of the supplied Printy character reference. Reference is style/character guidance only. Printy is a cheerful anthropomorphic cream thermal typewriter with keyboard, paper wheels, gloved hands and shoes. Show Printy as a curious technician using a magnifying glass to inspect TWO tiny DIP integrated circuits on a simple tidy workbench. One integrated circuit is represented closed with a tiny calculator pictogram; the other has a small paper strip with abstract code lines. Suggest understanding old electronics and writing a new program. No screwdriver, no soldering, no photorealism, no written words or numerals, no Canon logo. Simple original composition, generous negative space, full character and tools in frame, warm black ink, restrained brown accent. Genuinely transparent background.",
+      "sha256": "cd7dae4ee938b5520ddcbfd188a4f08405dc7a709360cb9621b7778422028ef9"
+    },
+    {
+      "file": "history/ap400.jpg",
+      "source": "https://etzone.org/2017/02/03/canon-fodder-part-three/",
+      "notes": "Photographie AP400 : E.T.ZONE / Steve K.",
+      "sha256": "11b9a76f89cb9a945eb90ef5a81e9c012018e9c13d2e250e4afdd5e2c55fe8b4"
+    },
+    {
+      "file": "history/canon-kaku.png",
+      "source": "https://global.canon/ja/corporate/history/03.html",
+      "notes": "Portrait officiel de Ryuzaburo Kaku, à la rubrique 1977 ; date de prise de vue non fournie.",
+      "sha256": "af23318b97f2d57683215577d2951f3d0bd9a35b7651d1154ef7e3e857093329"
+    },
+    {
+      "file": "history/canoword55.png",
+      "source": "https://global.canon/ja/corporate/history/03.html",
+      "notes": "Canon, produit à la rubrique 1980.",
+      "sha256": "95bb76b02db30feba6a4b151942216c0ca5910a7dff34a3347a1e1f855e0e7e5"
+    },
+    {
+      "file": "history/canon-x07.jpg",
+      "source": "https://akiba-pc.watch.impress.co.jp/docs/column/retrohard/1178338.html",
+      "notes": "Photographie de Jun Sasaki, 2019 ; appareil lancé en 1983.",
+      "sha256": "600e3b28d296a5cae51e66853c144dfacfcff17feb4b661476691a995e18d3ad"
+    },
+    {
+      "file": "history/x07-publicite-japon.jpg",
+      "source": "https://akiba-pc.watch.impress.co.jp/docs/column/retrohard/1178338.html",
+      "notes": "Publicité originale Canon reproduite dans l’article ; lecture comme source primaire.",
+      "sha256": "46e8ec1577b5c3ba21ec9c39175ffdb849dadff9aee6b3ca8dde179dd8d72ef0"
+    },
+    {
+      "file": "history/typestar90.webp",
+      "source": "https://silvergreen93.wordpress.com/2024/03/04/the-canon-typestar-90/",
+      "notes": "Photographie conservée dans la copie locale de Diverse experiments ; vue contemporaine du matériel ancien.",
+      "sha256": "927dc8f4d201a76061490d97c52b3c63536018efd4d29772727c6bdc6185d5c9"
+    },
+    {
+      "file": "history/typestar10.jpg",
+      "source": "https://www.salvosstores.com.au/shop/p/canon-typestar-10-electric-typewriter/381976",
+      "notes": "Photo Salvos Stores ; elle illustre le modèle, pas la date de lancement. Le repère 1992 vient du manuel Canon.",
+      "sha256": "17eb518ad24042f130f1df5f1abfcd296bdfa641f53b7f85cc17e51af4099e2c"
+    },
+    {
+      "file": "lcd-catalogue-00-7f.png",
+      "generator": "render_manual_diagrams.py",
+      "source": "studio/internal/assets/lcd-font.json",
+      "notes": "Rangées identiques à la palette Studio ; zones CGRAM variables affichées vides.",
+      "sha256": "c42aa4c94b4dc0fa5ff679c63081abd85f4228415e9114b910f9e6e2d2695a5a"
+    },
+    {
+      "file": "lcd-catalogue-80-ff.png",
+      "generator": "render_manual_diagrams.py",
+      "source": "studio/internal/assets/lcd-font.json",
+      "notes": "Rangées identiques à la palette Studio ; zones CGRAM variables affichées vides.",
+      "sha256": "4ee4937ee90351a85609e2c513c21072cbbd5010b6ab22257de6abd34cee27cb"
+    },
+    {
+      "file": "lcd-decimaux.png",
+      "generator": "render_manual_lcd.py",
+      "source": "Cœur HD6301 de Studio avec les ROM locales ; état enregistré dans build/user-manual/lcd-illustrations.json.",
+      "sha256": "eb2693cefa3b24b05c716c2701b4a9d06a8b19ea9fb8be4551e2815a066b5540"
+    },
+    {
+      "file": "lcd-menu.png",
+      "generator": "render_manual_lcd.py",
+      "source": "Cœur HD6301 de Studio avec les ROM locales ; état enregistré dans build/user-manual/lcd-illustrations.json.",
+      "sha256": "857863c8e4175ea70827041f5a7479eeba1f2b7b4f21171804af5939584f0c58"
+    },
+    {
+      "file": "lcd-symboles-natifs.png",
+      "generator": "render_manual_lcd.py",
+      "source": "Cœur HD6301 de Studio avec les ROM locales ; état enregistré dans build/user-manual/lcd-illustrations.json.",
+      "sha256": "1de301186a24d8fb86980469a646113ef34b8a19f0e617a627da3bc47a4fbc0f"
+    },
+    {
+      "file": "frise-typestar.png",
+      "generator": "render_manual_diagrams.py",
+      "notes": "Composition native de schéma / frise ; images sources conservées sans modification.",
+      "sha256": "31d1a5f53f613ecb98587aec2be4ae84f69692c31c740d7b45f215f11ea340f6"
+    },
+    {
+      "file": "schema-fonctionnel-s70.png",
+      "generator": "render_manual_diagrams.py",
+      "notes": "Composition native de schéma / frise ; images sources conservées sans modification.",
+      "sha256": "3083acaed77260079ca57aaad177cc9ad81549d9e5c84ff6ed477b908150d6a5"
+    },
+    {
+      "file": "schema-interpreteur.png",
+      "generator": "render_manual_diagrams.py",
+      "notes": "Composition native de schéma / frise ; images sources conservées sans modification.",
+      "sha256": "447b9415c7ba47a31b69373130bc871435f0a45842b1658133a1fb420c4e2f52"
+    },
+    {
+      "file": "printy-salut-v2.png",
+      "prompt": "Create a fresh illustration for a French retro BASIC instruction manual. Reference image is the character identity and silhouette reference only. Draw Printy, this smiling anthropomorphic Canon typewriter, waving one hand hello, full body including both small shoes, other hand relaxed. Keep the reference's slim, upright, almost square typewriter body, simple flat line-drawn keyboard, tiny round black eyes, C-shaped nose, small smile and narrow legs; body width about 0.85 of body height, far less broad than modern cartoon typewriters. Gentle three-quarter front view, warm 1980s manual black ink contours with only very light beige highlights, no bulky 3D keys, no text or extra props. An original new pose, not a reproduction of the reference scan. Transparent background, compact composition with clear silhouette.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-3bb2edf3-f5be-4d1e-890c-f7098b4affdc.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": true,
+      "sha256": "6912f093808967c89ce96543ceeef2cb558209f581ed91bd4934b7dc9a4a1fa0",
+      "reference": "illustration.png"
+    },
+    {
+      "file": "history/illustrations/canon-x07-front.png",
+      "prompt": "Educational historical illustration for a vintage computer manual: Canon X-07 portable computer faithfully based on the reference photograph, drawn in clean black and white patent line art on pure white background. Replace the diagonal camera view with a perfectly straight centered front/top view, symmetrical rectangular body, screen above keyboard, read vertically like a product diagram. Clearly show four-line LCD on upper left, four-arrow direction pad on upper right, small function keys, 5 keyboard rows and wide SHIFT/space keys, faithful overall proportions. No dramatic perspective, no photograph, no shading, no gray background, no props, no outer frame, no captions. Fine crisp ink, slightly heavier exterior outline. Device fills 85 percent of landscape image. Exact unobtrusive marking Canon X-07 on the real label position.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-14032f23-0e51-43dd-b8a1-c16957207fbf.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": false,
+      "sha256": "879daabe0c742563c191a363bf13e511c3164755d56943521879e07e433e864a",
+      "reference": "history/canon-x07.jpg"
+    },
+    {
+      "file": "history/illustrations/canoword55-front.png",
+      "prompt": "Use case: scientific-educational. Canon CanoWord 55 Japanese word processor of 1980. Tall floor-standing integrated cabinet with broad display above keyboard, paper/document holder at rear, full cabinet and two feet. Preserve its distinctive standing form. Transform the reference into a fresh black-and-white patent-style illustration for a history timeline. All machines must face straight toward the reader, centered and aligned symmetrically with horizontal edges; elevated front view so keyboard and LCD remain clear, no diagonal or rotated view. Pure white background, crisp fine black technical pen outlines, heavier exterior contour, only sparse hatching for recesses, no gray fills, no shadows, no photographic texture. Faithful structural details, omit tiny illegible key lettering instead of inventing characters. No captions, no numbers, no logos outside actual device. Entire subject visible with compact white border, landscape or square composition.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-7badceff-ed52-4ca2-a541-3c78976ae623.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": false,
+      "sha256": "cd58120e86685ae1fd5f9dd28bbc833abb0d085f4f163cfe7ead5c8cbd8a7caf",
+      "reference": "history/canoword55.png"
+    },
+    {
+      "file": "history/illustrations/ap400-front.png",
+      "prompt": "Use case: scientific-educational. Canon AP400 electronic typewriter, exact typewriter in reference. Broad office machine, tall paper support raised, platen, dark keyboard and control banks at both sides. Remove surroundings and sales stickers. Transform the reference into a fresh black-and-white patent-style illustration for a history timeline. All machines must face straight toward the reader, centered and aligned symmetrically with horizontal edges; elevated front view so keyboard and LCD remain clear, no diagonal or rotated view. Pure white background, crisp fine black technical pen outlines, heavier exterior contour, only sparse hatching for recesses, no gray fills, no shadows, no photographic texture. Faithful structural details, omit tiny illegible key lettering instead of inventing characters. No captions, no numbers, no logos outside actual device. Entire subject visible with compact white border, landscape or square composition.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-3f60ecbb-381c-4eb1-86c8-8769e3e33eb2.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": false,
+      "sha256": "ea6c1b60e1ceb7043868ff4cbd9c5e56f39d2d353a064d4844b24f8f949afa03",
+      "reference": "history/ap400.jpg"
+    },
+    {
+      "file": "history/illustrations/typestar5-front.png",
+      "prompt": "Use case: scientific-educational. Canon Typestar 5 portable electronic typewriter shown in lower part of the ad reference. Draw only machine, no person or advertising. Small LCD just above keyboard, platen rear with tall side knobs, compact slim slab body. Faithful controls and shape. Transform the reference into a fresh black-and-white patent-style illustration for a history timeline. All machines must face straight toward the reader, centered and aligned symmetrically with horizontal edges; elevated front view so keyboard and LCD remain clear, no diagonal or rotated view. Pure white background, crisp fine black technical pen outlines, heavier exterior contour, only sparse hatching for recesses, no gray fills, no shadows, no photographic texture. Faithful structural details, omit tiny illegible key lettering instead of inventing characters. No captions, no numbers, no logos outside actual device. Entire subject visible with compact white border, landscape or square composition.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-d1c964bb-b816-4e88-a0c5-27ed97f38523.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": false,
+      "sha256": "edf05410e4deab5100ed63fe762f79a2f6637f58d7f882d6391715ca19a9d8d8",
+      "reference": "Typestar 5 advert.jpg"
+    },
+    {
+      "file": "history/illustrations/typestar7-front.png",
+      "prompt": "Use case: scientific-educational. Canon Typestar 7 / S-70 machine in the reference industrial design, only device, no FIG 7 label. Long centered LCD above full keyboard, paired special buttons at upper left and right, platen and paper slot at rear, round knobs both sides, thin portable rectangular body. Transform the reference into a fresh black-and-white patent-style illustration for a history timeline. All machines must face straight toward the reader, centered and aligned symmetrically with horizontal edges; elevated front view so keyboard and LCD remain clear, no diagonal or rotated view. Pure white background, crisp fine black technical pen outlines, heavier exterior contour, only sparse hatching for recesses, no gray fills, no shadows, no photographic texture. Faithful structural details, omit tiny illegible key lettering instead of inventing characters. No captions, no numbers, no logos outside actual device. Entire subject visible with compact white border, landscape or square composition.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-ce6f55fd-d18e-43d5-b5dc-8cdb8043981c.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": false,
+      "sha256": "d1a84fcc4e0c035dfa81374695a1284bd0cc5bd0fe0aa6e7e141894962ecf668",
+      "reference": "canon-design-perspective.png"
+    },
+    {
+      "file": "history/illustrations/typestar90-front.png",
+      "prompt": "Use case: scientific-educational. Canon Typestar 90 / S-90 exactly as reference, centered wide 32-character LCD above keyboard, four special keys on each side of display, paper slot and platen above it, thin rectangular portable body. Remove table/background. Transform the reference into a fresh black-and-white patent-style illustration for a history timeline. All machines must face straight toward the reader, centered and aligned symmetrically with horizontal edges; elevated front view so keyboard and LCD remain clear, no diagonal or rotated view. Pure white background, crisp fine black technical pen outlines, heavier exterior contour, only sparse hatching for recesses, no gray fills, no shadows, no photographic texture. Faithful structural details, omit tiny illegible key lettering instead of inventing characters. No captions, no numbers, no logos outside actual device. Entire subject visible with compact white border, landscape or square composition.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-9c1f6d68-03cb-4f02-a74f-297425241048.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": false,
+      "sha256": "60a908c1de50e70c6fe39b4ab1d72d709c41060da3787e07af541603833067b2",
+      "reference": "history/typestar90.webp"
+    },
+    {
+      "file": "history/illustrations/typestar10-front.png",
+      "prompt": "Use case: scientific-educational. Canon Typestar 10 exactly as reference, small centered LCD with raised surround, keyboard below, lid raised at back with paper path visible. Show whole raised lid intact and the full device. No scene or table. Transform the reference into a fresh black-and-white patent-style illustration for a history timeline. All machines must face straight toward the reader, centered and aligned symmetrically with horizontal edges; elevated front view so keyboard and LCD remain clear, no diagonal or rotated view. Pure white background, crisp fine black technical pen outlines, heavier exterior contour, only sparse hatching for recesses, no gray fills, no shadows, no photographic texture. Faithful structural details, omit tiny illegible key lettering instead of inventing characters. No captions, no numbers, no logos outside actual device. Entire subject visible with compact white border, landscape or square composition.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-84f616be-0ac5-4da4-94a4-b1f2b50960d0.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": false,
+      "sha256": "a3ced0d74ec2985edf627e25c8ca02a6795b53d187de16515fb75a680204c630",
+      "reference": "history/typestar10.jpg"
+    },
+    {
+      "file": "printy-premiers-pas.png",
+      "prompt": "Use case: illustration-story. New spot illustration for a 1980s-style French BASIC manual. The reference gives Printy's identity: friendly anthropomorphic white typewriter body, compact upright near-square silhouette, round black eyes, C nose, small smile, flat hand-drawn keyboard, thin legs and small tan gloves/shoes. Keep original slender proportions, light flat cream/beige accents, black ink contours, minimal details, no bulky 3D keyboard. Printy examines a simple paper strip with the single exact calculation 2 + 3 = 5, pointing at the result with a little pencil; joyful discovery, one small paper strip beside him. Two arms, two legs, full body; all props fit comfortably. Original pose matching the character, no star eyes, no extra character, no decorative background. Transparent background.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-119c9d77-f7ff-4852-a780-eafffc66748f.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": true,
+      "sha256": "a1c947aa32a93073fa1485099360034781d6025288c84a70cdd1ae84ac11c2db",
+      "reference": "illustration.png"
+    },
+    {
+      "file": "printy-memoire.png",
+      "prompt": "Use case: illustration-story. New spot illustration for a 1980s-style French BASIC manual. The reference gives Printy's identity: friendly anthropomorphic white typewriter body, compact upright near-square silhouette, round black eyes, C nose, small smile, flat hand-drawn keyboard, thin legs and small tan gloves/shoes. Keep original slender proportions, light flat cream/beige accents, black ink contours, minimal details, no bulky 3D keyboard. Printy carefully places a small floppy disk in a simple open storage box, celebrating the saving of a programme. No text or labels; two small props. Two arms, two legs, full body; all props fit comfortably. Original pose matching the character, no star eyes, no extra character, no decorative background. Transparent background.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-2733292b-a322-46c8-ad37-9622f1fce4f5.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": true,
+      "sha256": "3aedf55d643e8a9bed155f2162b6a803deac51d292baf5cd5e4036a43970f2f0",
+      "reference": "illustration.png"
+    },
+    {
+      "file": "printy-debug.png",
+      "prompt": "Use case: illustration-story. New spot illustration for a 1980s-style French BASIC manual. The reference gives Printy's identity: friendly anthropomorphic white typewriter body, compact upright near-square silhouette, round black eyes, C nose, small smile, flat hand-drawn keyboard, thin legs and small tan gloves/shoes. Keep original slender proportions, light flat cream/beige accents, black ink contours, minimal details, no bulky 3D keyboard. Printy holds a small magnifying glass toward a paper strip, thoughtful and smiling, showing careful debugging. Only a few abstract ink marks on the strip, no legible text. Two arms, two legs, full body; all props fit comfortably. Original pose matching the character, no star eyes, no extra character, no decorative background. Transparent background.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-acbe311e-8bfd-4cf6-b674-c277c3deaf57.png",
+      "generator": "image_gen (outil intégré)",
+      "transparent_background": true,
+      "sha256": "57195fec553ca3c7e33f4e4b381595c2897aad6c1c7dab8b95d81ced9c6443f0",
+      "reference": "illustration.png"
+    },
+    {
+      "file": "lprint-characters.png",
+      "generator": "render_manual_paper_font.py / Studio HD6301, HFDECODE",
+      "origin": "95 glyphes décodés depuis le firmware choisi ; grille et codes composés pour le manuel.",
+      "sha256": "aa64cfc28d74b8952c419c0a53fd91c77010712259d2dee07d0754a0135809e9"
+    },
+    {
+      "file": "images/history/illustrations/canoword55-transparent.png",
+      "prompt": "Use case: background-extraction. Edit target: the attached black-and-white frontal patent-style line drawing of canoword55. Change only its exterior background: remove all the white canvas around the complete machine and make it genuinely transparent. Preserve the exact silhouette, proportions, view, black strokes, lettering, keys, screen and all internal opaque white device surfaces. The white device body and white keyboard keycaps remain OPAQUE WHITE. Exterior background and open empty space between the CanoWord stand legs are transparent. No scene, no shadow, no new details, no border. Center the entire unchanged machine with a small transparent margin on every side.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-acb619c9-5599-44e2-ac83-0802236339af.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/illustrations/canoword55-front.png"
+    },
+    {
+      "file": "images/history/illustrations/typestar5-transparent.png",
+      "prompt": "Use case: background-extraction. Edit target: the attached black-and-white frontal patent-style line drawing of typestar5. Change only its exterior background: remove all the white canvas around the complete machine and make it genuinely transparent. Preserve the exact silhouette, proportions, view, black strokes, lettering, keys, screen and all internal opaque white device surfaces. The white device body and white keyboard keycaps remain OPAQUE WHITE. Exterior background and open empty space between the CanoWord stand legs are transparent. No scene, no shadow, no new details, no border. Center the entire unchanged machine with a small transparent margin on every side.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-04ba0477-678d-4fd6-9f2b-cdead146ffb7.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/illustrations/typestar5-front.png"
+    },
+    {
+      "file": "images/history/illustrations/ap400-transparent.png",
+      "prompt": "Use case: background-extraction. Edit target: the attached black-and-white frontal patent-style line drawing of ap400. Change only its exterior background: remove all the white canvas around the complete machine and make it genuinely transparent. Preserve the exact silhouette, proportions, view, black strokes, lettering, keys, screen and all internal opaque white device surfaces. The white device body and white keyboard keycaps remain OPAQUE WHITE. Exterior background and open empty space between the CanoWord stand legs are transparent. No scene, no shadow, no new details, no border. Center the entire unchanged machine with a small transparent margin on every side.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-7e122053-c521-465f-b16a-5bde15caa2bb.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/illustrations/ap400-front.png"
+    },
+    {
+      "file": "images/history/illustrations/typestar7-transparent.png",
+      "prompt": "Use case: background-extraction. Edit target: the attached black-and-white frontal patent-style line drawing of typestar7. Change only its exterior background: remove all the white canvas around the complete machine and make it genuinely transparent. Preserve the exact silhouette, proportions, view, black strokes, lettering, keys, screen and all internal opaque white device surfaces. The white device body and white keyboard keycaps remain OPAQUE WHITE. Exterior background and open empty space between the CanoWord stand legs are transparent. No scene, no shadow, no new details, no border. Center the entire unchanged machine with a small transparent margin on every side.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-637dad1c-35cc-4a02-b6e0-8b9304638482.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/illustrations/typestar7-front.png"
+    },
+    {
+      "file": "images/history/illustrations/canon-x07-transparent.png",
+      "prompt": "Use case: background-extraction. Edit target: the attached black-and-white frontal patent-style line drawing of canon-x07. Change only its exterior background: remove all the white canvas around the complete machine and make it genuinely transparent. Preserve the exact silhouette, proportions, view, black strokes, lettering, keys, screen and all internal opaque white device surfaces. The white device body and white keyboard keycaps remain OPAQUE WHITE. Exterior background and open empty space between the CanoWord stand legs are transparent. No scene, no shadow, no new details, no border. Center the entire unchanged machine with a small transparent margin on every side.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-3e65e32f-3e3b-46aa-83aa-b00128a19c2a.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/illustrations/canon-x07-front.png"
+    },
+    {
+      "file": "images/history/illustrations/typestar10-transparent.png",
+      "prompt": "Use case: background-extraction. Edit target: the attached black-and-white frontal patent-style line drawing of typestar10. Change only its exterior background: remove all the white canvas around the complete machine and make it genuinely transparent. Preserve the exact silhouette, proportions, view, black strokes, lettering, keys, screen and all internal opaque white device surfaces. The white device body and white keyboard keycaps remain OPAQUE WHITE. Exterior background and open empty space between the CanoWord stand legs are transparent. No scene, no shadow, no new details, no border. Center the entire unchanged machine with a small transparent margin on every side.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-ef3d62b9-905a-445d-aa65-14207bc1b459.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/illustrations/typestar10-front.png"
+    },
+    {
+      "file": "images/history/illustrations/typestar90-transparent.png",
+      "prompt": "Use case: background-extraction. Edit target: the attached black-and-white frontal patent-style line drawing of typestar90. Change only its exterior background: remove all the white canvas around the complete machine and make it genuinely transparent. Preserve the exact silhouette, proportions, view, black strokes, lettering, keys, screen and all internal opaque white device surfaces. The white device body and white keyboard keycaps remain OPAQUE WHITE. Exterior background and open empty space between the CanoWord stand legs are transparent. No scene, no shadow, no new details, no border. Center the entire unchanged machine with a small transparent margin on every side.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-d8226303-b18a-4ded-bf95-2e7fc21a8d53.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/illustrations/typestar90-front.png"
+    },
+    {
+      "file": "images/history/illustrations/typemate-10-transparent.png",
+      "prompt": "Use case: scientific-educational. Asset: small machine portrait for a historical manual timeline. Image 1 is a photographic reference of Canon Typemate 10. Create an accurate elegant BLACK AND WHITE PATENT-STYLE line illustration of this exact machine, matching its distinctive casing, platen, paper opening, LCD length and keyboard proportions. Render it STRAIGHT and CENTERED, from directly in front, slightly elevated only enough to see the keyboard, with zero left/right skew. Entire machine fully visible, little margin, genuine TRANSPARENT BACKGROUND, crisp black contours and fine minimal hatching. The device body and keycaps are opaque white. Remove the tabletop, room, cables and any sales stickers. Keep real permanent controls and the original badge from the machine; tiny keyboard labels may be simplified. Do not reproduce the photograph's watermark. No new functionality, no invented screen, no colors, no shadows, no explanatory caption. Preserve the distinctive shape of this particular model rather than copying another Typestar.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-a60a25be-def4-4200-beda-baf30d831fd0.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/Typemate-10.jpg",
+      "reference_url": "https://typewriterdatabase.com/198x-canon-typemate-10.18472.typewriter"
+    },
+    {
+      "file": "images/history/illustrations/typestar-4-transparent.png",
+      "prompt": "Use case: scientific-educational. Asset: small machine portrait for a historical manual timeline. Image 1 is a photographic reference of Canon Typestar 4. Create an accurate elegant BLACK AND WHITE PATENT-STYLE line illustration of this exact machine, matching its distinctive casing, platen, paper opening, LCD length and keyboard proportions. Render it STRAIGHT and CENTERED, from directly in front, slightly elevated only enough to see the keyboard, with zero left/right skew. Entire machine fully visible, little margin, genuine TRANSPARENT BACKGROUND, crisp black contours and fine minimal hatching. The device body and keycaps are opaque white. Remove the tabletop, room, cables and any sales stickers. Keep real permanent controls and the original badge from the machine; tiny keyboard labels may be simplified. Do not reproduce the photograph's watermark. No new functionality, no invented screen, no colors, no shadows, no explanatory caption. Preserve the distinctive shape of this particular model rather than copying another Typestar.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-2e6c1adc-4cbd-4e71-8052-6aa30b09192a.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/Typestar-4.jpg",
+      "reference_url": "https://typewriterdatabase.com/1986-canon-typestar-4.23633.typewriter"
+    },
+    {
+      "file": "images/history/illustrations/typestar-2-transparent.png",
+      "prompt": "Use case: scientific-educational. Asset: small machine portrait for a historical manual timeline. Image 1 is a photographic reference of Canon Typestar 2. Create an accurate elegant BLACK AND WHITE PATENT-STYLE line illustration of this exact machine, matching its distinctive casing, platen, paper opening, LCD length and keyboard proportions. Render it STRAIGHT and CENTERED, from directly in front, slightly elevated only enough to see the keyboard, with zero left/right skew. Entire machine fully visible, little margin, genuine TRANSPARENT BACKGROUND, crisp black contours and fine minimal hatching. The device body and keycaps are opaque white. Remove the tabletop, room, cables and any sales stickers. Keep real permanent controls and the original badge from the machine; tiny keyboard labels may be simplified. Do not reproduce the photograph's watermark. No new functionality, no invented screen, no colors, no shadows, no explanatory caption. Preserve the distinctive shape of this particular model rather than copying another Typestar.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-9bed9cf5-795a-45f6-8564-d2f7a42dffa7.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/Typestar-2.jpg",
+      "reference_url": "https://typewriterdatabase.com/198x-canon-typestar-2.16399.typewriter"
+    },
+    {
+      "file": "images/history/illustrations/typestar-5-ii-transparent.png",
+      "prompt": "Use case: scientific-educational. Asset: small machine portrait for a historical manual timeline. Image 1 is a photographic reference of Canon Typestar 5 II. Create an accurate elegant BLACK AND WHITE PATENT-STYLE line illustration of this exact machine, matching its distinctive casing, platen, paper opening, LCD length and keyboard proportions. Render it STRAIGHT and CENTERED, from directly in front, slightly elevated only enough to see the keyboard, with zero left/right skew. Entire machine fully visible, little margin, genuine TRANSPARENT BACKGROUND, crisp black contours and fine minimal hatching. The device body and keycaps are opaque white. Remove the tabletop, room, cables and any sales stickers. Keep real permanent controls and the original badge from the machine; tiny keyboard labels may be simplified. Do not reproduce the photograph's watermark. No new functionality, no invented screen, no colors, no shadows, no explanatory caption. Preserve the distinctive shape of this particular model rather than copying another Typestar.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-d69ead93-faa7-4335-8f3b-0a070a58f7f2.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/Typestar-5-II.jpg",
+      "reference_url": "https://typewriterdatabase.com/198x-canon-typestar-5-ii.17731.typewriter"
+    },
+    {
+      "file": "images/history/illustrations/typestar-3-transparent.png",
+      "prompt": "Use case: scientific-educational. Asset: small machine portrait for a historical manual timeline. Image 1 is a photographic reference of Canon Typestar 3. Create an accurate elegant BLACK AND WHITE PATENT-STYLE line illustration of this exact machine, matching its distinctive casing, platen, paper opening, LCD length and keyboard proportions. Render it STRAIGHT and CENTERED, from directly in front, slightly elevated only enough to see the keyboard, with zero left/right skew. Entire machine fully visible, little margin, genuine TRANSPARENT BACKGROUND, crisp black contours and fine minimal hatching. The device body and keycaps are opaque white. Remove the tabletop, room, cables and any sales stickers. Keep real permanent controls and the original badge from the machine; tiny keyboard labels may be simplified. Do not reproduce the photograph's watermark. No new functionality, no invented screen, no colors, no shadows, no explanatory caption. Preserve the distinctive shape of this particular model rather than copying another Typestar.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-3548ee82-3d2b-4ed3-bd18-6d8f9dd31eee.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/Typestar-3.jpg",
+      "reference_url": "https://typewriterdatabase.com/1988-canon-typestar-3.18464.typewriter"
+    },
+    {
+      "file": "images/history/illustrations/typestar-10-ii-transparent.png",
+      "prompt": "Use case: scientific-educational. Asset: small machine portrait for a historical manual timeline. Image 1 is a photographic reference of Canon Typestar 10 II. Create an accurate elegant BLACK AND WHITE PATENT-STYLE line illustration of this exact machine, matching its distinctive casing, platen, paper opening, LCD length and keyboard proportions. Render it STRAIGHT and CENTERED, from directly in front, slightly elevated only enough to see the keyboard, with zero left/right skew. Entire machine fully visible, little margin, genuine TRANSPARENT BACKGROUND, crisp black contours and fine minimal hatching. The device body and keycaps are opaque white. Remove the tabletop, room, cables and any sales stickers. Keep real permanent controls and the original badge from the machine; tiny keyboard labels may be simplified. Do not reproduce the photograph's watermark. No new functionality, no invented screen, no colors, no shadows, no explanatory caption. Preserve the distinctive shape of this particular model rather than copying another Typestar.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-f959dfd5-167f-4e8e-a737-c929e8e768a7.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/Typestar-10-II.jpg",
+      "reference_url": "https://typewriterdatabase.com/198x-canon-typestar-10ii.18493.typewriter"
+    },
+    {
+      "file": "images/history/illustrations/typestar-6-ii-transparent.png",
+      "prompt": "Use case: scientific-educational. Asset: small machine portrait for a historical manual timeline. Image 1 is a photographic reference of Canon Typestar 6 II. Create an accurate elegant BLACK AND WHITE PATENT-STYLE line illustration of this exact machine, matching its distinctive casing, platen, paper opening, LCD length and keyboard proportions. Render it STRAIGHT and CENTERED, from directly in front, slightly elevated only enough to see the keyboard, with zero left/right skew. Entire machine fully visible, little margin, genuine TRANSPARENT BACKGROUND, crisp black contours and fine minimal hatching. The device body and keycaps are opaque white. Remove the tabletop, room, cables and any sales stickers. Keep real permanent controls and the original badge from the machine; tiny keyboard labels may be simplified. Do not reproduce the photograph's watermark. No new functionality, no invented screen, no colors, no shadows, no explanatory caption. Preserve the distinctive shape of this particular model rather than copying another Typestar.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-fe7c761c-5dbc-436b-ba78-6f8d1ac6b263.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/Typestar-6-II.jpg",
+      "reference_url": "https://typewriterdatabase.com/198x-canon-typestar-6-ii.12792.typewriter"
+    },
+    {
+      "file": "images/history/illustrations/typestar-220-ii-transparent.png",
+      "prompt": "Use case: scientific-educational. Asset: small machine portrait for a historical manual timeline. Image 1 is a photographic reference of Canon Typestar 220 II. Create an accurate elegant BLACK AND WHITE PATENT-STYLE line illustration of this exact machine, matching its distinctive casing, platen, paper opening, LCD length and keyboard proportions. Render it STRAIGHT and CENTERED, from directly in front, slightly elevated only enough to see the keyboard, with zero left/right skew. Entire machine fully visible, little margin, genuine TRANSPARENT BACKGROUND, crisp black contours and fine minimal hatching. The device body and keycaps are opaque white. Remove the tabletop, room, cables and any sales stickers. Keep real permanent controls and the original badge from the machine; tiny keyboard labels may be simplified. Do not reproduce the photograph's watermark. No new functionality, no invented screen, no colors, no shadows, no explanatory caption. Preserve the distinctive shape of this particular model rather than copying another Typestar.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-85423d72-894b-4fb4-89b2-5077774e7ce2.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/Typestar-220-II.jpg",
+      "reference_url": "https://typewriterdatabase.com/198x-canon-typestar-220ii.17202.typewriter"
+    },
+    {
+      "file": "images/history/illustrations/typestar-220-transparent.png",
+      "prompt": "Use case: scientific-educational. Asset: small machine portrait for a historical manual timeline. Image 1 is a photographic reference of Canon Typestar 220. Create an accurate elegant BLACK AND WHITE PATENT-STYLE line illustration of this exact machine, matching its distinctive casing, platen, paper opening, LCD length and keyboard proportions. Render it STRAIGHT and CENTERED, from directly in front, slightly elevated only enough to see the keyboard, with zero left/right skew. Entire machine fully visible, little margin, genuine TRANSPARENT BACKGROUND, crisp black contours and fine minimal hatching. The device body and keycaps are opaque white. Remove the tabletop, room, cables and any sales stickers. Keep real permanent controls and the original badge from the machine; tiny keyboard labels may be simplified. Do not reproduce the photograph's watermark. No new functionality, no invented screen, no colors, no shadows, no explanatory caption. Preserve the distinctive shape of this particular model rather than copying another Typestar.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-7a0a8c4d-e6bf-44a4-9265-df54dd4c09d7.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/Typestar-220.jpg",
+      "reference_url": "https://typewriterdatabase.com/199x-canon-typestar-220.3012.typewriter"
+    },
+    {
+      "file": "images/history/illustrations/typestar210-transparent.png",
+      "prompt": "Use case: scientific-educational. Reference image: Canon original manual cover showing the Typestar 210, from the common Typestar 110-II / 210 instructions. Produce a new accurate BLACK AND WHITE patent-style line portrait of the MACHINE ONLY. Turn the oblique machine into a straight symmetrical frontal view, gently elevated to show its keyboard, entirely visible. Preserve the flat slim rectangular portable casing, two platen knobs, exposed rear platen, short 16-character LCD at the center and keyboard layout visible in the reference. Only permanent small Canon / Typestar 210 badge, no extra labels, no colored blocks from the cover, no letters floating in the scene. Minimal fine black hatching and clear black outlines. Device surfaces and keys opaque white, real transparent exterior background, no floor, no cast shadow. This is a thumbnail illustration for a history timeline; prioritize faithful shape and proportions over tiny lettering.",
+      "source": "C:\\Users\\praim\\.codex\\generated_images\\01a07fa1-f002-7f83-847f-d68ebd0b2d36\\exec-ccaa0e6d-ff01-47c2-9ffd-942a101a55e5.png",
+      "generator": "Built-in image_gen",
+      "transparent_background": true,
+      "reference": "images/history/references-20261014/CanonTypestar110II-210-cover.png",
+      "reference_url": "https://site.xavier.edu/polt/typewriters/CanonTypestar110II%26210.pdf"
+    },
+    {
+      "file": "images/history/canon-shimomaruko-avant-1951.jpg",
+      "type": "historical-source-photograph",
+      "source_url": "https://global.canon/ja/c-museum/common/img/history/history_03_03.jpg",
+      "context_url": "https://global.canon/en/c-museum/history/story03.html",
+      "credit": "Canon Camera Museum, histoire 1951–1955 : acquisition du site de Shimomaruko en 1951.",
+      "notes": "Vue du site avant acquisition par Canon en 1951 ; date exacte du cliché non précisée.",
+      "retrieved": "2026-10-14",
+      "sha256": "fa5ab7cb2e8501a6487f57ed1db0c2b097f1ea1819db7b52d5000e23f8221069",
+      "treatment": "Source image retained unchanged."
+    },
+    {
+      "file": "images/history/canon-shimomaruko-L-1990.jpg",
+      "type": "historical-source-photograph",
+      "source_url": "https://www.obayashi.co.jp/chronicle/100yrs/images/figures/img5199_s/p785_01_s.jpg",
+      "context_url": "https://www.obayashi.co.jp/chronicle/100yrs/t3c5s99.html",
+      "credit": "Obayashi, histoire des 100 ans : bâtiment L de Canon, Shimomaruko, achevé en avril 1990.",
+      "notes": "Photographie d’archives du bâtiment L. Construction avril 1989–avril 1990 ; date exacte du cliché non précisée.",
+      "retrieved": "2026-10-14",
+      "sha256": "a57332fd6bf0414016536f3c7ef34dd7b7712c8d82b8484ccccb7f81f79d88a9",
+      "treatment": "Source image retained unchanged."
+    },
+    {
+      "file": "images/history/canon-bretagne-premiere-pierre-1984.jpg",
+      "type": "historical-source-photograph",
+      "source_url": "https://www.canon-bretagne.fr/inilrumi/2019/11/histoire.jpg",
+      "context_url": "https://www.canon-bretagne.fr/lentreprise/",
+      "credit": "Canon Bretagne, histoire du site industriel.",
+      "notes": "Plaque portant la date du 18 janvier 1984 ; photographie du monument non datée.",
+      "retrieved": "2026-10-14",
+      "sha256": "cd171d5e6a8a5e4bda6c08313460c39f4b266a30072b3c9c8d39789e4715dfef",
+      "treatment": "Source image retained unchanged."
+    }
+  ]
+}

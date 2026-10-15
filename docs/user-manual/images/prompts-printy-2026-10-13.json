@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen (outil intégré)",
+  "date": "2026-10-13",
+  "reference": "printy-projet.png",
+  "transparent_background": true,
+  "assets": [
+    {
+      "file": "printy-salut.png",
+      "prompt": "Create a fresh original illustration for a friendly French retro BASIC computer manual. The provided image is a STYLE AND MASCOT REFERENCE, not an edit target. Show Printy, an anthropomorphic compact cream thermal typewriter with two round paper feed wheels, keyboard, smiling face and gloves and shoes. Printy stands alone, waves one raised open gloved hand hello directly to the reader; the other hand rests at its side. Redraw the character in a visibly NEW pose and silhouette, do not trace or repeat the reference composition. No table, no signs, no text, no logos. Warm brown and cream tones, confident hand drawn black ink contours, very light vintage print texture, clear silhouette. Entire character and fingertips inside canvas, isolated on genuinely transparent background. Friendly 1980s instruction manual illustration, readable at small printed size."
+    },
+    {
+      "file": "printy-firmware.png",
+      "prompt": "Create a fresh original editorial illustration for a French retro BASIC manual, matching the ink and cream/brown style of the supplied Printy character reference. Reference is style/character guidance only. Printy is a cheerful anthropomorphic cream thermal typewriter with keyboard, paper wheels, gloved hands and shoes. Show Printy as a curious technician using a magnifying glass to inspect TWO tiny DIP integrated circuits on a simple tidy workbench. One integrated circuit is represented closed with a tiny calculator pictogram; the other has a small paper strip with abstract code lines. Suggest understanding old electronics and writing a new program. No screwdriver, no soldering, no photorealism, no written words or numerals, no Canon logo. Simple original composition, generous negative space, full character and tools in frame, warm black ink, restrained brown accent. Genuinely transparent background."
+    }
+  ]
+}

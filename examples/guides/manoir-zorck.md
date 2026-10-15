@@ -1,0 +1,48 @@
+# Le Manoir du comte Zorck — Typestar BASIC
+
+Première adaptation française, entièrement sur LCD. Ouvrir `manoir-zorck-fr.bas` dans Studio, puis exécuter dans l’émulateur ou envoyer à la Canon avec LOAD. Utiliser le firmware courant 0.4.85-dev. Aucun papier ni changement de firmware n’est nécessaire.
+
+## Votre mission
+
+Vous quittez le village avec 80 à 100 points de vie. Explorez les alentours, trouvez le manoir, franchissez ses trois protections, prenez des trésors dans le donjon et revenez vivant au village. Il n’est pas nécessaire de tout ramasser : sachez rentrer avant d’épuiser vos forces ! Une touche passe les messages. La durée d’attente au titre initialise le hasard.
+
+## Exploration
+
+N et S vont au nord et au sud ; E et O vont à l’est et à l’ouest. Les flèches gauche et droite conviennent également. I affiche la vie et le butin, Q abandonne. Les coordonnées X,Y apparaissent après le nom du terrain ; le village est au départ, près de 0,0. Les eaux et les murs bloquent le passage. Les rencontres déclenchent un combat automatique ; le LCD indique votre vie et celle de l’adversaire.
+
+## Les trois portes
+
+Vous disposez de **50 essais au total** pour les trois énigmes.
+
+1. **La porte cachée.** Cherchez deux coordonnées entières, X entre −200 et 200, Y entre −100 et 100. L’écran donne la distance à votre dernier essai. Appuyez sur une touche puis saisissez chaque coordonnée, validée par Return. Comparer plusieurs distances permet de localiser la porte ; ce n’est pas une direction à suivre sur la carte extérieure.
+2. **Le mot de passe.** Proposez une lettre au clavier. Toutes ses occurrences sont révélées. Les tirets représentent les lettres manquantes. Chaque lettre proposée coûte un essai, même répétée.
+3. **Le code.** Saisissez une chaîne de quatre à six chiffres **tous différents**, éventuellement commençant par zéro. BIEN indique les chiffres bien placés, MAL les chiffres présents à une autre place. Une saisie de longueur incorrecte, contenant des lettres ou des doublons est refusée sans consommer d’essai.
+
+## Le donjon
+
+Cinq étages, numérotés 0 à 4, partagent ce plan. Chaque coin contient un trésor gardé, récupérable une seule fois par étage. Le centre contient l’escalier.
+
+```text
+       X=1 2 3 4 5
+Y=1      T . . . T
+Y=2      . # . # .
+Y=3      . . E . .
+Y=4      . # . # .
+Y=5      T . . . T
+```
+
+Utilisez le pavé numérique : 8 nord, 2 sud, 4 ouest, 6 est, 7/9/1/3 pour les diagonales. Les flèches gauche/droite fonctionnent aussi. Une diagonale ne traverse pas un coin de mur. Au centre (3,3), M monte, D descend. I affiche l’état. **5 quitte le donjon**, même loin de l’escalier, et vous dépose devant son entrée. Rejoignez ensuite le village par la carte extérieure pour gagner.
+
+## Origine et choix d’adaptation
+
+D’après *Le Manoir du comte Zorck*, attribué à **Pascal Prioux (1983)** dans la transcription, publié dans **Hebdogiciel n°18**. Sources : [index Sharp PC-1211](http://www.hebdogiciel.free.fr/PC1211.htm) et [archive du listing](http://www.hebdogiciel.free.fr/hd-roms/PC1211/le%20manoir%20du%20comte%20zorck%20%5BPC1211_18%5D.zip).
+
+L’index classe le jeu sous PC-1211, tandis que le texte de présentation mentionne PC-1251. La transcription réunit plusieurs programmes, avec des erreurs et des données de donjon incomplètes. Cette version est donc une **adaptation**, pas une reproduction exacte : la carte extérieure et la liste des mots sont reprises ; les parties sont réunies sans CHAIN ; les cinq étages sont reconstruits ; les combats et les messages sont simplifiés. Le budget commun des énigmes, la recherche par distance, le mot à découvrir, le code à positions et le retour au village sont conservés. Les trésors déjà pris restent vides.
+
+L’auteur original reste crédité ; cette adaptation ne prétend pas changer les droits sur le jeu d’origine. Les scans et archives sources ne sont pas ajoutés à la ludothèque distribuable.
+
+## Vérification
+
+`tools/validate_zorck.py` exécute le code sur le modèle CPU avec la ROM BASIC réelle. Des secrets déterministes et l’absence de rencontres sur la carte extérieure rendent le parcours reproductible ; le combat du gardien reste exécuté. Le rapport est produit dans `build/zorck-validation.json`. Une partie sur machine réelle reste nécessaire pour valider le confort des messages et des saisies.
+
+Parcours automatisé réussi : trois portes, refus des codes invalides, changement d’étage, combat du gardien, trésor et retour victorieux au village. **681 octets libres au minimum observé** sur ce parcours déterministe ; ce n’est pas une garantie de minimum pour tous les tirages. La génération aléatoire d’un code à chiffres distincts a également été vérifiée séparément.

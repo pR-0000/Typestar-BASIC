@@ -1,0 +1,39 @@
+{
+  "mode": "foreground synchronous; no BASIC expression evaluation during rendering/motion",
+  "blocks": [
+    {
+      "name": "RBSTATE",
+      "start": "1CDE",
+      "bytes": 10,
+      "alias": "DIMJOB; acquired only after all PBOX arguments and EOS validated"
+    },
+    {
+      "name": "PBSTATE",
+      "start": "1CE8",
+      "bytes": 24,
+      "alias": "remaining DIMJOB scratch plus two adjacent bytes; no expression during print"
+    },
+    {
+      "name": "PXSTATE",
+      "start": "1D70",
+      "bytes": 7,
+      "alias": null,
+      "reason": "separate from DIMJOB while EXPR evaluates nested arrays"
+    },
+    {
+      "name": "PRSTATE",
+      "start": "1D77",
+      "bytes": 3,
+      "alias": null
+    },
+    {
+      "name": "PBOUT",
+      "start": "1BC0",
+      "bytes": 64,
+      "alias": "GXPATTERN, mutually exclusive with serial graphics"
+    }
+  ],
+  "extra_program_reservation": 0,
+  "band_and_backup": "64*tiles+220 bytes borrowed at DFLOOR; checked against DHEAP; no NEW",
+  "persistent_state": "GPRAN: 0 unused, 1 serial/consumed, 2 BASIC transaction active; returned to 1 by RBCLEAN"
+}

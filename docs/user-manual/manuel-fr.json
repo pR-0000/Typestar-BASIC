@@ -1,0 +1,866 @@
+{
+  "title": "Typestar BASIC",
+  "subtitle": "Manuel de l'utilisateur",
+  "language": "fr",
+  "version": "0.4.88-dev",
+  "author": "Pierre Raimbault & Chat GPT",
+  "date": "15 octobre 2026",
+  "cover_image": "images/illustration_BASIC_firmware.png",
+  "image_layout": {
+    "illustration.png": {
+      "max_width_mm": 80,
+      "max_height_mm": 48
+    },
+    "illustration-variables.png": {
+      "max_width_mm": 115,
+      "max_height_mm": 65
+    },
+    "illustration-dessins-papier.png": {
+      "max_width_mm": 110,
+      "max_height_mm": 70
+    },
+    "studio-transferts.png": {
+      "max_width_mm": 92,
+      "max_height_mm": 18
+    },
+    "Typestar 5 advert.jpg": {
+      "max_width_mm": 160,
+      "max_height_mm": 195
+    },
+    "Typestar 5 & 6 advert.jpg": {
+      "max_width_mm": 160,
+      "max_height_mm": 175
+    },
+    "hd6301_advert.png": {
+      "max_width_mm": 160,
+      "max_height_mm": 165
+    },
+    "hitachi-motorola-1974.jpg": {
+      "max_width_mm": 152,
+      "max_height_mm": 114
+    },
+    "hitachi-sh-1993.jpg": {
+      "max_width_mm": 104,
+      "max_height_mm": 142
+    },
+    "canon-design-attribution.png": {
+      "max_width_mm": 160,
+      "max_height_mm": 62
+    },
+    "canon-design-perspective.png": {
+      "max_width_mm": 98,
+      "max_height_mm": 89
+    },
+    "illustration-sons.png": {
+      "max_width_mm": 110,
+      "max_height_mm": 68
+    },
+    "illustration-calculs.png": {
+      "max_width_mm": 114,
+      "max_height_mm": 50
+    },
+    "illustration-decisions.png": {
+      "max_width_mm": 114,
+      "max_height_mm": 72
+    },
+    "illustration-liaison.png": {
+      "max_width_mm": 112,
+      "max_height_mm": 68
+    },
+    "installation-demontage.png": {
+      "max_width_mm": 160,
+      "max_height_mm": 160
+    },
+    "installation-clips-vue.png": {
+      "max_width_mm": 128,
+      "max_height_mm": 128
+    },
+    "installation-clip-lateral.png": {
+      "max_width_mm": 80,
+      "max_height_mm": 80
+    },
+    "installation-clips-avant.png": {
+      "max_width_mm": 103,
+      "max_height_mm": 85
+    },
+    "installation-ic8-original.png": {
+      "max_width_mm": 156,
+      "max_height_mm": 156
+    },
+    "installation-ic8-onerom.png": {
+      "max_width_mm": 148,
+      "max_height_mm": 148
+    },
+    "installation-sens-rom.png": {
+      "max_width_mm": 157,
+      "max_height_mm": 64
+    },
+    "printy-projet.png": {
+      "max_width_mm": 112,
+      "max_height_mm": 61
+    },
+    "printy-jeux.png": {
+      "max_width_mm": 105,
+      "max_height_mm": 70
+    },
+    "schema-fonctionnel-s70.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 105
+    },
+    "frise-typestar.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 110
+    },
+    "printy-salut.png": {
+      "max_width_mm": 74,
+      "max_height_mm": 65
+    },
+    "printy-firmware.png": {
+      "max_width_mm": 112,
+      "max_height_mm": 75
+    },
+    "canon-kaku.png": {
+      "max_width_mm": 44,
+      "max_height_mm": 61
+    },
+    "canoword55.png": {
+      "max_width_mm": 90,
+      "max_height_mm": 65
+    },
+    "canon-x07.jpg": {
+      "max_width_mm": 105,
+      "max_height_mm": 74
+    },
+    "schema-interpreteur.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 71
+    },
+    "lcd-catalogue-00-7f.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 150
+    },
+    "lcd-catalogue-80-ff.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 150
+    },
+    "lcd-menu.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 20
+    },
+    "lcd-decimaux.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 20
+    },
+    "lcd-symboles-natifs.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 20
+    },
+    "canon-x07-front.png": {
+      "max_width_mm": 150,
+      "max_height_mm": 95
+    },
+    "lprint-characters.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 95
+    },
+    "lprint-characters-symbols.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 70
+    },
+    "printy-salut-v2.png": {
+      "max_width_mm": 66,
+      "max_height_mm": 70
+    },
+    "printy-premiers-pas.png": {
+      "max_width_mm": 90,
+      "max_height_mm": 57
+    },
+    "printy-memoire.png": {
+      "max_width_mm": 90,
+      "max_height_mm": 57
+    },
+    "printy-debug.png": {
+      "max_width_mm": 90,
+      "max_height_mm": 57
+    },
+    "frise-typestar-suite.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 110
+    },
+    "frise-typestar-annees1990.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 62
+    },
+    "canon-shimomaruko-avant-1951.jpg": {
+      "max_width_mm": 120,
+      "max_height_mm": 82
+    },
+    "canon-shimomaruko-L-1990.jpg": {
+      "max_width_mm": 130,
+      "max_height_mm": 102
+    },
+    "canon-bretagne-premiere-pierre-1984.jpg": {
+      "max_width_mm": 112,
+      "max_height_mm": 84
+    },
+    "studio-vue-ensemble.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 120
+    },
+    "studio-editeur.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 92
+    },
+    "studio-emulateur.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 120
+    },
+    "studio-glyphes.png": {
+      "max_width_mm": 134,
+      "max_height_mm": 152
+    },
+    "studio-caracteres.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 105
+    },
+    "studio-impression-graphique.png": {
+      "max_width_mm": 132,
+      "max_height_mm": 146
+    },
+    "studio-debogueur.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 100
+    },
+    "studio-memoire.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 90
+    },
+    "studio-code-machine.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 90
+    },
+    "exemple-piano-lcd.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 22
+    },
+    "exemple-pocket-duel-lcd.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 22
+    },
+    "exemple-duel-orbital-lcd.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 22
+    },
+    "exemple-duel-balistique-lcd.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 22
+    },
+    "exemple-duel-orbital-papier.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 140
+    },
+    "exemple-duel-balistique-papier.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 140
+    },
+    "exemple-duel-orbital-schema.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 110
+    },
+    "cable-usb-ttl.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 100
+    },
+    "schema-cpu-restaure.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 160
+    },
+    "schema-cpu-original.jpg": {
+      "max_width_mm": 166,
+      "max_height_mm": 160
+    },
+    "schema-cpu-gauche.png": {
+      "max_width_mm": 158,
+      "max_height_mm": 213
+    },
+    "schema-cpu-droite.png": {
+      "max_width_mm": 158,
+      "max_height_mm": 213
+    }
+  },
+  "chapters": [
+    "00-fiche-machine.md",
+    "02-installation-firmware.md",
+    "02-studio.md",
+    "00-pourquoi-programmer.md",
+    "01-histoire-typestar.md",
+    "02-hd6301.md",
+    "02-presentation-firmware.md",
+    "03-premiers-pas.md",
+    "04-nombres-variables.md",
+    "05-decisions-boucles.md",
+    "06-fonctions-nombres-chaines.md",
+    "07-ecran-clavier.md",
+    "08-papier-dessins.md",
+    "09-sons-serie-memoire.md",
+    "09-terminal-papier.md",
+    "10-erreurs-et-limites.md",
+    "11-programmes-complets.md",
+    "12-table-caracteres.md",
+    "13-annexe-schema.md",
+    "98-reference-rapide.md",
+    "99-lexique.md"
+  ],
+  "symbols": {
+    "ABS": "06-fonctions-nombres-chaines.md#abs",
+    "AND": "05-decisions-boucles.md#and",
+    "ASC": "06-fonctions-nombres-chaines.md#asc",
+    "ATN": "06-fonctions-nombres-chaines.md#atn",
+    "BAUD": "09-sons-serie-memoire.md#baud",
+    "BEEP": "09-sons-serie-memoire.md#beep",
+    "BOX": "08-papier-dessins.md#box",
+    "CHR$": "06-fonctions-nombres-chaines.md#chr",
+    "CIRCLE": "08-papier-dessins.md#circle",
+    "CLEAR": "03-premiers-pas.md#clear",
+    "CLS": "07-ecran-clavier.md#cls",
+    "COS": "06-fonctions-nombres-chaines.md#cos",
+    "CURSOR": "07-ecran-clavier.md#cursor",
+    "DATA": "05-decisions-boucles.md#data",
+    "DIM": "04-nombres-variables.md#dim",
+    "DRAW": "08-papier-dessins.md#draw",
+    "ELSE": "05-decisions-boucles.md#else",
+    "END": "05-decisions-boucles.md#end",
+    "EXP": "06-fonctions-nombres-chaines.md#exp",
+    "FEED": "08-papier-dessins.md#feed",
+    "FIX": "06-fonctions-nombres-chaines.md#fix",
+    "FOR": "05-decisions-boucles.md#for",
+    "FRE": "03-premiers-pas.md#fre",
+    "GLYPH": "08-papier-dessins.md#glyph",
+    "GOSUB": "05-decisions-boucles.md#gosub",
+    "GOTO": "05-decisions-boucles.md#goto",
+    "HEAD": "08-papier-dessins.md#head",
+    "ICON": "07-ecran-clavier.md#icon",
+    "IF": "05-decisions-boucles.md#if",
+    "INKEY": "07-ecran-clavier.md#inkey",
+    "INPUT": "05-decisions-boucles.md#input",
+    "INT": "06-fonctions-nombres-chaines.md#int",
+    "KEYS": "07-ecran-clavier.md#keys",
+    "LCDCHAR": "07-ecran-clavier.md#lcdchar",
+    "LCDLINE": "07-ecran-clavier.md#lcdline",
+    "LCDTRI": "07-ecran-clavier.md#lcdtri",
+    "LEFT$": "06-fonctions-nombres-chaines.md#left",
+    "LEN": "06-fonctions-nombres-chaines.md#len",
+    "LET": "04-nombres-variables.md#let",
+    "LINE": "08-papier-dessins.md#line",
+    "LIST": "03-premiers-pas.md#list",
+    "LLOCATE": "08-papier-dessins.md#llocate",
+    "LOAD": "09-sons-serie-memoire.md#load",
+    "LOCATE": "07-ecran-clavier.md#locate",
+    "LOG": "06-fonctions-nombres-chaines.md#log",
+    "LPRINT": "08-papier-dessins.md#lprint",
+    "LSPACING": "08-papier-dessins.md#lspacing",
+    "MEM": "03-premiers-pas.md#mem",
+    "MID$": "06-fonctions-nombres-chaines.md#mid",
+    "MOD": "05-decisions-boucles.md#mod",
+    "MOVE": "08-papier-dessins.md#move",
+    "NEW": "03-premiers-pas.md#new",
+    "NEXT": "05-decisions-boucles.md#next",
+    "NOT": "05-decisions-boucles.md#not",
+    "OR": "05-decisions-boucles.md#or",
+    "ORIGIN": "08-papier-dessins.md#origin",
+    "PEEK": "09-sons-serie-memoire.md#peek",
+    "PI": "06-fonctions-nombres-chaines.md#pi",
+    "POINT": "08-papier-dessins.md#point",
+    "POKE": "09-sons-serie-memoire.md#poke",
+    "PRINT": "07-ecran-clavier.md#print",
+    "RANDOMIZE": "06-fonctions-nombres-chaines.md#randomize",
+    "READ": "05-decisions-boucles.md#read",
+    "REM": "05-decisions-boucles.md#rem",
+    "RESTORE": "05-decisions-boucles.md#restore",
+    "RETURN": "05-decisions-boucles.md#return",
+    "RIGHT$": "06-fonctions-nombres-chaines.md#right",
+    "RND": "06-fonctions-nombres-chaines.md#rnd",
+    "RUN": "03-premiers-pas.md#run",
+    "SAVE": "09-sons-serie-memoire.md#save",
+    "SERCLOSE": "09-sons-serie-memoire.md#serclose",
+    "SERCFG": "09-sons-serie-memoire.md#sercfg",
+    "SERIN": "09-sons-serie-memoire.md#serin",
+    "SEROPEN": "09-sons-serie-memoire.md#seropen",
+    "SEROUT": "09-sons-serie-memoire.md#serout",
+    "SGN": "06-fonctions-nombres-chaines.md#sgn",
+    "SIN": "06-fonctions-nombres-chaines.md#sin",
+    "SOUND": "09-sons-serie-memoire.md#sound",
+    "SQR": "06-fonctions-nombres-chaines.md#sqr",
+    "STEP": "05-decisions-boucles.md#step",
+    "STR$": "06-fonctions-nombres-chaines.md#str",
+    "TAN": "06-fonctions-nombres-chaines.md#tan",
+    "THEN": "05-decisions-boucles.md#then",
+    "TO": "05-decisions-boucles.md#to",
+    "VAL": "06-fonctions-nombres-chaines.md#val",
+    "LLIST": "08-papier-dessins.md#llist"
+  },
+  "table_layout": {
+    "00-fiche-machine.md": {
+      "widths_mm": {
+        "2": [
+          43,
+          123
+        ],
+        "3": [
+          43,
+          61.5,
+          61.5
+        ],
+        "4": [
+          37,
+          19,
+          51,
+          59
+        ],
+        "5": [
+          31,
+          28,
+          15,
+          44,
+          48
+        ]
+      },
+      "top_padding": 4,
+      "bottom_padding": 4
+    },
+    "10-erreurs-et-limites.md": {
+      "top_padding": 5,
+      "bottom_padding": 4
+    },
+    "06-fonctions-nombres-chaines.md": {
+      "top_padding": 4,
+      "bottom_padding": 4
+    },
+    "02-installation-firmware.md": {
+      "widths_mm": {
+        "3": [
+          42,
+          69,
+          55
+        ]
+      },
+      "top_padding": 5,
+      "bottom_padding": 4
+    },
+    "02-studio.md": {
+      "widths_mm": {
+        "2": [
+          47,
+          119
+        ]
+      },
+      "top_padding": 5,
+      "bottom_padding": 5
+    }
+  },
+  "page_break_before": [
+    "02-installation-firmware.md#etape-2-liberer-les-cinq-clips",
+    "02-installation-firmware.md#etape-6-remonter-et-faire-le-premier-essai",
+    "00-fiche-machine.md#le-materiel-que-vous-retrouvez-sous-le-basic",
+    "00-fiche-machine.md#quelques-voisins-a-ecran-lcd",
+    "02-installation-firmware.md#choisir-et-preparer-la-memoire-de-remplacement",
+    "11-programmes-complets.md#piano",
+    "11-programmes-complets.md#pocket-duel",
+    "11-programmes-complets.md#duel-orbital",
+    "11-programmes-complets.md#duel-balistique",
+    "12-table-caracteres.md#codes-lcd-128-a-255",
+    "12-table-caracteres.md#utiliser-un-dessin-de-la-table",
+    "12-table-caracteres.md#et-sur-le-papier",
+    "01-histoire-typestar.md#quelques-reperes-dans-une-gamme-difficile-a-classer",
+    "01-histoire-typestar.md#la-gamme-s-elargit",
+    "01-histoire-typestar.md#les-portables-des-annees-1990",
+    "13-annexe-schema.md#partie-gauche-memoire-ic5-et-tete-thermique",
+    "13-annexe-schema.md#partie-droite-microcontroleur-et-connecteurs",
+    "01-histoire-typestar.md#canon-aujourdhui-de-lordinateur-a-ses-peripheriques"
+  ],
+  "front_chapters": [
+    "00-fiche-machine.md"
+  ],
+  "toc_max_level": 1,
+  "example_programs": [
+    {
+      "file": "piano-fr.bas",
+      "title": "Piano",
+      "description": "Un petit instrument sonore commandé par les lettres du clavier. Ce programme court est un bon point de départ pour lire un listing complet. Les valeurs de DATA attribuent une modulation à chaque lettre ; le buzzer reste un générateur de bruitages, et non un instrument à hauteur musicale précise.",
+      "controls": "**Pour jouer :** appuyez sur les lettres **A à Z**. **Return** termine le programme. Essayez quelques touches, puis changez une valeur de DATA pour comparer les sons.",
+      "learning": "DIM réserve un tableau, READ le remplit, INKEY lit le clavier et SOUND produit le son.",
+      "illustrations": [
+        {
+          "file": "exemple-piano-lcd.png",
+          "caption": "Piano dans Studio : le clavier A à Z devient un petit instrument sonore."
+        }
+      ]
+    },
+    {
+      "file": "pocket-duel-fr.bas",
+      "title": "Pocket Duel",
+      "description": "Deux personnages s’affrontent dans une arène de trente-deux cases. Le bord gauche rejoint le bord droit. Des mines et des grilles compliquent les déplacements ; les petits triangles montrent la vie et la ligne inférieure indique la charge disponible. Ce jeu utilise uniquement le LCD et le buzzer.",
+      "controls": "**Commandes :** flèches gauche/droite pour bouger ; **A en minuscule** pour attaquer un voisin ; **Espace** pour se téléporter ; **Return** pour terminer. Attaque et téléportation demandent une charge pleine. L’adversaire agit après votre action. La version anglaise est également fournie dans les exemples de Studio.",
+      "learning": "LCDCHAR définit les personnages, LOCATE évite de redessiner tout l’écran, LCDTRI et LCDLINE montrent les jauges ; INKEY, les conditions et les sous-programmes organisent le jeu.",
+      "illustrations": [
+        {
+          "file": "exemple-pocket-duel-lcd.png",
+          "caption": "Pocket Duel dans Studio : personnages, obstacles, vie et charge se partagent les trente-deux positions du LCD."
+        }
+      ]
+    },
+    {
+      "file": "duel-orbital-fr.bas",
+      "title": "Duel Orbital",
+      "description": "Une bataille spatiale inspirée de la bataille navale. Vous commandez trois formations de satellites, de trois, deux et deux cases, sur une grille de six cases de côté. La Canon possède la même flotte ; le premier à toucher les sept cases adverses gagne. Vos satellites et les tirs restent visibles sur le papier.",
+      "controls": "**Pour jouer :** Return à l’accueil ; saisissez une case de départ comme **A1**, puis **H** pour placer la formation vers la droite ou **V** vers le bas. Pendant la partie, entrez votre tir de **A1 à F6**, ou **Q** pour terminer. La grille de gauche contient vos satellites ; celle de droite conserve vos tirs. Laissez le programme positionner le papier.",
+      "learning": "LINE construit les grilles ; GLYPH imprime satellites, tirs et explosions ; tableaux, hasard et tests logiques gèrent les positions et les décisions adverses.",
+      "illustrations": [
+        {
+          "file": "exemple-duel-orbital-lcd.png",
+          "caption": "Le LCD demande le prochain tir pendant que les deux grilles restent sur le papier."
+        },
+        {
+          "file": "exemple-duel-orbital-schema.png",
+          "caption": "Schéma d’une partie : vos satellites à gauche, un tir manqué en B4 et un tir touché en B2 à droite. Les trois motifs sont reproduits à partir des données du programme."
+        }
+      ]
+    },
+    {
+      "file": "duel-balistique-fr.bas",
+      "title": "Duel Balistique",
+      "description": "Deux canons se font face sur un relief imprimé une seule fois. Choisissez l’angle et la puissance : la trajectoire apparaît en pointillés et les impacts s’accumulent. Le terrain reste fixe et l’historique des valeurs jouées est imprimé sous l’arène. Vous pouvez affronter la Canon ou jouer à deux.",
+      "controls": "**Pour jouer :** entrez une graine de **1 à 9999**, puis **1** pour la Canon ou **2** pour deux joueurs. Choisissez l’angle demandé et une puissance de **20 à 100**. Un angle nul termine la partie. Gardez la même graine pour rejouer sur le même relief ; sauvegardez votre programme avant de charger ce jeu.",
+      "learning": "RANDOMIZE et RND préparent le terrain ; une table de sinus et des additions successives accélèrent les trajectoires ; BOX, LINE, DRAW et les moteurs composent le dessin.",
+      "illustrations": [
+        {
+          "file": "exemple-duel-balistique-lcd.png",
+          "caption": "Le LCD demande les paramètres au joueur suivant ; les valeurs du tir précédent sont imprimées."
+        },
+        {
+          "file": "exemple-duel-balistique-papier.png",
+          "caption": "Papier simulé dans Studio : graine 42, premier tir à 45 degrés et puissance 80. Le relief, les pointillés et les paramètres gardent la trace de la partie."
+        }
+      ]
+    }
+  ],
+  "citation_labels": {
+    "H1": {
+      "label": "Canon, histoire 1976-1987.",
+      "url": "https://global.canon/en/corporate/history/03.html"
+    },
+    "H2": {
+      "label": "Canon, archives des prix de design, rubriques 1984-1986.",
+      "url": "https://global.canon/en/design/award/1957-2012.html"
+    },
+    "H3": {
+      "label": "Règlement européen 3002/85, 28 octobre 1985.",
+      "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-1985-80857&lang=es"
+    },
+    "H4": {
+      "label": "Règlement européen 547/87, 23 février 1987.",
+      "url": "https://www.boe.es/buscar/doc.php?id=DOUE-L-1987-80192&lang=es"
+    },
+    "H5": {
+      "label": "Canon, dessin industriel USD299930S, dépôt 1986, publication 1989.",
+      "url": "https://patents.google.com/patent/USD299930S/en"
+    },
+    "H6": {
+      "label": "Canon, Serial Interface-30, manuel utilisateur.",
+      "url": "https://archive.org/details/canon-serial-interface-30-manual"
+    },
+    "H7": {
+      "label": "Canon, histoire 1962-1975.",
+      "url": "https://global.canon/en/corporate/history/02.html"
+    },
+    "H8": {
+      "label": "Canon Bretagne, histoire du site industriel.",
+      "url": "https://www.canon-bretagne.fr/lentreprise/"
+    },
+    "H9": {
+      "label": "Canon, Typestar 7 Instructions, alimentation, mémoire et caractéristiques, pp. 4, 31, 45, 48, 66.",
+      "url": "https://site.xavier.edu/polt/typewriters/CanonTypestar7.pdf"
+    },
+    "H10": {
+      "label": "Tilt no 31, mai 1986, publicité S-70 à 2 990 F.",
+      "url": "https://datassette.s3.us-west-004.backblazeb2.com/revistas/tilt_031.pdf"
+    },
+    "H11": {
+      "label": "Science Museum Group, Typestar 90, exemplaire daté vers 1987.",
+      "url": "https://collection.sciencemuseumgroup.org.uk/objects/co8537511/canon-typestar-90-electronic-typewriter-with-32-character-liquid-crystal-display"
+    },
+    "H12": {
+      "label": "Personal Computer World, mars 1988, annonce de gamme Typestar.",
+      "url": "https://worldradiohistory.com/UK/Personal-Computer-World/80s/PCW-1988-03-S-OCR.pdf"
+    },
+    "H13": {
+      "label": "Canon, Typestar 10 Instructions, édition © 1992, PUB. N-IE-560.",
+      "url": "https://site.xavier.edu/polt/typewriters/CanonTypestar10.pdf"
+    },
+    "H14": {
+      "label": "The Rainbow, juillet 1986, courrier à propos de la Typestar 7.",
+      "url": "https://colorcomputerarchive.com/repo/Documents/Magazines/Rainbow%2C%20The%20%28OCR%29/The%20Rainbow%20Vol.%2005%20No.%2012%20-%20July%201986.pdf"
+    },
+    "M1": {
+      "label": "Tsugio Makimoto, Makimoto Library, épisode 14 ; photo 14.1, p. 2.",
+      "url": ""
+    },
+    "M2": {
+      "label": "Hitachi, HD6301/HD6303 Handbook, variante Y0 : pp. 519, 526, 528.",
+      "url": ""
+    },
+    "P1": {
+      "label": "Schéma électronique Canon, reproduit dans AJD, Canon Typestar, part 1.",
+      "url": "https://ajd.sh/posts/canon-typestar-part-1/"
+    },
+    "C1": {
+      "label": "Canon, Typestar 7 Instructions, caractéristiques, p. 66 imprimée.",
+      "url": "https://site.xavier.edu/polt/typewriters/CanonTypestar7.pdf"
+    },
+    "E1": {
+      "label": "Epson, HX-20 Operation Manual, annexe des caractéristiques.",
+      "url": "https://electrickery.hosting.philpem.me.uk/comp/hx20/doc/om7-11ABC.pdf"
+    },
+    "I1": {
+      "label": "Psion, Organiser I Manual, section 16.",
+      "url": "https://www.jaapsch.net/psion/p1manorg.htm"
+    },
+    "I2": {
+      "label": "Psion, Organiser II Technical Manual, section 2.3 : HD6303XFP.",
+      "url": "https://www.jaapsch.net/psion/tech02.htm"
+    },
+    "S1": {
+      "label": "Sharp, PC-1250/PC-1251 Service Manual, p. 1.",
+      "url": "https://lastin.dti.supsi.ch/VET/sys/SHARP/PC-1251/PC-1250-PC-1251-Service_Manual.pdf"
+    },
+    "V1": {
+      "label": "VTech, brochure Laser 50, janvier 1986, réf. 95-2000-02.",
+      "url": ""
+    },
+    "K1": {
+      "label": "Canon, histoire officielle japonaise 1976-1987 ; portrait de Ryūzaburō Kaku.",
+      "url": "https://global.canon/ja/corporate/history/03.html"
+    },
+    "X1": {
+      "label": "Publicité Canon X-07 reproduite par AKIBA PC Hotline!, 9 avril 2019.",
+      "url": "https://akiba-pc.watch.impress.co.jp/docs/column/retrohard/1178338.html"
+    },
+    "V2": {
+      "label": "Cameron Kaiser, démontage photographié du Laser 50, 14 mars 2021 : Toshiba T7812 et T7813.",
+      "url": "https://oldvcr.blogspot.com/2021/03/those-mysterious-toshiba-t-chips-plus.html"
+    },
+    "H15": {
+      "label": "Typewriter Database, catalogue Canon et galeries de modèles ; dates de collection.",
+      "url": "https://typewriterdatabase.com/canon.656.typewriter-serial-number-database"
+    },
+    "H16": {
+      "label": "Diane Maher, Typestar 4, Typewriter Database ; année 1986 proposée avec réserve.",
+      "url": "https://typewriterdatabase.com/1986-canon-typestar-4.23633.typewriter"
+    },
+    "H17": {
+      "label": "Canon, Technical Documentation Part Number List, novembre 1999, p. 3 : Typestar 5-II / S-51.",
+      "url": "https://www.bitsavers.org/pdf/canon/Canon_Technical_Documentation_Part_Number_List_199911.pdf"
+    },
+    "H18": {
+      "label": "Canon, Typestar 3 Instructions, © 1989, PUB. N-IE-525 ; caractéristiques p. 42.",
+      "url": "https://site.xavier.edu/polt/typewriters/CanonTypestar3.pdf"
+    },
+    "H19": {
+      "label": "Canon, Typestar 110-II / 210 Instructions, © 1990, PUB. N-IE-538 ; caractéristiques p. 82.",
+      "url": "https://site.xavier.edu/polt/typewriters/CanonTypestar110II%26210.pdf"
+    },
+    "H20": {
+      "label": "Canon, Typestar 220 Instructions, © 1992, PUB. N-IE-561 ; caractéristiques p. 90.",
+      "url": "https://site.xavier.edu/polt/typewriters/CanonTypestar220.pdf"
+    },
+    "H21": {
+      "label": "Darren Goossens, Typestar 220-II datée de 1994, Typewriter Database et article de restauration.",
+      "url": "https://typewriterdatabase.com/1994-canon-typestar-220ii.17763.typewriter"
+    },
+    "H22": {
+      "label": "Guillermo Fernandez Boan, Typemate 10, photographies et cassette de ruban, Typewriter Database.",
+      "url": "https://typewriterdatabase.com/198x-canon-typemate-10.18472.typewriter"
+    },
+    "H23": {
+      "label": "Darren Goossens, Canon Typestar 220-II — a fix, 15 mars 2022 : carte électronique datée de 1994.",
+      "url": "https://darrengoossens.wordpress.com/2022/03/15/canon-typestar-220-ii-a-fix/"
+    },
+    "H24": {
+      "label": "The New Paper, 28 novembre 1991, p. 15 : publicité Canon Typestar 2.",
+      "url": "https://eresources.nlb.gov.sg/newspapers/digitised/issue/newpaper19911128-1"
+    },
+    "H25": {
+      "label": "Canon, manuel Typestar 4 : lettre du 17 février 1986, aperçu conservé par Ted Munk.",
+      "url": "https://typecast.munk.org/wp-content/uploads/2017/11/1986-CanonTypestar4.jpg"
+    },
+    "H26": {
+      "label": "Canon, Typestar 10-II, manuel allemand, p. 2 : lettre du 3 juin 1994.",
+      "url": "https://www.manualslib.de/manual/1142678/Canon-Typestar-10-Ii.html?page=2"
+    },
+    "H27": {
+      "label": "Obayashi, histoire des 100 ans : bâtiment L de Canon, Shimomaruko, achevé en avril 1990.",
+      "url": "https://www.obayashi.co.jp/chronicle/100yrs/t3c5s99.html"
+    },
+    "H28": {
+      "label": "Canon Camera Museum, histoire 1951–1955 : acquisition du site de Shimomaruko en 1951.",
+      "url": "https://global.canon/en/c-museum/history/story03.html"
+    },
+    "H29": {
+      "label": "Annonce de collection : Typestar 2 attribuée à 1990, reprise sur Keej.it. Datation de vendeur.",
+      "url": "https://keej.it/categoria-informatica/agenda-elettronica-beverly-hills?pn=2"
+    },
+    "H30": {
+      "label": "The Fool With a Pen, 6 août 2024 : exemplaire de Typestar 10-II attribué à 1994.",
+      "url": "https://thefoolwithapen.com/posts/2024/20240806/"
+    },
+    "H31": {
+      "label": "USITC, Certain Personal Word Processors from Japan, publication 2411, août 1991, annexe B, p. B-29.",
+      "url": "https://www.usitc.gov/publications/701_731/pub2411.pdf"
+    },
+    "H32": {
+      "label": "Electronics Australia, juin 1991, p. 126 : présentation de la Canon StarWriter 80 à jet d’encre.",
+      "url": "https://www.worldradiohistory.com/AUSTRALIA/Electronics-Australia/EA-1991-06.pdf"
+    },
+    "H33": {
+      "label": "The University Daily, 29 août 1994, publicité pour la StarWriter 30 à transfert thermique.",
+      "url": "https://newspapers.swco.ttu.edu/bitstream/handle/20.500.12255/193068/UD_1994_08_29.pdf?isAllowed=y&sequence=1"
+    },
+    "C6": {
+      "label": "ANSMANN, accumulateurs D Li-ion USB-C, sortie régulée 1,5 V, réf. 1314-0005.",
+      "url": "https://shop.ansmann.de/en/li-ion-batteries-d-typ-6000-min-5400-mah-2pcs-cardboard-box"
+    },
+    "C7": {
+      "label": "Koehler Paper, gammes de papiers thermiques sans BPA ou sans phénols.",
+      "url": "https://www.koehlerpaper.com/en/products/Thermal-paper/TH_POS_Cash-register-rolls.php"
+    },
+    "T1": {
+      "label": "GNU C Library, modes de terminal : traitement par lignes et par caractères.",
+      "url": "https://ftp.gnu.org/old-gnu/Manuals/glibc/html_node/Canonical-or-Not.html"
+    },
+    "T2": {
+      "label": "pySerial, Serial API : format des caractères, délais et contrôle RTS/CTS.",
+      "url": "https://pyserial.readthedocs.io/en/latest/pyserial_api.html"
+    },
+    "V3": {
+      "label": "James S’ Kingdom, présentation et essais du VTech Laser 50 : processeur Z80A.",
+      "url": "https://sites.google.com/site/jamesskingdom/Home/computers-exposed/vtech-computers"
+    },
+    "H34": {
+      "label": "Canon, Sustainability Report 2006, p. 8 : stratégie 1996-2000 et retrait de sept activités déficitaires.",
+      "url": "https://global.canon/en/sustainability/report/pdf/sustainability2006e.pdf"
+    },
+    "H35": {
+      "label": "Canon, Segment Information, exercice 2025 : Printing 2 494,4 milliards de yens, Imaging 1 054,9, total consolidé 4 624,7.",
+      "url": "https://global.canon/en/ir/business.html"
+    },
+    "U1": {
+      "label": "Typestar Print, documentation du câble USB-TTL 5 V, brochage validé S-70 et S-90.",
+      "url": "https://github.com/pR-0000/Typestar-Print/blob/main/docs/CABLE_WIRING.md"
+    }
+  },
+  "citation_urls": {
+    "https://global.canon/en/corporate/history/03.html": "Canon, histoire 1976-1987.",
+    "https://global.canon/en/design/award/1957-2012.html": "Canon, archives des prix de design, rubriques 1984-1986.",
+    "https://www.boe.es/buscar/doc.php?id=DOUE-L-1985-80857&lang=es": "Règlement européen 3002/85, 28 octobre 1985.",
+    "https://www.boe.es/buscar/doc.php?id=DOUE-L-1987-80192&lang=es": "Règlement européen 547/87, 23 février 1987.",
+    "https://patents.google.com/patent/USD299930S/en": "Canon, dessin industriel USD299930S, dépôt 1986, publication 1989.",
+    "https://archive.org/details/canon-serial-interface-30-manual": "Canon, Serial Interface-30, manuel utilisateur.",
+    "https://global.canon/en/corporate/history/02.html": "Canon, histoire 1962-1975.",
+    "https://www.canon-bretagne.fr/lentreprise/": "Canon Bretagne, histoire du site industriel.",
+    "https://site.xavier.edu/polt/typewriters/CanonTypestar7.pdf": "Canon, Typestar 7 Instructions, caractéristiques, p. 66 imprimée.",
+    "https://datassette.s3.us-west-004.backblazeb2.com/revistas/tilt_031.pdf": "Tilt no 31, mai 1986, publicité S-70 à 2 990 F.",
+    "https://collection.sciencemuseumgroup.org.uk/objects/co8537511/canon-typestar-90-electronic-typewriter-with-32-character-liquid-crystal-display": "Science Museum Group, Typestar 90, exemplaire daté vers 1987.",
+    "https://worldradiohistory.com/UK/Personal-Computer-World/80s/PCW-1988-03-S-OCR.pdf": "Personal Computer World, mars 1988, annonce de gamme Typestar.",
+    "https://site.xavier.edu/polt/typewriters/CanonTypestar10.pdf": "Canon, Typestar 10 Instructions, édition © 1992, PUB. N-IE-560.",
+    "https://colorcomputerarchive.com/repo/Documents/Magazines/Rainbow%2C%20The%20%28OCR%29/The%20Rainbow%20Vol.%2005%20No.%2012%20-%20July%201986.pdf": "The Rainbow, juillet 1986, courrier à propos de la Typestar 7.",
+    "https://ajd.sh/posts/canon-typestar-part-1/": "Schéma électronique Canon, reproduit dans AJD, Canon Typestar, part 1.",
+    "https://electrickery.hosting.philpem.me.uk/comp/hx20/doc/om7-11ABC.pdf": "Epson, HX-20 Operation Manual, annexe des caractéristiques.",
+    "https://www.jaapsch.net/psion/p1manorg.htm": "Psion, Organiser I Manual, section 16.",
+    "https://www.jaapsch.net/psion/tech02.htm": "Psion, Organiser II Technical Manual, section 2.3 : HD6303XFP.",
+    "https://lastin.dti.supsi.ch/VET/sys/SHARP/PC-1251/PC-1250-PC-1251-Service_Manual.pdf": "Sharp, PC-1250/PC-1251 Service Manual, p. 1.",
+    "https://global.canon/ja/corporate/history/03.html": "Canon, histoire officielle japonaise 1976-1987 ; portrait de Ryūzaburō Kaku.",
+    "https://akiba-pc.watch.impress.co.jp/docs/column/retrohard/1178338.html": "Publicité Canon X-07 reproduite par AKIBA PC Hotline!, 9 avril 2019.",
+    "https://oldvcr.blogspot.com/2021/03/those-mysterious-toshiba-t-chips-plus.html": "Cameron Kaiser, démontage photographié du Laser 50, 14 mars 2021 : Toshiba T7812 et T7813.",
+    "https://typewriterdatabase.com/canon.656.typewriter-serial-number-database": "Typewriter Database, catalogue Canon et galeries de modèles ; dates de collection.",
+    "https://typewriterdatabase.com/1986-canon-typestar-4.23633.typewriter": "Diane Maher, Typestar 4, Typewriter Database ; année 1986 proposée avec réserve.",
+    "https://www.bitsavers.org/pdf/canon/Canon_Technical_Documentation_Part_Number_List_199911.pdf": "Canon, Technical Documentation Part Number List, novembre 1999, p. 3 : Typestar 5-II / S-51.",
+    "https://site.xavier.edu/polt/typewriters/CanonTypestar3.pdf": "Canon, Typestar 3 Instructions, © 1989, PUB. N-IE-525 ; caractéristiques p. 42.",
+    "https://site.xavier.edu/polt/typewriters/CanonTypestar110II%26210.pdf": "Canon, Typestar 110-II / 210 Instructions, © 1990, PUB. N-IE-538 ; caractéristiques p. 82.",
+    "https://site.xavier.edu/polt/typewriters/CanonTypestar220.pdf": "Canon, Typestar 220 Instructions, © 1992, PUB. N-IE-561 ; caractéristiques p. 90.",
+    "https://typewriterdatabase.com/1994-canon-typestar-220ii.17763.typewriter": "Darren Goossens, Typestar 220-II datée de 1994, Typewriter Database et article de restauration.",
+    "https://typewriterdatabase.com/198x-canon-typemate-10.18472.typewriter": "Guillermo Fernandez Boan, Typemate 10, photographies et cassette de ruban, Typewriter Database.",
+    "https://darrengoossens.wordpress.com/2022/03/15/canon-typestar-220-ii-a-fix/": "Darren Goossens, Canon Typestar 220-II — a fix, 15 mars 2022 : carte électronique datée de 1994.",
+    "https://eresources.nlb.gov.sg/newspapers/digitised/issue/newpaper19911128-1": "The New Paper, 28 novembre 1991, p. 15 : publicité Canon Typestar 2.",
+    "https://typecast.munk.org/wp-content/uploads/2017/11/1986-CanonTypestar4.jpg": "Canon, manuel Typestar 4 : lettre du 17 février 1986, aperçu conservé par Ted Munk.",
+    "https://www.manualslib.de/manual/1142678/Canon-Typestar-10-Ii.html?page=2": "Canon, Typestar 10-II, manuel allemand, p. 2 : lettre du 3 juin 1994.",
+    "https://www.obayashi.co.jp/chronicle/100yrs/t3c5s99.html": "Obayashi, histoire des 100 ans : bâtiment L de Canon, Shimomaruko, achevé en avril 1990.",
+    "https://global.canon/en/c-museum/history/story03.html": "Canon Camera Museum, histoire 1951–1955 : acquisition du site de Shimomaruko en 1951.",
+    "https://keej.it/categoria-informatica/agenda-elettronica-beverly-hills?pn=2": "Annonce de collection : Typestar 2 attribuée à 1990, reprise sur Keej.it. Datation de vendeur.",
+    "https://thefoolwithapen.com/posts/2024/20240806/": "The Fool With a Pen, 6 août 2024 : exemplaire de Typestar 10-II attribué à 1994.",
+    "https://www.usitc.gov/publications/701_731/pub2411.pdf": "USITC, Certain Personal Word Processors from Japan, publication 2411, août 1991, annexe B, p. B-29.",
+    "https://www.worldradiohistory.com/AUSTRALIA/Electronics-Australia/EA-1991-06.pdf": "Electronics Australia, juin 1991, p. 126 : présentation de la Canon StarWriter 80 à jet d’encre.",
+    "https://newspapers.swco.ttu.edu/bitstream/handle/20.500.12255/193068/UD_1994_08_29.pdf?isAllowed=y&sequence=1": "The University Daily, 29 août 1994, publicité pour la StarWriter 30 à transfert thermique.",
+    "https://shop.ansmann.de/en/li-ion-batteries-d-typ-6000-min-5400-mah-2pcs-cardboard-box": "ANSMANN, accumulateurs D Li-ion USB-C, sortie régulée 1,5 V, réf. 1314-0005.",
+    "https://www.koehlerpaper.com/en/products/Thermal-paper/TH_POS_Cash-register-rolls.php": "Koehler Paper, gammes de papiers thermiques sans BPA ou sans phénols.",
+    "https://pyserial.readthedocs.io/en/latest/pyserial_api.html": "pySerial, Serial API : format des caractères, délais et contrôle RTS/CTS.",
+    "https://ftp.gnu.org/old-gnu/Manuals/glibc/html_node/Canonical-or-Not.html": "GNU C Library, modes de terminal : traitement par lignes et par caractères.",
+    "https://sites.google.com/site/jamesskingdom/Home/computers-exposed/vtech-computers": "James S’ Kingdom, présentation et essais du VTech Laser 50 : processeur Z80A.",
+    "https://global.canon/en/sustainability/report/pdf/sustainability2006e.pdf": "Canon, Sustainability Report 2006, p. 8 : stratégie 1996-2000 et retrait de sept activités déficitaires.",
+    "https://global.canon/en/ir/business.html": "Canon, Segment Information, exercice 2025 : Printing 2 494,4 milliards de yens, Imaging 1 054,9, total consolidé 4 624,7.",
+    "https://github.com/pR-0000/Typestar-Print/blob/main/docs/CABLE_WIRING.md": "Typestar Print, documentation du câble USB-TTL 5 V, brochage validé S-70 et S-90."
+  },
+  "image_sources": {
+    "canon-kaku.png": {
+      "label": "Canon, histoire officielle japonaise 1976-1987 ; portrait de Ryūzaburō Kaku.",
+      "url": "https://global.canon/ja/corporate/history/03.html"
+    },
+    "canoword55.png": {
+      "label": "Canon, histoire officielle japonaise : CanoWord 55, 1980.",
+      "url": "https://global.canon/ja/corporate/history/03.html"
+    },
+    "canon-x07.jpg": {
+      "label": "Photographie du X-07 : Jun Sasaki / AKIBA PC Hotline!, 9 avril 2019.",
+      "url": "https://akiba-pc.watch.impress.co.jp/docs/column/retrohard/1178338.html"
+    },
+    "hitachi-motorola-1974.jpg": {
+      "label": "Tsugio Makimoto, Makimoto Library, épisode 14 ; photo 14.1, p. 2.",
+      "url": ""
+    },
+    "canon-design-attribution.png": {
+      "label": "Canon, dessin industriel USD299930S, dépôt 1986, publication 1989.",
+      "url": "https://patents.google.com/patent/USD299930S/en"
+    },
+    "canon-design-perspective.png": {
+      "label": "Canon, dessin industriel USD299930S, dépôt 1986, publication 1989.",
+      "url": "https://patents.google.com/patent/USD299930S/en"
+    },
+    "frise-typestar.png": {
+      "label": "Dessins d’après Canon, E.T.ZONE, AKIBA PC Hotline! et G. Fernandez Boan (Typewriter Database).",
+      "url": "https://typewriterdatabase.com/canon.656.typewriter-serial-number-database"
+    },
+    "canon-x07-front.png": {
+      "label": "Illustration originale d’après une photographie du X-07 par Jun Sasaki / AKIBA PC Hotline!, 9 avril 2019.",
+      "url": "https://akiba-pc.watch.impress.co.jp/docs/column/retrohard/1178338.html"
+    },
+    "frise-typestar-suite.png": {
+      "label": "Dessins d’après Canon, Diverse experiments et les photos de A. Ruoso, G. Garcia, G. Fernandez Boan, M. Hoehne et D. Nikou (Typewriter Database).",
+      "url": "https://typewriterdatabase.com/canon.656.typewriter-serial-number-database"
+    },
+    "frise-typestar-annees1990.png": {
+      "label": "Dessins d’après G. Fernandez Boan et D. Maher (Typewriter Database).",
+      "url": "https://typewriterdatabase.com/canon.656.typewriter-serial-number-database"
+    },
+    "canon-shimomaruko-avant-1951.jpg": {
+      "label": "Canon Camera Museum, histoire 1951–1955 : acquisition du site de Shimomaruko en 1951.",
+      "url": "https://global.canon/en/c-museum/history/story03.html"
+    },
+    "canon-shimomaruko-L-1990.jpg": {
+      "label": "Obayashi, histoire des 100 ans : bâtiment L de Canon, Shimomaruko, achevé en avril 1990.",
+      "url": "https://www.obayashi.co.jp/chronicle/100yrs/t3c5s99.html"
+    },
+    "canon-bretagne-premiere-pierre-1984.jpg": {
+      "label": "Canon Bretagne, histoire du site industriel.",
+      "url": "https://www.canon-bretagne.fr/lentreprise/"
+    }
+  }
+}

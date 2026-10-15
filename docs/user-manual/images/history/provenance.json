@@ -1,0 +1,44 @@
+[
+  {
+    "file": "history/ap400.jpg",
+    "source": "https://etzone.org/2017/02/03/canon-fodder-part-three/",
+    "notes": "Photographie AP400 : E.T.ZONE / Steve K.",
+    "sha256": "11b9a76f89cb9a945eb90ef5a81e9c012018e9c13d2e250e4afdd5e2c55fe8b4"
+  },
+  {
+    "file": "history/canon-kaku.png",
+    "source": "https://global.canon/ja/corporate/history/03.html",
+    "notes": "Portrait officiel de Ryuzaburo Kaku, à la rubrique 1977 ; date de prise de vue non fournie.",
+    "sha256": "af23318b97f2d57683215577d2951f3d0bd9a35b7651d1154ef7e3e857093329"
+  },
+  {
+    "file": "history/canoword55.png",
+    "source": "https://global.canon/ja/corporate/history/03.html",
+    "notes": "Canon, produit à la rubrique 1980.",
+    "sha256": "95bb76b02db30feba6a4b151942216c0ca5910a7dff34a3347a1e1f855e0e7e5"
+  },
+  {
+    "file": "history/canon-x07.jpg",
+    "source": "https://akiba-pc.watch.impress.co.jp/docs/column/retrohard/1178338.html",
+    "notes": "Photographie de Jun Sasaki, 2019 ; appareil lancé en 1983.",
+    "sha256": "600e3b28d296a5cae51e66853c144dfacfcff17feb4b661476691a995e18d3ad"
+  },
+  {
+    "file": "history/x07-publicite-japon.jpg",
+    "source": "https://akiba-pc.watch.impress.co.jp/docs/column/retrohard/1178338.html",
+    "notes": "Publicité originale Canon reproduite dans l’article ; lecture comme source primaire.",
+    "sha256": "46e8ec1577b5c3ba21ec9c39175ffdb849dadff9aee6b3ca8dde179dd8d72ef0"
+  },
+  {
+    "file": "history/typestar90.webp",
+    "source": "https://silvergreen93.wordpress.com/2024/03/04/the-canon-typestar-90/",
+    "notes": "Photographie conservée dans la copie locale de Diverse experiments ; vue contemporaine du matériel ancien.",
+    "sha256": "927dc8f4d201a76061490d97c52b3c63536018efd4d29772727c6bdc6185d5c9"
+  },
+  {
+    "file": "history/typestar10.jpg",
+    "source": "https://www.salvosstores.com.au/shop/p/canon-typestar-10-electric-typewriter/381976",
+    "notes": "Photo Salvos Stores ; elle illustre le modèle, pas la date de lancement. Le repère 1992 vient du manuel Canon.",
+    "sha256": "17eb518ad24042f130f1df5f1abfcd296bdfa641f53b7f85cc17e51af4099e2c"
+  }
+]
