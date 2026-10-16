@@ -1,5 +1,11 @@
 # Typestar BASIC & Studio
 
+<p align="center">
+  <img src="docs/images/typestar-basic.png" width="640" alt="Canon S-70 avec Typestar BASIC / Canon S-70 running Typestar BASIC">
+</p>
+
+![Typestar BASIC Studio : éditeur, émulateur et débogueur / editor, emulator and debugger](docs/images/studio-screenshot.png)
+
 [Français](#français) · [English](#english)
 
 ## Français
