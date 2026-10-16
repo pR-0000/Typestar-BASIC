@@ -10,6 +10,8 @@ __pycache__/
 /docs/temp/
 **/.venv/
 *.bin
+!/firmware/0.4.88-dev/typestar-basic-32k.bin
+!/firmware/0.4.88-dev/typestar-basic-64k-mirror.bin
 *.rom
 *.sr
 *.zip

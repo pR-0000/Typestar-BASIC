@@ -1,5 +1,7 @@
 # Typestar BASIC & Studio
 
+**Firmware 0.4.88-dev : [32 Ko / 32 KiB](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-32k.bin) · [64 Ko / 64 KiB — W27C512](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-64k-mirror.bin)**
+
 **[Manuel français (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-fr.pdf) · [English manual (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf)**
 
 <p align="center">
@@ -19,6 +21,15 @@ Firmware **0.4.88-dev** · Studio **0.2.33** · Copyright © 2026 Pierre Raimbau
 ### Téléchargements
 
 La [version 0.4.88-dev](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.88-dev) regroupe les images BASIC de 32 Ko et 64 Ko, leurs empreintes et les manuels PDF français et anglais. Le [code source de cette version](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.88-dev.zip) contient Studio et les programmes d'exemple. L'émulateur utilise une maskROM Canon fournie par l'utilisateur.
+
+**Firmware prêt à programmer — 0.4.88-dev**
+
+| Image | Utilisation | Téléchargement |
+|---|---|---|
+| 32 Ko | OneROM configurée en 27C256, 27C256 compatible, ou émulateur Studio | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-32k.bin) |
+| 64 Ko, miroir | W27C512 compatible ; deux copies identiques de l'image 32 Ko | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-64k-mirror.bin) |
+
+Ces fichiers sont également conservés dans [firmware/0.4.88-dev/](firmware/0.4.88-dev/). Les [empreintes SHA-256](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/SHA256SUMS.txt) permettent de vérifier les téléchargements. Le [guide du firmware](firmware/README.md) précise les formats ; le manuel décrit le remplacement d'IC8.
 
 Pour une lecture paginée, avec illustrations, sommaire et index cliquables :
 
@@ -45,6 +56,7 @@ Les transferts BASIC utilisent **31250 bauds, 7E1** par défaut. D'autres régla
 ### Organisation
 
 ```text
+firmware/           Binaires BASIC publiés et empreintes SHA-256
 studio/             Lanceur et application PC
 src/                Sources HD6301 du firmware
 examples/           Programmes principaux français et anglais
@@ -58,7 +70,7 @@ docs/               Documentation et sources des manuels
     en/             Édition anglaise
 ```
 
-Les recherches, diagnostics, sauvegardes, réglages privés et fichiers générés sont placés dans des dossiers ignorés par Git. Les manuels PDF et les images BASIC prêtes à programmer sont disponibles dans les fichiers joints des [versions publiées](https://github.com/pR-0000/Typestar-BASIC/releases). Les sources Markdown des manuels sont conservées dans `docs/user-manual/`.
+Les recherches, diagnostics, sauvegardes, réglages privés et fichiers intermédiaires sont placés dans des dossiers ignorés par Git. Le dossier `firmware/` contient les images BASIC publiées et leurs empreintes. Les manuels PDF et ces mêmes images sont disponibles dans les fichiers joints des [versions publiées](https://github.com/pR-0000/Typestar-BASIC/releases). Les sources Markdown des manuels sont conservées dans `docs/user-manual/`.
 
 ### Contribuer et construire le firmware
 
@@ -81,6 +93,15 @@ Firmware **0.4.88-dev** · Studio **0.2.33** · Copyright © 2026 Pierre Raimbau
 ### Downloads
 
 The [0.4.88-dev release](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.88-dev) includes the 32 KiB and 64 KiB BASIC images, their checksums and the French and English PDF manuals. The [source code for this release](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.88-dev.zip) contains Studio and the example programs. The emulator uses a Canon maskROM supplied by the user.
+
+**Ready-to-program firmware — 0.4.88-dev**
+
+| Image | Use | Download |
+|---|---|---|
+| 32 KiB | OneROM configured as a 27C256, compatible 27C256, or Studio emulator | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-32k.bin) |
+| 64 KiB, mirrored | Compatible W27C512; two identical copies of the 32 KiB image | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-64k-mirror.bin) |
+
+These files are also kept in [firmware/0.4.88-dev/](firmware/0.4.88-dev/). Use the [SHA-256 checksums](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/SHA256SUMS.txt) to verify downloads. The [firmware guide](firmware/README.md) explains the formats; the manual covers replacing IC8.
 
 For paginated reading with illustrations, clickable contents and an index:
 
@@ -107,6 +128,7 @@ BASIC transfers default to **31250 baud, 7E1**. Other settings, including 1200 b
 ### Repository layout
 
 ```text
+firmware/           Published BASIC binaries and SHA-256 checksums
 studio/             Launcher and desktop application
 src/                HD6301 firmware sources
 examples/           Main programs in French and English
@@ -120,7 +142,7 @@ docs/               Documentation and manual sources
     en/             English edition
 ```
 
-Research, diagnostics, backups, private settings and generated files are kept in folders ignored by Git. PDF manuals and ready-to-program BASIC images are available as attachments to [published releases](https://github.com/pR-0000/Typestar-BASIC/releases). Manual Markdown sources are kept in `docs/user-manual/`.
+Research, diagnostics, backups, private settings and intermediate files are kept in folders ignored by Git. The `firmware/` directory contains published BASIC images and their checksums. PDF manuals and the same images are available as attachments to [published releases](https://github.com/pR-0000/Typestar-BASIC/releases). Manual Markdown sources are kept in `docs/user-manual/`.
 
 ### Contributing and building the firmware
 
