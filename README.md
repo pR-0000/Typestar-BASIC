@@ -1,5 +1,7 @@
 # Typestar BASIC & Studio
 
+**[Manuel français (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-fr.pdf) · [English manual (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf)**
+
 <p align="center">
   <img src="docs/images/typestar-basic.png" width="640" alt="Canon S-70 avec Typestar BASIC / Canon S-70 running Typestar BASIC">
 </p>
@@ -18,9 +20,16 @@ Firmware **0.4.88-dev** · Studio **0.2.33** · Copyright © 2026 Pierre Raimbau
 
 La [version 0.4.88-dev](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.88-dev) regroupe les images BASIC de 32 Ko et 64 Ko, leurs empreintes et les manuels PDF français et anglais. Le [code source de cette version](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.88-dev.zip) contient Studio et les programmes d'exemple. L'émulateur utilise une maskROM Canon fournie par l'utilisateur.
 
+Pour une lecture paginée, avec illustrations, sommaire et index cliquables :
+
+| Manuel utilisateur | Téléchargement |
+|---|---|
+| Français | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-fr.pdf) |
+| English | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf) |
+
 ### Commencer
 
-1. Consultez le [manuel français](docs/user-manual/README.md), notamment l'installation du mod.
+1. Consultez le [manuel français en PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-fr.pdf), notamment l'installation du mod. Les [chapitres Markdown](docs/user-manual/README.md) restent disponibles pour la consultation en ligne et les contributions.
 2. Installez Python 3.12 ou plus récent et lancez **[Typestar BASIC Studio.pyw](studio/Typestar%20BASIC%20Studio.pyw)**. Le lanceur prépare son environnement Python local et installe les dépendances manquantes. Voir le [guide Studio](studio/README.md) pour Windows, Linux et macOS.
 3. Ouvrez l'un des [programmes fournis](examples/README.md). Les suffixes **-fr** et **-en** indiquent leur langue.
 4. Dans Studio, utilisez **Exécuter (F5)** pour l'émulateur ou **Envoyer → LOAD** pour une Canon équipée du firmware et du câble USB appropriés.
@@ -49,7 +58,7 @@ docs/               Documentation et sources des manuels
     en/             Édition anglaise
 ```
 
-Les recherches, diagnostics, sauvegardes, réglages privés et fichiers générés sont placés dans des dossiers ignorés par Git. Les PDF et binaires générés sont destinés aux fichiers joints des versions publiées.
+Les recherches, diagnostics, sauvegardes, réglages privés et fichiers générés sont placés dans des dossiers ignorés par Git. Les manuels PDF et les images BASIC prêtes à programmer sont disponibles dans les fichiers joints des [versions publiées](https://github.com/pR-0000/Typestar-BASIC/releases). Les sources Markdown des manuels sont conservées dans `docs/user-manual/`.
 
 ### Contribuer et construire le firmware
 
@@ -73,9 +82,16 @@ Firmware **0.4.88-dev** · Studio **0.2.33** · Copyright © 2026 Pierre Raimbau
 
 The [0.4.88-dev release](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.88-dev) includes the 32 KiB and 64 KiB BASIC images, their checksums and the French and English PDF manuals. The [source code for this release](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.88-dev.zip) contains Studio and the example programs. The emulator uses a Canon maskROM supplied by the user.
 
+For paginated reading with illustrations, clickable contents and an index:
+
+| User manual | Download |
+|---|---|
+| Français | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-fr.pdf) |
+| English | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf) |
+
 ### Getting started
 
-1. Read the [English manual](docs/user-manual/en/README.md), particularly the firmware installation instructions.
+1. Read the [English PDF manual](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf), particularly the firmware installation instructions. The [Markdown chapters](docs/user-manual/en/README.md) remain available for online reading and contributions.
 2. Install Python 3.12 or later and launch **[Typestar BASIC Studio.pyw](studio/Typestar%20BASIC%20Studio.pyw)**. The launcher creates a local Python environment and installs missing packages. See the [Studio guide](studio/README.md) for Windows, Linux and macOS.
 3. Open a [supplied program](examples/README.md). File suffixes **-fr** and **-en** identify French and English versions.
 4. In Studio, choose **Run (F5)** for the emulator or **Send → LOAD** for a Canon equipped with the replacement firmware and a suitable USB cable.
@@ -104,7 +120,7 @@ docs/               Documentation and manual sources
     en/             English edition
 ```
 
-Research, diagnostics, backups, private settings and generated files are kept in folders ignored by Git. Generated PDFs and binaries are intended as attachments to published releases.
+Research, diagnostics, backups, private settings and generated files are kept in folders ignored by Git. PDF manuals and ready-to-program BASIC images are available as attachments to [published releases](https://github.com/pR-0000/Typestar-BASIC/releases). Manual Markdown sources are kept in `docs/user-manual/`.
 
 ### Contributing and building the firmware
 
