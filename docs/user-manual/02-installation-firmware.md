@@ -3,7 +3,52 @@
 
 Pour installer Typestar BASIC, nous remplaçons la ROM extérieure **IC8**, enfichée dans un support. Le remplacement se fait directement sur ce support. Le microcontrôleur et sa ROM interne Canon restent en place. Conservez la puce d'origine : vous pourrez retrouver le fonctionnement Canon en la remettant dans son support.
 
-Ce guide illustré présente la **Canon S-70 / Typestar 7** photographiée pour le projet. Le démarrage du BASIC a également été essayé sur S-60 / Typestar 6 ; l’ajout de son interface série est à l’étude. La S-90 demande un binaire BASIC adapté à sa ROM interne.
+Ce guide illustré présente la **Canon S-70 / Typestar 7** photographiée pour le projet. Une révision de la S-60 / Typestar 6 accepte également ce firmware, comme le précise la section ci-dessous. La S-90 demande un binaire BASIC adapté à sa ROM interne.
+
+<a id="s60-serial"></a>
+### Une Typestar 6 peut aussi passer au BASIC
+
+Le démarrage de Typestar BASIC et le **chargement de programmes avec Studio jusqu'à 31250 bauds, en 7E1**, ont été validés sur une **Canon S-60 / Typestar 6**, équipée du PCB **NG3-0672 / NH1-0159-065**, daté **« 86;06,12. »**. Cet exemplaire possède une petite trappe de port série, collée en usine, et une molette de contraste d'impression à l'avant. Le BASIC remplace sa ROM IC8, avec le microcontrôleur d'origine conservé. L'ajout du circuit série décrit ci-dessous demande des soudures ; le remplacement d'IC8 reste une opération sur support.
+
+D'autres S-60 présentent une coque sans trappe et une molette sur le côté droit : leur compatibilité reste à vérifier sur leur propre carte. **La référence du PCB est le repère à contrôler avant d'entreprendre cette extension.**
+
+### Les composants du port série S-60
+
+La prise de la S-70 de référence porte le marquage **AMP 8609 747109-1**. Pour CN7, la **TE Connectivity / AMP 5745001-3** constitue une référence de **DE-9 mâle coudée pour circuit imprimé** : comparez son [plan constructeur](https://www.te.com/en/product-5745001-3.html) aux perçages et fixations de la carte. Un équivalent de stock ancien a été utilisé sur l'exemplaire testé.
+
+| Emplacement | Composant à monter |
+|---|---|
+| **CN7** | Prise DE-9 mâle coudée, implantation et fixations compatibles avec la référence **5745001-3**. |
+| **IC4** | **Texas Instruments CD4050BE**, buffer CMOS non inverseur en DIP-16, testé à la place du Fujitsu MB84050B. Broche **1 : +5 V** ; broche **8 : masse**. |
+| **R77, R78, R79** | Une résistance de **4,7 kΩ** à chaque emplacement : respectivement en série avec **CN7.4, CN7.2 et CN7.7**. |
+| **RA1** | Trois résistances de **4,7 kΩ** et trois de **22 kΩ**, câblées selon les deux tableaux suivants. |
+
+### Reconstituer RA1 avec six résistances
+
+RA1 associe trois résistances série et trois rappels au +5 V. La numérotation ci-dessous reprend le relevé de cette carte : **la broche 7 est la pastille repérée sur le PCB par un petit carré ; elle est reliée au +5 V**. En partant de cette extrémité, les pastilles se comptent **7, 6, 5, 4, 3, 2, 1**. Les numéros CN7 sont ceux des contacts du connecteur ; les numéros IC4 sont ceux du buffer.
+
+| Pastille RA1 | Connexion sur le PCB |
+|---|---|
+| **1** | **CN7.5**, entrée d'activation de l'interface **IF_ENABLE#**. |
+| **2** | **IC4.3**, entrée du buffer d'activation. |
+| **3** | **CN7.3**, données reçues du PC **RXD**. |
+| **4** | **IC4.7**, entrée du buffer de réception. |
+| **5** | **CN7.6**, détection d'interface **IF_PRESENT#**. |
+| **6** | **IC4.9**, entrée du buffer de détection. |
+| **7 - carré** | **+5 V**, alimentation commune des rappels. |
+
+Soudez chaque résistance entre les deux pastilles indiquées, avec des liaisons isolées :
+
+| Entre les pastilles RA1 | Valeur | Fonction |
+|---|---|---|
+| **1 et 2** | **4,7 kΩ** | Série sur IF_ENABLE#. |
+| **3 et 4** | **4,7 kΩ** | Série sur RXD. |
+| **5 et 6** | **4,7 kΩ** | Série sur IF_PRESENT#. |
+| **1 et 7** | **22 kΩ** | Rappel d'IF_ENABLE# au +5 V. |
+| **3 et 7** | **22 kΩ** | Rappel de RXD au +5 V. |
+| **5 et 7** | **22 kΩ** | Rappel d'IF_PRESENT# au +5 V, pour définir son état câble débranché. |
+
+Ce montage est la reconstruction fonctionnelle retenue pour l'extension. Les trois paires **1-2, 3-4 et 5-6** doivent conserver leur résistance série : un réseau composé uniquement de résistances en étoile autour de la broche 7 assure les rappels mais laisse ces liaisons manquantes. L'intervention se fait hors tension, toutes alimentations retirées. Avant l'essai, contrôlez les connexions du tableau et l'orientation d'IC4, puis utilisez le [câble USB Typestar](09-sons-serie-memoire.md) et les mêmes réglages série dans Studio et sur la Canon.
 
 ## Avant d'ouvrir la machine
 

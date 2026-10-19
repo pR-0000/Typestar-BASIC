@@ -1,12 +1,12 @@
 # Typestar BASIC - User's manual
 
-Pierre Raimbault & Chat GPT - English edition, 15 October 2026. Reference firmware: **0.4.88-dev**, Canon S-70 / Typestar 7.
+Pierre Raimbault & Chat GPT - English edition, 19 October 2026. Reference firmware: **0.4.93-dev**, Canon S-70 / Typestar 7.
 
-This edition translates the complete French manual: installation, Studio, history, processor and firmware, beginner lessons, language reference, glossary and the four complete program listings. The original BASIC keywords and machine error messages stay unchanged. English example sources are supplied in **examples/** (names ending in **-en.bas**); the terminal pair is in **examples/terminal**.
+This edition translates the complete French manual: installation, Studio, history, processor and firmware, beginner lessons, language reference, glossary and the five complete program listings. The original BASIC keywords and machine error messages stay unchanged. English example sources are supplied in **examples/** (names ending in **-en.bas**); the terminal pair is in **examples/terminal**.
 
 Start with [capabilities](00-fiche-machine.md), [installation](02-installation-firmware.md) and [Studio](02-studio.md). Then try [your first instructions](03-premiers-pas.md). Later, consult [the quick reference](98-reference-rapide.md), [glossary](99-lexique.md) or [command index](index-commandes.md).
 
-The paginated [English PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf) has its own clickable contents, bookmarks, source notes and calculated glossary/index page references. Edit the UTF-8 Markdown sources to revise it. Each paragraph occupies one source line.
+The paginated [English PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-en.pdf) has its own clickable contents, bookmarks, source notes and calculated glossary/index page references. Edit the UTF-8 Markdown sources to revise it. Each paragraph occupies one source line.
 
 ## Illustrations and original documents
 
@@ -26,3 +26,5 @@ python docs/user-manual/validate_manual.py --config docs/user-manual/manuel-en.j
 ```
 
 `manuel-en.json` defines reading order, image sizes, bibliography and examples. The selected-program chapter is generated from the supplied source files. Both editions share the renderer and fonts; output files and page maps remain separate. Canon ROM images are supplied by the user and are not copied into this manual.
+
+The [tested S-60 serial upgrade](../../hardware/typestar-6-serial-upgrade.md#english) is documented with the board revision, connector references and RA1 wiring. The 0.4.93 edition also covers continuous repeated glyphs, paper compensation, Orbital Duel 1.8 and Typestar Ruins 0.4.

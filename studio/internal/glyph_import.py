@@ -40,17 +40,18 @@ def import_glyphs(source):
                 if len(indices)!=len(dims) or any(i>=d for i,d in zip(indices,dims)):raise ValueError(tr('Indice hors matrice.'))
                 data[indices]=number(match[3])
             elif part.startswith('GLYPH '):
-                match=re.fullmatch(r'GLYPH ([A-Z])\((0(?:,0)?)\),([^,]+),([^,]+),([^,]+)',part)
+                match=re.fullmatch(r'GLYPH ([A-Z])\((0(?:,0)?)\),([^,]+),([^,]+),([^,]+)(?:,([^,]+))?',part)
                 if not match or match[1] not in arrays:raise ValueError(tr('GLYPH constant attendu après DIM et affectations ; sélectionner le bloc complet.'))
                 w,h,zoom=map(number,(match[3],match[4],match[5]));dims,data=arrays[match[1]]
-                if not 1<=w<=31 or not 1<=h<=16 or zoom not in (1,2,3) or dims[0]<h:raise ValueError(tr('Dimensions GLYPH invalides.'))
+                repeat=number(match[6]) if match[6] else 1
+                if not 1<=w<=31 or not 1<=h<=16 or zoom not in (1,2,3,4) or not 1<=repeat<=16 or dims[0]<h:raise ValueError(tr('Dimensions GLYPH invalides.'))
                 if len(dims)==1:
                     if w>16 or match[2]!='0' or any(v>=1<<w for v in data.values()):raise ValueError(tr('Rangées hors largeur GLYPH.'))
                     pixels=[[(data.get((y,),0)>>(w-1-x))&1 for x in range(w)] for y in range(h)]
                 else:
                     if match[2]!='0,0' or dims[1]<w or any(v not in (0,1) for v in data.values()):raise ValueError(tr('Matrice de pixels 0/1 attendue.'))
                     pixels=[[data.get((y,x),0) for x in range(w)] for y in range(h)]
-                assets.append(dict(kind='Papier',pixels=pixels,zoom=zoom,array=match[1]))
+                assets.append(dict(kind='Papier',pixels=pixels,zoom=zoom,array=match[1],repeat=repeat))
             elif part and not part.startswith(('PRINT ','CLS','CURSOR ','LOCATE ')):
                 # Do not pretend a dynamic/control-flow program was evaluated.
                 raise ValueError(tr('Sélectionner uniquement un bloc de glyphe constant. Instruction non prise en charge : ')+part[:45])

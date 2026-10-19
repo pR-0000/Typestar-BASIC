@@ -13,7 +13,7 @@ from native_text import encode_source
 import unicodedata
 from serial_rates import BAUD_RATES
 
-VERSION = '0.2.33'
+VERSION = '0.2.34'
 KEYWORDS = set('''PRINT LPRINT INPUT LET IF THEN ELSE FOR TO STEP NEXT GOTO
 GOSUB RETURN END REM DATA READ RESTORE DIM RUN LIST LLIST NEW CLEAR MEM LOAD SAVE
 KEYS CLS LOCATE LLOCATE LSPACING CURSOR LCDCHAR LCDTRI LCDLINE ICON GLYPH
@@ -82,8 +82,8 @@ def export_sprite(pixels, kind, start=10, step=10, position=1,
         bodies = [f'LCDCHAR {position},' + ','.join(map(str, words + [triangle])),
                   f'LCDLINE {position},{lower}']
     else:
-        if not 1 <= w <= 31 or not 1 <= h <= 16 or zoom not in (1, 2, 3):
-            raise ValueError(tr('Papier : 1..31 × 1..16 pixels, mode 1, 2 ou 3.'))
+        if not 1 <= w <= 31 or not 1 <= h <= 16 or zoom not in (1, 2, 3, 4):
+            raise ValueError(tr('Papier : 1..31 × 1..16 pixels, mode 1, 2, 3 ou 4.'))
         if not re.fullmatch('[A-Z]', array):
             raise ValueError(tr('Nom de tableau attendu : A..Z.'))
         if w <= 16:

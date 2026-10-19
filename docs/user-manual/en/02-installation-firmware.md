@@ -3,7 +3,52 @@
 
 To install Typestar BASIC, we replace the external **IC8 ROM**, fitted in a socket. The replacement fits directly into that socket. The microcontroller and its internal Canon ROM stay in place. Keep the original chip: reinstalling it restores Canon's original operation.
 
-This illustrated guide shows the **Canon S-70 / Typestar 7** used for the project. BASIC startup has also been tried on the S-60 / Typestar 6; adding its serial interface is under investigation. The S-90 requires a BASIC binary adapted to its internal ROM.
+This illustrated guide shows the **Canon S-70 / Typestar 7** used for the project. One revision of the S-60 / Typestar 6 also runs this firmware, as explained below. The S-90 requires a BASIC binary adapted to its internal ROM.
+
+<a id="s60-serial"></a>
+### A Typestar 6 can run BASIC too
+
+Typestar BASIC startup and **program loading with Studio at up to 31250 baud, using 7E1**, have been validated on a **Canon S-60 / Typestar 6** with PCB **NG3-0672 / NH1-0159-065**, dated **"86;06,12."**. This machine has a small serial-port hatch, glued shut at the factory, and a print-contrast control at the front. BASIC replaces its IC8 ROM while retaining the original microcontroller. Adding the serial circuit described below requires soldering; replacing IC8 remains a socketed-chip operation.
+
+Other S-60 machines have a case without a hatch and a contrast control on the right side; their compatibility still needs checking on their own boards. **Check the PCB reference before undertaking this extension.**
+
+### S-60 serial-port components
+
+The connector on the reference S-70 is marked **AMP 8609 747109-1**. For CN7, **TE Connectivity / AMP 5745001-3** provides a reference for a **right-angle male DE-9 PCB connector**: compare its [manufacturer's drawing](https://www.te.com/en/product-5745001-3.html) with the board's holes and mountings. A new-old-stock equivalent was used on the tested machine.
+
+| Position | Component to fit |
+|---|---|
+| **CN7** | Right-angle male DE-9 connector with a footprint and mountings compatible with **5745001-3**. |
+| **IC4** | **Texas Instruments CD4050BE**, non-inverting CMOS buffer in DIP-16, tested in place of the Fujitsu MB84050B. Pin **1: +5 V**; pin **8: ground**. |
+| **R77, R78, R79** | One **4.7 kΩ** resistor at each position, in series with **CN7.4, CN7.2 and CN7.7**, respectively. |
+| **RA1** | Three **4.7 kΩ** and three **22 kΩ** resistors, wired according to the next two tables. |
+
+### Rebuilding RA1 with six resistors
+
+RA1 combines three series resistors and three pull-ups to +5 V. The numbering below follows the measurements on this board: **pin 7 is the pad marked by a small square on the PCB; it connects to +5 V**. Starting at that end, count the pads **7, 6, 5, 4, 3, 2, 1**. CN7 numbers identify connector contacts; IC4 numbers identify buffer pins.
+
+| RA1 pad | PCB connection |
+|---|---|
+| **1** | **CN7.5**, interface-enable input **IF_ENABLE#**. |
+| **2** | **IC4.3**, enable buffer input. |
+| **3** | **CN7.3**, data received from the PC, **RXD**. |
+| **4** | **IC4.7**, receive buffer input. |
+| **5** | **CN7.6**, interface detection **IF_PRESENT#**. |
+| **6** | **IC4.9**, detection buffer input. |
+| **7 - square** | **+5 V**, common supply for the pull-ups. |
+
+Solder each resistor between the two pads shown, using insulated connections:
+
+| Between RA1 pads | Value | Function |
+|---|---|---|
+| **1 and 2** | **4.7 kΩ** | Series resistor on IF_ENABLE#. |
+| **3 and 4** | **4.7 kΩ** | Series resistor on RXD. |
+| **5 and 6** | **4.7 kΩ** | Series resistor on IF_PRESENT#. |
+| **1 and 7** | **22 kΩ** | IF_ENABLE# pull-up to +5 V. |
+| **3 and 7** | **22 kΩ** | RXD pull-up to +5 V. |
+| **5 and 7** | **22 kΩ** | IF_PRESENT# pull-up to +5 V, defining its state with the cable unplugged. |
+
+This is the functional reconstruction selected for the upgrade. The three pairs **1-2, 3-4 and 5-6** must retain their series resistors: a network containing only resistors in a star around pin 7 provides pull-ups but leaves these connections missing. Work with all power sources removed. Before testing, check the connections in the table and IC4's orientation, then use the [Typestar USB cable](09-sons-serie-memoire.md) with matching serial settings in Studio and on the Canon.
 
 ## Before opening the machine
 

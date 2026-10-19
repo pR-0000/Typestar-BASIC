@@ -1,8 +1,8 @@
 # Typestar BASIC & Studio
 
-**Firmware 0.4.88-dev : [32 Ko / 32 KiB](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-32k.bin) · [64 Ko / 64 KiB — W27C512](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-64k-mirror.bin)**
+**Firmware 0.4.93-dev : [32 Ko / 32 KiB](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-32k.bin) · [64 Ko / 64 KiB — W27C512](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-64k-mirror.bin)**
 
-**[Manuel français (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-fr.pdf) · [English manual (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf)**
+**[Manuel français (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-fr.pdf) · [English manual (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-en.pdf)**
 
 <p align="center">
   <img src="docs/images/typestar-basic.png" width="640" alt="Canon S-70 avec Typestar BASIC / Canon S-70 running Typestar BASIC">
@@ -14,36 +14,43 @@
 
 ## Français
 
-**Un ordinateur BASIC dans une machine à écrire Canon.** Typestar BASIC remplace la ROM externe sur support IC8 d'une **Canon S-70 / Typestar 7**. Il fonctionne également sur S-60 / Typestar 6 ; sa liaison série nécessite l'ajout des composants correspondants. Les différences matérielles de la S-90 / Typestar 7-II restent à prendre en compte pour le firmware BASIC.
+**Un ordinateur BASIC dans une machine à écrire Canon.** Typestar BASIC remplace la ROM externe sur support IC8 d'une **Canon S-70 / Typestar 7**. Sur une **S-60 / Typestar 6**, PCB **NG3-0672 / NH1-0159-065**, le démarrage et le chargement série avec Studio jusqu'à **31250 bauds / 7E1** sont également validés après ajout des composants de l'interface ; [le manuel précise la révision testée](docs/user-manual/02-installation-firmware.md#s60-serial). Les autres révisions de S-60 restent à vérifier. Les différences matérielles de la S-90 / Typestar 7-II restent à prendre en compte pour le firmware BASIC.
 
-Firmware **0.4.88-dev** · Studio **0.2.33** · Copyright © 2026 Pierre Raimbault · Projet indépendant de Canon.
+Firmware **0.4.93-dev** · Studio **0.2.34** · Copyright © 2026 Pierre Raimbault · Projet indépendant de Canon.
 
 ### Téléchargements
 
-La [version 0.4.88-dev](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.88-dev) regroupe les images BASIC de 32 Ko et 64 Ko, leurs empreintes et les manuels PDF français et anglais. Le [code source de cette version](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.88-dev.zip) contient Studio et les programmes d'exemple. L'émulateur utilise une maskROM Canon fournie par l'utilisateur.
+La [version 0.4.93-dev](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.93-dev) regroupe les images BASIC de 32 Ko et 64 Ko, leurs empreintes et les manuels PDF français et anglais. Le [code source de cette version](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.93-dev.zip) contient Studio et les programmes d'exemple. L'émulateur utilise une maskROM Canon fournie par l'utilisateur.
 
-**Firmware prêt à programmer — 0.4.88-dev**
+**Firmware prêt à programmer — 0.4.93-dev**
 
 | Image | Utilisation | Téléchargement |
 |---|---|---|
-| 32 Ko | OneROM configurée en 27C256, 27C256 compatible, ou émulateur Studio | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-32k.bin) |
-| 64 Ko, miroir | W27C512 compatible ; deux copies identiques de l'image 32 Ko | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-64k-mirror.bin) |
+| 32 Ko | OneROM configurée en 27C256, 27C256 compatible, ou émulateur Studio | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-32k.bin) |
+| 64 Ko, miroir | W27C512 compatible ; deux copies identiques de l'image 32 Ko | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-64k-mirror.bin) |
 
-Ces fichiers sont également conservés dans [firmware/0.4.88-dev/](firmware/0.4.88-dev/). Les [empreintes SHA-256](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/SHA256SUMS.txt) permettent de vérifier les téléchargements. Le [guide du firmware](firmware/README.md) précise les formats ; le manuel décrit le remplacement d'IC8.
+Ces fichiers sont également conservés dans [firmware/0.4.93-dev/](firmware/0.4.93-dev/). Les [empreintes SHA-256](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/SHA256SUMS.txt) permettent de vérifier les téléchargements. Le [guide du firmware](firmware/README.md) précise les formats ; le manuel décrit le remplacement d'IC8.
 
 Pour une lecture paginée, avec illustrations, sommaire et index cliquables :
 
 | Manuel utilisateur | Téléchargement |
 |---|---|
-| Français | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-fr.pdf) |
-| English | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf) |
+| Français | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-fr.pdf) |
+| English | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-en.pdf) |
 
 ### Commencer
 
-1. Consultez le [manuel français en PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-fr.pdf), notamment l'installation du mod. Les [chapitres Markdown](docs/user-manual/README.md) restent disponibles pour la consultation en ligne et les contributions.
+1. Consultez le [manuel français en PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-fr.pdf), notamment l'installation du mod. Les [chapitres Markdown](docs/user-manual/README.md) restent disponibles pour la consultation en ligne et les contributions.
 2. Installez Python 3.12 ou plus récent et lancez **[Typestar BASIC Studio.pyw](studio/Typestar%20BASIC%20Studio.pyw)**. Le lanceur prépare son environnement Python local et installe les dépendances manquantes. Voir le [guide Studio](studio/README.md) pour Windows, Linux et macOS.
 3. Ouvrez l'un des [programmes fournis](examples/README.md). Les suffixes **-fr** et **-en** indiquent leur langue.
 4. Dans Studio, utilisez **Exécuter (F5)** pour l'émulateur ou **Envoyer → LOAD** pour une Canon équipée du firmware et du câble USB appropriés.
+
+### Nouveautés de la 0.4.93-dev
+
+- **Typestar 6 validée** : [guide de conversion série](docs/hardware/typestar-6-serial-upgrade.md), composants et câblage complet de RA1 pour la carte testée.
+- **Grands glyphes papier et répétition** : `GLYPH A(0),16,16,4,10` imprime dix motifs en deux passes continues. Correction des glyphes presque noirs et amélioration de la précision des déplacements papier.
+- **Jeux illustrés** : [Les Ruines de Typestar](examples/guides/ruines-typestar.md), carte aléatoire et grands sprites ; [Duel Orbital](examples/guides/duel-orbital.md), deux grilles imprimées par bandes communes. Versions françaises et anglaises incluses.
+- **Studio et manuels** : outils de glyphes actualisés, profils des nouveaux firmwares et PDF enrichis de cinq programmes complets. Voir les [notes de version bilingues](docs/releases/0.4.93-dev.md).
 
 ### Fonctionnalités
 
@@ -86,36 +93,43 @@ Les contributions originales sont sous [licence MIT](LICENSE). Les éléments is
 
 ## English
 
-**Turn a Canon typewriter into a BASIC computer.** Typestar BASIC replaces the socketed IC8 external ROM in a **Canon S-70 / Typestar 7**. It also boots on the S-60 / Typestar 6; serial communication requires installing the missing interface components. The S-90 / Typestar 7-II has hardware differences that still need to be addressed by the BASIC firmware.
+**Turn a Canon typewriter into a BASIC computer.** Typestar BASIC replaces the socketed IC8 external ROM in a **Canon S-70 / Typestar 7**. On an **S-60 / Typestar 6** with PCB **NG3-0672 / NH1-0159-065**, startup and serial program loading with Studio at up to **31250 baud / 7E1** are also validated after fitting the interface components; [the manual identifies the tested revision](docs/user-manual/en/02-installation-firmware.md#s60-serial). Other S-60 revisions still need checking. The S-90 / Typestar 7-II has hardware differences that still need to be addressed by the BASIC firmware.
 
-Firmware **0.4.88-dev** · Studio **0.2.33** · Copyright © 2026 Pierre Raimbault · Independent project, unaffiliated with Canon.
+Firmware **0.4.93-dev** · Studio **0.2.34** · Copyright © 2026 Pierre Raimbault · Independent project, unaffiliated with Canon.
 
 ### Downloads
 
-The [0.4.88-dev release](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.88-dev) includes the 32 KiB and 64 KiB BASIC images, their checksums and the French and English PDF manuals. The [source code for this release](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.88-dev.zip) contains Studio and the example programs. The emulator uses a Canon maskROM supplied by the user.
+The [0.4.93-dev release](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.93-dev) includes the 32 KiB and 64 KiB BASIC images, their checksums and the French and English PDF manuals. The [source code for this release](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.93-dev.zip) contains Studio and the example programs. The emulator uses a Canon maskROM supplied by the user.
 
-**Ready-to-program firmware — 0.4.88-dev**
+**Ready-to-program firmware — 0.4.93-dev**
 
 | Image | Use | Download |
 |---|---|---|
-| 32 KiB | OneROM configured as a 27C256, compatible 27C256, or Studio emulator | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-32k.bin) |
-| 64 KiB, mirrored | Compatible W27C512; two identical copies of the 32 KiB image | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-64k-mirror.bin) |
+| 32 KiB | OneROM configured as a 27C256, compatible 27C256, or Studio emulator | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-32k.bin) |
+| 64 KiB, mirrored | Compatible W27C512; two identical copies of the 32 KiB image | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-64k-mirror.bin) |
 
-These files are also kept in [firmware/0.4.88-dev/](firmware/0.4.88-dev/). Use the [SHA-256 checksums](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/SHA256SUMS.txt) to verify downloads. The [firmware guide](firmware/README.md) explains the formats; the manual covers replacing IC8.
+These files are also kept in [firmware/0.4.93-dev/](firmware/0.4.93-dev/). Use the [SHA-256 checksums](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/SHA256SUMS.txt) to verify downloads. The [firmware guide](firmware/README.md) explains the formats; the manual covers replacing IC8.
 
 For paginated reading with illustrations, clickable contents and an index:
 
 | User manual | Download |
 |---|---|
-| Français | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-fr.pdf) |
-| English | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf) |
+| Français | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-fr.pdf) |
+| English | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-en.pdf) |
 
 ### Getting started
 
-1. Read the [English PDF manual](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.88-dev/typestar-basic-manuel-en.pdf), particularly the firmware installation instructions. The [Markdown chapters](docs/user-manual/en/README.md) remain available for online reading and contributions.
+1. Read the [English PDF manual](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-en.pdf), particularly the firmware installation instructions. The [Markdown chapters](docs/user-manual/en/README.md) remain available for online reading and contributions.
 2. Install Python 3.12 or later and launch **[Typestar BASIC Studio.pyw](studio/Typestar%20BASIC%20Studio.pyw)**. The launcher creates a local Python environment and installs missing packages. See the [Studio guide](studio/README.md) for Windows, Linux and macOS.
 3. Open a [supplied program](examples/README.md). File suffixes **-fr** and **-en** identify French and English versions.
 4. In Studio, choose **Run (F5)** for the emulator or **Send → LOAD** for a Canon equipped with the replacement firmware and a suitable USB cable.
+
+### New in 0.4.93-dev
+
+- **Validated Typestar 6**: [serial-upgrade guide](docs/hardware/typestar-6-serial-upgrade.md#english), components and complete RA1 wiring for the tested board.
+- **Large paper glyphs and repetition**: `GLYPH A(0),16,16,4,10` prints ten motifs in two continuous sweeps. Fixes nearly black glyphs and improves paper-positioning accuracy.
+- **Illustrated games**: [Typestar Ruins](examples/guides/ruines-typestar.md), random map and large sprites; [Orbital Duel](examples/guides/duel-orbital.md), two boards printed in shared bands. French and English versions included.
+- **Studio and manuals**: updated glyph tools, profiles for the new firmware images and PDFs expanded with five complete programs. See the [bilingual release notes](docs/releases/0.4.93-dev.md).
 
 ### Features
 

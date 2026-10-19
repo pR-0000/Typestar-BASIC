@@ -1,10 +1,10 @@
-# Typestar BASIC Studio 0.2.33
+# Typestar BASIC Studio 0.2.34
 
 [Français](#français) · [English](#english)
 
 ## Français
 
-Studio réunit l'éditeur BASIC, les transferts série, l'éditeur de glyphes, l'impression graphique, un émulateur HD6301, le papier virtuel et le débogueur. Firmware de référence : **Typestar BASIC 0.4.88-dev**.
+Studio réunit l'éditeur BASIC, les transferts série, l'éditeur de glyphes, l'impression graphique, un émulateur HD6301, le papier virtuel et le débogueur. Firmware de référence : **Typestar BASIC 0.4.93-dev**.
 
 ### Lancer Studio
 
@@ -31,6 +31,10 @@ Cliquez sur le LCD pour utiliser le clavier. F7 ou Ctrl correspond à **CODE**, 
 
 Le mode **ROM générique** utilise le cœur de la machine sans injection de programme BASIC. Dans ce mode, F5 démarre ou reprend simplement le firmware sélectionné. La précision des moteurs, du son et des délais reste une simulation fonctionnelle ; la validation sur machine complète les essais dans Studio.
 
+### Nouveautés de Studio 0.2.34
+
+L'éditeur de glyphes importe et exporte le **mode papier 4**, à grands pixels carrés. L'import accepte aussi les blocs GLYPH comportant un paramètre de répétition et retrouve leur motif source. Les images BASIC jusqu'à **0.4.93-dev** disposent de leurs symboles pour le débogueur. BREAK atteint aussi les boucles natives d'impression ; le cœur HD6301 complète sa prise en charge de SBCA/SBCB. Les nouveaux jeux servent d'exemples de grandes cartes et de motifs répétés.
+
 ### Sources
 
 ```text
@@ -54,7 +58,7 @@ Copyright © 2026 Pierre Raimbault. Les images ROM Canon sont fournies séparém
 
 ## English
 
-Studio combines the BASIC editor, serial transfers, glyph editor, graphical printing, an HD6301 emulator, virtual paper and debugger. Reference firmware: **Typestar BASIC 0.4.88-dev**.
+Studio combines the BASIC editor, serial transfers, glyph editor, graphical printing, an HD6301 emulator, virtual paper and debugger. Reference firmware: **Typestar BASIC 0.4.93-dev**.
 
 ### Launching Studio
 
@@ -80,6 +84,10 @@ Keep `studio/` alongside `tools/`, `src/`, `docs/` and `examples/`. Shared modul
 Click the LCD to use the keyboard. F7 or Ctrl corresponds to **CODE**, F8 to **MODE**, and F9 to **KB - I/II**. Buttons below the display provide the other special keys. Glyph tools accept LCD and paper patterns; the character table lets you insert a character into your program.
 
 **Generic ROM** mode uses the machine core without injecting a BASIC program. In this mode, F5 simply starts or resumes the selected firmware. Motor, sound and timing accuracy remains a functional simulation; testing on real hardware complements the trials in Studio.
+
+### New in Studio 0.2.34
+
+The glyph editor imports and exports **paper mode 4**, with large square pixels. Import also accepts GLYPH blocks with a repeat parameter and recovers their source motif. BASIC images up to **0.4.93-dev** have matching debugger symbols. BREAK also reaches native print loops; the HD6301 core adds SBCA/SBCB support. The new games demonstrate large maps and repeated motifs.
 
 ### Source layout
 

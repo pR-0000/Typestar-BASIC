@@ -37,6 +37,16 @@
       "1B8C"
     ],
     [
+      "text line pitch",
+      "1B8C",
+      "1B8D"
+    ],
+    [
+      "paper Y fractional accumulator",
+      "1B8D",
+      "1B8E"
+    ],
+    [
       "INKEY pending translated event",
       "1B90",
       "1B91"

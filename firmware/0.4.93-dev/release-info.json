@@ -1,0 +1,28 @@
+{
+  "firmware": "0.4.93-dev",
+  "studio": "0.2.34",
+  "date": "2026-10-19",
+  "rom_bytes": 32768,
+  "occupied_rom_bytes": 32707,
+  "explicit_free_rom_bytes": 61,
+  "empty_basic_free_bytes": 5951,
+  "token_entries": 37,
+  "statement_dispatch_entries": 54,
+  "cpu_sha256": "94fb4550241850965f52978619b1dd3e6be160392031a7698ddced062b264d87",
+  "files": {
+    "typestar-basic-32k.bin": {
+      "bytes": 32768,
+      "sha256": "99d867e1d0dc66d80195153acfe1a47e76a7201e4b42cdba36662702ad40b710"
+    },
+    "typestar-basic-64k-mirror.bin": {
+      "bytes": 65536,
+      "sha256": "77fc21c6206b6071064cbcc98785c4b0ec1221e36447f9c08d25f8715a66585e"
+    }
+  },
+  "supported_hardware": [
+    "Canon S-70 / Typestar 7",
+    "Canon S-60 / Typestar 6, PCB NG3-0672 / NH1-0159-065"
+  ],
+  "physical_validation": "User-confirmed firmware, serial interface upgrade, glyphs, paper calibration and supplied games",
+  "format": "Physical IC8 byte order; 64 KiB file repeats the 32 KiB image"
+}

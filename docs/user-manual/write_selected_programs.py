@@ -9,7 +9,7 @@ def write_chapter(config):
     destination=HERE/config.get('content_directory','.')
     if english:
         out=['# 11 - Complete programs to try','',
-             'Here are four programs from the Typestar BASIC selection: a sound instrument, an LCD game and two paper games. Open the named file in **Typestar BASIC Studio**, then use **Run (F5)** in the emulator or **Send → LOAD** for the Canon. The listings below are the complete sources of the supplied files.','',
+             'This Typestar BASIC selection includes a sound instrument, an LCD game and paper games. Open the named file in **Typestar BASIC Studio**, then use **Run (F5)** in the emulator or **Send → LOAD** for the Canon. The listings below are the complete sources of the supplied files.','',
              '![Printy discovers games on the display and on paper.](../images/printy-jeux.png)','',
              '**Memory holds one program at a time.** Save your work before loading a game. For printed games, prefer **thermal paper** and let the motors position the sheet during play. Old transfer ribbons would be consumed quickly.','']
         report=[]
@@ -26,7 +26,7 @@ def write_chapter(config):
         (ROOT/'build/user-manual/selected-programs-en.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf8')
         return
     out=['# 11 - Des programmes complets à essayer','',
-         'Voici quatre programmes de la sélection Typestar BASIC : un instrument sonore, un jeu sur LCD et deux jeux sur papier. Ouvrez le fichier indiqué dans **Typestar BASIC Studio**, puis utilisez **Exécuter (F5)** dans l’émulateur ou **Envoyer → LOAD** pour la Canon. Les listings ci-dessous sont les sources complets des fichiers fournis.','',
+         'La sélection Typestar BASIC réunit un instrument sonore, un jeu sur LCD et des jeux sur papier. Ouvrez le fichier indiqué dans **Typestar BASIC Studio**, puis utilisez **Exécuter (F5)** dans l’émulateur ou **Envoyer → LOAD** pour la Canon. Les listings ci-dessous sont les codes sources complets des fichiers fournis.','',
          '![Printy découvre les jeux sur écran et sur papier.](images/printy-jeux.png)','',
          '**Un seul programme tient en mémoire à la fois.** Sauvegardez votre travail avant de charger un jeu. Pour les jeux imprimés, utilisez de préférence du **papier thermique** et laissez les moteurs positionner la feuille pendant la partie. Les anciens rubans de transfert seraient rapidement consommés.','']
     report=[]

@@ -107,7 +107,9 @@ def basic_backend(realtime_sound=False, mask_path=None, firmware_path=None, cold
             self.code_latched=not self.code_latched
 
         def raw_keys(self):
-            return self.matrix_keys | ({0x3b} if self.code_latched else set())
+            # Native continuous printer paths poll BREAK directly on the matrix.
+            return (self.matrix_keys | ({0x3b} if self.code_latched else set()) |
+                    ({0x36} if getattr(self,'break_requested',False) else set()))
 
         def read(self, address):
             if address==0x30:

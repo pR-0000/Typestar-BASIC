@@ -1,6 +1,9 @@
 ; RBJOB callback: stage exactly one band, including blank guard columns.
 ; A=band, B=tiles, X=destination. Zoom preserves all 32 columns of a 16x8
 ; sprite: native column 31 continues in a second contiguous tile, not cropped.
+; PBMASKS is shared with the geometry renderer and can be relocated. The final
+; incremental linker must rebind this operand to the current symbol map; .89
+; repairs a stale $40F8 reference. Sparse pixel tests cover every table row.
 SGRENDER STX SGOUT
         ASLA
         ASLA

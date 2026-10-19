@@ -66,7 +66,7 @@ Huit emplacements de motifs sont partagés. Le curseur 0 utilise le bloc natif e
 | `DRAW INSTANT` | Formes imprimées immédiatement. |
 | `DRAW DEFERRED` | Prépare jusqu'à 32 formes ensemble. |
 | `DRAW PRINT` ; `DRAW CANCEL` | Imprime ou abandonne la composition, puis revient à INSTANT. |
-| `GLYPH A(indices),largeur,hauteur[,mode]` | Bitmap 1D ou 2D ; modes 1 natif, 2 double X/Y, 3 double X. |
+| `GLYPH A(indices),largeur,hauteur[,mode[,repetitions]]` | Bitmap 1D ou 2D ; modes 1 natif, 2 double X/Y, 3 carré, 4 grand carré ; 1..16 répétitions. |
 | `ORIGIN [x[,y]]` | Déclare la position présente, sans déplacement. |
 | `MOVE x,y` | Position moteur absolue dans le repère déclaré. |
 | `HEAD dx` ; `FEED dy` | Déplacements relatifs de tête et de papier. |

@@ -2,9 +2,9 @@
   "title": "Typestar BASIC",
   "subtitle": "User's manual",
   "language": "en",
-  "version": "0.4.88-dev",
+  "version": "0.4.93-dev",
   "author": "Pierre Raimbault & Chat GPT",
-  "date": "15 October 2026",
+  "date": "19 October 2026",
   "cover_image": "images/illustration_BASIC_firmware.png",
   "image_layout": {
     "illustration.png": {
@@ -286,6 +286,14 @@
     "schema-cpu-droite.png": {
       "max_width_mm": 158,
       "max_height_mm": 213
+    },
+    "exemple-ruines-papier.png": {
+      "max_width_mm": 154,
+      "max_height_mm": 150
+    },
+    "exemple-orbital-grands-papier.png": {
+      "max_width_mm": 164,
+      "max_height_mm": 92
     }
   },
   "chapters": [
@@ -513,16 +521,16 @@
       "file": "orbital-duel-en.bas",
       "title": "Orbital Duel",
       "description": "A space battle inspired by Battleship. Command three satellite formations of three, two and two cells on a six-by-six grid. Canon has the same fleet; the first to hit all seven enemy cells wins. Satellites and shots remain visible on paper.",
-      "controls": "**To play:** Return at the welcome screen; enter a starting cell such as **A1**, then **H** for a formation extending right or **V** extending down. Enter shots **A1 to F6**, or **Q** to quit. The left grid holds your satellites; the right records shots. Let the program position the paper.",
-      "learning": "LINE builds grids; GLYPH prints satellites, shots and explosions; arrays, randomness and logical tests manage positions and enemy decisions.",
+      "controls": "**To play:** Drawing starts as soon as you RUN. Enter a starting cell such as **A1**, then **H** for a formation extending right or **V** extending down. Enter shots **A1 to F6**, or **Q** to quit. The left grid holds your satellites; the right records shots. Let the program position the paper.",
+      "learning": "GLYPH repeats one cached grid fragment across both boards; mode 4 enlarges sprites. CLEAR releases construction buffers before the game arrays are created. Arrays, randomness and logical tests control positions and the opponent.",
       "illustrations": [
         {
           "file": "exemple-duel-orbital-lcd.png",
           "caption": "The LCD requests the next shot while both grids remain on paper."
         },
         {
-          "file": "exemple-duel-orbital-schema.png",
-          "caption": "Explanatory game diagram: your satellites on the left, a B4 miss and B2 hit. The three patterns reproduce the program DATA."
+          "file": "exemple-orbital-grands-papier.png",
+          "caption": "Adjoining boards and large glyphs: a preview at nominal paper coordinates."
         }
       ]
     },
@@ -540,6 +548,19 @@
         {
           "file": "exemple-duel-balistique-papier.png",
           "caption": "Paper simulated from the ROM-executed program: fixed terrain, dotted shots, impacts and printed history."
+        }
+      ]
+    },
+    {
+      "file": "games/typestar-ruins-en.bas",
+      "title": "Typestar Ruins",
+      "description": "Explore a randomly generated temple on paper. Recover three guarded relics, then return to B2 within 48 moves. Partitions, seven monsters and healing supplies make route planning important. The LCD shows your current coordinates and the paper retains your footsteps.",
+      "controls": "**Controls:** left/right arrows turn, Return advances, Space displays help, Q ends the expedition. Each relic costs one health point against its guardian; chests and the spring restore health. A cross marks a used encounter. Drawing begins immediately after RUN.",
+      "learning": "DATA stores the tiles. GLYPH mode 4 prints large square pixels and repeats adjacent matching walls in a continuous band. The map array tracks terrain, consumed encounters and varying footstep positions; INKEY and LCDLINE control the menu.",
+      "illustrations": [
+        {
+          "file": "exemple-ruines-papier.png",
+          "caption": "A glyph map with coordinates, landmarks and the goal, shown at nominal paper coordinates."
         }
       ]
     }

@@ -4,7 +4,7 @@
 
 > **32 caractères à l'écran - 5 951 octets libres - une imprimante intégrée.** Calculez, composez un jeu, créez vos personnages, puis donnez-leur une place sur le papier !
 
-| Ressource | Typestar BASIC 0.4.88-dev sur S-70 |
+| Ressource | Typestar BASIC 0.4.93-dev sur S-70 |
 |---|---|
 | **Processeur** | HD6301Y0P, 8 bits ; horloge système d'environ **1 MHz**, à partir d'un quartz de 4 MHz. |
 | **Mémoires** | **8 Ko de RAM externe** ; **5 951 octets libres à vide**, partagés entre programme tokenisé et données. ROM BASIC de **32 Ko**, ROM Canon interne de 16 Ko conservée. |
@@ -12,7 +12,7 @@
 | **Calculs** | Décimaux à **huit chiffres significatifs** ; hasard, PI, racine, trigonométrie, logarithme, exponentielle et opérateurs logiques. |
 | **Écran et clavier** | **32 caractères de 5 × 7 pixels**, huit motifs personnels, triangles, lignes inférieures et indicateurs. Clavier multilingue de **44 touches**, selon la fiche Canon ; lecture des touches par INKEY. |
 | **Texte imprimé** | **Courier 10 Canon**, 72 colonnes et 95 caractères ASCII ; LLIST, interligne réglable et positionnement par LLOCATE. Impression sur papier ordinaire avec ruban, ou directement sur papier thermique. |
-| **Dessins imprimés** | Points, lignes, rectangles, cercles, contours et formes pleines. Glyphes personnels, agrandissement, déplacements de la tête et du papier. |
+| **Dessins imprimés** | Points, lignes, rectangles, cercles, contours et formes pleines. Glyphes personnels, grands pixels carrés, 1 à 16 copies par bandes continues, déplacements de la tête et du papier. |
 | **Sons** | BEEP et SOUND : pauses, bips et bruitages par modulation d'amplitude du buzzer ; modulation de 60 à 750 Hz, durée jusqu'à 2000 ms. |
 | **Échanges avec un PC** | Câble USB adapté au port TTL 5 V ; LOAD/SAVE, émission et réception. Jusqu'à **31 250 bauds** ; réglage par défaut **31250 / 7E1**. |
 | **Typestar BASIC Studio** | Éditeur, transfert, création de glyphes, émulation du LCD, du papier et du son ; impression d'images monochromes par CODE+P. |
@@ -31,7 +31,7 @@ Voici les principales caractéristiques de la Typestar 7 avec son logiciel Canon
 
 La tête physique, les glyphes exploités par le BASIC et les cellules du LCD sont trois choses distinctes.
 
-La machine accepte le BASIC avec une ROM programmée dans IC8. Le câble et Studio facilitent les échanges avec un ordinateur. Le démarrage sur S-60 / Typestar 6 a également été essayé ; l’ajout d’un port série sur ce modèle est à l’étude. La S-90 / Typestar 7-II demande un portage adapté à ses ROM.
+La machine accepte le BASIC avec une ROM programmée dans IC8. Le câble et Studio facilitent les échanges avec un ordinateur. Le démarrage du BASIC et le chargement série jusqu'à 31250 bauds sont également validés sur une S-60 / Typestar 6 équipée du PCB NG3-0672 / NH1-0159-065, après ajout des composants de son interface : consultez [la révision testée dans le chapitre Installation](02-installation-firmware.md#s60-serial). La S-90 / Typestar 7-II demande un portage adapté à ses ROM.
 
 ## Un processeur peu courant dans les ordinateurs personnels
 

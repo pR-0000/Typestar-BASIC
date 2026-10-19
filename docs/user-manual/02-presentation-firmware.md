@@ -24,6 +24,7 @@ Typestar BASIC utilise la réserve de la machine pour **un programme et ses donn
 
 Les différences entre les S-60, S-70 et S-90 sont présentées dans [le chapitre du matériel](02-hd6301.md). La S-70 reste la machine de référence du firmware.
 
+<a id="serial-cable"></a>
 ## La liaison série : comprendre le câble USB
 
 Canon proposait les interfaces **Serial I/F-30** et **Parallel Interface-30** pour relier certaines machines à un ordinateur. Leur électronique adaptait les signaux du connecteur Canon à ceux du périphérique choisi. Notre câble USB retrouve cet usage avec un convertisseur **FTDI FT232RL à niveaux TTL 5 V**. Il a été validé sur S-70 et S-90 avec le firmware Canon. [H6] [U1]
@@ -138,6 +139,15 @@ L’espace de la ROM est compté. Le code est organisé en modules assembleur et
 La police papier est comprimée **sans perte**. Le codec représente les **différences XOR entre colonnes**, regroupe les longues répétitions de différences nulles, puis applique un codage **Huffman** : les motifs fréquents utilisent des codes plus courts. La décompression séparée de chaque caractère économise aussi de la RAM.
 
 Pour LPRINT, un cache prépare les caractères distincts du texte. Une lettre répétée réutilise le même dessin. Cela évite de décomprimer à nouveau chaque occurrence et réduit les pauses pendant l'impression. La préparation du cache et le mouvement mécanique restent deux travaux différents.
+
+Pour les glyphes répétés, une seule bande de dessin est préparée, puis réutilisée pendant la passe. Un mur de 16 × 16 en mode 4 demande **348 octets temporaires**, pour une ou seize copies. Les deux moitiés du dessin sont imprimées successivement. Le programme et ses tableaux restent en mémoire.
+
+| Ressource de la version 0.4.93-dev | Taille |
+|---|---:|
+| ROM BASIC | 32 768 octets |
+| Occupation de la ROM | 32 707 octets |
+| Réserve explicitement libre | 61 octets |
+| RAM BASIC libre à vide, programme et données | 5 951 octets |
 
 ## Garder le programme, partager les tampons
 

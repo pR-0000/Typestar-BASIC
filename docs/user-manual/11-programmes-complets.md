@@ -1,6 +1,6 @@
 # 11 - Des programmes complets à essayer
 
-Voici quatre programmes de la sélection Typestar BASIC : un instrument sonore, un jeu sur LCD et deux jeux sur papier. Ouvrez le fichier indiqué dans **Typestar BASIC Studio**, puis utilisez **Exécuter (F5)** dans l’émulateur ou **Envoyer → LOAD** pour la Canon. Les listings ci-dessous sont les sources complets des fichiers fournis.
+La sélection Typestar BASIC réunit un instrument sonore, un jeu sur LCD et des jeux sur papier. Ouvrez le fichier indiqué dans **Typestar BASIC Studio**, puis utilisez **Exécuter (F5)** dans l’émulateur ou **Envoyer → LOAD** pour la Canon. Les listings ci-dessous sont les codes sources complets des fichiers fournis.
 
 ![Printy découvre les jeux sur écran et sur papier.](images/printy-jeux.png)
 
@@ -363,34 +363,40 @@ Deux personnages s’affrontent dans une arène de trente-deux cases. Le bord ga
 
 Une bataille spatiale inspirée de la bataille navale. Vous commandez trois formations de satellites, de trois, deux et deux cases, sur une grille de six cases de côté. La Canon possède la même flotte ; le premier à toucher les sept cases adverses gagne. Vos satellites et les tirs restent visibles sur le papier.
 
-**Pour jouer :** Return à l’accueil ; saisissez une case de départ comme **A1**, puis **H** pour placer la formation vers la droite ou **V** vers le bas. Pendant la partie, entrez votre tir de **A1 à F6**, ou **Q** pour terminer. La grille de gauche contient vos satellites ; celle de droite conserve vos tirs. Laissez le programme positionner le papier.
+**Pour jouer :** Le dessin démarre dès RUN. Saisissez une case de départ comme **A1**, puis **H** pour placer la formation vers la droite ou **V** vers le bas. Pendant la partie, entrez votre tir de **A1 à F6**, ou **Q** pour terminer. La grille de gauche contient vos satellites ; celle de droite conserve vos tirs. Laissez le programme positionner le papier.
 
 ![Le LCD demande le prochain tir pendant que les deux grilles restent sur le papier.](images/exemple-duel-orbital-lcd.png)
 
-![Schéma d’une partie : vos satellites à gauche, un tir manqué en B4 et un tir touché en B2 à droite. Les trois motifs sont reproduits à partir des données du programme.](images/exemple-duel-orbital-schema.png)
+![Tableaux accolés et grands glyphes : aperçu aux coordonnées nominales du papier.](images/exemple-orbital-grands-papier.png)
 
-**À observer dans le programme :** LINE construit les grilles ; GLYPH imprime satellites, tirs et explosions ; tableaux, hasard et tests logiques gèrent les positions et les décisions adverses.
+**À observer dans le programme :** GLYPH répète un fragment de grille sur les deux tableaux ; le mode 4 agrandit les dessins. CLEAR libère les tampons de construction avant les tableaux de jeu. Tableaux, hasard et tests logiques gèrent les positions et l’adversaire.
 
 **Fichier à ouvrir dans Studio :** [duel-orbital-fr.bas](../../examples/duel-orbital-fr.bas).
 
 ```basic
-10 REM TYPESTAR - DUEL ORBITAL 1.5
-20 CLS:CURSOR 4:PRINT "DUEL ORBITAL - ENTREE";:G=1
-30 G=G+1:IF G>60000 THEN G=1
-40 IF INKEY(0)<>13 THEN 30
-50 RANDOMIZE G:DIM B(1,35):DIM C(35):DIM H(1,3)
+10 REM TYPESTAR - DUEL ORBITAL 1.8
+20 CLS:CURSOR 4:PRINT "DUEL ORBITAL - DESSIN";
+25 GOSUB 1200
+27 CLEAR:B=1120:C=16:GOSUB 1280
+29 CLEAR
+30 DIM B(1,35):DIM C(35):DIM H(1,3)
+35 DIM Z(47):FOR I=0 TO 47:READ Z(I):NEXT I
+40 B=1484:C=0:LSPACING 1
+45 G=PEEK(9)*256+PEEK(10)
+50 IF G=0 THEN G=1
+55 RANDOMIZE G
 60 V=1:FOR S=1 TO 3
 70 P=INT(RND(1)*36):D=INT(RND(1)*2):GOSUB 600
 80 IF F=1 THEN 70
 90 GOSUB 660:NEXT S
-100 GOSUB 1200:V=0:P=0:D=0
+100 V=0:P=0:D=0
 110 FOR S=1 TO 3
 120 GOSUB 800
 170 GOSUB 600:IF F=0 THEN 190
 180 CLS:PRINT "BORD OU SATELLITE DEJA PRESENT";
 182 SOUND 120,80:GOSUB 900:GOTO 120
 190 GOSUB 660:FOR I=0 TO L-1:J=P+I*U
-200 GOSUB 1400:GLYPH Z(0),16,16,3:B=K+56:C=G
+200 GOSUB 1400:GLYPH Z(0),16,16,4:B=K+112:C=G
 210 NEXT I:GOSUB 1600:NEXT S
 220 A=0:E=0:N=0
 230 INPUT "TIR A1-F6 Q=FIN";A$
@@ -413,10 +419,10 @@ Une bataille spatiale inspirée de la bataille navale. Vous commandez trois form
 410 IF E=7 THEN R$="LA CANON GAGNE"
 420 FOR J=0 TO 35
 430 IF B(1,J)=0 OR B(1,J)>3 THEN 450
-440 V=1:GOSUB 1400:GLYPH Z(0),16,16,3:B=K+56:C=G
+440 V=1:GOSUB 1400:GLYPH Z(0),16,16,4:B=K+112:C=G
 450 NEXT J
-460 G=0:K=616:GOSUB 1500:LPRINT R$;" - ";N;" TOURS"
-470 B=672:C=0:GOSUB 1600:CLS:PRINT R$;" ";A;"-";E;
+460 G=0:K=1120:GOSUB 1500:LPRINT R$;" - ";N;" TOURS"
+470 B=1176:C=0:GOSUB 1600:CLS:PRINT R$;" ";A;"-";E;
 480 SOUND 440,100:SOUND 700,150:END
 600 L=2:IF S=1 THEN L=3
 610 X=P MOD 6:Y=INT(P/6):U=1+5*D:F=0
@@ -438,7 +444,7 @@ Une bataille spatiale inspirée de la bataille navale. Vous commandez trois form
 732 NEXT I
 740 X=J MOD 6:Y=INT(J/6)
 750 GOSUB 1400:T=32:IF S=0 THEN T=16
-752 GLYPH Z(T),16,16,3:B=K+56:C=G
+752 GLYPH Z(T),16,16,4:B=K+112:C=G
 760 IF V=0 THEN GOSUB 1600
 762 SOUND 300+300*(S<>0)*-1,80:RETURN
 800 L=2:IF S=1 THEN L=3
@@ -473,26 +479,31 @@ Une bataille spatiale inspirée de la bataille navale. Vous commandez trois form
 1100 F=0:IF J<0 OR J>35 THEN F=1:RETURN
 1110 IF ABS((J MOD 6)-(I MOD 6))>1 THEN F=1
 1120 RETURN
-1200 LSPACING 1:B=0:C=0:DIM Z(47)
-1210 FOR I=0 TO 47:READ Z(I):NEXT I
+1200 LSPACING 1:B=0:C=0:DIM Q(7,23)
+1210 FOR I=0 TO 7:Q(I,0)=1:NEXT I
 1230 LPRINT "TYPESTAR - DUEL ORBITAL":B=56
-1240 FOR V=0 TO 1:G=16+144*V:K=168:GOSUB 1500:F=0
-1245 FOR T=0 TO 7:R=31:IF T=7 THEN R=16
-1250 DRAW DEFERRED
-1252 LINE 0,0,0,R,1:LINE 40,0,40,R,1
-1254 LINE 80,0,80,R,1:LINE 120,0,120,R,1
-1256 LINE 160,0,160,R,1:LINE 200,0,200,R,1
-1258 LINE 240,0,240,R,1
-1260 IF F<=R THEN LINE 0,F,240,F,1:F=F+40
-1265 DRAW PRINT:F=F-32:B=B+56:NEXT T
-1270 C=G:NEXT V
-1280 FOR V=0 TO 1:FOR X=0 TO 5
-1290 G=18+144*V+20*X:K=112:GOSUB 1500
+1240 G=16:K=224:GOSUB 1500:F=0
+1245 FOR T=0 TO 15
+1250 IF T=15 THEN FOR I=1 TO 7:Q(I,0)=0:NEXT I
+1252 IF F>7 THEN 1258
+1254 FOR I=0 TO 23:Q(F,I)=1:NEXT I
+1256 F=F+20
+1258 GLYPH Q(0,0),24,8,4,12:B=B+56
+1260 F=F-8:IF F<12 THEN 1270
+1265 FOR I=1 TO 23:Q(F-12,I)=0:NEXT I
+1270 NEXT T:RETURN
+1280 G=592:K=224:GOSUB 1500
+1282 BOX 0,0,3,255,1,1:B=B+448
+1284 BOX 0,0,3,226,1,1:B=B+448
+1286 FOR V=0 TO 1:A$="VOUS":IF V=1 THEN A$="CANON"
+1288 G=161+288*V-8*LEN(A$):K=98:GOSUB 1500
+1289 LPRINT A$;:C=G+16*LEN(A$)
+1290 FOR X=0 TO 5:G=33+288*V+48*X:K=168:GOSUB 1500
 1300 LPRINT CHR$(65+X);:C=G+16:NEXT X
-1310 FOR Y=0 TO 5:G=144*V:K=182+70*Y:GOSUB 1500
-1320 LPRINT Y+1;:C=G+16:NEXT Y:NEXT V
+1310 NEXT V:FOR Y=0 TO 5:G=0:K=270+140*Y:GOSUB 1500
+1320 LPRINT Y+1;:C=G+16:NEXT Y
 1330 GOSUB 1600:RETURN
-1400 G=18+144*V+20*(J MOD 6):K=175+70*INT(J/6)
+1400 G=25+288*V+48*(J MOD 6):K=238+140*INT(J/6)
 1410 GOSUB 1500:RETURN
 1500 F=G-C:IF F=0 THEN 1540
 1510 IF ABS(F)>128 THEN F=SGN(F)*128
@@ -503,7 +514,7 @@ Une bataille spatiale inspirée de la bataille navale. Vous commandez trois form
 1560 IF F<0 THEN ORIGIN 0,448 ELSE ORIGIN
 1570 FEED F:B=B+F:GOTO 1540
 1580 ORIGIN:RETURN
-1600 G=0:K=1428:GOSUB 1500:RETURN
+1600 G=0:K=1484:GOSUB 1500:RETURN
 1700 DATA &H1000,&H2832,&H542C,&HAA24,&H54D2,&H292E
 1706 DATA &H1690,&H0450,&H0820,&H1048,&H20D4,&H512A
 1712 DATA &H4A55,&H242A,&H1814,&H0008
@@ -684,4 +695,170 @@ Deux canons se font face sur un relief imprimé une seule fois. Choisissez l’a
 1516 FEED O:B=B+O:GOTO 1510
 2000 DATA 0,87,174,259,342,423,500,574,643,707
 2010 DATA 766,819,866,906,940,966,985,996,1000
+```
+
+## Les Ruines de Typestar
+
+Explorez sur papier un temple généré aléatoirement. Retrouvez trois reliques gardées, puis revenez en B2 en 48 déplacements. Cloisons, sept monstres et soins demandent de choisir son parcours. Le LCD donne la position présente et le papier conserve les traces de passage.
+
+**Pour jouer :** les flèches gauche/droite tournent le cap, Return avance, Espace affiche l’aide, Q termine l’expédition. Chaque relique coûte un point de vie face à son gardien ; les coffres et la source soignent. Une croix marque une rencontre utilisée. RUN lance directement le dessin.
+
+![Une carte en glyphes avec coordonnées, repères et objectif, représentée aux coordonnées nominales du papier.](images/exemple-ruines-papier.png)
+
+**À observer dans le programme :** DATA conserve les tuiles. GLYPH en mode 4 imprime de grands pixels carrés et regroupe les murs voisins identiques dans une bande continue. Le tableau de carte suit les terrains, les rencontres utilisées et les positions variables des traces ; INKEY et LCDLINE pilotent les commandes.
+
+**Fichier à ouvrir dans Studio :** [games/ruines-typestar-fr.bas](../../examples/games/ruines-typestar-fr.bas).
+
+```basic
+10 REM LES RUINES DE TYPESTAR 0.4
+20 CLS:CURSOR 4:PRINT "LES RUINES - PREPARATION";
+30 LSPACING 1
+40 DIM M(79):DIM G(19)
+70 G(16)=6:G(17)=15:G(18)=15:G(19)=6
+80 A=PEEK(9)*256+PEEK(10):IF A=0 THEN A=1
+90 RANDOMIZE A
+100 FOR I=0 TO 9:M(I)=1:M(I+70)=1:NEXT I
+110 FOR I=10 TO 60 STEP 10:M(I)=1:M(I+9)=1:NEXT I
+130 D=3+INT(RND(1)*2):E=6+INT(RND(1)*2)
+140 FOR X=D TO E STEP E-D
+150 Y=1+INT(RND(1)*6)
+160 FOR I=1 TO 6
+170 IF I<>Y THEN M(10*I+X)=1
+180 NEXT I:NEXT X
+190 FOR I=1 TO 3
+200 J=11+INT(RND(1)*58)
+210 IF M(J)<>1 OR J MOD 10=0 OR J MOD 10=9 THEN 200
+220 M(J)=2:NEXT I
+230 FOR I=0 TO 13:T=5
+240 IF I>2 THEN T=4
+250 IF I>4 THEN T=10
+260 IF I>9 THEN T=6
+270 IF I=12 THEN T=3
+280 IF I=13 THEN T=8
+290 J=INT(RND(1)*80)
+292 IF M(J)<>0 OR J=11 OR J=12 OR J=21 THEN 290
+293 IF I=0 AND J MOD 10>=D THEN 290
+294 IF I=1 AND (J MOD 10<=D OR J MOD 10>=E) THEN 290
+295 IF I=2 AND J MOD 10<=E THEN 290
+296 M(J)=T:NEXT I:M(11)=7
+297 B=0:C=0:GOSUB 1200
+298 P=11:M(P)=23:H=9:R=0:N=0:D=0
+299 SOUND 440,70:SOUND 550,70:SOUND 660,120
+300 GOSUB 500
+310 GOSUB 900
+320 IF K=18 OR K=19 THEN 700
+330 IF K=32 THEN GOSUB 800:GOTO 300
+340 IF K=81 OR K=113 THEN A$="ABANDON":GOTO 1700
+350 IF K<>13 THEN 310
+360 Q=P-10:IF D=1 THEN Q=P+1
+370 IF D=2 THEN Q=P+10
+380 IF D=3 THEN Q=P-1
+390 IF Q<0 OR Q>79 THEN BEEP 40:GOTO 310
+400 T=M(Q) MOD 16
+410 IF T=1 OR T=2 THEN BEEP 40:GOTO 310
+420 P=Q:N=N+1:A$=""
+430 IF M(P)>=16 THEN 455
+440 M(P)=16:IF T=7 OR T=8 THEN M(P)=T+16
+450 IF T>=3 AND T<>7 AND T<>8 THEN GOSUB 1050
+452 GOSUB 600
+455 GOSUB 1000
+460 IF H<1 THEN A$="EXPEDITION PERDUE":GOTO 1700
+470 IF R=3 AND P=11 THEN A$="VICTOIRE !":GOTO 1700
+480 IF N=48 THEN A$="LES PORTES SE FERMENT":GOTO 1700
+490 IF LEN(A$)>0 THEN GOSUB 850
+495 GOTO 300
+500 CLS:CURSOR 4
+510 PRINT CHR$(65+(P MOD 10));INT(P/10)+1;" PV";H;
+520 PRINT " R";R;"/3 N E S O ";48-N;"p ESP:?";
+530 LCDLINE 13+2*D,31:RETURN
+600 IF T<>5 THEN 610
+602 R=R+1:H=H-1:A$="Gardien: -1 PV. Relique !"
+604 SOUND 660,100:RETURN
+610 IF T<>4 AND T<>10 THEN 640
+620 W=1+INT(RND(1)*2):IF T=4 THEN W=W+1
+625 H=H-W:A$="Monstre: -"+STR$(W)+" PV":SOUND 120,100
+630 RETURN
+640 IF T=6 THEN H=H+3:A$="Coffre: +3 PV":SOUND 550,90
+650 IF T=3 THEN H=9:A$="Source: PV au maximum":SOUND 700,90
+660 IF H>9 THEN H=9
+670 IF T=8 THEN A$="3 reliques, puis B2"
+680 RETURN
+700 LCDLINE 13+2*D,0
+710 D=(D+1) MOD 4:IF K=18 THEN D=(D+2) MOD 4
+720 LCDLINE 13+2*D,31:GOTO 310
+800 CLS:PRINT "Flèches: cap. Return: avancer";
+810 GOSUB 900:CLS:PRINT "3 reliques gardées, puis B2";
+820 GOSUB 900:CLS:PRINT "48 pas. Q: quitter. ";48-N;" rest.";
+830 GOSUB 900:RETURN
+850 CLS:PRINT CHR$(65+(P MOD 10));INT(P/10)+1;" ";A$;
+860 GOSUB 900:RETURN
+900 IF INKEY(0)<>0 THEN 900
+910 K=INKEY(0):IF K=0 THEN 910
+920 RETURN
+1000 Q=1+INT(RND(1)*45)
+1002 IF Q=INT(M(P)/32) THEN Q=Q MOD 45+1
+1004 M(P)=M(P) MOD 32+32*Q
+1006 G=20+32*(P MOD 10)+2*((Q-1) MOD 9)
+1010 K=182+112*INT(P/10)+14*INT((Q-1)/9)
+1020 GOSUB 1500:GLYPH G(16),4,4,4:B=K+56:C=G
+1030 GOSUB 1600:RETURN
+1050 G=20+32*(P MOD 10):K=182+112*INT(P/10)
+1060 GOSUB 1500:GLYPH G(0),12,12,4:B=K+112:C=G
+1070 RETURN
+1200 LPRINT "LES RUINES DE TYPESTAR":B=56
+1210 FOR T=1 TO 10:CLS:PRINT "CARTE ";T;"/10";
+1220 FOR I=0 TO 15:READ G(I):NEXT I
+1230 FOR J=0 TO 79:W=M(J):IF J=10 THEN W=7
+1240 IF J=11 THEN W=9
+1250 IF W<>T THEN 1260
+1252 X=J MOD 10:Y=INT(J/10):U=1
+1254 IF X+U=10 THEN 1258
+1256 IF M(J+U)<>T OR J+U=10 OR J+U=11 THEN 1258
+1257 U=U+1:GOTO 1254
+1258 GOSUB 1400:J=J+U-1
+1260 NEXT J:NEXT T
+1262 FOR I=0 TO 11:READ G(I):NEXT I
+1270 FOR X=0 TO 9:G=24+32*X:K=84:GOSUB 1500
+1280 LPRINT CHR$(65+X);:C=G+16:NEXT X
+1290 FOR Y=0 TO 7:G=0:K=196+112*Y:GOSUB 1500
+1300 LPRINT Y+1;:C=G+16:NEXT Y
+1310 G=16:K=1120:GOSUB 1500
+1312 A$="3 RELIQUES - RETOUR B2"
+1316 LPRINT A$;:C=G+16*LEN(A$)
+1320 GOSUB 1600:RETURN
+1400 G=16+32*X:K=168+112*Y:GOSUB 1500
+1410 GLYPH G(0),16,16,4,U
+1420 B=K+112:C=G:RETURN
+1500 F=G-C:IF F=0 THEN 1540
+1510 IF ABS(F)>128 THEN F=SGN(F)*128
+1520 IF F<0 THEN ORIGIN 128,0 ELSE ORIGIN
+1530 HEAD F:C=C+F:GOTO 1500
+1540 F=K-B:IF F=0 THEN 1580
+1550 IF ABS(F)>448 THEN F=SGN(F)*448
+1560 IF F<0 THEN ORIGIN 0,448 ELSE ORIGIN
+1570 FEED F:B=B+F:GOTO 1540
+1580 ORIGIN:RETURN
+1600 G=0:K=1652:GOSUB 1500:RETURN
+1700 G=0:K=1232:GOSUB 1500
+1710 LPRINT A$;" ";R;"/3 ";N;" PAS":B=1288:C=0
+1720 GOSUB 1600:CLS:PRINT A$;" ";R;"/3";
+1730 IF R=3 AND P=11 THEN SOUND 440,90:SOUND 660,180:END
+1740 SOUND 120,180:END
+2000 DATA 65535,49287,46819,65535,34841,39001,43561,65535,32901
+2010 DATA 34825,42637,65535,32961,38577,59813,65535,64,1360
+2020 DATA 5664,3620,805,9058,13250,2502,19912,14322,50124,452
+2030 DATA 896,896,1920,4032,20194,4368,42312,6834,8456,1984
+2040 DATA 39218,8456,16644,16644,24844,30780,32764,16376,8176
+2050 DATA 1984,0,896,10176,9536,10176,8832,8192,8478,30686,286
+2060 DATA 13214,268,1088,1088,0,3168,0,0,4080,4488,10836,17442
+2070 DATA 48093,17442,9252,4680,2640,1632,960,384,0,0,0,0,65535
+2080 DATA 43693,49149,32769,65535,32769,48573,44461,46133,45037
+2090 DATA 46421,43693,65535,0,65535,36849,40953,49149,49149
+2100 DATA 49149,49149,49149,49149,49149,49149,49149,49149,49093
+2110 DATA 48645,45063,0,384,0,16380,16380,4652,16380,10316
+2120 DATA 16376,16380,0,384,384,384,384,0,2016,2064,8184,2640
+2130 DATA 2064,2448,1056,6744,8580,18834,27030,27030,4080,1632
+2140 DATA 1632,1904,0,0,1040,2056,6700,7148,6828,6604,3224,5588
+2150 DATA 448,0,320,0,0,0,3075,1539,774,396,216,112,112,216,396
+2160 DATA 774,1539,3075
 ```

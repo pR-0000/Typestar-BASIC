@@ -24,6 +24,7 @@ Typestar BASIC uses the machine's reserve for **one program and its data**, with
 
 Differences between the S-60, S-70 and S-90 appear in [the hardware chapter](02-hd6301.md). The S-70 remains the firmware's reference machine.
 
+<a id="serial-cable"></a>
 ## Serial communication: understanding the USB cable
 
 Canon offered **Serial I/F-30** and **Parallel Interface-30** to connect certain machines to computers. Their electronics adapted Canon connector signals to the chosen peripheral. Our USB cable provides that connection using an **FTDI FT232RL converter with 5 V TTL levels**. It has been validated with Canon firmware on the S-70 and S-90. [H6] [U1]
@@ -138,6 +139,15 @@ ROM space is limited. Code is organised into assembly modules and entries into r
 The paper font is **losslessly compressed**. The codec represents **XOR differences between columns**, groups long runs of zero differences, then applies **Huffman coding**, giving frequent patterns shorter codes. Decoding characters individually also saves RAM.
 
 LPRINT caches the distinct characters of a text. Repeated letters reuse the same drawing, avoiding repeated decoding and reducing pauses. Cache preparation and mechanical movement remain separate jobs.
+
+For repeated glyphs, a single drawing band is prepared and reused throughout the sweep. A 16 × 16 wall in mode 4 needs **348 temporary bytes**, whether printed once or sixteen times. The two halves of the drawing are printed in turn. Your program and arrays remain in memory.
+
+| Resource in version 0.4.93-dev | Size |
+|---|---:|
+| BASIC ROM | 32,768 bytes |
+| ROM occupied | 32,707 bytes |
+| Explicitly free reserve | 61 bytes |
+| Empty BASIC RAM, shared by program and data | 5,951 bytes |
 
 ## Retaining programs and sharing buffers
 

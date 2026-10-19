@@ -180,6 +180,8 @@ ORIGIN:HEAD 8:HEAD -8
 ORIGIN:FEED 112:FEED -112
 ```
 
+Le firmware applique automatiquement une **compensation fractionnaire des reculs du papier**, commune à FEED, MOVE et LLOCATE. Les essais sur S-60 et S-70 ont retenu une petite avance séparée répartie à raison d'une unité toutes les quatre opérations de recul admissibles. Le repère logique reste celui du programme. L'état des rouleaux et le maintien de la feuille déterminent aussi la précision des retours.
+
 Le premier essai décale la tête et la ramène. Le second effectue un aller-retour du papier. Préparez la feuille pour qu’elle reste engagée pendant les deux mouvements. Ces commandes entraînent seulement les moteurs ; la chauffe est commandée par l’impression.
 
 Pour reculer depuis la position courante, attribuez-lui une coordonnée positive connue : `ORIGIN 0,112:FEED -56`. ORIGIN déclare la position estimée à 112, puis FEED commande le recul de 56 unités.
@@ -206,8 +208,21 @@ Ce visage possède huit rangées de huit pixels. A(0) indique la première rang�
 | 1 | Points natifs, un point par pixel déclaré ; défaut si le mode est omis. |
 | 2 | Doublement horizontal et vertical. |
 | 3 | Doublement horizontal seulement, pour des proportions approximativement carrées. |
+| 4 | Grands pixels carrés : deux fois la largeur et la hauteur du mode 3. |
 
 Les points natifs sont plus hauts que larges : le **mode 3** donne des proportions approximativement carrées. Le **mode 2** double les deux dimensions en conservant le rapport natif. Indiquez toujours les dimensions de la source.
+
+### Répéter un motif dans une même passe
+
+Pour imprimer cinq visages côte à côte, remplacez la ligne 50 du programme précédent par :
+
+```basic
+50 GLYPH A(0),8,8,4,5
+```
+
+Le dernier nombre choisit **1 à 16 répétitions**. Le firmware prépare le dessin une seule fois par bande, puis enchaîne les copies avec un tampon de taille constante. La touche **MARGIN RELEASE/BREAK** interrompt le groupe entre deux blocs.
+
+Un motif de **16 × 16 en mode 4** occupe 32 unités HEAD de large et deux bandes de 56 unités FEED. Dix copies demandent deux passes : leurs moitiés hautes, puis leurs moitiés basses. Les cadres de répétition sont arrondis à la largeur d'un bloc natif ; un petit motif peut donc laisser un espace entre les copies. Les dimensions indiquées restent celles de la source. Pour dessiner une rangée de murs, la forme complète est `GLYPH A(0),16,16,4,10`.
 
 ### Une matrice pour les pixels
 
@@ -225,4 +240,4 @@ Le programme imprime une diagonale ; les autres cellules restent à zéro. Une c
 
 GLYPH imprime immédiatement une source complète. Fermez d’abord toute composition différée ou ligne de texte. Le pilote avance par bandes de 16 points natifs, y compris pour un motif plus court.
 
-**À vous de jouer.** Imprimez le visage en modes 1, 2 et 3. Comparez ses proportions pour choisir le mode de votre prochain jeu.
+**À vous de jouer.** Imprimez le visage en modes 1, 2, 3 et 4. Comparez ses proportions pour choisir le mode de votre prochain jeu.

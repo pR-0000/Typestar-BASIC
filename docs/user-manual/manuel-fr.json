@@ -2,9 +2,9 @@
   "title": "Typestar BASIC",
   "subtitle": "Manuel de l'utilisateur",
   "language": "fr",
-  "version": "0.4.88-dev",
+  "version": "0.4.93-dev",
   "author": "Pierre Raimbault & Chat GPT",
-  "date": "15 octobre 2026",
+  "date": "19 octobre 2026",
   "cover_image": "images/illustration_BASIC_firmware.png",
   "image_layout": {
     "illustration.png": {
@@ -286,6 +286,14 @@
     "schema-cpu-droite.png": {
       "max_width_mm": 158,
       "max_height_mm": 213
+    },
+    "exemple-ruines-papier.png": {
+      "max_width_mm": 154,
+      "max_height_mm": 150
+    },
+    "exemple-orbital-grands-papier.png": {
+      "max_width_mm": 164,
+      "max_height_mm": 92
     }
   },
   "chapters": [
@@ -513,16 +521,16 @@
       "file": "duel-orbital-fr.bas",
       "title": "Duel Orbital",
       "description": "Une bataille spatiale inspirée de la bataille navale. Vous commandez trois formations de satellites, de trois, deux et deux cases, sur une grille de six cases de côté. La Canon possède la même flotte ; le premier à toucher les sept cases adverses gagne. Vos satellites et les tirs restent visibles sur le papier.",
-      "controls": "**Pour jouer :** Return à l’accueil ; saisissez une case de départ comme **A1**, puis **H** pour placer la formation vers la droite ou **V** vers le bas. Pendant la partie, entrez votre tir de **A1 à F6**, ou **Q** pour terminer. La grille de gauche contient vos satellites ; celle de droite conserve vos tirs. Laissez le programme positionner le papier.",
-      "learning": "LINE construit les grilles ; GLYPH imprime satellites, tirs et explosions ; tableaux, hasard et tests logiques gèrent les positions et les décisions adverses.",
+      "controls": "**Pour jouer :** Le dessin démarre dès RUN. Saisissez une case de départ comme **A1**, puis **H** pour placer la formation vers la droite ou **V** vers le bas. Pendant la partie, entrez votre tir de **A1 à F6**, ou **Q** pour terminer. La grille de gauche contient vos satellites ; celle de droite conserve vos tirs. Laissez le programme positionner le papier.",
+      "learning": "GLYPH répète un fragment de grille sur les deux tableaux ; le mode 4 agrandit les dessins. CLEAR libère les tampons de construction avant les tableaux de jeu. Tableaux, hasard et tests logiques gèrent les positions et l’adversaire.",
       "illustrations": [
         {
           "file": "exemple-duel-orbital-lcd.png",
           "caption": "Le LCD demande le prochain tir pendant que les deux grilles restent sur le papier."
         },
         {
-          "file": "exemple-duel-orbital-schema.png",
-          "caption": "Schéma d’une partie : vos satellites à gauche, un tir manqué en B4 et un tir touché en B2 à droite. Les trois motifs sont reproduits à partir des données du programme."
+          "file": "exemple-orbital-grands-papier.png",
+          "caption": "Tableaux accolés et grands glyphes : aperçu aux coordonnées nominales du papier."
         }
       ]
     },
@@ -540,6 +548,19 @@
         {
           "file": "exemple-duel-balistique-papier.png",
           "caption": "Papier simulé dans Studio : graine 42, premier tir à 45 degrés et puissance 80. Le relief, les pointillés et les paramètres gardent la trace de la partie."
+        }
+      ]
+    },
+    {
+      "file": "games/ruines-typestar-fr.bas",
+      "title": "Les Ruines de Typestar",
+      "description": "Explorez sur papier un temple généré aléatoirement. Retrouvez trois reliques gardées, puis revenez en B2 en 48 déplacements. Cloisons, sept monstres et soins demandent de choisir son parcours. Le LCD donne la position présente et le papier conserve les traces de passage.",
+      "controls": "**Pour jouer :** les flèches gauche/droite tournent le cap, Return avance, Espace affiche l’aide, Q termine l’expédition. Chaque relique coûte un point de vie face à son gardien ; les coffres et la source soignent. Une croix marque une rencontre utilisée. RUN lance directement le dessin.",
+      "learning": "DATA conserve les tuiles. GLYPH en mode 4 imprime de grands pixels carrés et regroupe les murs voisins identiques dans une bande continue. Le tableau de carte suit les terrains, les rencontres utilisées et les positions variables des traces ; INKEY et LCDLINE pilotent les commandes.",
+      "illustrations": [
+        {
+          "file": "exemple-ruines-papier.png",
+          "caption": "Une carte en glyphes avec coordonnées, repères et objectif, représentée aux coordonnées nominales du papier."
         }
       ]
     }

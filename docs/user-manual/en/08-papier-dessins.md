@@ -180,6 +180,8 @@ ORIGIN:HEAD 8:HEAD -8
 ORIGIN:FEED 112:FEED -112
 ```
 
+The firmware automatically applies **fractional compensation for paper reversals**, shared by FEED, MOVE and LLOCATE. S-60 and S-70 trials selected a small separate forward movement distributed at one unit per four eligible reverse operations. The logical coordinates remain those of the program. Roller condition and paper grip also affect return accuracy.
+
 The first experiment moves the head away and back. The second makes a paper round trip. Load the sheet so it remains gripped throughout both movements. These commands drive motors only; printing controls heating.
 
 To reverse from the present position, assign a known positive coordinate: `ORIGIN 0,112:FEED -56`. ORIGIN declares the estimated position as 112, then FEED commands 56 units backwards.
@@ -206,8 +208,21 @@ The face has eight rows of eight pixels. A(0) selects its first source row; 8,8 
 | 1 | Native dots, one dot per source pixel; default when omitted. |
 | 2 | Double width and height. |
 | 3 | Double width only, for approximately square proportions. |
+| 4 | Large square pixels: twice the width and height of mode 3. |
 
 Native dots are taller than wide: **mode 3** makes approximately square proportions. **Mode 2** doubles both dimensions while retaining the native ratio. Always supply source dimensions.
+
+### Repeat a motif in one continuous sweep
+
+To print five faces side by side, replace line 50 of the previous program with:
+
+```basic
+50 GLYPH A(0),8,8,4,5
+```
+
+The final number selects **1 to 16 repetitions**. The firmware prepares the drawing once per band and prints consecutive copies using a constant-size buffer. **MARGIN RELEASE/BREAK** interrupts the group between blocks.
+
+A **16 × 16 motif in mode 4** occupies 32 HEAD units horizontally and two bands of 56 FEED units. Ten copies take two sweeps: their upper halves, then their lower halves. Repetition frames are rounded to a native block's width, so smaller motifs may leave space between copies. Dimensions always describe the source. A wall row uses the complete form `GLYPH A(0),16,16,4,10`.
 
 ### A matrix for pixels
 
@@ -225,4 +240,4 @@ This prints a diagonal; other cells stay zero. Each numeric cell occupies five b
 
 GLYPH immediately prints a complete source. First close any deferred composition or text line. The driver advances in bands of 16 native dots, even for shorter patterns.
 
-**Your turn.** Print the face in modes 1, 2 and 3. Compare proportions before choosing your next game's mode.
+**Your turn.** Print the face in modes 1, 2, 3 and 4. Compare proportions before choosing your next game's mode.

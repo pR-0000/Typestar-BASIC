@@ -66,7 +66,7 @@ Eight pattern slots are shared. Cursor 0 uses a native block, leaving them avail
 | `DRAW INSTANT` | Print shapes immediately. |
 | `DRAW DEFERRED` | Prepare up to 32 shapes together. |
 | `DRAW PRINT` ; `DRAW CANCEL` | Print or discard composition, then return to INSTANT. |
-| `GLYPH A(indices),width,height[,mode]` | 1D/2D bitmap; modes 1 native, 2 double X/Y, 3 double X. |
+| `GLYPH A(indices),width,height[,mode[,repeat]]` | 1D/2D bitmap; modes 1 native, 2 double X/Y, 3 square, 4 large square; 1..16 repeats. |
 | `ORIGIN [x[,y]]` | Declare current position without moving. |
 | `MOVE x,y` | Absolute motor position in the declared reference. |
 | `HEAD dx` ; `FEED dy` | Relative head and paper movement. |
