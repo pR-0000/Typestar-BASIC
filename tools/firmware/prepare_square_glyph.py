@@ -11,7 +11,7 @@ assert len(b)==32768 and hashlib.sha256(b).hexdigest()==m['sha256']
 assert json.loads((out/'glyph-validation.json').read_text())['result']=='PASS'
 assert 'OK' in (out/'studio-validation.txt').read_text(encoding='utf-8-sig')
 r=json.loads((ROOT/'build/naval-duel/paper-validation.json').read_text())
-assert r['sha256']==hashlib.sha256((ROOT/'examples/duel-orbital-fr.bas').read_bytes()).hexdigest()
+assert r['sha256']==hashlib.sha256((ROOT/'examples/games/duel-orbital-fr.bas').read_bytes()).hexdigest()
 assert r['games'][0]['result']=='ABANDON 1-1'
 raw=b[16384:]+b[:16384];name='s70-basic-0.4.85-dev-canon-start-nh7.bin';p=ROOT/'release'/name
 assert not p.exists() or p.read_bytes()==raw

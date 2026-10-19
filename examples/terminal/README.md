@@ -1,4 +1,6 @@
-# Un terminal papier en BASIC
+# Un terminal papier en BASIC / A BASIC paper terminal
+
+## Français
 
 `terminal-fr.bas` reçoit le texte PC sur l'imprimante et prépare les réponses clavier sur le LCD, avant leur envoi par Return. `terminal_pc_fr.py` est son correspondant PC. Les deux utilisent **1200 bauds, 7E1** et **un acquittement ACK par octet PC**. Il s'agit d'un exemple de terminal en mode ligne avec son protocole ; un flux tty continu demande une réception tamponnée dans le firmware.
 
@@ -18,6 +20,22 @@ Pour un autre débit, modifier `B=1200` à la ligne 20 et utiliser la même vale
 
 Le [chapitre du manuel](../../docs/user-manual/09-terminal-papier.md) contient les explications et les deux listings complets. La validation électrique et mécanique sur machine reste à effectuer.
 
-## English version
+## English
 
-Load `terminal-en.bas` with Studio, then start `terminal_pc_en.py` on the PC before running the BASIC program. The pair uses 1200 baud, 7E1 with one ACK per transmitted byte. Use `/quit` in the PC script to finish and restore the default transfer speed. See the [English workshop](../../docs/user-manual/en/09-terminal-papier.md) for complete instructions.
+`terminal-en.bas` prints text received from the PC and prepares keyboard replies on the LCD before sending them with Return. `terminal_pc_en.py` is its PC peer. Both use **1200 baud, 7E1** and **one ACK per PC byte**. This is a line-oriented terminal example with its own protocol; a continuous tty stream requires buffered reception in the firmware.
+
+1. Load `terminal-en.bas` using **Typestar BASIC Studio > Send → LOAD**, at the usual **31250/7E1** settings.
+2. Prepare thermal paper. In a PC terminal opened in the project folder, run `python examples/terminal/terminal_pc_en.py COM28`, replacing the port with the one shown in Studio.
+3. Type **RUN** on the Canon. Start the PC script before RUN so it receives the first ACK.
+4. On the PC, type a sentence and press Enter to print it. On the Canon, type a reply, edit with Backspace, then send with Return.
+5. On the PC, `/quit` followed by Enter closes the session and restores **31250/7E1** on the Canon. After stopping with **MARGIN RELEASE / BREAK**, type `BAUD 31250` before transferring with Studio.
+
+Python uses **pySerial**: install it if needed with `python -m pip install pyserial`. On Linux/macOS, use `python3` if appropriate and a port such as `/dev/ttyUSB0` or `/dev/cu.usbserial-...`.
+
+The LCD prefix `> ` leaves **30 characters** for a reply. Characters are ASCII. Accents in PC sentences are simplified (`café` → `cafe`); other unsupported symbols become `?`. Canon replies use CRLF. Received CR, LF or CRLF produces a paper line ending; CRLF counts once. Tabs advance to the next eight-column stop. Text continues after 72 columns.
+
+Reception holds at most one byte at a time: the PC waits for ACK after each byte, including during printing. BASIC prepares groups of 36 characters, closes the session to print, reopens it, then acknowledges. The keyboard is polled between print operations; typing while the head is stopped avoids losing keys pressed during a batch.
+
+For another speed, change `B=1200` at line 20 and use the same value with `--baud`, for example `--baud 2400`. Other choices are 7812, 15625 and 31250; the format remains 7E1.
+
+The [manual chapter](../../docs/user-manual/en/09-terminal-papier.md) contains explanations and both complete listings. Electrical and mechanical validation on hardware remains to be done.

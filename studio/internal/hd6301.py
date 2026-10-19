@@ -1,7 +1,8 @@
 """HD6301 instruction interpreter and shared functional bus primitives.
 
-CPUBase.step decodes the main instruction set; HD6301CPU.step adds extended
-opcodes and interrupt frames. Functional timing, not cycle accurate.
+CPUBase.step is the reference decoder; HD6301CPU.step uses an opcode table.
+The reference path includes extended opcodes and interrupt frames for tests.
+Functional timing, not cycle accurate.
 Unknown opcodes fail explicitly. No firmware addresses or BASIC hooks.
 """
 from collections import deque
@@ -340,6 +341,16 @@ class HD6301CPU(CPUBase):
         return value
 
     def step(self):
+        pc = self.pc
+        if 0x100 <= pc < 0xfffd:
+            op = self.m[pc]
+            self.pc = pc + 1
+            self._opcode_handlers[op](self)
+        else:
+            # Preserve bus-side instruction fetches and unusual wraparound cases.
+            self.step_reference()
+
+    def step_reference(self):
         if self.m[self.pc] in (0x61,0x62,0x65,0x6B,0x71,0x72,0x75,0x7B):
             # HD6301 AIM/OIM/EIM/TIM; direct or indexed, C unchanged.
             op=self.m[self.pc]
@@ -399,3 +410,7 @@ class HD6301CPU(CPUBase):
         elif op==0x1B:self.a=self.add(self.a,self.b)
         else:
             reg='a' if op==0x40 else 'b';setattr(self,reg,self.sub(0,getattr(self,reg)))
+
+
+from hd6301_dispatch import build_dispatch
+HD6301CPU._opcode_handlers = build_dispatch()

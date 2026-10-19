@@ -64,6 +64,7 @@ def main():
     cpu = CPU()
     paused = False
     sound_scale = 1.0
+    instant_paper = False
     pause_started = 0
     last = 0
     emit({'type': 'ready', 'version': VERSION, 'realtime_sound': True, 'roms':rom_info,'cartridge':cpu.cartridge.metadata() if getattr(cpu,'cartridge',None) else None})
@@ -79,11 +80,15 @@ def main():
                 elif op == 'reset':
                     cpu = CPU()
                     cpu.sound_scale=sound_scale
+                    cpu.instant_paper=instant_paper
                     emit(dict(type='paper_reset'))
                     paused = False
                 elif op == 'sound_scale':
                     sound_scale=max(1.,min(3.,float(command['value'])))
                     cpu.sound_scale=sound_scale
+                elif op == 'instant_paper':
+                    instant_paper=bool(command['value'])
+                    cpu.instant_paper=instant_paper
                 elif op == 'debug':
                     from debugger import inspect_cpu
                     emit(inspect_cpu(cpu,cpu.symbols,command.get('address',cpu.pc)))

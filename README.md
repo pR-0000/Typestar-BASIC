@@ -16,11 +16,11 @@
 
 **Un ordinateur BASIC dans une machine à écrire Canon.** Typestar BASIC remplace la ROM externe sur support IC8 d'une **Canon S-70 / Typestar 7**. Sur une **S-60 / Typestar 6**, PCB **NG3-0672 / NH1-0159-065**, le démarrage et le chargement série avec Studio jusqu'à **31250 bauds / 7E1** sont également validés après ajout des composants de l'interface ; [le manuel précise la révision testée](docs/user-manual/02-installation-firmware.md#s60-serial). Les autres révisions de S-60 restent à vérifier. Les différences matérielles de la S-90 / Typestar 7-II restent à prendre en compte pour le firmware BASIC.
 
-Firmware **0.4.93-dev** · Studio **0.2.34** · Copyright © 2026 Pierre Raimbault · Projet indépendant de Canon.
+Firmware **0.4.93-dev** · Studio **0.2.36** · Copyright © 2026 Pierre Raimbault · Projet indépendant de Canon.
 
 ### Téléchargements
 
-La [version 0.4.93-dev](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.93-dev) regroupe les images BASIC de 32 Ko et 64 Ko, leurs empreintes et les manuels PDF français et anglais. Le [code source de cette version](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.93-dev.zip) contient Studio et les programmes d'exemple. L'émulateur utilise une maskROM Canon fournie par l'utilisateur.
+La [version 0.4.93-dev](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.93-dev) regroupe les images BASIC de 32 Ko et 64 Ko, leurs empreintes et les manuels PDF français et anglais actualisés. Le [code source actuel](https://github.com/pR-0000/Typestar-BASIC/archive/refs/heads/main.zip) contient **Studio 0.2.36** et les programmes d'exemple à jour. L'émulateur utilise une maskROM Canon fournie par l'utilisateur.
 
 **Firmware prêt à programmer — 0.4.93-dev**
 
@@ -52,6 +52,12 @@ Pour une lecture paginée, avec illustrations, sommaire et index cliquables :
 - **Jeux illustrés** : [Les Ruines de Typestar](examples/guides/ruines-typestar.md), carte aléatoire et grands sprites ; [Duel Orbital](examples/guides/duel-orbital.md), deux grilles imprimées par bandes communes. Versions françaises et anglaises incluses.
 - **Studio et manuels** : outils de glyphes actualisés, profils des nouveaux firmwares et PDF enrichis de cinq programmes complets. Voir les [notes de version bilingues](docs/releases/0.4.93-dev.md).
 
+### Mises à jour de Studio et des exemples
+
+- **Studio 0.2.36** : cœur HD6301 accéléré et case **Impression instantanée** pour préparer plus rapidement les dessins papier. Voir le [guide Studio](studio/README.md).
+- **Pocket Duel 1.1** : **Entrée attaque**, les flèches déplacent et Espace téléporte. Tous les jeux sont regroupés dans [examples/games/](examples/games/).
+- **Documentation bilingue** : [notices complètes en français et en anglais](examples/guides/README.md), guide du terminal, manuels enrichis de l'histoire du HX-20 et d'une publicité télévisée Typestar 7 de mai 1986. Les PDF sont disponibles dans les téléchargements ci-dessus.
+
 ### Fonctionnalités
 
 Le firmware propose le stockage tokenisé, les lignes 1–65535, les nombres décimaux, chaînes, tableaux 1D/2D, boucles, sous-programmes, opérateurs logiques, fonctions mathématiques, caractères LCD personnalisés, impression Courier 10, figures, glyphes papier, sons et communication série. Les **5 951 octets libres à vide** sont partagés par le programme, les variables et les allocations temporaires.
@@ -66,8 +72,8 @@ Les transferts BASIC utilisent **31250 bauds, 7E1** par défaut. D'autres régla
 firmware/           Binaires BASIC publiés et empreintes SHA-256
 studio/             Lanceur et application PC
 src/                Sources HD6301 du firmware
-examples/           Programmes principaux français et anglais
-  games/            Autres jeux
+examples/           Piano, jeux et terminal, versions françaises et anglaises
+  games/            Tous les jeux
   terminal/         Terminal BASIC et correspondant Python
   guides/           Notices
 tools/              Codecs, transferts et graphismes partagés
@@ -95,11 +101,11 @@ Les contributions originales sont sous [licence MIT](LICENSE). Les éléments is
 
 **Turn a Canon typewriter into a BASIC computer.** Typestar BASIC replaces the socketed IC8 external ROM in a **Canon S-70 / Typestar 7**. On an **S-60 / Typestar 6** with PCB **NG3-0672 / NH1-0159-065**, startup and serial program loading with Studio at up to **31250 baud / 7E1** are also validated after fitting the interface components; [the manual identifies the tested revision](docs/user-manual/en/02-installation-firmware.md#s60-serial). Other S-60 revisions still need checking. The S-90 / Typestar 7-II has hardware differences that still need to be addressed by the BASIC firmware.
 
-Firmware **0.4.93-dev** · Studio **0.2.34** · Copyright © 2026 Pierre Raimbault · Independent project, unaffiliated with Canon.
+Firmware **0.4.93-dev** · Studio **0.2.36** · Copyright © 2026 Pierre Raimbault · Independent project, unaffiliated with Canon.
 
 ### Downloads
 
-The [0.4.93-dev release](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.93-dev) includes the 32 KiB and 64 KiB BASIC images, their checksums and the French and English PDF manuals. The [source code for this release](https://github.com/pR-0000/Typestar-BASIC/archive/refs/tags/v0.4.93-dev.zip) contains Studio and the example programs. The emulator uses a Canon maskROM supplied by the user.
+The [0.4.93-dev release](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.93-dev) includes the 32 KiB and 64 KiB BASIC images, their checksums and the updated French and English PDF manuals. The [current source code](https://github.com/pR-0000/Typestar-BASIC/archive/refs/heads/main.zip) contains **Studio 0.2.36** and the up-to-date example programs. The emulator uses a Canon maskROM supplied by the user.
 
 **Ready-to-program firmware — 0.4.93-dev**
 
@@ -130,6 +136,12 @@ For paginated reading with illustrations, clickable contents and an index:
 - **Large paper glyphs and repetition**: `GLYPH A(0),16,16,4,10` prints ten motifs in two continuous sweeps. Fixes nearly black glyphs and improves paper-positioning accuracy.
 - **Illustrated games**: [Typestar Ruins](examples/guides/ruines-typestar.md), random map and large sprites; [Orbital Duel](examples/guides/duel-orbital.md), two boards printed in shared bands. French and English versions included.
 - **Studio and manuals**: updated glyph tools, profiles for the new firmware images and PDFs expanded with five complete programs. See the [bilingual release notes](docs/releases/0.4.93-dev.md).
+
+### Studio and example updates
+
+- **Studio 0.2.36**: faster HD6301 core and an **Instant printing** checkbox for faster paper-drawing development. See the [Studio guide](studio/README.md#english).
+- **Pocket Duel 1.1**: **Enter attacks**, arrows move and Space teleports. All games are grouped in [examples/games/](examples/games/).
+- **Bilingual documentation**: [complete French and English program guides](examples/guides/README.md), the terminal guide, and manuals expanded with HX-20 history and a May 1986 Typestar 7 television advertisement. The PDFs are available in the downloads above.
 
 ### Features
 

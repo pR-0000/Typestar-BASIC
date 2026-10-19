@@ -1,6 +1,6 @@
 # Les Ruines de Typestar / Typestar Ruins — 0.4
 
-[Programme français](../games/ruines-typestar-fr.bas) · [English program](../games/typestar-ruins-en.bas)
+[Programme français / French program](../games/ruines-typestar-fr.bas) · [English program](../games/typestar-ruins-en.bas)
 
 ## Français
 
@@ -53,7 +53,7 @@ Ramenez les trois reliques en B2 pour gagner. L'expédition se termine aussi lor
 
 ### Pour les programmeurs
 
-Le programme occupe **4 328 octets tokenisés** en français  **4 289** en anglais. Les deux tableaux, en-têtes compris, utilisent **518 octets** : `M(79)` pour la carte, `G(19)` pour les pixels. Le jeu lit successivement les dix motifs dans les `DATA`, puis réutilise le même tampon pour la croix. Les quatre dernières cellules gardent la pastille. Cette lecture par motif économise le stockage d'une palette complète en RAM. La difficulté 0.4 ajoute deux cases de cloison, trois chauves-souris, des reliques gardées réparties entre les trois zones et une limite de 48 déplacements. Le firmware 0.4.93-dev suffit ; rechargez simplement le jeu.
+Le programme occupe **4 328 octets tokenisés** en français et **4 289** en anglais. Les deux tableaux, en-têtes compris, utilisent **518 octets** : `M(79)` pour la carte, `G(19)` pour les pixels. Le jeu lit successivement les dix motifs dans les `DATA`, puis réutilise le même tampon pour la croix. Les quatre dernières cellules gardent la pastille. Cette lecture par motif économise le stockage d'une palette complète en RAM. La difficulté 0.4 ajoute deux cases de cloison, trois chauves-souris, des reliques gardées réparties entre les trois zones et une limite de 48 déplacements. Le firmware 0.4.93-dev suffit ; rechargez simplement le jeu.
 
 Dans `M`, les quatre bits de poids faible donnent le terrain : 0 sol, 1 mur, 2 arbre, 3 source, 4 squelette, 5 relique, 6 coffre, 7 entrée, 8 statue, 10 chauve-souris. Le bit 16 marque une visite ; les multiples de 32 conservent le dernier emplacement de pastille. Les rencontres consommées deviennent du sol visité. Le motif 9 dessine l'explorateur.
 
@@ -71,7 +71,9 @@ The ten supplied drawings are reproduced exactly, including their **16 × 16 pix
 
 The game loads one motif, finds adjacent matching cells within each row, then prints them together. A row of **ten large walls takes two horizontal sweeps**: the upper half of all ten walls, then the lower half. The firmware prepares each half once and reuses its buffer for every copy. Different motifs form separate groups. The LCD shows `MAP 1/10` through `MAP 10/10`, counting motifs.
 
-The map illustration above uses nominal coordinates and the firmware's paper font. The game and continuous printing have been validated on hardware as well as in the emulator. Duration depends on the generated map and required movements.
+![The large map glyphs: preview at nominal coordinates, French version](images/ruines-carte.png)
+
+This preview uses nominal coordinates and the firmware's paper font. The game and continuous printing have been validated on hardware as well as in the emulator. Duration depends on the generated map and required movements.
 
 ### Controls and orientation
 
@@ -80,6 +82,8 @@ The map has ten columns **A–J** and eight rows **1–8**. The explorer marks B
 ```text
 B2 HP9 R0/3 N E S W 48t SPC:?
 ```
+
+![Finding your way on Studio's LCD, French version](images/ruines-lcd.png)
 
 | Key | Action |
 |---|---|
@@ -93,6 +97,8 @@ Walls and trees block movement with a beep and preserve the move allowance. Rele
 Partitions change columns and openings each game; trees and items also change places. Each partition has a single opening, requiring a detour. Openings always connect all **38 walkable cells**, and the two passages next to the starting point stay clear. The seed comes from the hardware counter.
 
 ### Encounters and the paper journal
+
+![The game's ten sprites](images/ruines-glyphes.png)
 
 A **relic** increases R. Its guardian costs **one health point**, even if you avoided the other monsters. Each of the temple’s three regions holds one relic. A **chest** restores three health points, up to nine; the **spring** restores full health. Two **skeletons** each cost two or three points; five **bats** cost one or two. Plan your detours and the right time to use healing supplies. The statue reminds you of the goal.
 

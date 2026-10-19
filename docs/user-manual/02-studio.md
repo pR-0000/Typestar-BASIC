@@ -100,6 +100,8 @@ Les réglages habituels sont **31 250 bauds, 7 bits, parité E, 1 bit de stop**,
 
 Dans l'émulateur, ouvrez le sous-onglet **Papier**. La feuille se construit à partir des colonnes envoyées à la tête d'impression. Vous pouvez régler le **zoom**, activer **Suivre l'impression**, effacer l'aperçu et exporter le résultat en **PNG** ou **PDF**. Les [programmes complets](11-programmes-complets.md) présentent un schéma des grilles de Duel Orbital et une vue simulée de la feuille de Duel Balistique. Les légendes distinguent les dessins explicatifs des captures de l’émulateur.
 
+Pour préparer vos jeux plus rapidement, cochez **Impression instantanée**. Studio accélère les routines papier du firmware BASIC tout en conservant leurs pixels et leurs positions. Les calculs, les sons et les attentes de saisie continuent de s'exécuter ; une grande carte demande encore un temps de préparation. Vous pouvez changer cette option pendant l'exécution. Votre choix reste mémorisé pour la séance suivante.
+
 L'onglet **Impression graphique** prépare une image pour **la Canon réelle**. Ouvrez votre image, choisissez ses dimensions et ajustez le **seuil**, ou cochez **Tramage photo** pour répartir les points noirs. L'aperçu montre le résultat monochrome aux proportions papier approchées.
 
 ![Printy préparé pour une impression graphique : l'aperçu permet de régler les points avant l'envoi.](images/studio-impression-graphique.png)

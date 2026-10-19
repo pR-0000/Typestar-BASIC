@@ -37,7 +37,9 @@ The machine accepts BASIC through a programmed ROM in IC8. The cable and Studio 
 
 Most familiar microcomputers use a Z80, a 6502 or another well-known family. **Typestar BASIC lets you program a real HD6301**, more often found in embedded electronics. It joins a small group of personal machines using this Hitachi family.
 
-The **Epson HX-20** uses two CMOS 6301 processors. [E1] The **Psion Organiser I** uses an HD6301X at 0.9216 MHz. [I1] The **Organiser II** uses an **HD6303XFP**: this relative reads its program from external ROM, whereas the Typestar's HD6301 contains internal ROM. The families share the core instruction set; variants mainly differ in their integrated memory and peripherals. [I2] Electronic chess computers also use HD6301 variants, including the V1.
+The **Epson HX-20** uses two CMOS 6301 processors. [E1] Released in **July 1982**, this pioneer of the **notebook format**, roughly A4-sized and powered by a rechargeable battery, is described by the Smithsonian as the **first production laptop computer**. [E2] [E3] Earlier transportable computers included the IBM 5100 of 1975. [E4] The HX-20 combines a keyboard, LCD and small printer: an appealing family resemblance to our Typestar 7 a few years later.
+
+The **Psion Organiser I** uses an HD6301X at 0.9216 MHz. [I1] The **Organiser II** uses an **HD6303XFP**: this relative reads its program from external ROM, whereas the Typestar's HD6301 contains internal ROM. The families share the core instruction set; variants mainly differ in their integrated memory and peripherals. [I2] Electronic chess computers also use HD6301 variants, including the V1.
 
 ## Some neighbours with LCD screens
 
@@ -68,3 +70,9 @@ SOUND modulates a buzzer with a fixed carrier frequency. Serial rates describe c
 [V1]: references.md
 [V2]: https://oldvcr.blogspot.com/2021/03/those-mysterious-toshiba-t-chips-plus.html
 [V3]: https://sites.google.com/site/jamesskingdom/Home/computers-exposed/vtech-computers
+
+[E2]: https://www.si.edu/object/epson-hx-20-portable-computer%3Anmah_687330
+
+[E3]: https://corporate.epson/ja/about/history/milestone-products/1982-7-hc20.html
+
+[E4]: https://www.computerhistory.org/revolution/mobile-computing/18/316/1686

@@ -1,24 +1,61 @@
 # Programmes Typestar BASIC / Typestar BASIC programs
 
-Ouvrez un fichier dans **Typestar BASIC Studio**, puis choisissez **Exécuter (F5)** dans l'émulateur ou **Envoyer → LOAD** pour la Canon. Les suffixes **-fr** et **-en** indiquent la langue.
+## Français
 
-Open a file in **Typestar BASIC Studio**, then choose **Run (F5)** in the emulator or **Send → LOAD** for a connected Canon. File suffixes identify the language.
+Ouvrez un fichier dans **Typestar BASIC Studio**, puis choisissez **Exécuter (F5)** dans l'émulateur ou **Envoyer → LOAD** pour la Canon. Les suffixes **-fr** et **-en** indiquent la langue. Tous les jeux se trouvent dans **[games/](games/)** ; Piano reste à la racine.
 
-| Programme / Program | Français | English | Support |
-|---|---|---|---|
-| Pocket Duel | [FR](pocket-duel-fr.bas) | [EN](pocket-duel-en.bas) | LCD |
-| Duel Orbital / Orbital Duel | [FR](duel-orbital-fr.bas) | [EN](orbital-duel-en.bas) | Papier / Paper |
-| Duel Balistique / Ballistic Duel | [FR](duel-balistique-fr.bas) | [EN](ballistic-duel-en.bas) | Papier / Paper |
-| Piano | [FR](piano-fr.bas) | [EN](piano-en.bas) | Son / Sound |
+| Jeu | Français | English | Affichage | Notice |
+|---|---|---|---|---|
+| Pocket Duel | [FR](games/pocket-duel-fr.bas) | [EN](games/pocket-duel-en.bas) | LCD | [Jouer](guides/pocket-duel.md) |
+| Les Ruines de Typestar | [FR](games/ruines-typestar-fr.bas) | [EN](games/typestar-ruins-en.bas) | Papier + LCD | [Jouer](guides/ruines-typestar.md) |
+| Duel Orbital | [FR](games/duel-orbital-fr.bas) | [EN](games/orbital-duel-en.bas) | Papier + LCD | [Jouer](guides/duel-orbital.md) |
+| Duel Balistique | [FR](games/duel-balistique-fr.bas) | [EN](games/ballistic-duel-en.bas) | Papier + LCD | [Jouer](guides/duel-balistique-fr.md) |
+| Manoir du comte Zorck | [FR](games/manoir-zorck-fr.bas) | — | LCD | [Jouer](guides/manoir-zorck.md) |
+| Château | [FR](games/chateau-fr.bas) | — | LCD | [Jouer](guides/chateau.md) |
+| Enquête | [FR](games/enquete-fr.bas) | — | LCD | [Jouer](guides/enquete.md) |
+| Trésors et monstres | [FR](games/tresors-et-monstres-fr.bas) | — | LCD | [Jouer et source](guides/tresors-et-monstres.md) |
+| Les allumettes | [FR](games/game-matches-fr.bas) | — | LCD | [Jouer](guides/allumettes.md) |
+| Le trésor 4 × 4 | [FR](games/game-treasure-fr.bas) | — | LCD | [Jouer](guides/petit-tresor.md) |
+| Candy War | [FR](games/candy-war-fr.bas) | — | LCD ; papier facultatif | [Jouer](guides/candy-war.md) |
 
-- [games/](games/) : autres jeux en français / additional games in French.
-- [terminal/](terminal/README.md) : terminal série et correspondant Python, en deux langues / bilingual serial terminal and Python peer.
-- [guides/](guides/) : notices des jeux / game notes.
+Dans **Pocket Duel 1.1**, **Entrée attaque**, les flèches déplacent et Espace téléporte. BREAK interrompt la partie.
 
-Jeu validé sur machine : **Les Ruines de Typestar 0.4**, une expédition sur une carte en grands glyphes, avec les murs consécutifs imprimés ensemble (firmware 0.4.93-dev), repérée de A à J et de 1 à 8. Passages plus étroits, sept monstres, trois reliques gardées et 48 déplacements. Traces de passage et objets utilisés barrés. [FR](games/ruines-typestar-fr.bas), [EN](games/typestar-ruins-en.bas), [notice / guide](guides/ruines-typestar.md).
+Les jeux papier montrent les grands glyphes et leur répétition en une passe. **Les Ruines de Typestar 0.4** et **Duel Orbital 1.8** utilisent ces fonctions du firmware **0.4.93-dev**. Préférez le papier thermique et laissez le programme positionner la feuille.
 
-Hardware-validated game: **Typestar Ruins 0.4**, an expedition on a large glyph map with continuous printing of adjacent walls (firmware 0.4.93-dev) with A–J / 1–8 coordinates. Narrower passages, seven monsters, three guarded relics and 48 moves. Visit marks and crossed-out used objects. [FR](games/ruines-typestar-fr.bas), [EN](games/typestar-ruins-en.bas), [guide](guides/ruines-typestar.md).
+### Autres programmes
 
-Pour les jeux imprimés, préférez le papier thermique. La Canon conserve un seul programme à la fois : sauvegardez votre travail avant d'en charger un autre.
+- **Piano** : [FR](piano-fr.bas), [EN](piano-en.bas), [notice](guides/piano.md). Les lettres A–Z produisent des sons ; Entrée termine le programme.
+- **Terminal série** : [programmes et notice bilingues](terminal/README.md), avec leur correspondant Python.
+- **Ancienne bataille navale** : [première ébauche](games/bataille-navale-fr.bas), conservée comme étape du projet. Pour la version aboutie avec placement des pièces et adversaire, choisissez **Duel Orbital**.
 
-Thermal paper is recommended for printed games. The Canon holds one program at a time: save your work before loading another one.
+Les [notices](guides/README.md) expliquent les commandes et indiquent les sources des adaptations. La Canon conserve un seul programme à la fois : sauvegardez votre travail avant d'en charger un autre.
+
+## English
+
+Open a file in **Typestar BASIC Studio**, then choose **Run (F5)** in the emulator or **Send → LOAD** for the Canon. Suffixes **-fr** and **-en** identify the language. All games are in **[games/](games/)**; Piano remains in this directory.
+
+| Game | Français | English | Display | Guide |
+|---|---|---|---|---|
+| Pocket Duel | [FR](games/pocket-duel-fr.bas) | [EN](games/pocket-duel-en.bas) | LCD | [Play](guides/pocket-duel.md) |
+| Typestar Ruins | [FR](games/ruines-typestar-fr.bas) | [EN](games/typestar-ruins-en.bas) | Paper + LCD | [Play](guides/ruines-typestar.md) |
+| Orbital Duel | [FR](games/duel-orbital-fr.bas) | [EN](games/orbital-duel-en.bas) | Paper + LCD | [Play](guides/duel-orbital.md) |
+| Ballistic Duel | [FR](games/duel-balistique-fr.bas) | [EN](games/ballistic-duel-en.bas) | Paper + LCD | [Play](guides/duel-balistique-fr.md) |
+| Count Zorck's Manor | [FR](games/manoir-zorck-fr.bas) | — | LCD | [Play](guides/manoir-zorck.md) |
+| Castle | [FR](games/chateau-fr.bas) | — | LCD | [Play](guides/chateau.md) |
+| Investigation | [FR](games/enquete-fr.bas) | — | LCD | [Play](guides/enquete.md) |
+| Treasures and Monsters | [FR](games/tresors-et-monstres-fr.bas) | — | LCD | [Play and source](guides/tresors-et-monstres.md) |
+| Matches | [FR](games/game-matches-fr.bas) | — | LCD | [Play](guides/allumettes.md) |
+| The 4 × 4 Treasure | [FR](games/game-treasure-fr.bas) | — | LCD | [Play](guides/petit-tresor.md) |
+| Candy War | [FR](games/candy-war-fr.bas) | — | LCD; optional paper | [Play](guides/candy-war.md) |
+
+In **Pocket Duel 1.1**, **Enter attacks**, arrows move and Space teleports. BREAK interrupts the game.
+
+The paper games demonstrate large glyphs and repeated motifs in one pass. **Typestar Ruins 0.4** and **Orbital Duel 1.8** use these features of firmware **0.4.93-dev**. Prefer thermal paper and let the program position the sheet.
+
+### Other programs
+
+- **Piano**: [FR](piano-fr.bas), [EN](piano-en.bas), [guide](guides/piano.md). A–Z play sounds; Enter exits.
+- **Serial terminal**: [bilingual programs and guide](terminal/README.md), with Python peers.
+- **Earlier Battleships**: [initial prototype](games/bataille-navale-fr.bas), retained as a development stage. Choose **Orbital Duel** for piece placement and an opponent.
+
+The [guides](guides/README.md) explain controls and identify sources for adaptations. The Canon holds one program at a time: save your work before loading another.

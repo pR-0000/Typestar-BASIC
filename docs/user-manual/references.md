@@ -53,3 +53,8 @@
 - **H34** : [Canon, Sustainability Report 2006, p. 8 : stratégie 1996-2000 et retrait de sept activités déficitaires.](https://global.canon/en/sustainability/report/pdf/sustainability2006e.pdf)
 - **H35** : [Canon, Segment Information, exercice 2025 : Printing 2 494,4 milliards de yens, Imaging 1 054,9, total consolidé 4 624,7.](https://global.canon/en/ir/business.html)
 - **U1** : [Typestar Print, documentation du câble USB-TTL 5 V, brochage validé S-70 et S-90.](https://github.com/pR-0000/Typestar-Print/blob/main/docs/CABLE_WIRING.md)
+
+- **E2** : [Smithsonian, Epson HX-20 : premier ordinateur de type laptop produit en série.](https://www.si.edu/object/epson-hx-20-portable-computer%3Anmah_687330)
+- **E3** : [Epson, HC-20/HX-20, commercialisation en juillet 1982 : format A4 et batterie rechargeable.](https://corporate.epson/ja/about/history/milestone-products/1982-7-hc20.html)
+- **E4** : [Computer History Museum, IBM 5100 portable computer, 1975.](https://www.computerhistory.org/revolution/mobile-computing/18/316/1686)
+- **H36** : [WOR 9, enregistrement du 19 mai 1986, publicité Canon Typestar à 15 min 56 s (30 s). Internet Archive.](https://archive.org/details/wor-9-may-19-1986-commercials)

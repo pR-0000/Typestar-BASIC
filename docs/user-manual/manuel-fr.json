@@ -294,6 +294,10 @@
     "exemple-orbital-grands-papier.png": {
       "max_width_mm": 164,
       "max_height_mm": 92
+    },
+    "typestar7-tv-wor1986.png": {
+      "max_width_mm": 135,
+      "max_height_mm": 112
     }
   },
   "chapters": [
@@ -470,7 +474,6 @@
     "02-installation-firmware.md#etape-2-liberer-les-cinq-clips",
     "02-installation-firmware.md#etape-6-remonter-et-faire-le-premier-essai",
     "00-fiche-machine.md#le-materiel-que-vous-retrouvez-sous-le-basic",
-    "00-fiche-machine.md#quelques-voisins-a-ecran-lcd",
     "02-installation-firmware.md#choisir-et-preparer-la-memoire-de-remplacement",
     "11-programmes-complets.md#piano",
     "11-programmes-complets.md#pocket-duel",
@@ -505,10 +508,10 @@
       ]
     },
     {
-      "file": "pocket-duel-fr.bas",
+      "file": "games/pocket-duel-fr.bas",
       "title": "Pocket Duel",
       "description": "Deux personnages s’affrontent dans une arène de trente-deux cases. Le bord gauche rejoint le bord droit. Des mines et des grilles compliquent les déplacements ; les petits triangles montrent la vie et la ligne inférieure indique la charge disponible. Ce jeu utilise uniquement le LCD et le buzzer.",
-      "controls": "**Commandes :** flèches gauche/droite pour bouger ; **A en minuscule** pour attaquer un voisin ; **Espace** pour se téléporter ; **Return** pour terminer. Attaque et téléportation demandent une charge pleine. L’adversaire agit après votre action. La version anglaise est également fournie dans les exemples de Studio.",
+      "controls": "**Commandes :** flèches gauche/droite pour bouger ; **Entrée** pour attaquer un voisin ; **Espace** pour se téléporter. Attaque et téléportation demandent une charge pleine. L’adversaire agit après votre action. **BREAK** interrompt la partie. La version anglaise est également fournie dans les exemples de Studio.",
       "learning": "LCDCHAR définit les personnages, LOCATE évite de redessiner tout l’écran, LCDTRI et LCDLINE montrent les jauges ; INKEY, les conditions et les sous-programmes organisent le jeu.",
       "illustrations": [
         {
@@ -518,7 +521,7 @@
       ]
     },
     {
-      "file": "duel-orbital-fr.bas",
+      "file": "games/duel-orbital-fr.bas",
       "title": "Duel Orbital",
       "description": "Une bataille spatiale inspirée de la bataille navale. Vous commandez trois formations de satellites, de trois, deux et deux cases, sur une grille de six cases de côté. La Canon possède la même flotte ; le premier à toucher les sept cases adverses gagne. Vos satellites et les tirs restent visibles sur le papier.",
       "controls": "**Pour jouer :** Le dessin démarre dès RUN. Saisissez une case de départ comme **A1**, puis **H** pour placer la formation vers la droite ou **V** vers le bas. Pendant la partie, entrez votre tir de **A1 à F6**, ou **Q** pour terminer. La grille de gauche contient vos satellites ; celle de droite conserve vos tirs. Laissez le programme positionner le papier.",
@@ -535,7 +538,7 @@
       ]
     },
     {
-      "file": "duel-balistique-fr.bas",
+      "file": "games/duel-balistique-fr.bas",
       "title": "Duel Balistique",
       "description": "Deux canons se font face sur un relief imprimé une seule fois. Choisissez l’angle et la puissance : la trajectoire apparaît en pointillés et les impacts s’accumulent. Le terrain reste fixe et l’historique des valeurs jouées est imprimé sous l’arène. Vous pouvez affronter la Canon ou jouer à deux.",
       "controls": "**Pour jouer :** entrez une graine de **1 à 9999**, puis **1** pour la Canon ou **2** pour deux joueurs. Choisissez l’angle demandé et une puissance de **20 à 100**. Un angle nul termine la partie. Gardez la même graine pour rejouer sur le même relief ; sauvegardez votre programme avant de charger ce jeu.",
@@ -777,6 +780,22 @@
     "U1": {
       "label": "Typestar Print, documentation du câble USB-TTL 5 V, brochage validé S-70 et S-90.",
       "url": "https://github.com/pR-0000/Typestar-Print/blob/main/docs/CABLE_WIRING.md"
+    },
+    "E2": {
+      "label": "Smithsonian, Epson HX-20 : premier ordinateur de type laptop produit en série.",
+      "url": "https://www.si.edu/object/epson-hx-20-portable-computer%3Anmah_687330"
+    },
+    "E3": {
+      "label": "Epson, HC-20/HX-20, commercialisation en juillet 1982 : format A4 et batterie rechargeable.",
+      "url": "https://corporate.epson/ja/about/history/milestone-products/1982-7-hc20.html"
+    },
+    "E4": {
+      "label": "Computer History Museum, IBM 5100 portable computer, 1975.",
+      "url": "https://www.computerhistory.org/revolution/mobile-computing/18/316/1686"
+    },
+    "H36": {
+      "label": "WOR 9, enregistrement du 19 mai 1986, publicité Canon Typestar à 15 min 56 s (30 s). Internet Archive.",
+      "url": "https://archive.org/details/wor-9-may-19-1986-commercials"
     }
   },
   "citation_urls": {
@@ -828,7 +847,11 @@
     "https://sites.google.com/site/jamesskingdom/Home/computers-exposed/vtech-computers": "James S’ Kingdom, présentation et essais du VTech Laser 50 : processeur Z80A.",
     "https://global.canon/en/sustainability/report/pdf/sustainability2006e.pdf": "Canon, Sustainability Report 2006, p. 8 : stratégie 1996-2000 et retrait de sept activités déficitaires.",
     "https://global.canon/en/ir/business.html": "Canon, Segment Information, exercice 2025 : Printing 2 494,4 milliards de yens, Imaging 1 054,9, total consolidé 4 624,7.",
-    "https://github.com/pR-0000/Typestar-Print/blob/main/docs/CABLE_WIRING.md": "Typestar Print, documentation du câble USB-TTL 5 V, brochage validé S-70 et S-90."
+    "https://github.com/pR-0000/Typestar-Print/blob/main/docs/CABLE_WIRING.md": "Typestar Print, documentation du câble USB-TTL 5 V, brochage validé S-70 et S-90.",
+    "https://www.si.edu/object/epson-hx-20-portable-computer%3Anmah_687330": "Smithsonian, Epson HX-20 : premier ordinateur de type laptop produit en série.",
+    "https://corporate.epson/ja/about/history/milestone-products/1982-7-hc20.html": "Epson, HC-20/HX-20, commercialisation en juillet 1982 : format A4 et batterie rechargeable.",
+    "https://www.computerhistory.org/revolution/mobile-computing/18/316/1686": "Computer History Museum, IBM 5100 portable computer, 1975.",
+    "https://archive.org/details/wor-9-may-19-1986-commercials": "WOR 9, enregistrement du 19 mai 1986, publicité Canon Typestar à 15 min 56 s (30 s). Internet Archive."
   },
   "image_sources": {
     "canon-kaku.png": {
@@ -882,6 +905,10 @@
     "canon-bretagne-premiere-pierre-1984.jpg": {
       "label": "Canon Bretagne, histoire du site industriel.",
       "url": "https://www.canon-bretagne.fr/lentreprise/"
+    },
+    "typestar7-tv-wor1986.png": {
+      "label": "WOR 9, enregistrement du 19 mai 1986, publicité Canon Typestar à 15 min 56 s (30 s). Internet Archive.",
+      "url": "https://archive.org/details/wor-9-may-19-1986-commercials"
     }
   }
 }

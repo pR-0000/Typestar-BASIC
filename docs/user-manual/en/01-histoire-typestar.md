@@ -78,6 +78,14 @@ This firmly places S-70 in **1985**. The regulation applies retrospectively from
 
 These lists connect technical references and commercial names sometimes used separately in collectors' advertisements. A plate reading "S-70" can thus find its place in the Typestar family.
 
+### Taking ideas along
+
+A recording from American television station **WOR 9**, dated **19 May 1986**, preserves a **Typestar 7** commercial between **15:56 and 16:26**. It promises to put ideas on paper wherever they occur, with professional-looking results. Typing-error correction, text memory, compact size, low weight and quiet operation accompany this freedom to write. [H36]
+
+![The Typestar 7 in an American television commercial preserved in the WOR 9 recording dated 19 May 1986.](../images/history/typestar7-tv-wor1986.png)
+
+The display and memory extend the keyboard's role: writers prepare their text before printing it. The commercial brings together the qualities that still give this small portable machine its appeal.
+
 ## A visit to Brittany
 
 Canon's French history provides another landmark. Canon Bretagne dates its legal creation to 1983, photocopier production to 1984 and typewriter production to 1985. Circuit-board assembly followed in 1986; toner cartridges, fax machines and laser printers appear in its 1987 activities. [H8]
@@ -114,6 +122,7 @@ For **Typestar 2, 4 and 10-II**, proposed positions are **around 1990-1991**, **
 | **1984** | Typestar 5 design award; Canon U.S.A. advertisement © 1984. [H2] |
 | **1985** | Typestar 6 design award; **S-70 / Typestar 7** and **S-10 / Typemate 10** explicitly documented in October. [H2] [H3] |
 | **May 1986** | S-70 offered for **2,990 francs** in French magazine Tilt no. 31. [H10] |
+| **19 May 1986** | A **Typestar 7** commercial appears in a WOR 9 recording from the United States. [H36] |
 | **1986** | S-16 design award; design D299930 filed on 8 April. [H2] [H5] |
 | **Around 1986** | **Typestar 4**: Canon manual reproduces a letter dated **17 February 1986**. Period estimate. [H25] |
 | **February 1987** | S-61 / Typestar 6 II added to European regulation. [H4] |
@@ -282,3 +291,5 @@ Paper, imaging and electronic processing connect the Typestar to Canon's present
 [H34]: https://global.canon/en/sustainability/report/pdf/sustainability2006e.pdf
 
 [H35]: https://global.canon/en/ir/business.html
+
+[H36]: https://archive.org/details/wor-9-may-19-1986-commercials

@@ -278,6 +278,9 @@ class EmulatorPanel(QWidget):
         debug_layout.addWidget(split)
         self.details.addTab(debug,tr('Débogueur'))
         self.paper=PaperPanel();self.details.addTab(self.paper,tr('Papier'))
+        if self.settings:
+            self.paper.instant.setChecked(self.settings.value('emulator/instant_paper', False, type=bool))
+        self.paper.instant.toggled.connect(self.set_instant_paper)
         self.details.currentChanged.connect(lambda index:self.request_debug() if index==1 else None)
         layout.addWidget(self.details,1)
 
@@ -361,6 +364,13 @@ class EmulatorPanel(QWidget):
     def write(self, value):
         if self.process and self.process.state() == QProcess.ProcessState.Running:
             self.process.write((json.dumps(value)+'\n').encode('utf-8'))
+
+    def set_instant_paper(self, enabled):
+        if self.settings:
+            self.settings.setValue('emulator/instant_paper', enabled)
+            self.settings.sync()
+        if self.worker_ready:
+            self.write(dict(op='instant_paper', value=enabled))
 
     def set_power(self, enabled):
         if enabled:self.start()
@@ -454,6 +464,7 @@ class EmulatorPanel(QWidget):
                 continue
             if data['type'] == 'ready':
                 self.worker_ready=True
+                self.write(dict(op='instant_paper', value=self.paper.instant.isChecked()))
                 self.log.appendPlainText((tr('Moteur ') + f'{data.get('version', 'ancien')}' + tr(' ; temporisations sonores : ') + f'{data.get('realtime_sound', False)}'))
                 if data.get('roms'):self.set_machine_mode(data['roms']['basic_available'])
                 if data.get('roms'):self.log.appendPlainText(json.dumps(data['roms'],ensure_ascii=False,indent=2))
@@ -505,6 +516,8 @@ class EmulatorPanel(QWidget):
 
     def set_machine_mode(self, basic):
         self.basic_available=basic
+        self.paper.instant.setEnabled(basic)
+        self.paper.instant.setToolTip(tr('Accélère les routines papier du BASIC. Les calculs du programme et les pauses restent exécutés.') if basic else tr('Impression instantanée disponible avec le firmware BASIC.'))
         self.update_cartridge_label()
         self.lcd.native_mode=not basic
         self.entry.setEnabled(basic)

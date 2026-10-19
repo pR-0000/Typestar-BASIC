@@ -77,6 +77,14 @@ Ce document situe solidement la S-70 en **1985**. Il prévoit une application r�
 
 Ces listes rapprochent des références techniques et des noms commerciaux que les annonces de collectionneurs emploient parfois séparément. Une plaque portant « S-70 » peut ainsi retrouver sa place dans la famille Typestar.
 
+### Les idées prennent la route
+
+Un enregistrement de la chaîne américaine **WOR 9**, daté du **19 mai 1986**, conserve une publicité pour la **Typestar 7**, entre **15 min 56 s et 16 min 26 s**. La machine promet de coucher ses idées sur le papier partout où elles viennent, avec une présentation professionnelle. Correction des fautes de frappe, mémoire de texte, format compact, faible poids et silence accompagnent cette liberté d'écrire. [H36]
+
+![La Typestar 7 dans une publicité télévisée américaine conservée dans l'enregistrement WOR 9 du 19 mai 1986.](images/history/typestar7-tv-wor1986.png)
+
+L'écran et la mémoire prolongent ici le rôle du clavier : on prépare son texte avant de l'imprimer. La publicité rassemble ainsi les qualités qui font encore le charme de cette petite machine transportable.
+
 ## Un détour par la Bretagne
 
 L'histoire française de Canon apporte un autre repère. Canon Bretagne indique une création juridique en 1983, une production de photocopieurs en 1984 et le début de la production de machines à écrire en 1985. L'assemblage de cartes électroniques suit en 1986 ; les cartouches de toner, fax et imprimantes laser figurent dans les activités de 1987. [H8]
@@ -113,6 +121,7 @@ Pour situer les **Typestar 2, 4 et 10-II**, nous proposons respectivement **vers
 | **1984** | Typestar 5 récompensée pour son design ; publicité Canon U.S.A. datée © 1984. [H2] |
 | **1985** | Typestar 6 récompensée ; **S-70 / Typestar 7** et **S-10 / Typemate 10** explicitement documentées en octobre. [H2] [H3] |
 | **Mai 1986** | La S-70 est proposée à **2 990 francs** en France dans Tilt n° 31. [H10] |
+| **19 mai 1986** | Une publicité américaine pour la **Typestar 7** figure dans un enregistrement de WOR 9. [H36] |
 | **1986** | S-16 récompensée pour son design ; dépôt du dessin D299930 le 8 avril. [H2] [H5] |
 | **Vers 1986** | **Typestar 4** : le manuel Canon reproduit une lettre datée du **17 février 1986**. Estimation de période. [H25] |
 | **Février 1987** | S-61 / Typestar 6 II ajoutée au règlement européen. [H4] |
@@ -255,3 +264,5 @@ Le papier, l’image et leur traitement électronique relient ainsi les Typestar
 
 [H34]: https://global.canon/en/sustainability/report/pdf/sustainability2006e.pdf
 [H35]: https://global.canon/en/ir/business.html
+
+[H36]: https://archive.org/details/wor-9-may-19-1986-commercials

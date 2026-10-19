@@ -292,5 +292,8 @@
   "Clavier Canon : F7 = CODE, F8 = MODE, F9 = KB - I/II.": "Canon keyboard: F7 = CODE, F8 = MODE, F9 = KB - I/II.",
   "Cliquer sur le LCD pour taper. F7 = CODE, F8 = MODE, F9 = KB - I/II ; Échap = MARGIN RELEASE/BREAK. Les fonctions des touches dépendent du firmware.": "Click the LCD to type. F7 = CODE, F8 = MODE, F9 = KB - I/II; Escape = MARGIN RELEASE/BREAK. Key functions depend on the firmware.",
   "1 : pixels natifs ; 2 : zoom ×2 ; 3 : pixels carrés ; 4 : grands pixels carrés (×2 du mode 3).": "1: native pixels; 2: zoom ×2; 3: square pixels; 4: large square pixels (twice mode 3).",
-  "Papier : 1..31 × 1..16 pixels, mode 1, 2, 3 ou 4.": "Paper: 1..31 × 1..16 pixels, mode 1, 2, 3 or 4."
+  "Papier : 1..31 × 1..16 pixels, mode 1, 2, 3 ou 4.": "Paper: 1..31 × 1..16 pixels, mode 1, 2, 3 or 4.",
+  "Impression instantanée": "Instant printing",
+  "Accélère les routines papier du BASIC. Les calculs du programme et les pauses restent exécutés.": "Speeds up BASIC paper routines. Program calculations and pauses still run.",
+  "Impression instantanée disponible avec le firmware BASIC.": "Instant printing is available with BASIC firmware."
 }

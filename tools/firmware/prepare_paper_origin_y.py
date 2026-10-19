@@ -11,7 +11,7 @@ assert len(cpu)==32768 and hashlib.sha256(cpu).hexdigest()==m['sha256']
 assert json.loads((base/'motion-validation.json').read_text())['result']=='PASS'
 for name in ('logic-validation.json','paper-validation.json'):
  r=json.loads((ROOT/'build/naval-duel'/name).read_text())
- assert r['sha256']==hashlib.sha256((ROOT/'examples/duel-orbital-fr.bas').read_bytes()).hexdigest()
+ assert r['sha256']==hashlib.sha256((ROOT/'examples/games/duel-orbital-fr.bas').read_bytes()).hexdigest()
 assert 'OK' in (base/'studio-validation.txt').read_text()
 raw=cpu[16384:]+cpu[:16384];name='s70-basic-0.4.84-dev-canon-start-nh7.bin';dest=ROOT/'release'/name
 assert not dest.exists() or dest.read_bytes()==raw

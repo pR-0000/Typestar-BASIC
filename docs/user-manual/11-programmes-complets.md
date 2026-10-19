@@ -39,23 +39,23 @@ Un petit instrument sonore commandé par les lettres du clavier. Ce programme co
 
 Deux personnages s’affrontent dans une arène de trente-deux cases. Le bord gauche rejoint le bord droit. Des mines et des grilles compliquent les déplacements ; les petits triangles montrent la vie et la ligne inférieure indique la charge disponible. Ce jeu utilise uniquement le LCD et le buzzer.
 
-**Commandes :** flèches gauche/droite pour bouger ; **A en minuscule** pour attaquer un voisin ; **Espace** pour se téléporter ; **Return** pour terminer. Attaque et téléportation demandent une charge pleine. L’adversaire agit après votre action. La version anglaise est également fournie dans les exemples de Studio.
+**Commandes :** flèches gauche/droite pour bouger ; **Entrée** pour attaquer un voisin ; **Espace** pour se téléporter. Attaque et téléportation demandent une charge pleine. L’adversaire agit après votre action. **BREAK** interrompt la partie. La version anglaise est également fournie dans les exemples de Studio.
 
 ![Pocket Duel dans Studio : personnages, obstacles, vie et charge se partagent les trente-deux positions du LCD.](images/exemple-pocket-duel-lcd.png)
 
 **À observer dans le programme :** LCDCHAR définit les personnages, LOCATE évite de redessiner tout l’écran, LCDTRI et LCDLINE montrent les jauges ; INKEY, les conditions et les sous-programmes organisent le jeu.
 
-**Fichier à ouvrir dans Studio :** [pocket-duel-fr.bas](../../examples/pocket-duel-fr.bas).
+**Fichier à ouvrir dans Studio :** [games/pocket-duel-fr.bas](../../examples/games/pocket-duel-fr.bas).
 
 ```basic
 10 DIM T(5)
 20 DATA 0,16,24,28,30,31
 30 FOR I=0 TO 5:READ T(I):NEXT I
-40 CLS:CURSOR 4:PRINT "POCKET DUEL 1.0";
+40 CLS:CURSOR 4:PRINT "POCKET DUEL 1.1";
 50 SOUND 0,300
 60 CLS:PRINT "Flèches: bouger";
 70 SOUND 0,450
-80 CLS:PRINT "A: ATTAQUE  ESPACE: TELEPORT";
+80 CLS:PRINT "ENTREE: ATTAQUE ESPACE: TELEPORT";
 90 SOUND 0,550
 100 CLS:PRINT CHR$(192);" MINE  ";CHR$(172);" GRILLE";
 110 SOUND 0,550
@@ -79,10 +79,9 @@ Deux personnages s’affrontent dans une arène de trente-deux cases. Le bord ga
 295 GOSUB 6100:GOSUB 6100:GOSUB 6100:GOSUB 6200
 
 300 K=INKEY(0):IF K=0 THEN 300
-310 IF K=13 THEN 9900
+310 IF K=13 THEN 500
 320 IF K=18 THEN 400
 330 IF K=19 THEN 460
-340 IF K=97 THEN 500
 350 IF K=32 THEN 600
 360 GOTO 300
 
@@ -354,9 +353,6 @@ Deux personnages s’affrontent dans une arène de trente-deux cases. Le bord ga
 9700 SOUND 300,70:SOUND 180,90:SOUND 70,180
 9710 CLS:PRINT "DEFAITE...";
 9720 END
-
-9900 CLS:PRINT "FIN DE PARTIE";
-9910 END
 ```
 
 ## Duel Orbital
@@ -371,7 +367,7 @@ Une bataille spatiale inspirée de la bataille navale. Vous commandez trois form
 
 **À observer dans le programme :** GLYPH répète un fragment de grille sur les deux tableaux ; le mode 4 agrandit les dessins. CLEAR libère les tampons de construction avant les tableaux de jeu. Tableaux, hasard et tests logiques gèrent les positions et l’adversaire.
 
-**Fichier à ouvrir dans Studio :** [duel-orbital-fr.bas](../../examples/duel-orbital-fr.bas).
+**Fichier à ouvrir dans Studio :** [games/duel-orbital-fr.bas](../../examples/games/duel-orbital-fr.bas).
 
 ```basic
 10 REM TYPESTAR - DUEL ORBITAL 1.8
@@ -538,7 +534,7 @@ Deux canons se font face sur un relief imprimé une seule fois. Choisissez l’a
 
 **À observer dans le programme :** RANDOMIZE et RND préparent le terrain ; une table de sinus et des additions successives accélèrent les trajectoires ; BOX, LINE, DRAW et les moteurs composent le dessin.
 
-**Fichier à ouvrir dans Studio :** [duel-balistique-fr.bas](../../examples/duel-balistique-fr.bas).
+**Fichier à ouvrir dans Studio :** [games/duel-balistique-fr.bas](../../examples/games/duel-balistique-fr.bas).
 
 ```basic
 10 REM DUEL BALISTIQUE 0.6 - TERRAIN FIXE X2

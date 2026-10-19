@@ -53,3 +53,8 @@
 - **H34** : [Canon, Sustainability Report 2006, p. 8: 1996-2000 strategy and withdrawal from seven unprofitable businesses.](https://global.canon/en/sustainability/report/pdf/sustainability2006e.pdf)
 - **H35** : [Canon, Segment Information, FY2025: Printing ¥2,494.4 billion, Imaging ¥1,054.9 billion, consolidated total ¥4,624.7 billion.](https://global.canon/en/ir/business.html)
 - **U1** : [Typestar Print, validated S-70/S-90 USB cable documentation: pinout and 5 V TTL levels.](https://github.com/pR-0000/Typestar-Print/blob/main/docs/CABLE_WIRING.md)
+
+- **E2** : [Smithsonian, Epson HX-20: the first production laptop computer.](https://www.si.edu/object/epson-hx-20-portable-computer%3Anmah_687330)
+- **E3** : [Epson, HC-20/HX-20, released July 1982: A4 size and rechargeable battery.](https://corporate.epson/ja/about/history/milestone-products/1982-7-hc20.html)
+- **E4** : [Computer History Museum, IBM 5100 portable computer, 1975.](https://www.computerhistory.org/revolution/mobile-computing/18/316/1686)
+- **H36** : [WOR 9, recording dated 19 May 1986, Canon Typestar commercial at 15:56 (30 s). Internet Archive.](https://archive.org/details/wor-9-may-19-1986-commercials)

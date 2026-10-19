@@ -100,6 +100,8 @@ Usual settings are **31,250 baud, 7 data bits, E parity, 1 stop bit**, or **3125
 
 Within the emulator, open **Paper**. The sheet develops from columns sent to the print head. Adjust **zoom**, enable **Follow printing**, clear the preview or export **PNG** and **PDF**. [Complete programs](11-programmes-complets.md) includes an explanatory Orbital Duel grid and a simulated Ballistic Duel sheet. Captions distinguish explanatory drawings from emulator captures.
 
+To develop games faster, check **Instant printing**. Studio speeds up BASIC firmware paper routines while preserving their pixels and positions. Calculations, sounds and input waits continue to run, so large maps still take time to prepare. You can change this option during execution. Your choice is saved for the next session.
+
 **Graphics printing** prepares an image for **the real Canon**. Open it, choose dimensions and adjust **threshold**, or enable **Photo dithering** to distribute black dots. The preview shows monochrome output with approximate paper proportions.
 
 ![Printy prepared for graphics printing: preview the dots before sending.](images/studio-impression-graphique.png)

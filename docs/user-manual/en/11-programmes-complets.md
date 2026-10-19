@@ -39,23 +39,23 @@ A little sound instrument controlled by keyboard letters. This short program is 
 
 Two characters fight in a thirty-two-cell arena whose left edge joins the right. Mines and fences complicate movement; little triangles show health and the lower line shows available charge. The game uses only LCD and buzzer.
 
-**Controls:** left/right arrows move; **lowercase A** attacks a neighbour; **Space** teleports; **Return** ends. Attack and teleport need full charge. The opponent acts after your action.
+**Controls:** left/right arrows move, **Enter** attacks an adjacent enemy, **Space** teleports. Attacks and teleportation require a full charge. The opponent acts after your action. **BREAK** interrupts the game. The French version is also included in Studio's examples.
 
 ![Pocket Duel in Studio: characters, obstacles, health and charge share thirty-two LCD cells.](images/exemple-pocket-duel-lcd.png)
 
 **What to look for:** LCDCHAR defines characters, LOCATE avoids full redraws, LCDTRI and LCDLINE show gauges; INKEY, conditions and subroutines organise play.
 
-**File to open in Studio:** [pocket-duel-en.bas](../../../examples/pocket-duel-en.bas).
+**File to open in Studio:** [games/pocket-duel-en.bas](../../../examples/games/pocket-duel-en.bas).
 
 ```basic
 10 DIM T(5)
 20 DATA 0,16,24,28,30,31
 30 FOR I=0 TO 5:READ T(I):NEXT I
-40 CLS:CURSOR 4:PRINT "POCKET DUEL 1.0";
+40 CLS:CURSOR 4:PRINT "POCKET DUEL 1.1";
 50 SOUND 0,300
 60 CLS:PRINT "ARROWS: MOVE";
 70 SOUND 0,450
-80 CLS:PRINT "A: ATTACK  SPACE: TELEPORT";
+80 CLS:PRINT "ENTER: ATTACK  SPACE: TELEPORT";
 90 SOUND 0,550
 100 CLS:PRINT CHR$(192);" MINE  ";CHR$(172);" FENCE";
 110 SOUND 0,550
@@ -79,10 +79,9 @@ Two characters fight in a thirty-two-cell arena whose left edge joins the right.
 295 GOSUB 6100:GOSUB 6100:GOSUB 6100:GOSUB 6200
 
 300 K=INKEY(0):IF K=0 THEN 300
-310 IF K=13 THEN 9900
+310 IF K=13 THEN 500
 320 IF K=18 THEN 400
 330 IF K=19 THEN 460
-340 IF K=97 THEN 500
 350 IF K=32 THEN 600
 360 GOTO 300
 
@@ -354,9 +353,6 @@ Two characters fight in a thirty-two-cell arena whose left edge joins the right.
 9700 SOUND 300,70:SOUND 180,90:SOUND 70,180
 9710 CLS:PRINT "YOU LOSE...";
 9720 END
-
-9900 CLS:PRINT "GAME OVER";
-9910 END
 ```
 
 ## Orbital Duel
@@ -371,7 +367,7 @@ A space battle inspired by Battleship. Command three satellite formations of thr
 
 **What to look for:** GLYPH repeats one cached grid fragment across both boards; mode 4 enlarges sprites. CLEAR releases construction buffers before the game arrays are created. Arrays, randomness and logical tests control positions and the opponent.
 
-**File to open in Studio:** [orbital-duel-en.bas](../../../examples/orbital-duel-en.bas).
+**File to open in Studio:** [games/orbital-duel-en.bas](../../../examples/games/orbital-duel-en.bas).
 
 ```basic
 10 REM TYPESTAR - ORBITAL DUEL 1.8
@@ -538,7 +534,7 @@ Two cannons face each other across terrain printed once. Choose angle and power:
 
 **What to look for:** RANDOMIZE and RND prepare terrain; a sine table and successive additions speed trajectories; BOX, LINE, DRAW and motors compose the sheet.
 
-**File to open in Studio:** [ballistic-duel-en.bas](../../../examples/ballistic-duel-en.bas).
+**File to open in Studio:** [games/ballistic-duel-en.bas](../../../examples/games/ballistic-duel-en.bas).
 
 ```basic
 10 REM BALLISTIC DUEL 0.6 - FIXED TERRAIN X2

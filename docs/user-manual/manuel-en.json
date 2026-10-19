@@ -294,6 +294,10 @@
     "exemple-orbital-grands-papier.png": {
       "max_width_mm": 164,
       "max_height_mm": 92
+    },
+    "typestar7-tv-wor1986.png": {
+      "max_width_mm": 135,
+      "max_height_mm": 112
     }
   },
   "chapters": [
@@ -470,7 +474,6 @@
     "02-installation-firmware.md#step-2-release-the-five-clips",
     "02-installation-firmware.md#step-6-reassemble-and-try-it",
     "00-fiche-machine.md#the-original-hardware-beneath-basic",
-    "00-fiche-machine.md#some-neighbours-with-lcd-screens",
     "02-installation-firmware.md#choosing-and-preparing-replacement-memory",
     "11-programmes-complets.md#piano",
     "11-programmes-complets.md#pocket-duel",
@@ -505,10 +508,10 @@
       ]
     },
     {
-      "file": "pocket-duel-en.bas",
+      "file": "games/pocket-duel-en.bas",
       "title": "Pocket Duel",
       "description": "Two characters fight in a thirty-two-cell arena whose left edge joins the right. Mines and fences complicate movement; little triangles show health and the lower line shows available charge. The game uses only LCD and buzzer.",
-      "controls": "**Controls:** left/right arrows move; **lowercase A** attacks a neighbour; **Space** teleports; **Return** ends. Attack and teleport need full charge. The opponent acts after your action.",
+      "controls": "**Controls:** left/right arrows move, **Enter** attacks an adjacent enemy, **Space** teleports. Attacks and teleportation require a full charge. The opponent acts after your action. **BREAK** interrupts the game. The French version is also included in Studio's examples.",
       "learning": "LCDCHAR defines characters, LOCATE avoids full redraws, LCDTRI and LCDLINE show gauges; INKEY, conditions and subroutines organise play.",
       "illustrations": [
         {
@@ -518,7 +521,7 @@
       ]
     },
     {
-      "file": "orbital-duel-en.bas",
+      "file": "games/orbital-duel-en.bas",
       "title": "Orbital Duel",
       "description": "A space battle inspired by Battleship. Command three satellite formations of three, two and two cells on a six-by-six grid. Canon has the same fleet; the first to hit all seven enemy cells wins. Satellites and shots remain visible on paper.",
       "controls": "**To play:** Drawing starts as soon as you RUN. Enter a starting cell such as **A1**, then **H** for a formation extending right or **V** extending down. Enter shots **A1 to F6**, or **Q** to quit. The left grid holds your satellites; the right records shots. Let the program position the paper.",
@@ -535,7 +538,7 @@
       ]
     },
     {
-      "file": "ballistic-duel-en.bas",
+      "file": "games/ballistic-duel-en.bas",
       "title": "Ballistic Duel",
       "description": "Two cannons face each other across terrain printed once. Choose angle and power: a dotted trajectory appears and impacts accumulate. The terrain stays fixed; previous shot values print below the arena. Play against Canon or another player.",
       "controls": "**To play:** enter a seed from **1 to 9999**, then **1** against Canon or **2** for two players. Supply the requested angle and power **20 to 100**. Zero angle ends play. Reuse a seed for the same terrain; save your program before loading the game.",
@@ -777,6 +780,22 @@
     "U1": {
       "label": "Typestar Print, validated S-70/S-90 USB cable documentation: pinout and 5 V TTL levels.",
       "url": "https://github.com/pR-0000/Typestar-Print/blob/main/docs/CABLE_WIRING.md"
+    },
+    "E2": {
+      "label": "Smithsonian, Epson HX-20: the first production laptop computer.",
+      "url": "https://www.si.edu/object/epson-hx-20-portable-computer%3Anmah_687330"
+    },
+    "E3": {
+      "label": "Epson, HC-20/HX-20, released July 1982: A4 size and rechargeable battery.",
+      "url": "https://corporate.epson/ja/about/history/milestone-products/1982-7-hc20.html"
+    },
+    "E4": {
+      "label": "Computer History Museum, IBM 5100 portable computer, 1975.",
+      "url": "https://www.computerhistory.org/revolution/mobile-computing/18/316/1686"
+    },
+    "H36": {
+      "label": "WOR 9, recording dated 19 May 1986, Canon Typestar commercial at 15:56 (30 s). Internet Archive.",
+      "url": "https://archive.org/details/wor-9-may-19-1986-commercials"
     }
   },
   "citation_urls": {
@@ -830,7 +849,11 @@
     "https://global.canon/en/ir/business.html": "Canon, Segment Information, FY2025: Printing ¥2,494.4 billion, Imaging ¥1,054.9 billion, consolidated total ¥4,624.7 billion.",
     "https://github.com/pR-0000/Typestar-Print/blob/main/docs/CABLE_WIRING.md": "Typestar Print, validated S-70/S-90 USB cable documentation: pinout and 5 V TTL levels.",
     "https://patents.google.com/patent/USD286162S/en": "Canon, industrial design D286162, font cartridge, filed 18 December 1984.",
-    "https://patents.google.com/patent/JPS5942988A/en": "Canon / Takahiro Tsukamoto, electronic typewriter display patent JPS5942988A, filed 1982, published 1984."
+    "https://patents.google.com/patent/JPS5942988A/en": "Canon / Takahiro Tsukamoto, electronic typewriter display patent JPS5942988A, filed 1982, published 1984.",
+    "https://www.si.edu/object/epson-hx-20-portable-computer%3Anmah_687330": "Smithsonian, Epson HX-20: the first production laptop computer.",
+    "https://corporate.epson/ja/about/history/milestone-products/1982-7-hc20.html": "Epson, HC-20/HX-20, released July 1982: A4 size and rechargeable battery.",
+    "https://www.computerhistory.org/revolution/mobile-computing/18/316/1686": "Computer History Museum, IBM 5100 portable computer, 1975.",
+    "https://archive.org/details/wor-9-may-19-1986-commercials": "WOR 9, recording dated 19 May 1986, Canon Typestar commercial at 15:56 (30 s). Internet Archive."
   },
   "image_sources": {
     "canon-kaku.png": {
@@ -884,6 +907,10 @@
     "canon-bretagne-premiere-pierre-1984.jpg": {
       "label": "Canon Bretagne, industrial site history.",
       "url": "https://www.canon-bretagne.fr/lentreprise/"
+    },
+    "typestar7-tv-wor1986.png": {
+      "label": "WOR 9, recording dated 19 May 1986, Canon Typestar commercial at 15:56 (30 s). Internet Archive.",
+      "url": "https://archive.org/details/wor-9-may-19-1986-commercials"
     }
   },
   "content_directory": "en"

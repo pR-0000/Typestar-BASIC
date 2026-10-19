@@ -38,7 +38,12 @@ def main():
     parser.add_argument('--language',choices=['fr','en'],default='fr')
     args = parser.parse_args()
     english=args.language=='en'
-    filemap={'piano-fr.bas':'piano-en.bas','pocket-duel-fr.bas':'pocket-duel-en.bas','duel-orbital-fr.bas':'orbital-duel-en.bas','duel-balistique-fr.bas':'ballistic-duel-en.bas'} if english else {}
+    filemap = {
+        'piano-fr.bas': 'piano-en.bas' if english else 'piano-fr.bas',
+        'pocket-duel-fr.bas': 'games/pocket-duel-en.bas' if english else 'games/pocket-duel-fr.bas',
+        'duel-orbital-fr.bas': 'games/orbital-duel-en.bas' if english else 'games/duel-orbital-fr.bas',
+        'duel-balistique-fr.bas': 'games/ballistic-duel-en.bas' if english else 'games/duel-balistique-fr.bas',
+    }
     set_language(args.language)
     app = QApplication.instance() or QApplication([])
     font_id = QFontDatabase.addApplicationFont(str(HERE/'fonts/Lato-Regular.ttf'))
@@ -222,7 +227,7 @@ def main():
     # A separately labelled explanatory drawing, not a retouched screenshot.
     # It shows the program's exact DATA motifs while a difference between
     # staged glyph data and captured output is investigated separately.
-    source=(ROOT/'examples/duel-orbital-fr.bas').read_text(encoding='utf-8')
+    source=(ROOT/'examples/games/duel-orbital-fr.bas').read_text(encoding='utf-8')
     rows=[]
     for line in source.splitlines():
         if 1700<=int(line.split()[0])<=1752:

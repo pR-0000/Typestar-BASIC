@@ -37,7 +37,9 @@ La machine accepte le BASIC avec une ROM programmée dans IC8. Le câble et Stud
 
 La plupart des micro-ordinateurs familiers utilisent un Z80, un 6502 ou une autre famille bien connue. **Typestar BASIC permet de programmer un véritable HD6301**, plus souvent rencontré dans l'électronique embarquée. Il rejoint ainsi un petit groupe de machines personnelles utilisant cette famille Hitachi.
 
-L’**Epson HX-20** utilise deux processeurs CMOS 6301. [E1] Le **Psion Organiser I** emploie un HD6301X à 0,9216 MHz. [I1] L’**Organiser II** utilise un **HD6303XFP** : ce cousin du HD6301 lit son programme dans une ROM extérieure, tandis que le HD6301 de la Typestar possède une ROM interne. Les deux familles partagent le jeu d’instructions de base ; leurs variantes se distinguent surtout par la mémoire et les périphériques intégrés. [I2] Des ordinateurs d’échecs emploient aussi des variantes HD6301, dont la V1.
+L’**Epson HX-20** utilise deux processeurs CMOS 6301. [E1] Commercialisé en **juillet 1982**, au format A4 et sur batterie rechargeable, il est reconnu par le Smithsonian comme le **premier laptop produit en série**. [E2] [E3] Des transportables existaient déjà, comme l’IBM 5100 de 1975. [E4] Clavier, LCD, imprimante : une belle parenté avec la Typestar !
+
+Le **Psion Organiser I** emploie un HD6301X à 0,9216 MHz. [I1] L’**Organiser II** utilise un **HD6303XFP** : ce cousin du HD6301 lit son programme dans une ROM extérieure, tandis que le HD6301 de la Typestar possède une ROM interne. Les deux familles partagent le jeu d’instructions de base ; leurs variantes se distinguent surtout par la mémoire et les périphériques intégrés. [I2] Des ordinateurs d’échecs emploient aussi des variantes HD6301, dont la V1.
 
 ## Quelques voisins à écran LCD
 
@@ -54,11 +56,7 @@ Le PC-1251 réserve aussi de la RAM aux variables fixes et à une petite zone di
 
 ## Bien lire les chiffres du BASIC
 
-Un Ko vaut ici **1 024 octets**. Les 5 951 octets libres sont partagés entre le programme et ses données. La tokenisation raccourcit les mots-clés : **MEM** mesure directement l’occupation en RAM, tandis que le fichier `.bas` conserve le texte lisible sur le PC.
-
-Les dessins utilisent une fenêtre logique de **248 × 256 coordonnées**, avec un axe vertical quantifié. Les glyphes personnels et les moteurs permettent d'étendre les compositions sur la feuille ; le chapitre papier explique leurs unités.
-
-SOUND module un buzzer à fréquence propre fixe. Les débits série décrivent les échanges avec le PC ; les calculs et les moteurs ont leur propre rythme. Le support des cartouches RAM est envisagé pour une version ultérieure.
+Un Ko vaut **1 024 octets**. Les **5 951 octets libres** accueillent le programme tokenisé et ses données ; **MEM** mesure l’occupation en RAM. Le fichier `.bas` conserve le texte lisible sur le PC.
 
 [C1]: https://site.xavier.edu/polt/typewriters/CanonTypestar7.pdf
 
@@ -75,3 +73,9 @@ SOUND module un buzzer à fréquence propre fixe. Les débits série décrivent 
 [V2]: https://oldvcr.blogspot.com/2021/03/those-mysterious-toshiba-t-chips-plus.html
 
 [V3]: https://sites.google.com/site/jamesskingdom/Home/computers-exposed/vtech-computers
+
+[E2]: https://www.si.edu/object/epson-hx-20-portable-computer%3Anmah_687330
+
+[E3]: https://corporate.epson/ja/about/history/milestone-products/1982-7-hc20.html
+
+[E4]: https://www.computerhistory.org/revolution/mobile-computing/18/316/1686

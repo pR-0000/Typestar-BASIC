@@ -36,6 +36,15 @@ def basic_backend(realtime_sound=False, mask_path=None, firmware_path=None, cold
             from paper_fast import kernels
             self.paper_kernels=kernels(self.m)
             self.paper_fast=True
+            from paper_instant import kernels as instant_kernels
+            self.instant_paper_kernels=instant_kernels(self.m, s)
+            self.instant_paper=False
+            # Ordinary instructions need no desktop hooks. Keep the exact CPU
+            # path while reserving polling, display, sound and paper boundaries.
+            self.hook_pcs = (traced | set(self.paper_kernels) |
+                             set(self.instant_paper_kernels) |
+                             {s['READY'], s['GETC'], s['KBDPOLL'], s['KBDFAST'],
+                              s['KBDRETURN'], 0x8ef0})
             self.pc = 0x6829
             if not cold_start:
                 self.idle(); self.command(''); self.command('')
@@ -149,6 +158,14 @@ def basic_backend(realtime_sound=False, mask_path=None, firmware_path=None, cold
 
         def step(self):
             self.matrix_ticks+=1
+            if (self.live and self.boot_complete and not self.matrix_events and
+                    not self.matrix_scanning and not self.sound_until and
+                    self.pc not in self.hook_pcs):
+                HD6301CPU.step(self)
+                return
+            if self.instant_paper and self.pc in self.instant_paper_kernels:
+                self.instant_paper_kernels[self.pc](self)
+                return
             if self.paper_fast and self.pc in self.paper_kernels:
                 self.paper_kernels[self.pc](self)
                 return
@@ -225,6 +242,7 @@ def basic_backend(realtime_sound=False, mask_path=None, firmware_path=None, cold
                 self.last_inkey = self.m[s['IKPENDING']]
                 self.key_count += 1
             if self.pc in traced:super().step()
+            elif self.live:HD6301CPU.step(self)
             else:StageCPU.step(self)
 
         def key_press(self,value):
