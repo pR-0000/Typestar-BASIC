@@ -109,6 +109,8 @@ Organise exchanges as **one character, one reply**. The program chooses when to 
 
 Write **SERCLOSE before END**, and close the session before LOAD, SAVE, another SEROPEN or a settings change. Errors and BREAK also close communication. These functions provide a foundation for a remote keyboard or simple terminal; your program supplies the protocol.
 
+**Try the remote keyboard.** The `examples/remote-keyboard/` directory supplies the BASIC program and Python peer, with a bilingual guide. Load the program with Studio, start the script on the PC, then type RUN on the Canon. Monitor mode displays key codes; `--type` converts them into keystrokes in your chosen window. Letters, recognised accents, Enter, Backspace and navigation travel over the serial connection at 31250/7E1.
+
 ## Printing an image from the computer
 
 At the BASIC console, **CODE + P** opens serial graphics-printer mode. This shortcut is for direct use. Studio prepares and sends a monochrome image using the appropriate protocol.
@@ -128,3 +130,5 @@ PRINT PEEK(&H4000)
 This reads the first byte of the CPU area occupied by external ROM. The result depends on firmware. PEEK uses processor addresses, whereas a ROM file stores image bytes.
 
 POKE writes directly to memory or hardware registers. Use it at addresses whose purpose you understand, with a backup saved before exploring: an incorrect write can alter the program or trigger an action. Dedicated BASIC commands simplify ordinary drawing, sound and movement.
+
+**What about reading a cartridge?** PEEK observes memory currently visible to the processor. Accessing a cartridge also requires selecting its bank, then restoring normal memory: some windows share addresses with the BASIC program itself. A future cartridge reader will need to perform this short operation in an always-accessible routine, then pass the bytes to a BASIC program and its serial peer on the PC.

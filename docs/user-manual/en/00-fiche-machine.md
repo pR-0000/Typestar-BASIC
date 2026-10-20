@@ -54,6 +54,8 @@ These machines show what a single display line and a little memory could offer. 
 
 The PC-1251 also reserves RAM for fixed variables and a separate small area. The Laser 50 figure follows its brochure. Its processor belongs to the Z80 family; photographs of its circuit board show Toshiba T7812/T7813 components. [V2] [V3]
 
+**A keyboard made for writing.** The Typestar has proper typewriter keys with a **19.05 mm pitch** and **4 mm travel**. [C1] Compared with the compact keys of the Sharp PC-1251 or VTech Laser 50, it offers welcome comfort for two-handed typing, entering long programs and writing text. This is one of the project's great attractions: the possibilities of a small BASIC computer, with the typing feel of a machine designed for writing.
+
 ## Reading the BASIC figures
 
 Here, 1 KB means **1,024 bytes**. The 5,951 free bytes are shared between your program and its data. Tokenisation shortens keywords: **MEM** measures actual RAM use, while the `.bas` file remains readable text on the computer.

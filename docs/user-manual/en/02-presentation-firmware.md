@@ -18,9 +18,41 @@ The new ROM combines a purpose-written interpreter, adaptations of existing serv
 
 Original software uses the LCD to review and correct text before printing. The manual advertises approximately **6,000 characters**, stored under **26 title codes**, roughly three A4 sheets. This reserve holds both text and formatting such as margins and tabs. [H9]
 
-An address or letter template can be recalled and reprinted. **COURIER 12II** and **DICTIONARY PSII** cartridges add character designs; analysis revealed font data. **RAM** cartridges preserve documents. The manual describes a 4K model holding about 4,000 characters, powered by a CR2032 lithium battery, with copy and recall functions. [H9]
+An address or letter template can be recalled and reprinted. The side slot accepts two accessory families: **Typestyle ROM cartridges**, which change the printed typeface, and **RAM cartridges**, which store documents.
 
-Typestar BASIC uses the machine's reserve for **one program and its data**, with the organisation below. RAM cartridge support is planned. [The memory chapter](02-hd6301.md) explains retention while switched off.
+### Typestyle: a different look on paper
+
+**Courier 10 is built into the machine.** The Typestar 7 manual lists five additional typefaces, each supplied in its own cartridge: [H9]
+
+| Cartridge listed by Canon | Spacing |
+|---|---|
+| **Courier Italic 10II** | Fixed, 10 characters per inch; italic letters. |
+| **Courier 12II** | Fixed, 12 characters per inch. |
+| **Cubic PSII** | Proportional. |
+| **Dictionary PSII** | Proportional. |
+| **Armeria PSII** | Proportional. |
+
+The number 10 or 12 expresses **characters per inch**. At 12, more letters fit on a line. **PS** means proportional spacing: an *i* occupies less width than a *W*. Dictionary PSII is a typeface. Under Canon software, style **A** selects Courier 10; **B** selects the inserted cartridge. [H9] [H37]
+
+The **Courier 12II** and **Dictionary PSII** captures studied for this project contain their names, character widths and printable patterns. The **Cubic PSII** example opened with a Typestar 90 / 7-II stores these data in a **16 KB Hitachi HN613128P ROM**. [H37]
+
+### RAM cartridges: a library of documents
+
+Canon software organises documents under **26 titles, A to Z**, in internal memory and on a cartridge. To edit or print an archived document, first recall it into internal memory; after editing, copy it back to the cartridge. A short preview helps identify the documents. [H9] [P1]
+
+| Advertised capacity | Documented example |
+|---|---|
+| **4K**, approximately 4,000 characters | Canon Typestar 7 manual. [H9] |
+| **8 KB** | Cartridge described with a Typestar 7 by Alex Dueppen. [P1] |
+| **16 KB** | Cartridge photographed with a Typestar 90 / 7-II. [H37] |
+
+These three capacities are **documented models**, with their associated manuals and machines. Each RAM cartridge retains data using a replaceable **3 V CR2032 lithium cell**. Backing up the documents makes it easier to prepare for battery replacement. [H9] [H37]
+
+### A real memory connector
+
+The connector has **40 contacts at 1.27 mm pitch**. The pitch resembles CompactFlash, while the pinout and operation are Canon-specific. The schematic shows an eight-bit data bus and address lines **A0 to A15**: sixteen bits can identify **65,536 addresses**, or 64 KB. Accessible capacity then depends on selection circuitry and banks, which expose part of the memory at a time. [P1]
+
+**With Typestar BASIC today**, the program and its data occupy internal RAM, and LPRINT uses Courier 10. Cartridge support is planned for a later extension. Studio already allows font cartridges to be tried with emulated Canon firmware. [The memory chapter](02-hd6301.md) explains retention while switched off.
 
 Differences between the S-60, S-70 and S-90 appear in [the hardware chapter](02-hd6301.md). The S-70 remains the firmware's reference machine.
 
@@ -170,6 +202,7 @@ IC7 A14 is tied to +5 V on the studied board: a 32 KB ROM presents **its upper 1
 [The Studio chapter](02-studio.md#debogueur) shows how to observe these mechanisms through registers, memory and HD6301 instructions. Physical experiments complement simulation for paper movement and sound.
 
 [P1]: https://ajd.sh/posts/canon-typestar-part-1/
+[H37]: https://silvergreen93.wordpress.com/2024/03/04/the-canon-typestar-90/
 [M2]: references.md
 [H9]: https://site.xavier.edu/polt/typewriters/CanonTypestar7.pdf
 [H6]: https://archive.org/details/canon-serial-interface-30-manual

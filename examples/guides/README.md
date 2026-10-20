@@ -19,3 +19,4 @@ Each guide explains the goal, controls and program features. Open the [BASIC fil
 | Candy War | [Commerce de bonbons / Sweet trading](candy-war.md) |
 | Piano | [Le clavier sonore / The sound keyboard](piano.md) |
 | Terminal | [Liaison série / Serial communication](../terminal/README.md) |
+| Clavier distant / Remote keyboard | [Frapper sur le PC / Typing on the PC](../remote-keyboard/README.md) |

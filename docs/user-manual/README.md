@@ -1,6 +1,6 @@
 # Typestar BASIC - manuel de l'utilisateur
 
-Pierre Raimbault & Chat GPT - rédaction française du 19 octobre 2026.
+Pierre Raimbault & Chat GPT - rédaction française du 20 octobre 2026.
 
 Référence du langage : **Typestar BASIC 0.4.93-dev**, sur Canon S-70 / Typestar 7. Ce manuel accompagne vos premières instructions, puis vos programmes utilisant le clavier, le LCD, l'imprimante, le buzzer et la liaison série. Aucune connaissance de l'assembleur ni de l'électronique n'est nécessaire pour suivre les ateliers.
 

@@ -171,9 +171,13 @@ La **Typestar 220**, dont le manuel porte **© 1992**, conserve un affichage de 
 
 La **220-II** prolonge ce panorama dans les années 1990. L'exemplaire documenté par son propriétaire est rattaché à **1994** à partir d'une date visible sur son électronique. Ses impressions de démonstration montrent différents caractères, tailles et motifs. Ce repère situe une machine conservée aujourd'hui et pourra être complété par une annonce ou un catalogue d'époque. [H21] [H23]
 
-### StarWriter : le traitement de texte prend de la place
+### StarWriter : des traitements de texte dédiés
 
-Le nom **StarWriter** évoque lui aussi une étoile, avec une autre ambition : réunir un traitement de texte plus complet et son imprimante. La **StarWriter 80**, présentée dans la presse en 1991, imprime par **jet d’encre Bubble Jet**. Les modèles 80 et 85 proposent un LCD de **16 lignes de 80 caractères**, 60 000 octets de mémoire interne et un stockage sur disquette de 720 000 octets. On approche ainsi du petit poste de travail personnel, avec environ **7,2 à 7,4 kg** à transporter. La Typestar 7, donnée pour 2,7 kg avec piles et ruban, conserve l’avantage du petit format. [H32] [H31] [H9]
+Dans les catalogues de l’époque, **word processor** désigne souvent un **appareil autonome de traitement de texte** : clavier, écran, logiciel et imprimante forment un ensemble consacré à la rédaction. On prépare son document à l’écran, on déplace des passages, on conserve des fichiers, puis on imprime la version choisie. Aujourd’hui, le même terme évoque surtout un logiciel installé sur un ordinateur. [H31]
+
+La **machine à écrire électronique** privilégie la saisie sur papier, immédiatement ou après relecture d’une ligne. Elle peut aussi proposer correction et mémoire : la Typestar 7 permet déjà de conserver et de remanier des textes. La frontière est donc progressive. Ce sont l’étendue des outils d’édition, le stockage et la place accordée au document à l’écran qui rapprochent les StarWriter du poste de travail personnel. [H9] [H31]
+
+La **StarWriter 80**, présentée dans la presse en 1991, imprime par **jet d’encre Bubble Jet**. Les modèles 80 et 85 proposent un LCD de **16 lignes de 80 caractères**, 60 000 octets de mémoire interne et un stockage sur disquette de 720 000 octets. Cet équipement représente environ **7,2 à 7,4 kg** à transporter. La Typestar 7, donnée pour 2,7 kg avec piles et ruban, conserve l’avantage du petit format. [H32] [H31] [H9]
 
 La famille StarWriter réunit plusieurs techniques d’impression : la **StarWriter 30** est encore proposée à **transfert thermique** dans une publicité de 1994. Ces machines à grand écran constituent une piste intéressante pour un autre projet BASIC, à condition d’étudier leur processeur, leurs ROM et leurs périphériques. Cette possibilité reste à explorer ; le présent firmware utilise le matériel des Typestar 6 et 7. [H33]
 

@@ -172,9 +172,13 @@ A **joint 1990 manual** covers **Typestar 110-II and 210**. It describes a **six
 
 **220-II** extends the picture into the 1990s. Its documented specimen is assigned to **1994** from a visible electronics date. Demonstration prints show different characters, sizes and patterns. A period advertisement or catalogue could supplement this surviving-machine landmark. [H21] [H23]
 
-### StarWriter: word processing takes more space
+### StarWriter: dedicated word processors
 
-**StarWriter** also evokes a star, with another ambition: a fuller word processor and printer. **StarWriter 80**, reported in 1991, uses **Bubble Jet inkjet** printing. Models 80 and 85 offer **16 lines of 80 characters**, 60,000 bytes internal memory and 720,000-byte floppy storage. They approach a personal workstation, weighing **7.2-7.4 kg**. Typestar 7, specified at 2.7 kg with batteries and ribbon, retains its compact advantage. [H32] [H31] [H9]
+In period catalogues, **word processor** often means a **dedicated, self-contained appliance**: keyboard, screen, software and printer form a system devoted to writing. You prepare a document on screen, move passages, save files, then print the version you choose. Today, the same term usually suggests software running on a computer. [H31]
+
+An **electronic typewriter** centres on typing onto paper, immediately or after reviewing a line. It may also offer correction and memory: the Typestar 7 already stores and edits texts. The boundary is therefore gradual. The range of editing tools, storage and emphasis on the on-screen document bring StarWriter machines closer to a personal workstation. [H9] [H31]
+
+The **StarWriter 80**, reported in 1991, uses **Bubble Jet inkjet** printing. Models 80 and 85 offer **16 lines of 80 characters**, 60,000 bytes of internal memory and 720,000-byte floppy storage. This equipment weighs **7.2–7.4 kg**. Typestar 7, specified at 2.7 kg with batteries and ribbon, retains its compact advantage. [H32] [H31] [H9]
 
 The StarWriter family includes several printing technologies: a **StarWriter 30** is advertised with **thermal transfer** in 1994. These large-display machines could be interesting for another BASIC project, after studying their processors, ROMs and peripherals. That remains unexplored; this firmware uses Typestar 6 and 7 hardware. [H33]
 

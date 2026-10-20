@@ -109,6 +109,8 @@ Organisez un échange **un caractère, une réponse** : le programme choisit qua
 
 Écrivez **SERCLOSE avant END**, puis fermez la session avant LOAD, SAVE, une nouvelle SEROPEN ou un changement de réglages. Une erreur ou BREAK ferme aussi la liaison. Ces fonctions constituent une base pour un clavier distant ou un terminal simple ; votre programme construit ensuite le protocole souhaité.
 
+**À essayer : le clavier distant.** Le dossier `examples/remote-keyboard/` fournit le programme BASIC et son correspondant Python, avec une notice bilingue. Chargez le programme avec Studio, lancez le script sur le PC, puis tapez RUN sur la Canon. Le mode moniteur montre les codes des touches ; l'option `--type` les transforme en frappes dans la fenêtre choisie. Lettres, accents reconnus, Entrée, Retour arrière et navigation passent ainsi par la liaison série à 31250/7E1.
+
 ## Imprimer une image depuis le PC
 
 Depuis la console BASIC, **CODE + P** ouvre le mode imprimante graphique série. Ce raccourci est réservé à l’usage direct. Studio prépare et envoie l’image monochrome avec le protocole adapté.
@@ -128,3 +130,5 @@ PRINT PEEK(&H4000)
 Cet exemple lit le premier octet de la zone CPU où se trouve la ROM externe. Le résultat dépend du firmware. PEEK emploie les adresses du processeur ; le fichier ROM range, lui, les octets de l’image.
 
 POKE écrit directement dans la mémoire ou les registres du matériel. Réservez-le aux adresses dont vous connaissez le rôle et gardez une sauvegarde avant l’exploration : une écriture erronée peut modifier le programme ou déclencher une action. Les commandes BASIC dédiées simplifient les dessins, les sons et les déplacements ordinaires.
+
+**Et pour lire une cartouche ?** PEEK observe la mémoire actuellement visible du processeur. L'accès à une cartouche demande aussi de choisir sa banque, puis de rétablir la mémoire normale : certaines fenêtres partagent leurs adresses avec le programme BASIC lui-même. Un futur lecteur de cartouches devra effectuer cette courte opération dans une routine toujours accessible, puis confier les octets à un programme BASIC et à son correspondant série sur PC.

@@ -26,6 +26,7 @@ Les jeux papier montrent les grands glyphes et leur répétition en une passe. *
 
 - **Piano** : [FR](piano-fr.bas), [EN](piano-en.bas), [notice](guides/piano.md). Les lettres A–Z produisent des sons ; Entrée termine le programme.
 - **Terminal série** : [programmes et notice bilingues](terminal/README.md), avec leur correspondant Python.
+- **Clavier distant** : [programmes et notice bilingues](remote-keyboard/README.md), pour envoyer les frappes Canon à un moniteur Python ou à la fenêtre active du PC.
 - **Ancienne bataille navale** : [première ébauche](games/bataille-navale-fr.bas), conservée comme étape du projet. Pour la version aboutie avec placement des pièces et adversaire, choisissez **Duel Orbital**.
 
 Les [notices](guides/README.md) expliquent les commandes et indiquent les sources des adaptations. La Canon conserve un seul programme à la fois : sauvegardez votre travail avant d'en charger un autre.
@@ -56,6 +57,7 @@ The paper games demonstrate large glyphs and repeated motifs in one pass. **Type
 
 - **Piano**: [FR](piano-fr.bas), [EN](piano-en.bas), [guide](guides/piano.md). A–Z play sounds; Enter exits.
 - **Serial terminal**: [bilingual programs and guide](terminal/README.md), with Python peers.
+- **Remote keyboard**: [bilingual programs and guide](remote-keyboard/README.md), sending Canon keystrokes to a Python monitor or the PC's focused window.
 - **Earlier Battleships**: [initial prototype](games/bataille-navale-fr.bas), retained as a development stage. Choose **Orbital Duel** for piece placement and an opponent.
 
 The [guides](guides/README.md) explain controls and identify sources for adaptations. The Canon holds one program at a time: save your work before loading another.

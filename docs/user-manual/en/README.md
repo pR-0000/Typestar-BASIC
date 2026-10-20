@@ -1,6 +1,6 @@
 # Typestar BASIC - User's manual
 
-Pierre Raimbault & Chat GPT - English edition, 19 October 2026. Reference firmware: **0.4.93-dev**, Canon S-70 / Typestar 7.
+Pierre Raimbault & Chat GPT - English edition, 20 October 2026. Reference firmware: **0.4.93-dev**, Canon S-70 / Typestar 7.
 
 This edition translates the complete French manual: installation, Studio, history, processor and firmware, beginner lessons, language reference, glossary and the five complete program listings. The original BASIC keywords and machine error messages stay unchanged. English example sources are supplied in **examples/** (names ending in **-en.bas**); the terminal pair is in **examples/terminal**.
 

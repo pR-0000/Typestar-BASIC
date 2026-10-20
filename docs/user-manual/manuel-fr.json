@@ -4,7 +4,7 @@
   "language": "fr",
   "version": "0.4.93-dev",
   "author": "Pierre Raimbault & Chat GPT",
-  "date": "19 octobre 2026",
+  "date": "20 octobre 2026",
   "cover_image": "images/illustration_BASIC_firmware.png",
   "image_layout": {
     "illustration.png": {
@@ -34,6 +34,10 @@
     "hd6301_advert.png": {
       "max_width_mm": 160,
       "max_height_mm": 165
+    },
+    "hd6301v-die-hitachi.jpg": {
+      "max_width_mm": 85,
+      "max_height_mm": 90
     },
     "hitachi-motorola-1974.jpg": {
       "max_width_mm": 152,
@@ -602,7 +606,7 @@
       "url": "https://www.canon-bretagne.fr/lentreprise/"
     },
     "H9": {
-      "label": "Canon, Typestar 7 Instructions, alimentation, mémoire et caractéristiques, pp. 4, 31, 45, 48, 66.",
+      "label": "Canon, Typestar 7 Instructions, alimentation, polices, mémoire et caractéristiques, pp. 4, 16, 31, 45, 48, 66.",
       "url": "https://site.xavier.edu/polt/typewriters/CanonTypestar7.pdf"
     },
     "H10": {
@@ -634,7 +638,7 @@
       "url": ""
     },
     "P1": {
-      "label": "Schéma électronique Canon, reproduit dans AJD, Canon Typestar, part 1.",
+      "label": "Alex Dueppen, Typestar 7 : démontage, cartouches et schéma électronique.",
       "url": "https://ajd.sh/posts/canon-typestar-part-1/"
     },
     "C1": {
@@ -796,6 +800,42 @@
     "H36": {
       "label": "WOR 9, enregistrement du 19 mai 1986, publicité Canon Typestar à 15 min 56 s (30 s). Internet Archive.",
       "url": "https://archive.org/details/wor-9-may-19-1986-commercials"
+    },
+    "M3": {
+      "label": "Arduino Uno R3, carte à microcontrôleur ATmega328P.",
+      "url": "https://docs.arduino.cc/hardware/uno-rev3/"
+    },
+    "M4": {
+      "label": "Raspberry Pi, cartes Pico à microcontrôleurs RP2040/RP2350 ; distinction avec les ordinateurs Linux.",
+      "url": "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html"
+    },
+    "M5": {
+      "label": "Espressif, ESP32 : processeur, mémoires et périphériques intégrés.",
+      "url": "https://www.espressif.com/en/products/socs/esp32"
+    },
+    "H37": {
+      "label": "Diverse experiments, The Canon Typestar 90, 4 mars 2024 : RAM 16 Ko, CR2032 et cartouche Cubic PSII.",
+      "url": "https://silvergreen93.wordpress.com/2024/03/04/the-canon-typestar-90/"
+    },
+    "M6": {
+      "label": "Zilog, Z80 CPU User Manual, organisation du processeur et bus externes.",
+      "url": "https://www.zilog.com/docs/z80/um0080.pdf"
+    },
+    "M7": {
+      "label": "Semiconductor History Museum of Japan, Microprocessor shifted to CMOS (Hitachi), 1981 ; notice du 23 janvier 2019.",
+      "url": "https://www.shmj.or.jp/english/pdf/ic/exhibi708E.pdf"
+    },
+    "M8": {
+      "label": "RhinoPower, Suzuki ECU 33920-57B30 : processeur Denso apparenté au 63B01, 3 août 2012.",
+      "url": "https://www.rhinopower.org/ECUs/57B30/57B30.html"
+    },
+    "M9": {
+      "label": "RhinoPower, The 76xxx series processor : analyse du cœur et des périphériques par rétro-ingénierie.",
+      "url": "https://www.rhinopower.org/76xxx/76xxx.html"
+    },
+    "M10": {
+      "label": "RhinoPower, ROM Reader : lecture des mémoires internes de calculateurs automobiles, 15 mars 2010.",
+      "url": "https://www.rhinopower.org/ECUs/RomReader/Romreader.html"
     }
   },
   "citation_urls": {
@@ -813,7 +853,8 @@
     "https://worldradiohistory.com/UK/Personal-Computer-World/80s/PCW-1988-03-S-OCR.pdf": "Personal Computer World, mars 1988, annonce de gamme Typestar.",
     "https://site.xavier.edu/polt/typewriters/CanonTypestar10.pdf": "Canon, Typestar 10 Instructions, édition © 1992, PUB. N-IE-560.",
     "https://colorcomputerarchive.com/repo/Documents/Magazines/Rainbow%2C%20The%20%28OCR%29/The%20Rainbow%20Vol.%2005%20No.%2012%20-%20July%201986.pdf": "The Rainbow, juillet 1986, courrier à propos de la Typestar 7.",
-    "https://ajd.sh/posts/canon-typestar-part-1/": "Schéma électronique Canon, reproduit dans AJD, Canon Typestar, part 1.",
+    "https://ajd.sh/posts/canon-typestar-part-1/": "Alex Dueppen, Typestar 7 : démontage, cartouches et schéma électronique.",
+    "https://silvergreen93.wordpress.com/2024/03/04/the-canon-typestar-90/": "Diverse experiments, The Canon Typestar 90, 4 mars 2024 : RAM 16 Ko, CR2032 et cartouche Cubic PSII.",
     "https://electrickery.hosting.philpem.me.uk/comp/hx20/doc/om7-11ABC.pdf": "Epson, HX-20 Operation Manual, annexe des caractéristiques.",
     "https://www.jaapsch.net/psion/p1manorg.htm": "Psion, Organiser I Manual, section 16.",
     "https://www.jaapsch.net/psion/tech02.htm": "Psion, Organiser II Technical Manual, section 2.3 : HD6303XFP.",
@@ -851,9 +892,21 @@
     "https://www.si.edu/object/epson-hx-20-portable-computer%3Anmah_687330": "Smithsonian, Epson HX-20 : premier ordinateur de type laptop produit en série.",
     "https://corporate.epson/ja/about/history/milestone-products/1982-7-hc20.html": "Epson, HC-20/HX-20, commercialisation en juillet 1982 : format A4 et batterie rechargeable.",
     "https://www.computerhistory.org/revolution/mobile-computing/18/316/1686": "Computer History Museum, IBM 5100 portable computer, 1975.",
-    "https://archive.org/details/wor-9-may-19-1986-commercials": "WOR 9, enregistrement du 19 mai 1986, publicité Canon Typestar à 15 min 56 s (30 s). Internet Archive."
+    "https://archive.org/details/wor-9-may-19-1986-commercials": "WOR 9, enregistrement du 19 mai 1986, publicité Canon Typestar à 15 min 56 s (30 s). Internet Archive.",
+    "https://docs.arduino.cc/hardware/uno-rev3/": "Arduino Uno R3, carte à microcontrôleur ATmega328P.",
+    "https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html": "Raspberry Pi, cartes Pico à microcontrôleurs RP2040/RP2350 ; distinction avec les ordinateurs Linux.",
+    "https://www.espressif.com/en/products/socs/esp32": "Espressif, ESP32 : processeur, mémoires et périphériques intégrés.",
+    "https://www.zilog.com/docs/z80/um0080.pdf": "Zilog, Z80 CPU User Manual, organisation du processeur et bus externes.",
+    "https://www.shmj.or.jp/english/pdf/ic/exhibi708E.pdf": "Semiconductor History Museum of Japan, Microprocessor shifted to CMOS (Hitachi), 1981 ; notice du 23 janvier 2019.",
+    "https://www.rhinopower.org/ECUs/57B30/57B30.html": "RhinoPower, Suzuki ECU 33920-57B30 : processeur Denso apparenté au 63B01, 3 août 2012.",
+    "https://www.rhinopower.org/76xxx/76xxx.html": "RhinoPower, The 76xxx series processor : analyse du cœur et des périphériques par rétro-ingénierie.",
+    "https://www.rhinopower.org/ECUs/RomReader/Romreader.html": "RhinoPower, ROM Reader : lecture des mémoires internes de calculateurs automobiles, 15 mars 2010."
   },
   "image_sources": {
+    "hd6301v-die-hitachi.jpg": {
+      "label": "Photographie Hitachi, reproduite par le Semiconductor History Museum of Japan : HD6301V.",
+      "url": "https://www.shmj.or.jp/english/pdf/ic/exhibi708E.pdf"
+    },
     "canon-kaku.png": {
       "label": "Canon, histoire officielle japonaise 1976-1987 ; portrait de Ryūzaburō Kaku.",
       "url": "https://global.canon/ja/corporate/history/03.html"

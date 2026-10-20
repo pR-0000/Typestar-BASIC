@@ -18,9 +18,41 @@ La nouvelle ROM associe un interpréteur écrit pour la machine, des adaptations
 
 Avec le logiciel d’origine, le LCD permet de relire et corriger le texte avant l’impression. Le manuel annonce environ **6 000 caractères**, répartis sous **26 codes de titre**, soit environ trois feuilles A4. Cette réserve accueille à la fois le texte et les informations de format, comme les marges et les tabulations. [H9]
 
-Une adresse ou une formule de courrier peut ainsi être rappelée et réimprimée. Les cartouches **COURIER 12II** et **DICTIONARY PSII** complètent le dessin des caractères ; leur analyse a révélé des données de police. Les cartouches **RAM** servent, elles, à conserver des textes. Le manuel décrit notamment un modèle 4K, d’environ 4 000 caractères, alimenté par une pile lithium CR2032 : ses fonctions permettent de copier puis de rappeler les documents. [H9]
+Une adresse ou une formule de courrier peut ainsi être rappelée et réimprimée. Le logement latéral accueille deux familles d'accessoires : les **cartouches ROM Typestyle**, pour changer de police sur papier, et les **cartouches RAM**, pour conserver des textes.
 
-Typestar BASIC utilise la réserve de la machine pour **un programme et ses données**, avec sa propre organisation décrite ci-dessous. Le support des cartouches RAM constitue une extension envisagée pour la suite. La conservation à l’arrêt est expliquée dans [le chapitre des mémoires](02-hd6301.md).
+### Typestyle : une autre écriture sur le papier
+
+**Courier 10 est intégré à la machine.** Le manuel de la Typestar 7 présente cinq polices supplémentaires, chacune dans sa cartouche : [H9]
+
+| Cartouche annoncée par Canon | Espacement |
+|---|---|
+| **Courier Italic 10II** | Fixe, 10 caractères par pouce ; caractères italiques. |
+| **Courier 12II** | Fixe, 12 caractères par pouce. |
+| **Cubic PSII** | Proportionnel. |
+| **Dictionary PSII** | Proportionnel. |
+| **Armeria PSII** | Proportionnel. |
+
+Le nombre 10 ou 12 exprime une **densité de caractères par pouce**. À 12, davantage de lettres tiennent sur une ligne. **PS** désigne l'espacement proportionnel : un *i* occupe moins de largeur qu'un *W*. Dictionary PSII est bien une police d'écriture. Sous le logiciel Canon, le réglage de style **A** utilise Courier 10 ; **B** choisit la cartouche insérée. [H9] [H37]
+
+Les captures de **Courier 12II** et **Dictionary PSII** étudiées pour ce projet contiennent leurs noms, les largeurs des caractères et les motifs imprimables. Sur l'exemplaire **Cubic PSII** ouvert avec une Typestar 90 / 7-II, une ROM **Hitachi HN613128P de 16 Ko** conserve ces données. [H37]
+
+### Les cartouches RAM : une bibliothèque de textes
+
+Le logiciel Canon organise les documents sous **26 titres A à Z**, dans la mémoire interne comme sur cartouche. Pour modifier ou imprimer un texte archivé, on le rappelle d'abord dans la mémoire interne ; après modification, on le recopie sur la cartouche. Le petit aperçu aide à reconnaître les documents. [H9] [P1]
+
+| Capacité annoncée | Exemple documenté |
+|---|---|
+| **4K**, environ 4 000 caractères | Manuel Canon Typestar 7. [H9] |
+| **8 Ko** | Cartouche décrite avec une Typestar 7 par Alex Dueppen. [P1] |
+| **16 Ko** | Cartouche photographiée avec une Typestar 90 / 7-II. [H37] |
+
+Ces trois capacités constituent des **modèles documentés**, avec leurs notices et machines associées. Chaque cartouche RAM entretient ses données grâce à une **pile lithium CR2032 de 3 V** remplaçable. Une sauvegarde des textes permet de préparer sereinement son remplacement. [H9] [H37]
+
+### Un véritable connecteur mémoire
+
+Le connecteur possède **40 contacts au pas de 1,27 mm**. Ce pas rappelle celui du CompactFlash ; le brochage et le fonctionnement restent propres à Canon. Le schéma montre un bus de données de huit bits et les adresses **A0 à A15** : seize bits peuvent désigner **65 536 adresses**, soit 64 Ko. La quantité accessible dépend ensuite des circuits de sélection et des banques, qui rendent visible une partie de la mémoire à la fois. [P1]
+
+**Avec Typestar BASIC aujourd'hui**, le programme et ses données occupent la RAM interne, et LPRINT utilise Courier 10. L'exploitation des cartouches constitue une extension envisagée pour la suite. Studio permet déjà d'essayer les cartouches de police avec le firmware Canon émulé. La conservation à l'arrêt est expliquée dans [le chapitre des mémoires](02-hd6301.md).
 
 Les différences entre les S-60, S-70 et S-90 sont présentées dans [le chapitre du matériel](02-hd6301.md). La S-70 reste la machine de référence du firmware.
 
@@ -170,6 +202,7 @@ La broche A14 d’IC7 est reliée au +5 V sur la carte étudiée : une ROM de 32
 Le [chapitre Studio](02-studio.md#debogueur) montre comment observer ces mécanismes dans le débogueur : registres, mémoire et instructions du HD6301. Les essais sur machine complètent la simulation pour les déplacements du papier et le son.
 
 [P1]: https://ajd.sh/posts/canon-typestar-part-1/
+[H37]: https://silvergreen93.wordpress.com/2024/03/04/the-canon-typestar-90/
 [M2]: references.md
 
 [H9]: https://site.xavier.edu/polt/typewriters/CanonTypestar7.pdf

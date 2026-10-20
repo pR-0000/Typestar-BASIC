@@ -56,7 +56,8 @@ Pour une lecture paginée, avec illustrations, sommaire et index cliquables :
 
 - **Studio 0.2.36** : cœur HD6301 accéléré et case **Impression instantanée** pour préparer plus rapidement les dessins papier. Voir le [guide Studio](studio/README.md).
 - **Pocket Duel 1.1** : **Entrée attaque**, les flèches déplacent et Espace téléporte. Tous les jeux sont regroupés dans [examples/games/](examples/games/).
-- **Documentation bilingue** : [notices complètes en français et en anglais](examples/guides/README.md), guide du terminal, manuels enrichis de l'histoire du HX-20 et d'une publicité télévisée Typestar 7 de mai 1986. Les PDF sont disponibles dans les téléchargements ci-dessus.
+- **Clavier distant** : [exemple BASIC et correspondant Python](examples/remote-keyboard/README.md), avec moniteur de codes et saisie dans la fenêtre active du PC.
+- **Documentation bilingue** : [notices complètes en français et en anglais](examples/guides/README.md), guides du terminal et du clavier distant, manuels enrichis de l'histoire du HX-20 et des Typestar, des cartouches et du HD6301, avec sa photo de silicium et ses applications automobiles. Les PDF sont disponibles dans les téléchargements ci-dessus.
 
 ### Fonctionnalités
 
@@ -75,6 +76,7 @@ src/                Sources HD6301 du firmware
 examples/           Piano, jeux et terminal, versions françaises et anglaises
   games/            Tous les jeux
   terminal/         Terminal BASIC et correspondant Python
+  remote-keyboard/  Clavier distant BASIC et correspondant Python
   guides/           Notices
 tools/              Codecs, transferts et graphismes partagés
   firmware/         Assemblage et construction du firmware
@@ -141,7 +143,8 @@ For paginated reading with illustrations, clickable contents and an index:
 
 - **Studio 0.2.36**: faster HD6301 core and an **Instant printing** checkbox for faster paper-drawing development. See the [Studio guide](studio/README.md#english).
 - **Pocket Duel 1.1**: **Enter attacks**, arrows move and Space teleports. All games are grouped in [examples/games/](examples/games/).
-- **Bilingual documentation**: [complete French and English program guides](examples/guides/README.md), the terminal guide, and manuals expanded with HX-20 history and a May 1986 Typestar 7 television advertisement. The PDFs are available in the downloads above.
+- **Remote keyboard**: [BASIC example and Python peer](examples/remote-keyboard/README.md), with a code monitor and typing in the PC's focused window.
+- **Bilingual documentation**: [complete French and English program guides](examples/guides/README.md), terminal and remote-keyboard guides, and manuals expanded with HX-20 and Typestar history, cartridges and the HD6301, including its die photograph and automotive applications. The PDFs are available in the downloads above.
 
 ### Features
 

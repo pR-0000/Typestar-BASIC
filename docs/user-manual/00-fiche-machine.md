@@ -54,6 +54,8 @@ Ces appareils montrent ce que l’on pouvait faire avec une seule ligne d’affi
 
 Le PC-1251 réserve aussi de la RAM aux variables fixes et à une petite zone distincte. Pour le Laser 50, le tableau reprend la capacité annoncée dans la brochure. Son processeur appartient à la famille Z80 ; les composants Toshiba T7812/T7813 sont visibles sur les photographies de son circuit. [V2] [V3]
 
+**Un clavier fait pour écrire.** La Typestar possède de vraies touches de machine à écrire, espacées de **19,05 mm**, avec une **course de 4 mm**. [C1] Face aux touches compactes du Sharp PC-1251 ou du VTech Laser 50, ce clavier offre un confort appréciable pour taper à deux mains, saisir de longs programmes et rédiger du texte. C'est l'un des grands attraits du projet : retrouver les possibilités d'un petit ordinateur BASIC avec le plaisir de frappe d'une machine conçue pour écrire.
+
 ## Bien lire les chiffres du BASIC
 
 Un Ko vaut **1 024 octets**. Les **5 951 octets libres** accueillent le programme tokenisé et ses données ; **MEM** mesure l’occupation en RAM. Le fichier `.bas` conserve le texte lisible sur le PC.
