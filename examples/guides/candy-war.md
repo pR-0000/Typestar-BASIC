@@ -1,6 +1,6 @@
 # Candy War 0.6
 
-[Programme français / French program](../games/candy-war-fr.bas)
+[Français](../games/candy-war-fr.bas) · [English](../games/candy-war-en.bas)
 
 ## Français
 
@@ -31,11 +31,11 @@ Le score final additionne votre argent et le stock valorisé aux **prix de base*
 
 ## English
 
-You have **$500**, a bag holding **60 sweets** and **30 days** to trade across six places. Buy cheaply, sell at higher prices and watch out for police checks. The goods are **COLA, GUM, CHOCO and MIX**. The supplied program is in French; the menu names below match its display.
+You have **$500**, a bag holding **60 sweets** and **30 days** to trade across six places. Buy cheaply, sell at higher prices and watch out for police checks. The goods are **COLA, GUM, CHOCO and MIX**.
 
 ### Getting started
 
-Run with F5 in Studio or `RUN` on the Canon. **Enter** passes the title. Choose **Papier** to print a map and daily accounts, or **Sans** for LCD-only play.
+Run with F5 in Studio or `RUN` on the Canon. **Enter** passes the title. Choose **Paper** to print a map and daily accounts, or **No paper** for LCD-only play.
 
 **Arrows** move the selection, **Enter** confirms and **Backspace** returns to the previous menu. **1/2**, **2/2**, and similar page numbers identify menus spanning several screens; arrows also move between screens. A key passes messages.
 
@@ -43,15 +43,15 @@ Run with F5 in Studio or `RUN` on the Canon. **Enter** passes the title. Choose 
 
 | Menu | Use |
 |---|---|
-| Prix | View the four local prices. |
-| Achat | Choose a sweet and quantity to buy; **0** returns to the menu. |
-| Vente | Sell your stock; **0** returns to the menu. |
-| Voyage | Choose a connected place and a normal or discreet trip. |
-| Bilan | Check your money, bag and alert level. |
-| Papier | Print an extra statement when paper mode is enabled. |
+| Prices | View the four local prices. |
+| Buy | Choose a sweet and quantity to buy; **0** returns to the menu. |
+| Sell | Sell your stock; **0** returns to the menu. |
+| Travel | Choose a connected place and a normal or discreet trip. |
+| Status | Check your money, bag and alert level. |
+| Paper | Print an extra statement when paper mode is enabled. |
 
-Travel advances one day and renews prices. A **Discret** trip costs $40 and reduces the chance of a police check. Sales raise the alert level; a check may confiscate sweets, impose a fine or cost days. Shortages, surpluses and fashion change some prices on arrival.
+Travel advances one day and renews prices. A **Stealth** trip costs $40 and reduces the chance of a police check. Sales raise the alert level; a check may confiscate sweets, impose a fine or cost days. Shortages, surpluses and fashion change some prices on arrival.
 
-The Voyage menu offers places connected to your present location: Centre, Cinéma, Parc, Stade, Fête and Usine. In paper mode, one line combines the day, money, location and **prices followed by owned quantities in parentheses**. The program presents the sheet for reading, then repositions it for the next printout. Let it control the motors.
+The Travel menu offers places connected to your present location: Center, Cinema, Park, Arena, Fair and Factory. In paper mode, one line combines the day, money, location and **prices followed by owned quantities in parentheses**. The program presents the sheet for reading, then repositions it for the next printout. Let it control the motors.
 
 The final score combines your cash and stock valued at **base prices**. Start with small purchases to learn the market. The program combines LCD menus, arrays, randomness, sound, graphics and printed text.

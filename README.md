@@ -56,6 +56,7 @@ Pour une lecture paginée, avec illustrations, sommaire et index cliquables :
 
 - **Studio 0.2.36** : cœur HD6301 accéléré et case **Impression instantanée** pour préparer plus rapidement les dessins papier. Voir le [guide Studio](studio/README.md).
 - **Pocket Duel 1.1** : **Entrée attaque**, les flèches déplacent et Espace téléporte. Tous les jeux sont regroupés dans [examples/games/](examples/games/).
+- **Jeux bilingues** : tous les jeux sont disponibles en français et en anglais, avec leurs notices et commandes adaptées. Voir le [catalogue des exemples](examples/README.md).
 - **Clavier distant** : [exemple BASIC et correspondant Python](examples/remote-keyboard/README.md), avec moniteur de codes et saisie dans la fenêtre active du PC.
 - **Documentation bilingue** : [notices complètes en français et en anglais](examples/guides/README.md), guides du terminal et du clavier distant, manuels enrichis de l'histoire du HX-20 et des Typestar, des cartouches et du HD6301, avec sa photo de silicium et ses applications automobiles. Les PDF sont disponibles dans les téléchargements ci-dessus.
 
@@ -143,6 +144,7 @@ For paginated reading with illustrations, clickable contents and an index:
 
 - **Studio 0.2.36**: faster HD6301 core and an **Instant printing** checkbox for faster paper-drawing development. See the [Studio guide](studio/README.md#english).
 - **Pocket Duel 1.1**: **Enter attacks**, arrows move and Space teleports. All games are grouped in [examples/games/](examples/games/).
+- **Bilingual games**: all games are available in French and English, with matching guides and localized controls. See the [example catalogue](examples/README.md#english).
 - **Remote keyboard**: [BASIC example and Python peer](examples/remote-keyboard/README.md), with a code monitor and typing in the PC's focused window.
 - **Bilingual documentation**: [complete French and English program guides](examples/guides/README.md), terminal and remote-keyboard guides, and manuals expanded with HX-20 and Typestar history, cartridges and the HD6301, including its die photograph and automotive applications. The PDFs are available in the downloads above.
 

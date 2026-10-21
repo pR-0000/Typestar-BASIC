@@ -1,5 +1,7 @@
 # Le Manoir du comte Zorck / Count Zorck's Manor — Typestar BASIC
 
+[Français](../games/manoir-zorck-fr.bas) · [English](../games/count-zorck-manor-en.bas)
+
 ## Français
 
 Première adaptation française, entièrement sur LCD. Ouvrir `manoir-zorck-fr.bas` dans Studio, puis exécuter dans l’émulateur ou envoyer à la Canon avec LOAD. Utiliser le firmware courant ; la validation initiale utilisait la 0.4.85-dev. Aucun papier ni changement de firmware n’est nécessaire.
@@ -51,7 +53,7 @@ Parcours automatisé réussi : trois portes, refus des codes invalides, changeme
 
 ## English
 
-First French adaptation, entirely on the LCD. Open the [French program](../games/manoir-zorck-fr.bas) in Studio, then run it in the emulator or send it to the Canon with LOAD. Use the current firmware, 0.4.85-dev in the original validation. No paper or firmware change is needed.
+An adventure entirely on the LCD, available in French and English. Open the [English program](../games/count-zorck-manor-en.bas) in Studio, then run it in the emulator or send it to the Canon with LOAD. Use the current firmware, 0.4.85-dev in the original validation. No paper or firmware change is needed.
 
 ### Your mission
 
@@ -59,7 +61,7 @@ You leave the village with 80 to 100 health points. Explore the surroundings, fi
 
 ### Exploration
 
-N and S move north and south; E and O move east and west. The left and right arrows also work. I shows health and loot; Q quits. X,Y coordinates appear after the terrain name; the village is the starting point, near 0,0. Water and walls block movement. Encounters trigger automatic combat; the LCD shows your health and your opponent's.
+N and S move north and south; E and W move east and west. The left and right arrows also work. I shows health and loot; Q quits. X,Y coordinates appear after the terrain name; the village is the starting point, near 0,0. Water and walls block movement. Encounters trigger automatic combat; the LCD shows your health and your opponent's.
 
 ### The three gates
 
@@ -67,7 +69,7 @@ You have **50 attempts in total** for the three puzzles.
 
 1. **The hidden gate.** Find two integer coordinates: X between −200 and 200, Y between −100 and 100. The display gives the distance from your last attempt. Press a key, then enter each coordinate, confirming with Return. Comparing several distances helps locate the gate; this is separate from choosing a direction on the outdoor map.
 2. **The password.** Type a letter. All its occurrences are revealed. Dashes represent missing letters. Every proposed letter costs an attempt, including repeats.
-3. **The code.** Enter a string of four to six **different digits**, optionally starting with zero. BIEN counts digits in the correct position; MAL counts present digits in another position. Wrong-length input, letters or repeated digits are rejected without using an attempt.
+3. **The code.** Enter a string of four to six **different digits**, optionally starting with zero. EXACT counts digits in the correct position; MISPLACED counts present digits in another position. Wrong-length input, letters or repeated digits are rejected without using an attempt.
 
 ### The dungeon
 
@@ -82,18 +84,18 @@ Y=4      . # . # .
 Y=5      T . . . T
 ```
 
-Use the number keys: 8 north, 2 south, 4 west, 6 east, and 7/9/1/3 for diagonals. Left/right arrows also work. Diagonal movement cannot cut through a wall corner. At the centre (3,3), M goes up and D goes down. I shows status. **5 leaves the dungeon**, even away from the stairs, and places you outside its entrance. Reach the village on the outdoor map to win.
+Use the number keys: 8 north, 2 south, 4 west, 6 east, and 7/9/1/3 for diagonals. Left/right arrows also work. Diagonal movement cannot cut through a wall corner. At the centre (3,3), U goes up and D goes down. I shows status. **5 leaves the dungeon**, even away from the stairs, and places you outside its entrance. Reach the village on the outdoor map to win.
 
 ### Origin and adaptation choices
 
 Based on *Le Manoir du comte Zorck*, attributed to **Pascal Prioux (1983)** in the transcription, published in **Hebdogiciel issue 18**. Sources: [Sharp PC-1211 index](http://www.hebdogiciel.free.fr/PC1211.htm) and [listing archive](http://www.hebdogiciel.free.fr/hd-roms/PC1211/le%20manoir%20du%20comte%20zorck%20%5BPC1211_18%5D.zip).
 
-The index lists the game under PC-1211, while its introduction mentions PC-1251. The transcription combines several programs, with errors and incomplete dungeon data. This version is therefore an **adaptation**, not an exact reproduction: the outdoor map and word list are retained; the parts are joined without CHAIN; five floors are reconstructed; combat and messages are simplified. The shared puzzle budget, distance search, hidden word, positional code and return to the village are preserved. Collected treasures remain empty.
+The index lists the game under PC-1211, while its introduction mentions PC-1251. The transcription combines several programs, with errors and incomplete dungeon data. This version is therefore an **adaptation**, not an exact reproduction: the outdoor map is retained, and the password list is translated into English; the parts are joined without CHAIN; five floors are reconstructed; combat and messages are simplified. The shared puzzle budget, distance search, hidden word, positional code and return to the village are preserved. Collected treasures remain empty.
 
 The original author remains credited; this adaptation makes no claim to alter the original game's rights. Source scans and archives are not included in the distributed game collection.
 
 ### Verification
 
-`tools/validate_zorck.py` runs the code on the CPU model with the real BASIC ROM. Deterministic secrets and the absence of outdoor encounters make the route reproducible; guardian combat still runs. The report is written to `build/zorck-validation.json`. A game on real hardware is still needed to assess message and input comfort.
+An automated walkthrough runs the English program on the CPU model with the released 0.4.93-dev BASIC ROM. Deterministic secrets and the absence of outdoor encounters make the route reproducible; guardian combat still runs. A game on real hardware will also help assess message and input comfort.
 
-The automated route passed: three gates, rejection of invalid codes, changing floors, guardian combat, treasure and a victorious return to the village. **681 free bytes was the observed minimum** on this deterministic route; this does not guarantee a minimum for every random outcome. Random generation of a code containing distinct digits was also verified separately.
+The automated route passed: three gates, rejection of invalid codes, changing floors with U/D, guardian combat, treasure and a victorious return to the village using W for west. **731 free bytes was the observed minimum** on this deterministic route; this does not guarantee a minimum for every random outcome. Random generation of a code containing distinct digits was also verified separately.

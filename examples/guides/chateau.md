@@ -1,5 +1,7 @@
 # Château / Castle — Typestar BASIC 1.0
 
+[Français](../games/chateau-fr.bas) · [English](../games/castle-en.bas)
+
 ## Français
 
 Adaptation LCD du jeu d’**Alain Dubus**, publié dans **Hebdogiciel n°20** pour le Sharp PC-1211. Ouvrir `chateau-fr.bas` dans Studio, puis lancer l’émulateur ou envoyer le programme à la Canon avec LOAD. Aucun changement de firmware ni papier nécessaire.
@@ -55,11 +57,11 @@ Les quatre scénarios passent : sauvetage, fuite/défaite, catapulte/explosion e
 
 ## English
 
-LCD adaptation of **Alain Dubus's** game, published in **Hebdogiciel issue 20** for the Sharp PC-1211. Open the [French program](../games/chateau-fr.bas) in Studio, then run the emulator or send it to the Canon with LOAD. It requires no firmware change or paper.
+LCD adaptation of **Alain Dubus's** game, published in **Hebdogiciel issue 20** for the Sharp PC-1211. Open the [English program](../games/castle-en.bas) in Studio, then run the emulator or send it to the Canon with LOAD. It requires no firmware change or paper.
 
 ### Rescue the queen!
 
-You start in room 1 with 100 gold pieces. The queen is imprisoned in one of the other 35 rooms. Find her, then bring her back to room 1. REINE appears in the status display when she accompanies you.
+You start in room 1 with 100 gold pieces. The queen is imprisoned in one of the other 35 rooms. Find her, then bring her back to room 1. QUEEN appears in the status display when she accompanies you.
 
 Every valid move costs **8 gold pieces**, including retracing your steps. A balance below zero loses the game; zero is allowed. The map is a square six rooms on each side:
 
@@ -76,7 +78,7 @@ Every valid move costs **8 gold pieces**, including retracing your steps. A bala
 |---|---|
 | North | 8 or N |
 | South | 2 or S |
-| West | Left arrow, 4 or O |
+| West | Left arrow, 4 or W |
 | East | Right arrow, 6 or E |
 | Quit from the room screen | Q |
 | Pass a message | Any key |
@@ -85,12 +87,12 @@ Hold a direction only long enough for one move: release and press again to move 
 
 ### Encounters
 
-- **Bear, ogre, lion, Dracula, dragon:** C fights, F flees. A fight has a 60% chance of success. Victory gains 20, 25, 30, 35 or 40 gold respectively; defeat loses that amount. Fleeing costs 10 gold. A defeated monster disappears; after fleeing or losing, it can confront you on a later visit. You remain in the room and can then choose a direction.
+- **Bear, ogre, lion, Dracula, dragon:** F fights, R runs away. A fight has a 60% chance of success. Victory gains 20, 25, 30, 35 or 40 gold respectively; defeat loses that amount. Fleeing costs 10 gold. A defeated monster disappears; after fleeing or losing, it can confront you on a later visit. You remain in the room and can then choose a direction.
 - **Treasure and ruby:** give 60 and 50 gold, once each.
 - **Queen:** she now accompanies you; return to the entrance.
 - **Two catapults:** throw you into a room from 2 to 36. Landing also costs 8 gold and triggers any encounter at the destination. Each catapult works once.
 - **Two chests:** contain 10 to 59 gold. If the random amount is below 15, the chest explodes and you lose twice that amount. Each chest can be opened once.
-- **Informant:** O accepts, N refuses. He reveals the queen's room, then charges a random amount that can take all your gold! He offers the service once. If the queen already accompanies you, he charges nothing.
+- **Informant:** Y accepts, N refuses. He reveals the queen's room, then charges a random amount that can take all your gold! He offers the service once. If the queen already accompanies you, he charges nothing.
 
 Keep track of visited rooms. The shortest route to the queen may be insufficient: you also need to fund the return journey. Encounters may enrich you or jeopardise the entire expedition.
 
@@ -102,6 +104,6 @@ The rules, amounts and thirteen encounters are retained. Sharp-specific techniqu
 
 ### Size and validation
 
-The program uses **2,140 tokenized bytes**, leaving **3,811 bytes before variable allocation**. `tools/validate_chateau.py` runs deterministic scenarios using the BASIC ROM in the CPU model: returning with the queen, walls, won combat, fleeing and losing, treasures, chests, the informant, catapults, explosions and running out of gold. Positions and some random outcomes are imposed only in the test; the distributed game remains random. The report is saved in `build/chateau-validation.json`. Ease of use still needs confirmation on real hardware.
+The English program uses **2,132 tokenized bytes**, leaving **3,819 bytes before variable allocation**. Automated checks run deterministic scenarios using the released 0.4.93-dev BASIC ROM in the CPU model: returning with the queen, walls, won combat, fleeing and losing, treasures, chests, the informant, catapults, explosions and running out of gold. The English F/R and Y/N controls are exercised. Positions and some random outcomes are imposed only in the test; the distributed game remains random. Ease of use can also be checked on real hardware.
 
-All four scenarios pass: rescue, fleeing/losing, catapult/explosion and insolvency. The observed minimum is 3,501 free bytes in the tested scenarios, before the final cosmetic shortening of the defeat message.
+All four scenarios pass: rescue, fleeing/losing, catapult/explosion and insolvency. The observed minimum is **3,516 free bytes** in the tested English scenarios.

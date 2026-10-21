@@ -1,8 +1,8 @@
 # Notices des programmes / Program guides
 
-Chaque notice explique le but, les commandes et les particularités du programme. Les [fichiers BASIC](../README.md) s'ouvrent dans Typestar BASIC Studio. Les programmes portant `-fr` sont en français, ceux portant `-en` en anglais ; certaines notices bilingues accompagnent un programme disponible seulement en français.
+Chaque notice explique le but, les commandes et les particularités du programme. Les [fichiers BASIC](../README.md) s'ouvrent dans Typestar BASIC Studio. Les programmes portant `-fr` sont en français, ceux portant `-en` en anglais ; chaque jeu du catalogue propose désormais les deux versions.
 
-Each guide explains the goal, controls and program features. Open the [BASIC files](../README.md) in Typestar BASIC Studio. Programs ending in `-fr` are in French; those ending in `-en` are in English. Some bilingual guides describe a program currently available only in French.
+Each guide explains the goal, controls and program features. Open the [BASIC files](../README.md) in Typestar BASIC Studio. Programs ending in `-fr` are in French; those ending in `-en` are in English. Every game in the catalogue now provides both versions.
 
 | Programme / Program | Notice / Guide |
 |---|---|

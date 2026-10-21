@@ -1,6 +1,6 @@
 # Trésors et monstres
 
-[Programme français / French program](../games/tresors-et-monstres-fr.bas)
+[Français](../games/tresors-et-monstres-fr.bas) · [English](../games/treasures-and-monsters-en.bas)
 
 ## Français
 
@@ -58,7 +58,7 @@ Sources : [numéro et sommaire numérisés](https://abandonware-magazines.org/af
 
 ## English
 
-A role-playing game for **one to four players**, taking turns on the same keyboard. Explore a dungeon, survive encounters and bring back gold. The game uses the LCD; a sheet of paper can help you keep track of characters. The supplied program is in French; display and prompt names below match that version.
+A role-playing game for **one to four players**, taking turns on the same keyboard. Explore a dungeon, survive encounters and bring back gold. The game uses the LCD; a sheet of paper can help you keep track of characters. Choose the English BASIC file linked above for the following messages.
 
 ### Getting started
 
@@ -68,20 +68,20 @@ On each turn, **a key** passes each of the character's three status screens. Que
 
 | Display | Meaning |
 |---|---|
-| J1…J4 | Player whose turn it is. |
-| Salle | Progress through the dungeon. |
-| Vie: current / maximum | At zero health, the character dies. |
-| Vivres | Food for moving and healing. |
-| Force | Combat chances and damage. |
-| Or | Gold buys passage and ranks survivors. |
-| Fioles | Antidotes protect against poison. |
-| Monstres | Number of combat victories. |
+| P1…P4 | Player whose turn it is. |
+| ROOM | Progress through the dungeon. |
+| HP: current / maximum | At zero health, the character dies. |
+| FOOD | Food for moving and healing. |
+| STR | Combat chances and damage. |
+| GOLD | Gold buys passage and ranks survivors. |
+| VIALS | Antidotes protect against poison. |
+| KILLS | Number of combat victories. |
 
 ### Moving and healing
 
-At **AVANCER 0-3**, choose how many rooms to advance. Each turn adds one to six food, then costs **advance + 1 food**. A negative food balance makes the character starve. Check your reserves before moving.
+At **ADVANCE 0-3**, choose how many rooms to advance. Each turn adds one to six food, then costs **advance + 1 food**. A negative food balance makes the character starve. Check your reserves before moving.
 
-With **0**, you stay where you are. At **SOINS 0=NON 1=O**, answering 1 spends one extra food and restores one to six health points, up to the character's maximum. Staying still can still trigger an encounter.
+With **0**, you stay where you are. At **HEAL 0=NO 1=YES**, answering 1 spends one extra food and restores one to six health points, up to the character's maximum. Staying still can still trigger an encounter.
 
 ### Encounters
 

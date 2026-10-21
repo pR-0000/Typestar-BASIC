@@ -1,6 +1,6 @@
 # Les allumettes / Matches
 
-[Programme français / French program](../games/game-matches-fr.bas)
+[Français](../games/game-matches-fr.bas) · [English](../games/game-matches-en.bas)
 
 ## Français
 
@@ -12,8 +12,8 @@ Lancez avec F5 ou `RUN`. Une touche passe les messages. À **PRENDRE 1-3**, tape
 
 ## English
 
-Twenty matches lie on the table. You and the Canon take **one, two or three** in turn. **Taking the last match loses.** You move first. The supplied program is in French.
+Twenty matches lie on the table. You and the Canon take **one, two or three** in turn. **Taking the last match loses.** You move first.
 
-Start with F5 or `RUN`. A key passes messages. At **PRENDRE 1-3**, enter your number followed by **Enter**. Take at most the number of remaining matches. The Canon announces its move and the new total. `RUN` starts another round.
+Start with F5 or `RUN`. A key passes messages. At **TAKE 1-3**, enter your number followed by **Enter**. Take at most the number of remaining matches. The Canon announces its move and the new total. `RUN` starts another round.
 
 **Something to investigate:** which positions make the next player's task difficult? Try leaving your opponent 1, 5, 9, 13 or 17 matches. Line 110 calculates the Canon's strategy; line 20 sets the starting pile.

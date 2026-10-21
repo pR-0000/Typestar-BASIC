@@ -1,6 +1,6 @@
 # Le trésor 4 × 4 / The 4 × 4 treasure
 
-[Programme français / French program](../games/game-treasure-fr.bas)
+[Français](../games/game-treasure-fr.bas) · [English](../games/game-treasure-en.bas)
 
 ## Français
 
@@ -14,9 +14,9 @@ Les seize valeurs DATA, lues de gauche à droite puis de haut en bas, décrivent
 
 ## English
 
-Find a treasure hidden in a **four-column, four-row grid** with **three lives**. Some cells contain a trap, costing one life; the others are empty or hold the treasure. The supplied program is in French.
+Find a treasure hidden in a **four-column, four-row grid** with **three lives**. Some cells contain a trap, costing one life; the others are empty or hold the treasure.
 
-Start with F5 or `RUN`. At **X 1-4,0=FIN**, enter the column followed by **Enter**, then a row from 1 to 4. You may search any cell. A key passes the result. Record your searches on a hand-drawn grid: searching an already visited cell preserves the move count.
+Start with F5 or `RUN`. At **X 1-4,0=QUIT**, enter the column followed by **Enter**, then a row from 1 to 4. You may search any cell. A key passes the result. Record your searches on a hand-drawn grid: searching an already visited cell preserves the move count.
 
 Finding the treasure wins immediately; three traps lose the game. Enter **0** at the column prompt to finish. The map is **fixed**: playing again also helps you learn its positions.
 

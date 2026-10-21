@@ -1,5 +1,7 @@
 # Enquête / Investigation — Typestar BASIC 1.0
 
+[Français](../games/enquete-fr.bas) · [English](../games/investigation-en.bas)
+
 ## Français
 
 D’après **Enquête**, d’**Éric Flament**, paru dans **Hebdogiciel n°23** pour Sharp PC-1211. Version française sur LCD, sans impression. Charger `enquete-fr.bas` depuis Studio, avec le firmware courant. Les accents utilisent directement les caractères natifs.
@@ -54,7 +56,7 @@ Taille : **2 718 octets tokenisés**, **3 233 octets libres avant variables**. L
 
 ## English
 
-Based on **Enquête**, by **Éric Flament**, published in **Hebdogiciel issue 23** for the Sharp PC-1211. This French version uses the LCD, without printing. Load the [program](../games/enquete-fr.bas) from Studio with the current firmware. Accents use native characters directly.
+Based on **Enquête**, by **Éric Flament**, published in **Hebdogiciel issue 23** for the Sharp PC-1211. The game uses the LCD, without printing. Load the [English program](../games/investigation-en.bas) from Studio with the current firmware. Accents use native characters directly.
 
 ### Gaston has been killed
 
@@ -64,23 +66,23 @@ The body's location appears after the introduction. Each case has one culprit. T
 
 ### Questioning suspects
 
-Choose a person with the left/right arrows, then Return. A1 or A2 identifies the active case. Q quits from this selection. Questions are arranged on two pages:
+Choose a person with the left/right arrows, then Return. C1 or C2 identifies the active case. Q quits from this selection. Questions are arranged on two pages:
 
-- **1 Lieu (Location):** the person's stated location.
+- **1 Place:** the person's stated location.
 - **2 Alibi:** a reliable alibi clears the person in the active case.
-- **3 Lien (Connection):** asks whether the person knew the victim; “no” clears them.
-- **4 Vu (Seen):** choose another person to compare their statements.
-- **5 Accuser (Accuse):** choose a name, then confirm with O. Any other key cancels. **A false accusation ends the game.**
-- **6 Affaire (Case):** after the second death, switches between case 1 (Gaston) and case 2 (the new victim), displaying the victim's name.
+- **3 Knew:** asks whether the person knew the victim; “no” clears them.
+- **4 Seen:** choose another person to compare their statements.
+- **5 Accuse:** choose a name, then confirm with Y. Any other key cancels. **A false accusation ends the game.**
+- **6 Case:** after the second death, switches between case 1 (Gaston) and case 2 (the new victim), displaying the victim's name.
 
-Arrows change pages; keys 1 to 6 work on both pages. Backspace returns to suspect selection, or cancels name selection in “Vu” and “Accuser”. After an answer, the questioned person's menu stays open. Backspace lets you change suspects; discovery of the second body interrupts the conversation. A key passes messages. The final counter counts answers obtained, not menu navigation.
+Arrows change pages; keys 1 to 6 work on both pages. Backspace returns to suspect selection, or cancels name selection in “Seen” and “Accuse”. After an answer, the questioned person's menu stays open. Backspace lets you change suspects; discovery of the second body interrupts the conversation. A key passes messages. The final counter counts answers obtained, not menu navigation.
 
 ### Comparing statements
 
-Record stated locations. Use **Vu** between two people **claiming to be in the same place**:
+Record stated locations. Use **Seen** between two people **claiming to be in the same place**:
 
-- “Oui” (Yes): their statements corroborate each other; both are innocent in this case.
-- “Non” (No): one of them is lying. Compare them with a third person, then cross-check alibis and connections to the victim.
+- “Yes”: their statements corroborate each other; both are innocent in this case.
+- “No”: one of them is lying. Compare them with a third person, then cross-check alibis and connections to the victim.
 
 A “no” between two different locations proves nothing! This rule compares statements rather than simulating detailed movements. Characters are grouped into three locations chosen from the game's nine location names. Comparisons always offer a way forward; alibis and connections alone may be insufficient.
 
@@ -100,6 +102,6 @@ The listing has several errors and inconsistencies: comparing a person with them
 
 ### Verification
 
-Studio's analyser checks the program. `tools/validate_enquete.py` runs scenarios with the BASIC ROM in the emulator: questioning, a second body, two correct accusations, suicide and an incorrect accusation. Culprits are fixed only for these tests. Playability and navigation comfort still need confirmation on the Canon.
+Studio's analyser checks the program. Automated walkthroughs execute the English file with the released 0.4.93-dev BASIC ROM in the emulator: questioning, a second body, two correct accusations confirmed with Y, suicide and an incorrect accusation. Culprits are fixed only for these tests. Playing on the Canon can also confirm message and navigation comfort.
 
-Size: **2,718 tokenized bytes**, **3,233 bytes free before variables**. All three CPU scenarios passed; consistency of comparisons was also checked for all 81 culprit/deceased combinations, allowing living witnesses to give statements about the dead.
+English version: **2,708 tokenized bytes**, **3,243 bytes free before variables**. All three CPU scenarios passed, with at least **2,501 bytes free** observed; consistency of comparisons was also checked for all 81 culprit/deceased combinations, allowing living witnesses to give statements about the dead.
