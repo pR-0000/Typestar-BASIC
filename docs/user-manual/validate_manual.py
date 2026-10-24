@@ -59,7 +59,7 @@ def runtime_checks(report, mask, firmware):
     from emulator_worker import backend
     CPU = backend(mask_path=mask, firmware_path=firmware)
     results = []
-    def advance(cpu, predicate, budget=2500000):
+    def advance(cpu, predicate, budget=20000000):
         for count in range(budget):
             if predicate():
                 return count
@@ -67,33 +67,51 @@ def runtime_checks(report, mask, firmware):
         raise AssertionError(f'Execution timeout PC={cpu.pc:04X}, LCD={cpu.screen()!r}')
     def idle(cpu):
         return not cpu.input and cpu.pc == cpu.symbols['GETC']
+    def awaiting_input(cpu):
+        # RLINE also retains the last executed line after END. The return
+        # address distinguishes INPUT's editor from output acknowledgement.
+        return (idle(cpu) and cpu.word(cpu.symbols['RLINE']) != 0
+                and cpu.word(cpu.sp+1) == cpu.symbols['READNEXT']+3)
     def error(cpu):
         return cpu.lcd[0] == ord('?')
-    for item in report:
+    for position, item in enumerate(report):
         if not item['program']:
             continue
         if item['chapter'] == '11-programmes-complets.md':
             results.append(dict(chapter=item['chapter'], example=item['example'], result='syntax/codec only', reason='interactive selected program; validate by playing in Studio or on the Canon'))
             continue
         source = item['source']
+        based_on = None
+        # A replacement line is taught after the complete GLYPH example.
+        # Execute it in that program's context, including its DIM and DATA.
+        if len(source.splitlines()) == 1 and int(source.split()[0]) > 10:
+            previous = next((old for old in reversed(report[:position])
+                             if old['chapter'] == item['chapter'] and old['program']), None)
+            assert previous is not None, (item['chapter'],item['example'],'Missing context')
+            lines = {int(line.split()[0]):line for line in previous['source'].splitlines()}
+            lines[int(source.split()[0])] = source
+            source = '\n'.join(lines[number] for number in sorted(lines))
+            based_on = previous['example']
         if 'SEROPEN' in source:
             results.append(dict(chapter=item['chapter'], example=item['example'], result='syntax/codec only', reason='requires external serial peer'))
             continue
         cpu = CPU(source+'\n')
+        cpu.instant_paper = True
         if 'INKEY' in source:
             cpu.held_key = 32
         replies = 0
         for _ in range(8):
             advance(cpu, lambda: idle(cpu) or error(cpu))
             assert not error(cpu),(item['chapter'], item['example'],cpu.screen())
-            if 'INPUT' not in source or cpu.word(cpu.symbols['RLINE']) == 0:
+            if 'INPUT' not in source or not awaiting_input(cpu):
                 break
             prompt = cpu.screen()
             answers = [('TON NOM','ALICE'),('TON AGE','12'),('DEVINE','42'),
-                       ('PRIX','2.5'),('DE 1 A 6','4'),('NOMBRE','7')]
+                       ('PRIX','2.5'),('DE 1 A 6','4'),('NOMBRE','7'),
+                       ('YOUR NAME','ALICE'),('YOUR AGE','12'),('WHAT IS 6*7','42'),
+                       ('PRICE','2.5'),('QUANTITY','7'),('FROM 1 TO 6','4'),('NUMBER','7')]
             answer = next((value for key,value in answers if key in prompt),None)
-            if answer is None:
-                break
+            assert answer is not None,(item['chapter'],item['example'],'Unanswered INPUT',prompt)
             cpu.input.extend(encode_source(answer)+b'\r')
             cpu.step()
             replies += 1
@@ -101,8 +119,11 @@ def runtime_checks(report, mask, firmware):
             raise AssertionError((item['chapter'],item['example'],'repeated INPUT'))
         advance(cpu,lambda:idle(cpu) or error(cpu))
         assert not error(cpu),(item['chapter'], item['example'],cpu.screen())
+        if 'INPUT' in source:
+            assert not awaiting_input(cpu),(item['chapter'],item['example'],'Unanswered INPUT')
         results.append(dict(chapter=item['chapter'],example=item['example'],result='PASS',
-                            screen=cpu.screen(), replies=replies, paper_points=len(cpu.paper_events)))
+                            screen=cpu.screen(), replies=replies, paper_points=len(cpu.paper_events),
+                            based_on_example=based_on))
         print(item['chapter'],item['example'],'PASS',flush=True)
     checks = [
         ('ABS(-8)', '8'), ('SGN(-5)', '-1'), ('INT(-3.8)', '-4'),

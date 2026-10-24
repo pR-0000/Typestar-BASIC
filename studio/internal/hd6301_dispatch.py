@@ -139,6 +139,9 @@ def build_dispatch():
                 5: f'c.nz(c.{register} & value)',
                 6: f'c.{register} = c.nz(value)',
                 8: f'c.{register} = c.nz(c.{register} ^ value)',
+                9: (f'acc = c.{register}\ntotal = acc + value + int(c.c)\nresult = c.nz(total)\n'
+                    'c.c = total > 255\nc.v = bool((~(acc ^ value)) & (acc ^ result) & 128)\n'
+                    f'c.{register} = result'),
                 10: f'c.{register} = c.nz(c.{register} | value)',
                 11: f'c.{register} = c.add(c.{register}, value)',
                 12: 'c.d = c.nz(value, 16)' if bank_b else 'c.sub(c.x, value, 16)',

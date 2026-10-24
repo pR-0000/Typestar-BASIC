@@ -66,19 +66,19 @@ Huit emplacements de motifs sont partagés. Le curseur 0 utilise le bloc natif e
 | `DRAW INSTANT` | Formes imprimées immédiatement. |
 | `DRAW DEFERRED` | Prépare jusqu'à 32 formes ensemble. |
 | `DRAW PRINT` ; `DRAW CANCEL` | Imprime ou abandonne la composition, puis revient à INSTANT. |
-| `GLYPH A(indices),largeur,hauteur[,mode[,repetitions]]` | Bitmap 1D ou 2D ; modes 1 natif, 2 double X/Y, 3 carré, 4 grand carré ; 1..16 répétitions. |
+| `GLYPH A(indices),largeur,hauteur[,mode[,repetitions]]` | Bitmap 1D ou 2D ; modes 1 natif, 2 double X/Y, 3 carré, 4 grand carré ; 1..16 répétitions. Mode 5 : palette et rangée de 1..40 motifs 8×8. |
 | `ORIGIN [x[,y]]` | Déclare la position présente, sans déplacement. |
 | `MOVE x,y` | Position moteur absolue dans le repère déclaré. |
 | `HEAD dx` ; `FEED dy` | Déplacements relatifs de tête et de papier. |
 
-Dessin : X 0..247, Y 0..255, entiers ; correction de proportions et rangée native `INT(Y/2)`. Moteurs : X 0..128, Y 0..448, autres unités. Après impression, redéclarer le repère moteur. GLYPH : hauteur 1..16 ; largeur 1..16 en masques 1D, 1..31 en matrice 2D. La largeur 2D correspond au nombre de colonnes et part de la colonne zéro.
+Dessin : X 0..247, Y 0..255, entiers ; correction de proportions et rangée native `INT(Y/2)`. Moteurs : X 0..128, Y 0..448, autres unités. Après impression, redéclarer le repère moteur. GLYPH : hauteur 1..16 ; largeur 1..16 ou 32 en masques 1D, 1..32 en matrice 2D. La largeur 2D correspond au nombre de colonnes et part de la colonne zéro.
 
 ## Sons, hasard, série et accès mémoire
 
 | Forme | Usage |
 |---|---|
 | `BEEP [duree]` | 0..2000 ms ; défaut 100 ms. |
-| `SOUND modulation,duree` | 60..750 Hz de modulation, ou 0 pour le silence ; 0..2000 ms. |
+| `SOUND cadence,duree[,rapport[,texture]]` | 50..31250 Hz ou 0 (silence) ; 0..2000 ms ; rapport 1..99 % (50) ; texture 0 (carré) ou 1 (bruit, cadence ≥1000, 672 octets libres). |
 | `RANDOMIZE graine` | Graine entière 1..65535, obligatoire. |
 | `BAUD debit` | 1200, 2400, 7812, 15625 ou 31250. |
 | `SERCFG format` | 7N1, 7N2, 7E1, 7E2, 7O1 ou 7O2 ; sans guillemets. |

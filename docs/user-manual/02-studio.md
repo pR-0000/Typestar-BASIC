@@ -23,6 +23,8 @@ L'éditeur occupe la partie gauche de la fenêtre. Les **numéros de ligne**, le
 
 Utilisez **Fichier → Nouveau**, **Ouvrir**, **Enregistrer** ou **Enregistrer sous** pour ranger vos programmes. **Ctrl+F** recherche un mot ; les commandes du menu **Édition** permettent de copier, coller, annuler et rétablir. Les fichiers `.bas` sont du texte **UTF-8** : vous pouvez écrire les accents reconnus par le LCD directement dans les messages.
 
+Certains DATA de jeux contiennent des octets sans caractère de texte habituel. Studio les représente par de petits repères hexadécimaux, comme **[B3]**. Chaque repère représente toujours **un seul octet** : ouverture, sauvegarde, copie et transfert conservent les données et la limite de 63 octets par ligne. Les lettres et les accents gardent leur apparence habituelle.
+
 Avec **Programme → Vérifier les limites** ou **F4**, Studio contrôle les numéros de ligne, leur longueur, les caractères et la place occupée par le programme tokenisé. Cliquez sur un diagnostic pour rejoindre la ligne concernée. L'estimation de mémoire précède la création des variables : votre programme utilisera aussi de la RAM pendant son exécution. Les essais dans l'émulateur permettent ensuite de vérifier les calculs et le déroulement.
 
 **Essayons ensemble.** Créez un nouveau fichier et recopiez ces lignes :

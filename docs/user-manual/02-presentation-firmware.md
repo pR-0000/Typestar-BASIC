@@ -174,11 +174,11 @@ Pour LPRINT, un cache prépare les caractères distincts du texte. Une lettre r�
 
 Pour les glyphes répétés, une seule bande de dessin est préparée, puis réutilisée pendant la passe. Un mur de 16 × 16 en mode 4 demande **348 octets temporaires**, pour une ou seize copies. Les deux moitiés du dessin sont imprimées successivement. Le programme et ses tableaux restent en mémoire.
 
-| Ressource de la version 0.4.93-dev | Taille |
+| Ressource de la version 0.4.100-dev | Taille |
 |---|---:|
 | ROM BASIC | 32 768 octets |
-| Occupation de la ROM | 32 707 octets |
-| Réserve explicitement libre | 61 octets |
+| Occupation de la ROM | 32 710 octets |
+| Réserve explicitement libre | 58 octets |
 | RAM BASIC libre à vide, programme et données | 5 951 octets |
 
 ## Garder le programme, partager les tampons

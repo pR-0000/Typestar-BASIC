@@ -14,7 +14,8 @@ CARRIER_HZ=5888.3
 ATTACK_SECONDS=.002
 RELEASE_SECONDS=.003
 
-def pcm(hz,ms,mode,rate=44100,channels=1):
+def pcm(hz,ms,mode,rate=44100,channels=1,duty=50,wave=0,extended=False):
+    if extended:return synth_pcm(hz,ms,mode,rate,channels,duty,wave)
     count=round(rate*ms/1000);out=array('h');envelope=0.
     attack=1-math.exp(-1/(rate*ATTACK_SECONDS))
     release=1-math.exp(-1/(rate*RELEASE_SECONDS))
@@ -32,6 +33,35 @@ def pcm(hz,ms,mode,rate=44100,channels=1):
     if peak:
         gain=min(2.,28000/peak)
         out=array('h',(round(v*gain) for v in out))
+    return out.tobytes()
+
+def synth_pcm(hz,ms,mode,rate,channels,duty,wave):
+    """Audible preview of measured gate textures, not a calibrated speaker model.
+
+    Oversampled gates retain the 31-bit sequence at clocks above Nyquist.
+    A direct switching component previews the strong high-rate survey sounds;
+    the fixed resonant component remains audible in slower amplitude modulation.
+    """
+    count=round(rate*ms/1000);out=array('h');envelope=0.
+    state=31;bits=[]
+    for _ in range(31):
+        bits.append(state&1);state=(state>>1)|(((state^(state>>2))&1)<<4)
+    fraction=max(.01,min(.99,duty/100));oversample=8
+    direct=.85 if mode==3 or hz>=1000 else .12
+    resonance=.22 if mode==3 or hz>=4500 else .82
+    for n in range(count):
+        gate=0.
+        for j in range(oversample):
+            phase=(n+(j+.5)/oversample)*hz/rate
+            gate+=1. if mode==0 else 0. if mode==2 else bits[int(phase)%31] if mode==3 else float(phase%1<fraction)
+        gate/=oversample
+        envelope+=(gate-envelope)*.45
+        mean=16/31 if mode==3 else fraction
+        ac=0 if mode in (0,2) else gate-mean
+        value=resonance*envelope*math.sin(2*math.pi*CARRIER_HZ*n/rate)+direct*ac
+        fade=min(1,n/(rate*.0005),max(0,(count-1-n)/(rate*.0005)))
+        sample=round(26000*max(-1,min(1,value))*fade) if mode!=2 else 0
+        out.extend([sample]*channels)
     return out.tobytes()
 
 class AudioStream(QIODevice):
@@ -100,7 +130,8 @@ class BuzzerAudio:
         if self.sink.error().value:return tr('Erreur de sortie audio : ')+str(self.sink.error())
     def enqueue(self,event):
         if 'gate' in event:self.buffer.set_gate(event['gate'])
-        else:self.buffer.append(pcm(event['hz'],event['ms'],event['mode'],self.rate,self.channels))
+        else:self.buffer.append(pcm(event['hz'],event['ms'],event['mode'],self.rate,self.channels,
+                                   event.get('duty',50),event.get('wave',0),event.get('extended',False)))
 
     def pause(self,paused):
         if self.sink:

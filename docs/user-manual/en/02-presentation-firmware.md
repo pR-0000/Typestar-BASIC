@@ -174,11 +174,11 @@ LPRINT caches the distinct characters of a text. Repeated letters reuse the same
 
 For repeated glyphs, a single drawing band is prepared and reused throughout the sweep. A 16 × 16 wall in mode 4 needs **348 temporary bytes**, whether printed once or sixteen times. The two halves of the drawing are printed in turn. Your program and arrays remain in memory.
 
-| Resource in version 0.4.93-dev | Size |
+| Resource in version 0.4.100-dev | Size |
 |---|---:|
 | BASIC ROM | 32,768 bytes |
-| ROM occupied | 32,707 bytes |
-| Explicitly free reserve | 61 bytes |
+| ROM occupied | 32,710 bytes |
+| Explicitly free reserve | 58 bytes |
 | Empty BASIC RAM, shared by program and data | 5,951 bytes |
 
 ## Retaining programs and sharing buffers

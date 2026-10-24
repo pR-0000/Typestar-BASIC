@@ -250,6 +250,8 @@ def _loop(c, s):
 
 def _glyph(c, s):
     start, tiles, band = c.x, c.b, (c.a << 4) & 255
+    if 'TMDECODE' in s:
+        c.putword(s['SGDEST'],start)
     for address in range(start, start + ((tiles << 6) & 255 or 256)):
         c.write(address, 0)
     c.write(s['SGBAND'], band)
@@ -273,8 +275,11 @@ def _glyph(c, s):
                 c.putword(out, value)
         out += 2
         column += 1
-        c.b = column & 31
-        if c.b == 31:
+        wide_driver = 'SGPAIR' in s
+        if wide_driver:
+            c.push(out & 255);c.push(out >> 8);c.pop();c.pop()
+        c.b = ((out-start) & 63) if wide_driver else column & 31
+        if c.b == (62 if wide_driver else 31):
             out += 2
             c.b = mode
             if mode == 4:
@@ -387,8 +392,17 @@ def kernels(memory, symbols):
     # The larger pure-RAM routines have split ROM islands. Hash their exact
     # instruction blocks; their pattern/mask/font data is still read at runtime.
     groups = [
+        ([(0xa5e0, 0xa5ff, '16ff8732f6fd891ff6eaedce4719ab23e0e83b144480c7ec3148710e2d196a22'),
+          (0xb448, 0xb4d7, 'f2dbb239896f4dd19218949ee618a1ce5d12816c817cecee9d01131505f3c3a4')],
+         'SGRENDER', _glyph),
         ([(0x85db, 0x85f7, 'fd1e0de834f72d2d01ac926e5ae8c619bdd826a8178fa14c1ad2464d2fbc52af'),
           (0xb448, 0xb4d7, '9b40200652dad1ad7ebbc81e087c7467aa4e6458bbdfbb3363a8f0b4694eb246')],
+         'SGRENDER', _glyph),
+        ([(0xb33d, 0xb35c, '16ff8732f6fd891ff6eaedce4719ab23e0e83b144480c7ec3148710e2d196a22'),
+          (0xb448, 0xb4d7, 'f2dbb239896f4dd19218949ee618a1ce5d12816c817cecee9d01131505f3c3a4')],
+         'SGRENDER', _glyph),
+        ([(0x85db, 0x85f7, 'fd1e0de834f72d2d01ac926e5ae8c619bdd826a8178fa14c1ad2464d2fbc52af'),
+          (0xb448, 0xb4d7, '775daa015a392b8002f78caaa27894f7f2aa14959a41f3df68c98bb1e39b7230')],
          'SGRENDER', _glyph),
         ([(0x84fe, 0x853d, '4e87846e89c89851e66e51871f4cc4f9d186f00ddf2fcbb4584abe9086e45578'),
           (0x857c, 0x85a3, 'a0be52ba2e60708d27c1cd5fbeb73d9c57f8cf3b46232c69ca8e4d878634464f')],

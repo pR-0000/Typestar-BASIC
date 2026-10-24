@@ -26,6 +26,7 @@ from reportlab.platypus import (
     BaseDocTemplate, Frame, Image, PageBreak, PageTemplate, Paragraph,
     Preformatted, Spacer, Table, TableStyle,
 )
+from reportlab.platypus.xpreformatted import XPreformatted
 from source_notes import SourceNotes
 
 HERE = Path(__file__).resolve().parent
@@ -38,10 +39,17 @@ NOTES = None
 
 
 def normalized(text):
-    # Vera's bold face lacks directional arrows; keep their meaning in ASCII.
-    # Original labels remain unchanged in Markdown and the Studio screenshots.
-    return (text.replace('\u2014', '-').replace('\u2013', '-').replace('\u2011', '-')
-            .replace('\u2192', '->').replace('\u2190', '<-'))
+    # The bundled Lato faces include all four directional arrows.
+    return text.replace('\u2014', '-').replace('\u2013', '-').replace('\u2011', '-')
+
+
+def code_flow(text, style):
+    # Preserve the original byte characters in PDF listings as in Studio.
+    # Markup changes only the font; copy/paste still contains the native byte.
+    if re.search('[\ue080-\ue0ff]',text):
+        markup=re.sub('[\ue080-\ue0ff]',lambda m:'<font name="Byte">'+m[0]+'</font>',html.escape(text))
+        return XPreformatted(markup,style)
+    return Preformatted(text,style)
 
 
 def slug(text):
@@ -76,6 +84,7 @@ def setup_styles():
                            ('BodyItalic', 'Lato-Italic.ttf'), ('BodyBoldItalic','Lato-BoldItalic.ttf')]:
         pdfmetrics.registerFont(TTFont(name, str(font_dir / filename)))
     pdfmetrics.registerFont(pdfmetrics.Font('Code', 'Courier', 'WinAnsiEncoding'))
+    pdfmetrics.registerFont(TTFont('Byte', str(ROOT/'studio/internal/assets/typestar-bytes.ttf')))
     pdfmetrics.registerFontFamily('Code', normal='Code', bold='Code', italic='Code', boldItalic='Code')
     pdfmetrics.registerFontFamily('Body', normal='Body', bold='BodyBold',
                                  italic='BodyItalic', boldItalic='BodyBoldItalic')
@@ -323,7 +332,7 @@ def chapter(tokens, source, styles, pages, config):
                     label='Listing '+language
                 listing_code=ParagraphStyle('listing-code',parent=code_style,leading=12.5)
                 listing=Table([[Paragraph('<b>'+html.escape(label)+'</b>',styles['small'])]]+
-                              [[Preformatted(line or ' ',listing_code)] for line in expanded],
+                              [[code_flow(line or ' ',listing_code)] for line in expanded],
                               colWidths=[166*mm],repeatRows=1,hAlign='LEFT',splitByRow=len(expanded)>20)
                 listing.setStyle(TableStyle([
                     ('BACKGROUND',(0,0),(-1,0),PALE),
@@ -331,9 +340,25 @@ def chapter(tokens, source, styles, pages, config):
                     ('TOPPADDING',(0,0),(-1,-1),0),('BOTTOMPADDING',(0,0),(-1,-1),0),
                     ('TOPPADDING',(0,0),(-1,0),6),('BOTTOMPADDING',(0,0),(-1,0),6),
                     ('LEFTPADDING',(0,0),(-1,-1),8),('RIGHTPADDING',(0,0),(-1,-1),8)]))
+                # Keep small binary pixel patterns together so their shape
+                # stays readable across the DATA rows, including their label.
+                start=0
+                while start<len(expanded):
+                    if not re.fullmatch(r'\d+\s+DATA\s+%[01]{8}',expanded[start]):
+                        start+=1
+                        continue
+                    end=start
+                    while end+1<len(expanded) and re.fullmatch(r'\d+\s+DATA\s+%[01]{8}',expanded[end+1]):
+                        end+=1
+                    if end-start<8:
+                        first=start+1
+                        if start and re.match(r'\d+\s+REM\b',expanded[start-1]):
+                            first=start
+                        listing.setStyle(TableStyle([('NOSPLIT',(0,first),(-1,end+1))]))
+                    start=end+1
                 flow.extend([listing,Spacer(1,12)])
                 continue
-            code = Table([[Preformatted('\n'.join(expanded), code_style)]], colWidths=[166*mm])
+            code = Table([[code_flow('\n'.join(expanded), code_style)]], colWidths=[166*mm])
             code.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),PALE),
                                      ('LEFTPADDING',(0,0),(-1,-1),9),
                                      ('RIGHTPADDING',(0,0),(-1,-1),9),
@@ -403,7 +428,8 @@ def illustration_assets():
             p = (20+x*39, 15+y*39)
             draw.rectangle((*p,p[0]+33,p[1]+33), fill='#225651' if row&(16>>x) else '#eef4f2', outline='#aabbb4')
         draw.text((250, 18+y*39), f'%{row:05b}  = {row:2d}', fill='#172621', font=font)
-    image.save(folder/'lcd-sourire.png')
+    if not (folder/'lcd-sourire.png').exists():
+        image.save(folder/'lcd-sourire.png')
     image = PILImage.new('RGB', (850, 345), 'white')
     draw = ImageDraw.Draw(image)
     for x in range(130, 791, 55):
@@ -418,7 +444,8 @@ def illustration_assets():
         draw.text(xy,label,font=font,fill='#172621')
     draw.rectangle((240,125,460,265),outline='#225651',width=3)
     draw.ellipse((235,120,245,130),fill='#225651')
-    image.save(folder/'repere-graphique.png')
+    if not (folder/'repere-graphique.png').exists():
+        image.save(folder/'repere-graphique.png')
 
 
 def collect(chapters):
@@ -446,9 +473,6 @@ def build(config_path, output, pagination_seed=None):
     english=config.get('language')=='en'
     content_root=HERE/config.get('content_directory','.')
     def translated(fr,en):return en if english else fr
-    if '09-terminal-papier.md' in config['chapters']:
-        from sync_terminal_example import sync
-        sync(config.get('language','fr'))
     if config.get('example_programs'):
         from write_selected_programs import write_chapter
         write_chapter(config)

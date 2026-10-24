@@ -1,8 +1,8 @@
 # Typestar BASIC - manuel de l'utilisateur
 
-Pierre Raimbault & Chat GPT - rédaction française du 20 octobre 2026.
+Pierre Raimbault & Chat GPT - rédaction française du 24 octobre 2026.
 
-Référence du langage : **Typestar BASIC 0.4.93-dev**, sur Canon S-70 / Typestar 7. Ce manuel accompagne vos premières instructions, puis vos programmes utilisant le clavier, le LCD, l'imprimante, le buzzer et la liaison série. Aucune connaissance de l'assembleur ni de l'électronique n'est nécessaire pour suivre les ateliers.
+Référence du langage : **Typestar BASIC 0.4.100-dev**, sur Canon S-70 / Typestar 7. Ce manuel accompagne vos premières instructions, puis vos programmes utilisant le clavier, le LCD, l'imprimante, le buzzer et la liaison série. Aucune connaissance de l'assembleur ni de l'électronique n'est nécessaire pour suivre les ateliers.
 
 Chaque leçon propose une idée simple, quelques lignes à essayer, une explication du résultat et une modification personnelle. Sauvegardez votre programme avant de saisir un nouvel exercice. L’[édition anglaise](en/README.md) reprend les chapitres, les exemples et les illustrations localisées.
 
@@ -23,10 +23,10 @@ L’installation suit immédiatement la présentation des capacités. Le chapitr
 11. [Une boîte à outils pour les calculs et le texte](06-fonctions-nombres-chaines.md) : hasard, PI, mathématiques et manipulation des chaînes.
 12. [Composer un écran et écouter le clavier](07-ecran-clavier.md) : PRINT, LOCATE, curseur, caractères personnels, triangles, lignes et indicateurs.
 13. [Votre programme laisse une trace sur le papier](08-papier-dessins.md) : LPRINT, interligne, LLOCATE, géométrie, moteurs et glyphes.
-14. [Faire du bruit et échanger des informations](09-sons-serie-memoire.md) : BEEP, SOUND, LOAD/SAVE, sessions série, PEEK et POKE.
-15. [Atelier : un terminal papier](09-terminal-papier.md) : conversation en 1200/7E1, programme BASIC et correspondant Python.
+14. [Atelier : une carte faite de petits dessins](08-atelier-tilemap.md) : un programme court et commenté pour découvrir les palettes et les rangées GLYPH.
+15. [Faire du bruit et échanger des informations](09-sons-serie-memoire.md) : BEEP, SOUND, LOAD/SAVE, sessions série, PEEK et POKE.
 16. [Trouver une erreur et améliorer son programme](10-erreurs-et-limites.md) : messages, limites et méthode de vérification.
-17. [Programmes complets](11-programmes-complets.md) : Piano, Pocket Duel, Duel Orbital, Duel Balistique et les Ruines de Typestar, avec leurs listings.
+17. [Programmes complets](11-programmes-complets.md) : Piano, Pocket Duel, Duel Orbital, Duel Balistique, les Ruines de Typestar et Canon S-70 Quest, avec leurs six listings et leurs commandes.
 18. [Choisir ses caractères](12-table-caracteres.md) : palette LCD de Studio et police papier LPRINT.
 19. [Annexe : schéma de la carte CPU](13-annexe-schema.md) : vue nettoyée et agrandissements fidèles au scan.
 20. [Référence rapide du langage](98-reference-rapide.md)
@@ -41,7 +41,7 @@ Le projet est indépendant de Canon et s'inspire de Microsoft BASIC sans en prom
 
 Le **Markdown UTF-8 reste le source de référence**, avec un fichier par chapitre et une seule ligne par paragraphe. Les fichiers ne contiennent pas de retours forcés au milieu des phrases pour adapter le texte à une largeur particulière. Photos, schémas et légendes restent dans le dossier `images`.
 
-Le [PDF français](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.93-dev/typestar-basic-manuel-fr.pdf) réunit les chapitres historiques et pratiques. Il possède des pages numérotées, un sommaire cliquable, des signets, les renvois de page du lexique et un index alphabétique des 86 mots-clés, fonctions et constante recensés. Sa pagination est recalculée après chaque modification ; aucune page n'est écrite à la main dans le Markdown. Le PDF accompagne la version de développement 0.4.93-dev.
+Le [PDF français](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-fr.pdf) réunit les chapitres historiques et pratiques. Il possède des pages numérotées, un sommaire cliquable, des signets, les renvois de page du lexique et un index alphabétique des 86 mots-clés, fonctions et constante recensés. Sa pagination est recalculée après chaque modification ; aucune page n'est écrite à la main dans le Markdown. Cette édition accompagne la version publiée **0.4.100-dev** ; les deux PDF sont joints à la release GitHub. Les reconstructions locales sont produites dans `output/pdf/`.
 
 ## Utiliser Studio
 
@@ -49,4 +49,4 @@ Pour découvrir les outils, suivez le [chapitre illustré de Studio](02-studio.m
 
 Le [guide de construction](BUILDING.md) explique comment régénérer les éditions PDF.
 
-Le [guide de conversion série de la S-60](../hardware/typestar-6-serial-upgrade.md) précise la révision testée, les références de prise et le câblage de RA1. L'édition 0.4.93 décrit aussi les glyphes répétés en continu, la compensation papier, Duel Orbital 1.8 et les Ruines de Typestar 0.4.
+Le [guide de conversion série de la S-60](../hardware/typestar-6-serial-upgrade.md) précise la révision testée, les références de prise et le câblage de RA1. L’édition actuelle décrit les rangées GLYPH de 1 à 40 motifs, les neuf modes du Piano, Duel Orbital 2.0, les Ruines de Typestar 0.6 et Canon S-70 Quest 0.9. Dans Quest, **RET passer / BS skip** passe l’impression ; le bassin de l’Oasis est en **26,6** et cinq slimes suffisent pour le niveau 2.

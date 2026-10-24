@@ -7,6 +7,7 @@ Ouvrez un fichier dans **Typestar BASIC Studio**, puis choisissez **Exécuter (F
 | Jeu | Français | English | Affichage | Notice |
 |---|---|---|---|---|
 | Pocket Duel | [FR](games/pocket-duel-fr.bas) | [EN](games/pocket-duel-en.bas) | LCD | [Jouer](guides/pocket-duel.md) |
+| Canon S-70 Quest — prototype 0.9 | [FR](games/canon-s70-quest-fr.bas) | [EN](games/canon-s70-quest-en.bas) | Carte papier + combats LCD | [Jouer](guides/canon-s70-quest.md) |
 | Les Ruines de Typestar | [FR](games/ruines-typestar-fr.bas) | [EN](games/typestar-ruins-en.bas) | Papier + LCD | [Jouer](guides/ruines-typestar.md) |
 | Duel Orbital | [FR](games/duel-orbital-fr.bas) | [EN](games/orbital-duel-en.bas) | Papier + LCD | [Jouer](guides/duel-orbital.md) |
 | Duel Balistique | [FR](games/duel-balistique-fr.bas) | [EN](games/ballistic-duel-en.bas) | Papier + LCD | [Jouer](guides/duel-balistique-fr.md) |
@@ -20,11 +21,13 @@ Ouvrez un fichier dans **Typestar BASIC Studio**, puis choisissez **Exécuter (F
 
 Dans **Pocket Duel 1.1**, **Entrée attaque**, les flèches déplacent et Espace téléporte. BREAK interrompt la partie.
 
-Les jeux papier montrent les grands glyphes et leur répétition en une passe. **Les Ruines de Typestar 0.4** et **Duel Orbital 1.8** utilisent ces fonctions du firmware **0.4.93-dev**. Préférez le papier thermique et laissez le programme positionner la feuille.
+Les jeux papier montrent les grands glyphes et leur répétition en une passe. **Les Ruines de Typestar 0.6** et **Duel Orbital 2.0** utilisent ces fonctions du firmware **0.4.100-dev**. Préférez le papier thermique et laissez le programme positionner la feuille.
+
+- **Atelier tilemap** : [carte commentée en français et en anglais](graphics/README.md), six colonnes et quatre rangées imprimées en quatre passes.
 
 ### Autres programmes
 
-- **Piano** : [FR](piano-fr.bas), [EN](piano-en.bas), [notice](guides/piano.md). Les lettres A–Z produisent des sons ; Entrée termine le programme.
+- **Piano** : [FR](piano-fr.bas), [EN](piano-en.bas), [notice](guides/piano.md). Neuf modes de synthèse ; A–Z jouent, gauche/droite changent de mode, Espace joue la gamme MIX MINUS du diagnostic v3 ; Entrée termine le programme.
 - **Terminal série** : [programmes et notice bilingues](terminal/README.md), avec leur correspondant Python.
 - **Clavier distant** : [programmes et notice bilingues](remote-keyboard/README.md), pour envoyer les frappes Canon à un moniteur Python ou à la fenêtre active du PC.
 - **Ancienne bataille navale** : [FR](games/bataille-navale-fr.bas) et [EN](games/battleships-en.bas), conservée comme étape du projet. Pour la version aboutie avec placement des pièces et adversaire, choisissez **Duel Orbital**.
@@ -38,6 +41,7 @@ Open a file in **Typestar BASIC Studio**, then choose **Run (F5)** in the emulat
 | Game | Français | English | Display | Guide |
 |---|---|---|---|---|
 | Pocket Duel | [FR](games/pocket-duel-fr.bas) | [EN](games/pocket-duel-en.bas) | LCD | [Play](guides/pocket-duel.md) |
+| Canon S-70 Quest — prototype 0.9 | [FR](games/canon-s70-quest-fr.bas) | [EN](games/canon-s70-quest-en.bas) | Paper map + LCD combat | [Play](guides/canon-s70-quest.md#english) |
 | Typestar Ruins | [FR](games/ruines-typestar-fr.bas) | [EN](games/typestar-ruins-en.bas) | Paper + LCD | [Play](guides/ruines-typestar.md) |
 | Orbital Duel | [FR](games/duel-orbital-fr.bas) | [EN](games/orbital-duel-en.bas) | Paper + LCD | [Play](guides/duel-orbital.md) |
 | Ballistic Duel | [FR](games/duel-balistique-fr.bas) | [EN](games/ballistic-duel-en.bas) | Paper + LCD | [Play](guides/duel-balistique-fr.md) |
@@ -51,11 +55,13 @@ Open a file in **Typestar BASIC Studio**, then choose **Run (F5)** in the emulat
 
 In **Pocket Duel 1.1**, **Enter attacks**, arrows move and Space teleports. BREAK interrupts the game.
 
-The paper games demonstrate large glyphs and repeated motifs in one pass. **Typestar Ruins 0.4** and **Orbital Duel 1.8** use these features of firmware **0.4.93-dev**. Prefer thermal paper and let the program position the sheet.
+The paper games demonstrate large glyphs and repeated motifs in one pass. **Typestar Ruins 0.6** and **Orbital Duel 2.0** use these features of firmware **0.4.100-dev**. Prefer thermal paper and let the program position the sheet.
+
+- **Tilemap workshop**: [commented map in French and English](graphics/README.md), six columns and four rows printed in four passes.
 
 ### Other programs
 
-- **Piano**: [FR](piano-fr.bas), [EN](piano-en.bas), [guide](guides/piano.md). A–Z play sounds; Enter exits.
+- **Piano**: [FR](piano-fr.bas), [EN](piano-en.bas), [guide](guides/piano.md). Nine synthesis modes; A–Z play, left/right change mode, Space plays the v3 diagnostic MIX MINUS scale; Enter exits.
 - **Serial terminal**: [bilingual programs and guide](terminal/README.md), with Python peers.
 - **Remote keyboard**: [bilingual programs and guide](remote-keyboard/README.md), sending Canon keystrokes to a Python monitor or the PC's focused window.
 - **Earlier Battleships**: [FR](games/bataille-navale-fr.bas) and [EN](games/battleships-en.bas), retained as a development stage. Choose **Orbital Duel** for piece placement and an opponent.

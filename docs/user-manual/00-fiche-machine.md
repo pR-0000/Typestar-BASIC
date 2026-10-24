@@ -4,7 +4,7 @@
 
 > **32 caractères à l'écran - 5 951 octets libres - une imprimante intégrée.** Calculez, composez un jeu, créez vos personnages, puis donnez-leur une place sur le papier !
 
-| Ressource | Typestar BASIC 0.4.93-dev sur S-70 |
+| Ressource | Typestar BASIC 0.4.100-dev sur S-70 |
 |---|---|
 | **Processeur** | HD6301Y0P, 8 bits ; horloge système d'environ **1 MHz**, à partir d'un quartz de 4 MHz. |
 | **Mémoires** | **8 Ko de RAM externe** ; **5 951 octets libres à vide**, partagés entre programme tokenisé et données. ROM BASIC de **32 Ko**, ROM Canon interne de 16 Ko conservée. |
@@ -12,8 +12,8 @@
 | **Calculs** | Décimaux à **huit chiffres significatifs** ; hasard, PI, racine, trigonométrie, logarithme, exponentielle et opérateurs logiques. |
 | **Écran et clavier** | **32 caractères de 5 × 7 pixels**, huit motifs personnels, triangles, lignes inférieures et indicateurs. Clavier multilingue de **44 touches**, selon la fiche Canon ; lecture des touches par INKEY. |
 | **Texte imprimé** | **Courier 10 Canon**, 72 colonnes et 95 caractères ASCII ; LLIST, interligne réglable et positionnement par LLOCATE. Impression sur papier ordinaire avec ruban, ou directement sur papier thermique. |
-| **Dessins imprimés** | Points, lignes, rectangles, cercles, contours et formes pleines. Glyphes personnels, grands pixels carrés, 1 à 16 copies par bandes continues, déplacements de la tête et du papier. |
-| **Sons** | BEEP et SOUND : pauses, bips et bruitages par modulation d'amplitude du buzzer ; modulation de 60 à 750 Hz, durée jusqu'à 2000 ms. |
+| **Dessins imprimés** | Points, lignes, rectangles, cercles, contours et formes pleines. Glyphes personnels, grands pixels carrés, 1 à 16 copies par bandes continues, rangées de 1 à 40 motifs différents de 8 × 8, déplacements de la tête et du papier. |
+| **Sons** | BEEP et SOUND : pauses, bips et bruitages par modulation d'amplitude du buzzer ; cadence de 50 à 31250 Hz, rapport cyclique réglable et motif de bruit, durée jusqu'à 2000 ms. |
 | **Échanges avec un PC** | Câble USB adapté au port TTL 5 V ; LOAD/SAVE, émission et réception. Jusqu'à **31 250 bauds** ; réglage par défaut **31250 / 7E1**. |
 | **Typestar BASIC Studio** | Éditeur, transfert, création de glyphes, émulation du LCD, du papier et du son ; impression d'images monochromes par CODE+P. |
 

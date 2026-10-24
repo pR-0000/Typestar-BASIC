@@ -1,0 +1,37 @@
+{
+  "firmware": "0.4.100-dev",
+  "studio": "0.2.40",
+  "date": "2026-10-24",
+  "rom_bytes": 32768,
+  "occupied_rom_bytes": 32710,
+  "explicit_free_rom_bytes": 58,
+  "empty_basic_free_bytes": 5951,
+  "token_entries": 37,
+  "statement_dispatch_entries": 54,
+  "cpu_sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec",
+  "files": {
+    "typestar-basic-32k.bin": {
+      "bytes": 32768,
+      "sha256": "acac17896f0fd92f9e3aa0bb42522b69ae46fe71deb36885f3f61df155c128e5"
+    },
+    "typestar-basic-64k-mirror.bin": {
+      "bytes": 65536,
+      "sha256": "0a687e8322dfd02b9cc5a698f23f8f60b4dd79498e2fcb06c7a2276c8c09bce8"
+    }
+  },
+  "supported_hardware": [
+    "Canon S-70 / Typestar 7",
+    "Canon S-60 / Typestar 6, PCB NG3-0672 / NH1-0159-065"
+  ],
+  "validation": {
+    "rom_reports": 16,
+    "core_cases": 114,
+    "paper_font_characters": 95,
+    "keyboard_translations": 1760,
+    "manual_programs_per_language": 53,
+    "manual_expressions_per_language": 28,
+    "ruins_direction_cases": 8
+  },
+  "hardware_scope": "S-70 startup and printed games demonstrated on hardware; software audit also covers retention, serial failures and error paths. Physical registration, acoustics and electrical faults require real hardware.",
+  "format": "Physical IC8 byte order; 64 KiB file repeats the 32 KiB image"
+}

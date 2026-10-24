@@ -7,6 +7,7 @@ Each guide explains the goal, controls and program features. Open the [BASIC fil
 | Programme / Program | Notice / Guide |
 |---|---|
 | Pocket Duel | [Combat sur LCD / LCD combat](pocket-duel.md) |
+| Canon S-70 Quest 0.9 | [Carte papier et combats au tour par tour / Paper map and turn-based battles](canon-s70-quest.md) |
 | Les Ruines de Typestar / Typestar Ruins | [Exploration sur papier / Paper exploration](ruines-typestar.md) |
 | Duel Orbital / Orbital Duel | [Satellites et tirs / Satellites and shots](duel-orbital.md) |
 | Duel Balistique / Ballistic Duel | [Angles et trajectoires / Angles and trajectories](duel-balistique-fr.md) |

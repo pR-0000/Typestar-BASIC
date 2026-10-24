@@ -8,9 +8,9 @@ This Typestar BASIC selection includes a sound instrument, an LCD game and paper
 
 ## Piano
 
-A little sound instrument controlled by keyboard letters. This short program is a good first complete listing. DATA assigns modulation to each letter; the buzzer makes effects rather than precisely pitched musical notes.
+Nine sound modes turn the keyboard into a small effects synthesizer: mixed pulses, pulse width, sweeps, envelopes and noise. DATA tables prepare the values used by SOUND; the buzzer and its resonances shape the result.
 
-**To play:** press letters **A to Z**. **Return** ends the program. Try keys, then change a DATA value to compare sounds.
+**To play:** letters **A to Z** produce sounds; **left/right arrows** choose the mode. **1, 2, 3** select the register, **4, 5, 6** select pulse width. **Space** plays an eight-sound MIX MINUS demonstration. **Return** ends the program. Each sound finishes before the next key is read.
 
 ![Piano in Studio: letters A to Z become a little sound instrument.](images/exemple-piano-lcd.png)
 
@@ -19,20 +19,65 @@ A little sound instrument controlled by keyboard letters. This short program is 
 **File to open in Studio:** [piano-en.bas](../../../examples/piano-en.bas).
 
 ```basic
-10 DIM F(25)
-20 DATA 131,524,466,262,147,277,294,311,196,330,349
-30 DATA 370,392,555,207,220,233,155,247,165,185,494
-40 DATA 415,440,174,138
-50 FOR I=0 TO 25:READ F(I):NEXT I
-60 CLS:CURSOR 4
-70 PRINT "PIANO A-Z   RETURN: QUIT";
-80 C=INKEY(0):IF C=0 THEN 80
-90 IF C=13 THEN 140
-100 C=C AND 223
-110 IF C<65 THEN 80
-120 IF C>90 THEN 80
-130 SOUND F(C-65),80:GOTO 80
-140 CLS:PRINT "PIANO ENDED":END
+10 DIM F(77):DIM H(77):DIM G(77):DIM V(7)
+20 DATA 262,277,294,311,330,349,370,392,416,440,466,494,524
+21 DATA 555,588,623,660,699,740,784,831,880,933,988,1047,1109
+22 DATA 523,554,587,622,659,698,740,784,831,880,932,988,1047
+23 DATA 1109,1175,1245,1319,1397,1480,1568,1661,1760,1865
+24 DATA 1976,2093,2217,1046,1108,1174,1244,1318,1396,1480
+25 DATA 1568,1662,1760,1864,1976,2094,2218,2350,2490,2638
+26 DATA 2794,2960,3136,3322,3520,3730,3952,4186,4434,5627
+27 DATA 5612,5595,5578,5559,5540,5519,5497,5473,5449,5423
+28 DATA 5395,5365,5334,5301,5266,5229,5190,5149,5105,5058
+29 DATA 5009,4956,4901,4842,4780,5366,5335,5302,5267,5230
+30 DATA 5191,5149,5105,5058,5009,4957,4901,4842,4780,4714
+31 DATA 4644,4570,4492,4409,4321,4228,4129,4024,3913,3796
+32 DATA 3672,4843,4781,4715,4645,4571,4493,4409,4321,4227
+33 DATA 4129,4025,3913,3795,3671,3539,3399,3251,3095,2929
+34 DATA 2753,2567,2369,2159,1937,1703,1455,1000,1123,1260
+35 DATA 1414,1588,1782,2000,2245,2520,2829,3175,3564,4000
+36 DATA 4490,5040,5657,6350,7127,8000,8980,10080,11314,12699
+37 DATA 14255,16000,17960,2000,2245,2520,2828,3175,3564,4000
+38 DATA 4490,5040,5657,6350,7127,8000,8980,10079,11314,12699
+39 DATA 14254,16000,17959,20159,22627,25398,28509,31250,31250
+40 DATA 4000,4490,5040,5656,6350,7128,8000,8980,10080,11314
+41 DATA 12700,14254,16000,17960,20158,22628,25398,28508,31250
+42 DATA 31250,31250,31250,31250,31250,31250,31250,5365,5301
+43 DATA 5229,5190,5105,5009,4901,4842
+60 FOR I=0 TO 77:READ F(I):NEXT I
+61 FOR I=0 TO 77:READ H(I):NEXT I
+62 FOR I=0 TO 77:READ G(I):NEXT I
+63 FOR I=0 TO 7:READ V(I):NEXT I
+65 N$="CLASSICMIX -  MIX +  PULSE  SWEEP  "
+66 N$=N$+"FADE   NOISE  CUT    HOLD   "
+90 M=1:D=50:R=1:B=26:CURSOR 4
+100 CLS:PRINT "PIANO ";MID$(N$,7*M+1,7);2^(R-1);"x D";D;
+110 C=INKEY(0):IF C=0 THEN 110
+120 IF C=13 THEN 900
+125 IF C=32 THEN GOSUB 700:GOTO 110
+130 IF C=18 THEN M=(M+8) MOD 9:GOTO 100
+140 IF C=19 THEN M=(M+1) MOD 9:GOTO 100
+150 IF C>=49 AND C<=51 THEN R=C-49:B=26*R:GOTO 100
+160 IF C=52 THEN D=10:GOTO 100
+170 IF C=53 THEN D=50:GOTO 100
+180 IF C=54 THEN D=90:GOTO 100
+190 C=C AND 223:IF C<65 OR C>90 THEN 110
+200 I=C-65+B
+210 IF M=0 THEN SOUND F(I),80,D:GOTO 110
+220 IF M=1 THEN SOUND H(I),80,D:GOTO 110
+230 IF M=2 THEN SOUND 5889+F(I),80,D:GOTO 110
+240 IF M=3 THEN SOUND 50,80,1+INT((C-65)*.33334):GOTO 110
+250 IF M=4 THEN GOSUB 400:GOTO 110
+260 IF M=5 THEN GOSUB 500:GOTO 110
+270 IF M=6 THEN SOUND G(I),90,D,1:GOTO 110
+280 IF M=7 THEN SOUND 50,80,99-INT((C-65)*.33334):GOTO 110
+290 BEEP 80:GOTO 110
+400 SOUND H(I),25,D:SOUND H(I)+500,25,D
+410 SOUND H(I),25,D:RETURN
+500 SOUND 5890,25,10:SOUND 5890,25,50
+510 SOUND 5890,25,90:RETURN
+700 FOR J=0 TO 7:SOUND V(J),320,50:NEXT J:RETURN
+900 CLS:PRINT "PIANO ENDED":END
 ```
 
 ## Pocket Duel
@@ -365,18 +410,18 @@ A space battle inspired by Battleship. Command three satellite formations of thr
 
 ![Adjoining boards and large glyphs: a preview at nominal paper coordinates.](images/exemple-orbital-grands-papier.png)
 
-**What to look for:** GLYPH repeats one cached grid fragment across both boards; mode 4 enlarges sprites. CLEAR releases construction buffers before the game arrays are created. Arrays, randomness and logical tests control positions and the opponent.
+**What to look for:** GLYPH mode 5 streams different tiles across both grids, including their right border, then the halves of satellites and impacts. Large pixels keep the pictures square. CLEAR releases construction buffers before game arrays are created. Arrays, randomness and logical tests control positions and the opponent.
 
 **File to open in Studio:** [games/orbital-duel-en.bas](../../../examples/games/orbital-duel-en.bas).
 
 ```basic
-10 REM TYPESTAR - ORBITAL DUEL 1.8
+10 REM TYPESTAR - ORBITAL DUEL 2.0
 20 CLS:CURSOR 4:PRINT "ORBITAL DUEL - DRAWING";
 25 GOSUB 1200
 27 CLEAR:B=1120:C=16:GOSUB 1280
 29 CLEAR
 30 DIM B(1,35):DIM C(35):DIM H(1,3)
-35 DIM Z(47):FOR I=0 TO 47:READ Z(I):NEXT I
+35 DIM Z(72):FOR I=4 TO 51:READ Z(I):NEXT I
 40 B=1484:C=0:LSPACING 1
 45 G=PEEK(9)*256+PEEK(10)
 50 IF G=0 THEN G=1
@@ -391,9 +436,12 @@ A space battle inspired by Battleship. Command three satellite formations of thr
 170 GOSUB 600:IF F=0 THEN 190
 180 CLS:PRINT "EDGE OR SATELLITE IN THE WAY";
 182 SOUND 120,80:GOSUB 900:GOTO 120
-190 GOSUB 660:FOR I=0 TO L-1:J=P+I*U
-200 GOSUB 1400:GLYPH Z(0),16,16,4:B=K+112:C=G
-210 NEXT I:GOSUB 1600:NEXT S
+190 GOSUB 660:J=P:W=L:IF D=1 THEN W=1
+200 GOSUB 1400:T=1:GOSUB 1450
+202 IF D=0 THEN 218
+204 FOR I=1 TO L-1:J=P+6*I
+206 GOSUB 1400:T=1:W=1:GOSUB 1450:NEXT I
+218 GOSUB 1600:NEXT S
 220 A=0:E=0:N=0
 230 INPUT "SHOT A1-F6 Q=END";A$
 240 IF A$="Q" OR A$="q" THEN 400
@@ -415,7 +463,7 @@ A space battle inspired by Battleship. Command three satellite formations of thr
 410 IF E=7 THEN R$="CANON WINS"
 420 FOR J=0 TO 35
 430 IF B(1,J)=0 OR B(1,J)>3 THEN 450
-440 V=1:GOSUB 1400:GLYPH Z(0),16,16,4:B=K+112:C=G
+440 V=1:GOSUB 1400:T=1:W=1:GOSUB 1450
 450 NEXT J
 460 G=0:K=1120:GOSUB 1500:LPRINT R$;" - ";N;" TURNS"
 470 B=1176:C=0:GOSUB 1600:CLS:PRINT R$;" ";A;"-";E;
@@ -439,8 +487,8 @@ A space battle inspired by Battleship. Command three satellite formations of thr
 730 FOR I=0 TO 35:IF B(0,I)=S+4 THEN C(I)=3
 732 NEXT I
 740 X=J MOD 6:Y=INT(J/6)
-750 GOSUB 1400:T=32:IF S=0 THEN T=16
-752 GLYPH Z(T),16,16,4:B=K+112:C=G
+750 GOSUB 1400:T=9:IF S=0 THEN T=5
+752 W=1:GOSUB 1450
 760 IF V=0 THEN GOSUB 1600
 762 SOUND 300+300*(S<>0)*-1,80:RETURN
 800 L=2:IF S=1 THEN L=3
@@ -475,22 +523,23 @@ A space battle inspired by Battleship. Command three satellite formations of thr
 1100 F=0:IF J<0 OR J>35 THEN F=1:RETURN
 1110 IF ABS((J MOD 6)-(I MOD 6))>1 THEN F=1
 1120 RETURN
-1200 LSPACING 1:B=0:C=0:DIM Q(7,23)
-1210 FOR I=0 TO 7:Q(I,0)=1:NEXT I
+1200 LSPACING 1:B=0:C=0:DIM Q(100)
+1210 Q(100)=1
 1230 LPRINT "TYPESTAR - ORBITAL DUEL":B=56
 1240 G=16:K=224:GOSUB 1500:F=0
 1245 FOR T=0 TO 15
-1250 IF T=15 THEN FOR I=1 TO 7:Q(I,0)=0:NEXT I
-1252 IF F>7 THEN 1258
-1254 FOR I=0 TO 23:Q(F,I)=1:NEXT I
-1256 F=F+20
-1258 GLYPH Q(0,0),24,8,4,12:B=B+56
-1260 F=F-8:IF F<12 THEN 1270
-1265 FOR I=1 TO 23:Q(F-12,I)=0:NEXT I
+1250 FOR I=0 TO 3:A=32896:IF T=15 THEN A=0
+1251 IF T=15 AND I=0 THEN A=32768
+1252 H=0:IF F=2*I THEN H=256
+1253 IF F=2*I+1 THEN H=1
+1254 Q(4+I)=A:Q(8+I)=255*H:Q(12+I)=A+127*H:NEXT I
+1255 H=0:IF F<8 THEN H=2
+1256 FOR I=0 TO 11:Q(64+3*I)=1+H
+1257 Q(65+3*I)=H:Q(66+3*I)=H:NEXT I
+1258 GLYPH Q(0),37,8,5:B=B+56:C=G
+1260 F=F-8:IF F<0 THEN F=F+20
 1270 NEXT T:RETURN
-1280 G=592:K=224:GOSUB 1500
-1282 BOX 0,0,3,255,1,1:B=B+448
-1284 BOX 0,0,3,226,1,1:B=B+448
+1280 GOTO 1286
 1286 FOR V=0 TO 1:A$="YOU":IF V=1 THEN A$="CANON"
 1288 G=161+288*V-8*LEN(A$):K=98:GOSUB 1500
 1289 LPRINT A$;:C=G+16*LEN(A$)
@@ -501,6 +550,11 @@ A space battle inspired by Battleship. Command three satellite formations of thr
 1330 GOSUB 1600:RETURN
 1400 G=25+288*V+48*(J MOD 6):K=238+140*INT(J/6)
 1410 GOSUB 1500:RETURN
+1450 FOR R=0 TO 1:FOR O=0 TO W-1
+1452 Z(64+3*O)=T+2*R:Z(65+3*O)=T+2*R+1
+1454 Z(66+3*O)=0:NEXT O
+1456 GLYPH Z(0),3*W-1,8,5:B=B+56:C=G
+1458 NEXT R:RETURN
 1500 F=G-C:IF F=0 THEN 1540
 1510 IF ABS(F)>128 THEN F=SGN(F)*128
 1520 IF F<0 THEN ORIGIN 128,0 ELSE ORIGIN
@@ -511,15 +565,12 @@ A space battle inspired by Battleship. Command three satellite formations of thr
 1570 FEED F:B=B+F:GOTO 1540
 1580 ORIGIN:RETURN
 1600 G=0:K=1484:GOSUB 1500:RETURN
-1700 DATA &H1000,&H2832,&H542C,&HAA24,&H54D2,&H292E
-1706 DATA &H1690,&H0450,&H0820,&H1048,&H20D4,&H512A
-1712 DATA &H4A55,&H242A,&H1814,&H0008
-1720 DATA &H0000,&H0100,&H2548,&H1110,&H0820,&H2004
-1726 DATA &H0000,&H700E,&H0000,&H2004,&H0820,&H1010
-1732 DATA &H2108,&H0540,&H0100,&H0000
-1740 DATA &H8102,&H0000,&H2108,&H1BB0,&H1FF0,&H0FF0
-1746 DATA &H1FF8,&HBFFD,&H1FF8,&H0FF0,&H1FF0,&H1FF0
-1752 DATA &H2388,&H0100,&H8002,&H0100
+1700 DATA 4136,21674,21545,5636,50,11300,53806,36944
+1708 DATA 2064,8273,18980,6144,8264,54314,21802,5128
+1716 DATA 1,9489,2080,112,0,18448,8196,14
+1724 DATA 32,2064,8453,256,4,8208,2112,0
+1732 DATA 33024,8475,7951,8127,512,2224,61680,63741
+1740 DATA 7951,7967,8961,32769,63728,61680,34816,512
 ```
 
 ## Ballistic Duel
@@ -697,36 +748,34 @@ Two cannons face each other across terrain printed once. Choose angle and power:
 
 Explore a randomly generated temple on paper. Recover three guarded relics, then return to B2 within 48 moves. Partitions, seven monsters and healing supplies make route planning important. The LCD shows your current coordinates and the paper retains your footsteps.
 
-**Controls:** left/right arrows turn, Return advances, Space displays help, Q ends the expedition. Each relic costs one health point against its guardian; chests and the spring restore health. A cross marks a used encounter. Drawing begins immediately after RUN.
+**To play:** left/right keys select the underlined direction from **↑ ↓ ← →** (up, down, left, right), Return moves one cell, Space shows help, Q ends the expedition. Each relic costs one health point to its guardian; chests and the spring heal you. A cross marks a used encounter. RUN starts drawing immediately.
 
 ![A glyph map with coordinates, landmarks and the goal, shown at nominal paper coordinates.](images/exemple-ruines-papier.png)
 
-**What to look for:** DATA stores the tiles. GLYPH mode 4 prints large square pixels and repeats adjacent matching walls in a continuous band. The map array tracks terrain, consumed encounters and varying footstep positions; INKEY and LCDLINE control the menu.
+![Up, down, left and right arrows use the same selector as Quest.](images/exemple-ruines-lcd.png)
+
+**What to look for:** DATA keeps artwork compact. GLYPH mode 5 prints different tiles in one row with large square pixels. The map tracks terrain, used encounters and footsteps; INKEY and LCDLINE handle controls.
 
 **File to open in Studio:** [games/typestar-ruins-en.bas](../../../examples/games/typestar-ruins-en.bas).
 
 ```basic
-10 REM TYPESTAR RUINS 0.4
-20 CLS:CURSOR 4:PRINT "RUINS - PREPARING";
-30 LSPACING 1
-40 DIM M(79):DIM G(19)
+1 GOTO 10
+2 A=PEEK(L):L=L+1:IF A=126 THEN A=PEEK(L)-35:L=L+1
+6 A=236-A:IF A<0 THEN A=A+256
+8 RETURN
+10 REM TYPESTAR RUINS 0.6
+20 CLS:CURSOR 4:PRINT "RUINS - LOADING";:LSPACING 1
+40 DIM M(79):DIM G(83):DIM S(20):DIM D(10)
 70 G(16)=6:G(17)=15:G(18)=15:G(19)=6
 80 A=PEEK(9)*256+PEEK(10):IF A=0 THEN A=1
-90 RANDOMIZE A
-100 FOR I=0 TO 9:M(I)=1:M(I+70)=1:NEXT I
+90 RANDOMIZE A:FOR I=0 TO 9:M(I)=1:M(I+70)=1:NEXT I
 110 FOR I=10 TO 60 STEP 10:M(I)=1:M(I+9)=1:NEXT I
-130 D=3+INT(RND(1)*2):E=6+INT(RND(1)*2)
-140 FOR X=D TO E STEP E-D
-150 Y=1+INT(RND(1)*6)
-160 FOR I=1 TO 6
-170 IF I<>Y THEN M(10*I+X)=1
-180 NEXT I:NEXT X
-190 FOR I=1 TO 3
+130 D=3+INT(RND(1)*2):E=6+INT(RND(1)*2):FOR X=D TO E STEP E-D
+150 Y=1+INT(RND(1)*6):FOR I=1 TO 6:IF I<>Y THEN M(10*I+X)=1
+180 NEXT I:NEXT X:FOR I=1 TO 3
 200 J=11+INT(RND(1)*58)
 210 IF M(J)<>1 OR J MOD 10=0 OR J MOD 10=9 THEN 200
-220 M(J)=2:NEXT I
-230 FOR I=0 TO 13:T=5
-240 IF I>2 THEN T=4
+220 M(J)=2:NEXT I:FOR I=0 TO 13:T=5:IF I>2 THEN T=4
 250 IF I>4 THEN T=10
 260 IF I>9 THEN T=6
 270 IF I=12 THEN T=3
@@ -734,53 +783,45 @@ Explore a randomly generated temple on paper. Recover three guarded relics, then
 290 J=INT(RND(1)*80)
 292 IF M(J)<>0 OR J=11 OR J=12 OR J=21 THEN 290
 293 IF I=0 AND J MOD 10>=D THEN 290
-294 IF I=1 AND (J MOD 10<=D OR J MOD 10>=E) THEN 290
+294 IF I=1 AND(J MOD 10<=D OR J MOD 10>=E)THEN 290
 295 IF I=2 AND J MOD 10<=E THEN 290
-296 M(J)=T:NEXT I:M(11)=7
-297 B=0:C=0:GOSUB 1200
+296 M(J)=T:NEXT I:M(11)=7:B=0:C=0:GOSUB 1200
 298 P=11:M(P)=23:H=9:R=0:N=0:D=0
 299 SOUND 440,70:SOUND 550,70:SOUND 660,120
 300 GOSUB 500
-310 GOSUB 900
-320 IF K=18 OR K=19 THEN 700
+310 GOSUB 900:IF K=18 OR K=19 THEN 700
 330 IF K=32 THEN GOSUB 800:GOTO 300
 340 IF K=81 OR K=113 THEN A$="EXPEDITION ENDED":GOTO 1700
 350 IF K<>13 THEN 310
-360 Q=P-10:IF D=1 THEN Q=P+1
-370 IF D=2 THEN Q=P+10
-380 IF D=3 THEN Q=P-1
+360 Q=P-10:IF D=1 THEN Q=P+10
+370 IF D=2 THEN Q=P-1
+380 IF D=3 THEN Q=P+1
 390 IF Q<0 OR Q>79 THEN BEEP 40:GOTO 310
-400 T=M(Q) MOD 16
-410 IF T=1 OR T=2 THEN BEEP 40:GOTO 310
-420 P=Q:N=N+1:A$=""
-430 IF M(P)>=16 THEN 455
+400 T=M(Q)MOD 16:IF T=1 OR T=2 THEN BEEP 40:GOTO 310
+420 P=Q:N=N+1:A$="":IF M(P)>=16 THEN 455
 440 M(P)=16:IF T=7 OR T=8 THEN M(P)=T+16
 450 IF T>=3 AND T<>7 AND T<>8 THEN GOSUB 1050
 452 GOSUB 600
-455 GOSUB 1000
-460 IF H<1 THEN A$="EXPEDITION LOST":GOTO 1700
+455 GOSUB 1000:IF H<1 THEN A$="EXPEDITION LOST":GOTO 1700
 470 IF R=3 AND P=11 THEN A$="VICTORY!":GOTO 1700
 480 IF N=48 THEN A$="THE GATES CLOSE":GOTO 1700
 490 IF LEN(A$)>0 THEN GOSUB 850
 495 GOTO 300
-500 CLS:CURSOR 4
-510 PRINT CHR$(65+(P MOD 10));INT(P/10)+1;" HP";H;
-520 PRINT " R";R;"/3 N E S W ";48-N;"t SPC:?";
+500 CLS:CURSOR 4:PRINT CHR$(65+(P MOD 10));INT(P/10)+1;" HP";H;
+520 PRINT " R";R;"/3     ";48-N;"t SPC:?";
 530 LCDLINE 13+2*D,31:RETURN
 600 IF T<>5 THEN 610
 602 R=R+1:H=H-1:A$="Guard: -1 HP. A relic!"
 604 SOUND 660,100:RETURN
 610 IF T<>4 AND T<>10 THEN 640
 620 W=1+INT(RND(1)*2):IF T=4 THEN W=W+1
-625 H=H-W:A$="Monster: -"+STR$(W)+" HP":SOUND 120,100
-630 RETURN
+625 H=H-W:A$="Monster: -"+STR$(W)+" HP":SOUND 120,100:RETURN
 640 IF T=6 THEN H=H+3:A$="Chest: +3 HP":SOUND 550,90
 650 IF T=3 THEN H=9:A$="Spring: full health":SOUND 700,90
 660 IF H>9 THEN H=9
 670 IF T=8 THEN A$="3 relics, then B2"
 680 RETURN
-700 LCDLINE 13+2*D,0
-710 D=(D+1) MOD 4:IF K=18 THEN D=(D+2) MOD 4
+700 LCDLINE 13+2*D,0:D=(D+1)MOD 4:IF K=18 THEN D=(D+2)MOD 4
 720 LCDLINE 13+2*D,31:GOTO 310
 800 CLS:PRINT "Arrows: turn. Return: move";
 810 GOSUB 900:CLS:PRINT "3 guarded relics, then B2";
@@ -791,40 +832,45 @@ Explore a randomly generated temple on paper. Recover three guarded relics, then
 900 IF INKEY(0)<>0 THEN 900
 910 K=INKEY(0):IF K=0 THEN 910
 920 RETURN
-1000 Q=1+INT(RND(1)*45)
-1002 IF Q=INT(M(P)/32) THEN Q=Q MOD 45+1
-1004 M(P)=M(P) MOD 32+32*Q
-1006 G=20+32*(P MOD 10)+2*((Q-1) MOD 9)
+1000 Q=1+INT(RND(1)*45):IF Q=INT(M(P)/32)THEN Q=Q MOD 45+1
+1004 M(P)=M(P)MOD 32+32*Q:G=20+32*(P MOD 10)+2*((Q-1)MOD 9)
 1010 K=182+112*INT(P/10)+14*INT((Q-1)/9)
-1020 GOSUB 1500:GLYPH G(16),4,4,4:B=K+56:C=G
-1030 GOSUB 1600:RETURN
+1020 GOSUB 1500:GLYPH G(16),4,4,4:B=K+56:C=G:GOSUB 1600:RETURN
 1050 G=20+32*(P MOD 10):K=182+112*INT(P/10)
-1060 GOSUB 1500:GLYPH G(0),12,12,4:B=K+112:C=G
-1070 RETURN
-1200 LPRINT "TYPESTAR RUINS":B=56
-1210 FOR T=1 TO 10:CLS:PRINT "MAP ";T;"/10";
-1220 FOR I=0 TO 15:READ G(I):NEXT I
-1230 FOR J=0 TO 79:W=M(J):IF J=10 THEN W=7
-1240 IF J=11 THEN W=9
-1250 IF W<>T THEN 1260
-1252 X=J MOD 10:Y=INT(J/10):U=1
-1254 IF X+U=10 THEN 1258
-1256 IF M(J+U)<>T OR J+U=10 OR J+U=11 THEN 1258
-1257 U=U+1:GOTO 1254
-1258 GOSUB 1400:J=J+U-1
-1260 NEXT J:NEXT T
-1262 FOR I=0 TO 11:READ G(I):NEXT I
+1060 GOSUB 1500:GLYPH G(0),12,12,4:B=K+112:C=G:RETURN
+1180 W=1:L=S(1):FOR V=0 TO 1:Z=8*V:GOSUB 1410:NEXT V
+1184 FOR I=16 TO 23:G(I)=0:NEXT I:RETURN
+1200 LPRINT "TYPESTAR RUINS":B=56:A=&H20C0
+1203 IF PEEK(A+1)*256+PEEK(A+2)>=2000 THEN 1206
+1204 A=A+PEEK(A):GOTO 1203
+1206 FOR T=1 TO 10:L=A+3
+1207 IF PEEK(L)<>34 THEN L=L+1:GOTO 1207
+1208 S(T)=L+1:A=A+PEEK(A):NEXT T
+1209 FOR T=1 TO 10:READ A$:NEXT T:GOSUB 1180
+1210 FOR Y=0 TO 7:CLS:PRINT "PRINTING MAP ";Y+1;"/8";
+1214 FOR V=0 TO 1:X=0
+1216 FOR I=0 TO 10:D(I)=-1:NEXT I:U=3:Q=0:D(0)=2:D(1)=V
+1219 G=16+32*X:K=168+112*Y+56*V:GOSUB 1500
+1220 J=10*Y+X:W=M(J):IF J=10 THEN W=7
+1222 IF J=11 THEN W=9
+1224 IF D(W)>=0 THEN 1240
+1226 IF U=8 THEN 1250
+1228 D(W)=U:U=U+1:L=S(W+10*V):Z=8*D(W):GOSUB 1410
+1240 G(64+2*Q)=2*D(W):G(65+2*Q)=2*D(W)+1
+1242 Q=Q+1:X=X+1:IF X<10 THEN 1220
+1250 GLYPH G(0),2*Q,8,5:B=K+56:C=G:IF X<10 THEN 1216
+1254 NEXT V:NEXT Y:FOR I=0 TO 11:READ G(I):NEXT I
+1264 G(16)=6:G(17)=15:G(18)=15:G(19)=6
 1270 FOR X=0 TO 9:G=24+32*X:K=84:GOSUB 1500
 1280 LPRINT CHR$(65+X);:C=G+16:NEXT X
 1290 FOR Y=0 TO 7:G=0:K=196+112*Y:GOSUB 1500
-1300 LPRINT Y+1;:C=G+16:NEXT Y
-1310 G=16:K=1120:GOSUB 1500
-1312 A$="3 RELICS - BACK TO B2"
-1316 LPRINT A$;:C=G+16*LEN(A$)
+1300 LPRINT Y+1;:C=G+16:NEXT Y:G=16:K=1120:GOSUB 1500
+1312 A$="3 RELICS - BACK TO B2":LPRINT A$;:C=G+16*LEN(A$)
 1320 GOSUB 1600:RETURN
-1400 G=16+32*X:K=168+112*Y:GOSUB 1500
-1410 GLYPH G(0),16,16,4,U
-1420 B=K+112:C=G:RETURN
+1410 FOR O=0 TO 3:GOSUB 2:F=256*A:GOSUB 2:E=256*A:GOSUB 2
+1414 G(Z+O)=F+A:GOSUB 2:G(Z+4+O)=E+A:NEXT O
+1418 IF V=0 THEN S(W+10)=L
+1419 RETURN
 1500 F=G-C:IF F=0 THEN 1540
 1510 IF ABS(F)>128 THEN F=SGN(F)*128
 1520 IF F<0 THEN ORIGIN 128,0 ELSE ORIGIN
@@ -840,21 +886,213 @@ Explore a randomly generated temple on paper. Recover three guarded relics, then
 1720 GOSUB 1600:CLS:PRINT A$;" ";R;"/3";
 1730 IF R=3 AND P=11 THEN SOUND 440,90:SOUND 660,180:END
 1740 SOUND 120,180:END
-2000 DATA 65535,49287,46819,65535,34841,39001,43561,65535,32901
-2010 DATA 34825,42637,65535,32961,38577,59813,65535,64,1360
-2020 DATA 5664,3620,805,9058,13250,2502,19912,14322,50124,452
-2030 DATA 896,896,1920,4032,20194,4368,42312,6834,8456,1984
-2040 DATA 39218,8456,16644,16644,24844,30780,32764,16376,8176
-2050 DATA 1984,0,896,10176,9536,10176,8832,8192,8478,30686,286
-2060 DATA 13214,268,1088,1088,0,3168,0,0,4080,4488,10836,17442
-2070 DATA 48093,17442,9252,4680,2640,1632,960,384,0,0,0,0,65535
-2080 DATA 43693,49149,32769,65535,32769,48573,44461,46133,45037
-2090 DATA 46421,43693,65535,0,65535,36849,40953,49149,49149
-2100 DATA 49149,49149,49149,49149,49149,49149,49149,49149,49093
-2110 DATA 48645,45063,0,384,0,16380,16380,4652,16380,10316
-2120 DATA 16376,16380,0,384,384,384,384,0,2016,2064,8184,2640
-2130 DATA 2064,2448,1056,6744,8580,18834,27030,27030,4080,1632
-2140 DATA 1632,1904,0,0,1040,2056,6700,7148,6828,6604,3224,5588
-2150 DATA 448,0,320,0,0,0,3075,1539,774,396,216,112,112,216,396
-2160 DATA 774,1539,3075
+2000 DATA "ää,e6~,äädTBäälgdÒF_ääl+V;~&Gää"
+2001 DATA "Üìù*Ò&$Ñ) Ö(ùlùlàl,"
+2002 DATA "~-ÉG:Ùà,SÙòòÂtmâûëà,"
+2003 DATA "ÜÜùl,,lÜu~1ÖNÖÂòòÜÜÂ"
+2004 DATA "ÜÜÜÜëÉd1~2ËÈèù,ÖlÜÜÜÜ"
+2005 DATA "ÜÜÜÜääB?-ülÖäälÖ//??8=7B?ääÜÜ"
+2006 DATA "ää]ñMô-ü-ü-ü-ü-ü-ü-ü-ü-ü-ü-'.ì<à"
+2007 DATA "ÜÜÖlÜÜââËâÇûâÜÜÖlÖlÖlÖlÜÜ"
+2008 DATA "à~/ÙûÈÙÒ\òhZVVëèèà|"
+2009 DATA "ÜÜÜÜòÙÙ~#@ ÂT~;Ö,ÜÜÖÜÜÜÜÜÜ"
+2020 DATA 3075,1539,774,396,216,112
+2021 DATA 112,216,396,774,1539,3075
+```
+
+## Canon S-70 Quest
+
+Adapted from [Canon X-07 Quest](https://github.com/pR-0000/Canon_X-07_RPG), this game retains its 30-by-16 kingdom and artwork. **The King sends the hero to find the sorcerer who has fled.** The map stays on paper and turn-based battles take place on the LCD. Explore the castle, graveyard, forest, ruins, Oasis and black tower. Five guardians guide progression; shops sell potions and sword/armor upgrades. The map is drawn in complete tile rows.
+
+**Starting:** **Enter** prints the map; **BS skip** skips printing and starts on the LCD. An older printed map can be used as a reference; printed victory crosses are enabled when the map was printed during the current game. **Left/right arrows** select the underlined heading, **Enter** moves one cell, **Backspace** opens gold/potions/HP immediately, then the other numbered status pages. In battle choose **ATK, DEF, POT, FLEE** with arrows and Enter. Start with **20 gold and zero potions**; upgrades cost **40 then 80 gold**. **Five slimes (10 XP)** reach level 2. The Oasis guardian is at **26,6**, after the first three guardians and at level 8; that single water cell is walkable.
+
+![The fixed kingdom map, drawn with fifteen tiles.](images/exemple-s70-quest-carte.png)
+
+![Position, HP, level and next objective on the LCD.](images/exemple-s70-quest-lcd.png)
+
+![Backspace opens gold, potion count and HP on page 1/3.](images/exemple-s70-quest-bilan.png)
+
+![Turn-based combat: attack, defend, potion or flee.](images/exemple-s70-quest-combat.png)
+
+**What to look for:** A temporary palette and GLYPH mode 5 print the map. CLEAR then releases that memory for battles. Packed DATA hold the map and sprites; keep these native bytes by loading the supplied file in Studio. Subroutines handle encounters, purchases, experience and rewards. The LCD combines native characters, custom sprites and an underlined direction.
+
+**File to open in Studio:** [games/canon-s70-quest-en.bas](../../../examples/games/canon-s70-quest-en.bas).
+
+```basic
+1 GOTO 47
+2 DATA"",",-$è<",".2##nì$$0"
+3 DATA"2####22$$","3#$##ã2","####-ì,3"
+4 DATA"2_,<2ã","##.##$è2","$#.#$$"
+5 DATA",,$-",",#2/","#$#,$2Â,"
+6 DATA"2##;#2#Ò-#,","%P2,/###}#2+,","###$##Â#2,"
+7 DATA""
+8 DATA"âüâüâüââòüäâP!ê$õWã%àAê1JEm]]î"
+9 DATA"ÜÙßòòòzêéÂlnoFî|tê=#êê=#ê"
+10 DATA"âòGêâÂttîÂ^rÙâÂ@ë[êW"
+11 A=G-C:IF A=0 THEN 15
+12 IF ABS(A)>128 THEN A=SGN(A)*128
+13 IF A<0 THEN ORIGIN 128,0 ELSE ORIGIN
+14 HEAD A:C=C+A:GOTO 11
+15 A=K-B:IF A=0 THEN 19
+16 IF ABS(A)>448 THEN A=SGN(A)*448
+17 IF A<0 THEN ORIGIN 0,448 ELSE ORIGIN
+18 FEED A:B=B+A:GOTO 15
+19 ORIGIN:RETURN
+20 RESTORE:FOR J=0 TO A:READ M$:NEXT:RETURN
+21 A=ASC(MID$(M$,INT(Q*.5)+1,1))-35:T=A MOD 15
+22 IF Q MOD 2=0 THEN T=INT(A*.06667)
+23 RETURN
+24 IF INKEY(0)<>0 THEN 24
+25 K=INKEY(0):IF K=0 THEN 25
+26 RETURN
+27 CLS:PRINT A$;:GOSUB 24:RETURN
+28 CLS:PRINT X+1;",";Y+1;" HP";H;" LV";L;" >";
+29 PRINT MID$("Grave ForestRuins Oasis Tower ",6*R+1,6);
+30 LOCATE 1,25:PRINT"   ";:LCDLINE 25+2*D,31
+31 GOSUB 24:IF K=18 OR K=19 THEN 45
+32 IF K=32 THEN GOSUB 162:GOTO 28
+33 IF K=8 THEN GOSUB 163:GOTO 28
+34 IF K<>13 THEN 31
+35 Q=X:V=Y:IF D=0 THEN V=V-1
+36 IF D=1 THEN V=V+1
+37 IF D=2 THEN Q=Q-1
+38 IF D=3 THEN Q=Q+1
+39 IF Q<0 OR Q>29 OR V<0 OR V>15 THEN 44
+40 A=V:GOSUB 20:GOSUB 21:IF T>=9 AND(Q<>25 OR V<>5)THEN 44
+41 X=Q:Y=V:GOSUB 57:IF H<1 THEN 174
+42 IF R=5 THEN 175
+43 GOTO 28
+44 SOUND 120,35:GOTO 31
+45 LCDLINE 25+2*D,0:D=(D+1)MOD 4:IF K=18 THEN D=(D+2)MOD 4
+46 LCDLINE 25+2*D,31:GOTO 31
+47 CLS:CURSOR 4:PRINT"MAP: ENT print BS skip";
+48 GOSUB 24:IF K=8 THEN 52
+49 IF K<>13 THEN 48
+50 CLS:PRINT"PRINTING MAP";:LSPACING 1
+51 DIM G(93):B=0:C=0:GOSUB 143:CLEAR:DIM G(7):B=1736:GOTO 53
+52 CLEAR:DIM G(7)
+53 B$="@@N_U_NN_U__UQUN_N_NUN_UN_JQNUND_JQQ_UN_UQDN_NU_Q"
+54 X=5:Y=13:D=0:L=1:H=30:F=20:P=0:R=0:E=0:N=0:S=0:W=0:C=0
+55 RANDOMIZE PEEK(9)*255+PEEK(10)+1
+56 A$="Find the sorcerer!":GOSUB 27:GOTO 28
+57 IF T=2 OR T=3 OR T=4 THEN GOSUB 76:RETURN
+58 Z=0:IF T=6 THEN Z=1
+59 IF T=7 THEN Z=2
+60 IF T=5 THEN Z=3
+61 IF T=9 THEN Z=4
+62 IF T=8 THEN Z=5
+63 IF Z>R+1 THEN A$="Defeat the previous guardian":GOTO 75
+64 IF Z>0 AND Z<=R THEN RETURN
+65 IF L<2*Z THEN A$="Level required: "+STR$(2*Z):GOTO 75
+66 IF Z>0 THEN T=4:IF Z=2 THEN T=3
+67 IF Z=3 OR Z=4 THEN T=5
+68 IF Z=5 THEN T=6
+69 IF Z>0 THEN GOSUB 91:RETURN
+70 IF N>0 THEN N=N-1:RETURN
+71 IF RND(1)>.3 THEN RETURN
+72 T=0:IF X>9 THEN T=1
+73 IF Y<9 THEN T=2:IF X>14 THEN T=3
+74 GOSUB 91:N=1:RETURN
+75 GOTO 27
+76 CLS:PRINT"1 Rest 2 Potion 3 Sword 4 Armor";
+77 GOSUB 24:IF K=8 THEN RETURN
+78 J=K-49:IF J<0 OR J>3 THEN 77
+79 Q=4:IF J=1 THEN Q=8
+80 IF J=2 THEN Q=40*(S+1)
+81 IF J=3 THEN Q=40*(W+1)
+82 IF J=2 AND S=2 OR J=3 AND W=2 THEN 76
+83 CLS:PRINT"";F;" PRICE ";Q;" ENT:YES BS:NO";
+84 GOSUB 24:IF K=8 THEN 76
+85 IF K<>13 OR F<Q THEN 84
+86 F=F-Q:IF J=0 THEN H=24+6*L
+87 IF J=1 THEN P=P+1
+88 IF J=2 THEN S=S+1
+89 IF J=3 THEN W=W+1
+90 SOUND 550,50:GOTO 76
+91 U=14+8*T+3*R:V=5+3*T+2*R:Q=T+INT(R/2)
+92 IF Z>0 THEN U=24+14*Z:V=7+3*Z:Q=Z+2
+93 GOSUB 94+T:GOTO 101
+94 A$="SLIME":RETURN
+95 A$="GHOST":RETURN
+96 A$="SPIDER":RETURN
+97 A$="BANDIT":RETURN
+98 A$="SKELETON":RETURN
+99 A$="DEMON":RETURN
+100 A$="SORCERER":RETURN
+101 IF Z>0 THEN A$="GUARDIAN: "+A$
+102 GOSUB 27:J=0:CLS:GOSUB 134:GOSUB 137
+103 LOCATE 1,7:PRINT" ATK DEF POT FLEE    ";:LCDLINE 8+4*J,31
+104 GOSUB 24:IF K=18 OR K=19 THEN 117
+105 IF K<>13 THEN 104
+106 IF J=3 THEN 119
+107 IF J=2 THEN 131
+108 A=4+L+S-Q+INT(RND(1)*3):IF J=1 THEN A=2+INT(L/2)
+109 IF A<1 THEN A=1
+110 IF A>U THEN A=U
+111 U=U-A:O=0:IF U=0 THEN GOSUB 139:GOTO 121
+112 O=V-L-W:IF O<1 THEN O=1
+113 IF J=1 THEN O=INT((O+1)/2)
+114 IF O>H THEN O=H
+115 H=H-O:GOSUB 139:IF H=0 THEN RETURN
+116 GOTO 103
+117 LCDLINE 8+4*J,0:J=(J+1)MOD 4:IF K=18 THEN J=(J+2)MOD 4
+118 LCDLINE 8+4*J,31:GOTO 104
+119 IF Z>0 THEN SOUND 120,40:GOTO 104
+120 SOUND 180,50:RETURN
+121 O=2+T:Q=3+2*T:IF Z>0 THEN GOSUB 127
+122 F=F+Q:E=E+O:A$="Victory! +"+STR$(O)+" XP +"+STR$(Q)+""
+123 GOSUB 27
+124 IF E<6+4*L OR L=12 THEN RETURN
+125 E=E-6-4*L:L=L+1:H=24+6*L:SOUND 440,60:SOUND 660,100
+126 A$="Level "+STR$(L):GOSUB 27:GOTO 124
+127 Q=Q+8+2*Z:O=O+8+2*Z:R=R+1:IF B=0 THEN RETURN
+128 FOR I=0 TO 7:G(I)=2^I+2^(7-I):NEXT
+129 G=96+16*X:K=280+56*Y:GOSUB 11:GLYPH G(0),8,8,4:B=K+56:C=G
+130 GOTO 161
+131 IF P=0 THEN SOUND 120,35:GOTO 104
+132 P=P-1:H=H+18:IF H>24+6*L THEN H=24+6*L
+133 SOUND 660,50:A=0:GOTO 112
+134 LCDCHAR 1,14,10,4,27,4,10,17,0
+135 FOR I=0 TO 6:G(I)=ASC(MID$(B$,7*T+I+1,1))-64:NEXT
+136 LCDCHAR 32,G(0),G(1),G(2),G(3),G(4),G(5),G(6),0:RETURN
+137 LOCATE 1,3:PRINT RIGHT$("   "+STR$(H),3);
+138 LOCATE 1,28:PRINT RIGHT$("   "+STR$(U),3);:RETURN
+139 LCDLINE 8+4*J,0:GOSUB 137
+140 LOCATE 1,7:PRINT"                    ";
+141 LOCATE 1,8:PRINT"-";O;:LOCATE 1,22:PRINT"-";A;
+142 SOUND 300,40:SOUND 0,800:RETURN
+143 LPRINT"CANON S-70 QUEST - START 6,14":B=56
+144 RESTORE:FOR X=0 TO 15:READ M$:NEXT
+145 J=0:FOR Y=1 TO 3:READ M$:FOR X=1 TO 40 STEP 2
+146 G=ASC(MID$(M$,X,1)):IF G=33 THEN G=6
+147 G=(240-G)AND 255:A=ASC(MID$(M$,X+1,1)):IF A=33 THEN A=6
+148 G(J)=256*G+((240-A)AND 255):J=J+1:NEXT:NEXT
+149 RESTORE:G=96:K=84:GOSUB 11
+150 LPRINT"         111111111122222222223";:C=576
+151 G=96:K=168:GOSUB 11
+152 LPRINT"123456789012345678901234567890";:C=576
+153 FOR Y=0 TO 15:READ M$
+154 CLS:PRINT"PRINTING MAP ";Y+1;"/16";
+155 G=40*(Y MOD 2):K=280+56*Y:GOSUB 11
+156 LPRINT RIGHT$(" "+STR$(Y+1),2);:C=G+32:FOR X=0 TO 14
+157 A=ASC(MID$(M$,X+1,1))-35
+158 G(64+2*X)=INT(A*.06667):G(65+2*X)=A MOD 15
+159 NEXT:G=96:K=280+56*Y:GOSUB 11:GLYPH G(0),30,8,5:B=K+56:C=G
+160 NEXT
+161 G=0:K=1736:GOTO 11
+162 A$="Arrows: turn ENT: step BS: stats":GOTO 27
+163 J=0
+164 CLS:IF J=1 THEN 167
+165 IF J=2 THEN 169
+166 PRINT"1/3 ";F;" POT";P;" HP";H;"/";24+6*L;:GOTO 170
+167 PRINT"2/3 LV";L;" XP";E;"/";6+4*L;
+168 PRINT" ATK";4+L+S;" DEF";L+W;:GOTO 170
+169 PRINT"3/3 Sword +";S;" Armor +";W;
+170 GOSUB 24:IF K=8 OR K=13 THEN RETURN
+171 IF K=18 THEN J=(J+2)MOD 3:GOTO 164
+172 IF K=19 THEN J=(J+1)MOD 3:GOTO 164
+173 GOTO 170
+174 CLS:PRINT"Adventure over";:SOUND 120,180:END
+175 CLS:PRINT"Sorcerer defeated! Realm saved!";
+176 SOUND 440,70:SOUND 550,70:SOUND 660,160:END
 ```

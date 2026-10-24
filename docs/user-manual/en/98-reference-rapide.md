@@ -66,19 +66,19 @@ Eight pattern slots are shared. Cursor 0 uses a native block, leaving them avail
 | `DRAW INSTANT` | Print shapes immediately. |
 | `DRAW DEFERRED` | Prepare up to 32 shapes together. |
 | `DRAW PRINT` ; `DRAW CANCEL` | Print or discard composition, then return to INSTANT. |
-| `GLYPH A(indices),width,height[,mode[,repeat]]` | 1D/2D bitmap; modes 1 native, 2 double X/Y, 3 square, 4 large square; 1..16 repeats. |
+| `GLYPH A(indices),width,height[,mode[,repeat]]` | 1D/2D bitmap; modes 1 native, 2 double X/Y, 3 square, 4 large square; 1..16 repeats. Mode 5: palette and row of 1..40 8×8 tiles. |
 | `ORIGIN [x[,y]]` | Declare current position without moving. |
 | `MOVE x,y` | Absolute motor position in the declared reference. |
 | `HEAD dx` ; `FEED dy` | Relative head and paper movement. |
 
-Graphics: integer X 0..247, Y 0..255; corrected proportions, native row `INT(Y/2)`. Motors: X 0..128, Y 0..448, different units. Redeclare motor origin after printing. GLYPH: height 1..16; width 1..16 for 1D masks, 1..31 for a 2D matrix. The 2D width matches the column count and starts at column zero.
+Graphics: integer X 0..247, Y 0..255; corrected proportions, native row `INT(Y/2)`. Motors: X 0..128, Y 0..448, different units. Redeclare motor origin after printing. GLYPH: height 1..16; width 1..16 or 32 for 1D masks, 1..32 for a 2D matrix. The 2D width matches the column count and starts at column zero.
 
 ## Sound, randomness, serial and memory
 
 | Form | Purpose |
 |---|---|
 | `BEEP [duration]` | 0..2000 ms; default 100 ms. |
-| `SOUND modulation,duration` | 60..750 Hz modulation, or 0 for silence; 0..2000 ms. |
+| `SOUND rate,duration[,duty[,texture]]` | 50..31250 Hz or 0 (silence); 0..2000 ms; duty 1..99% (50); texture 0 (square) or 1 (noise, rate ≥1000, 672 free bytes). |
 | `RANDOMIZE seed` | Required integer seed 1..65535. |
 | `BAUD rate` | 1200, 2400, 7812, 15625 or 31250. |
 | `SERCFG format` | 7N1, 7N2, 7E1, 7E2, 7O1 or 7O2; unquoted. |

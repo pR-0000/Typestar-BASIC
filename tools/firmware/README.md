@@ -1,12 +1,14 @@
 # Firmware construction
 
-HD6301 sources are in `../../src/`. The published firmware is **0.4.93-dev**, validated on S-70 and the documented S-60 revision. Its incremental pipeline extends .88 (`build_llist.py`) with .89's glyph-mask relocation fix, .91's separate paper-correction step, .92's reduced 1/4 gain and .93's continuous repeated glyphs and lossless font repacking. Ready-to-program images and resource statistics are in [firmware/0.4.93-dev](../../firmware/0.4.93-dev/README.md).
+HD6301 sources are in `../../src/`. The published firmware is **0.4.100-dev**, validated on S-70 and the documented S-60 revision. Its incremental pipeline extends .88 (`build_llist.py`) with .89's glyph-mask relocation fix, .91's separate paper-correction step, .92's reduced 1/4 gain and .93's continuous repeated glyphs and lossless font repacking. Ready-to-program images and resource statistics are in [firmware/0.4.100-dev](../../firmware/0.4.100-dev/README.md).
 
 These scripts form an **incremental build pipeline**. Each stage checks the previous CPU image and symbol map before modifying the relevant ROM regions. `build.py` is the initial stage, rather than an independent build of the latest version. Intermediate images, manifests and reports live in the ignored `build/` directory.
 
 Run scripts from the repository root. The existing pipeline requires the A09 assembler, the original Canon firmware and locally generated intermediate reports. It retains paths to the adjacent ROMReader research workspace. A standalone, configurable build remains a separate publication task. This reorganization changes no firmware bytes.
 
-Some shared modules retain a `validate_` prefix because assembly helpers were developed alongside verification code; they remain here when construction stages import them. Independent diagnostics and hardware probes are stored in the ignored `_local/development/` tree.
+Some shared modules retain a `validate_` prefix because assembly helpers were developed alongside verification code; they remain here when construction stages import them. Release regression suites are in `../diagnostics/`; older research probes are stored in the ignored `_local/development/` tree.
+
+The published **0.4.100-dev image** uses `build_release_candidate.py`, followed by `../diagnostics/run_release_audit.py` and `prepare_release_candidate.py`. Packaging requires sixteen passing reports with the exact CPU-image hash: ROM control flow and ownership, immutable error strings, BASIC execution, editor/CRC/retention, serial protocols, cross-command state, graphics, sound and games. Full coverage and the remaining hardware checks are described in [the audit notes](../../docs/firmware-test-0.4.100.md). The independent `?FOR/NEXT` message fixes a shared suffix overwritten during earlier repacking. The image has 58 explicitly free ROM bytes and 5,951 empty BASIC RAM bytes. The packaged images and checksums are in `firmware/0.4.100-dev/`; the release notes separate software coverage from physical tests.
 
 Archived intermediate releases may be supplied with `TYPESTAR_FIRMWARE_ARCHIVE` or the ignored `_local/build-inputs.ini` (`[inputs]`, `firmware_archive = /path/to/archive`). Output always remains in the project's generated `release/` folder.
 

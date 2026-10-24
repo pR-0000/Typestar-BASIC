@@ -4,6 +4,41 @@ Studio's **Characters** palette gives access to all 256 LCD codes. Select a draw
 
 **These two tables reproduce Studio's palette**, transcribed by observing the S-70 display. Choose a letter, border, symbol or piece of scenery.
 
+<a id="ic5-lcd"></a>
+## IC5: from character codes to pixels
+
+When your program displays `PRINT "A"`, the processor sends **code 65** to the display. The circuit marked **IC5**, bearing the reference **MB62H177**, then handles drawing the letter on the LCD. The native font resides in the display circuit's character generator; the processor ROMs also hold patterns for some of Canon software's composed characters. [P1] [L2]
+
+### A relationship with the HD44780 family
+
+The observed commands and memory organisation resemble **Hitachi HD44780** controllers. The **HD44780U** data sheet's **Table 4, variant A02**, presents a European font containing letters, signs and accents, several of which resemble the Typestar's patterns. This document provides a comparison reference: IC5 bears the reference MB62H177, and our catalogue retains the shapes and codes observed on the Canon. [L1] [L2]
+
+The resemblance helps explain how the display works. The Typestar has its own character choices and a strip of triangles and indicators adapted to a typewriter. For example, the observed catalogue starts its extended characters with **Ç at code 160** and has a **solid block at code 171**. The Canon table below remains the reference for your programs.
+
+### Three memories with different jobs
+
+| Display memory | What it holds | Example |
+|---|---|---|
+| **DDRAM**, display memory | Codes placed at screen positions. | Code 65 selects the letter A. |
+| **CGROM**, fixed font | Permanent pictures of native letters and symbols. | The pixels of A or Ç. |
+| **CGRAM**, custom-picture memory | Pixel rows that a program can change. | A character created with LCDCHAR. |
+
+Tests confirm reading codes from DDRAM and patterns from CGRAM. **Reading a letter from display memory returns its code**, such as 65 for A. The identified accesses provide custom-picture pixels; fixed characters were recorded by displaying them and transcribing their pixels. That transcription supplies Studio's emulated LCD font. [L2]
+
+### Why eight custom characters?
+
+The model confirmed on the S-70 uses **64 bytes of CGRAM**, organised as **8 patterns of 8 rows**. Visible characters occupy five columns and seven rows; the eighth row contributes to the triangles beneath the letters. Codes **0 through 7** select these eight patterns, and **8 through 15** repeat them: changing a pattern changes all its occurrences and its alias. [L2]
+
+Accents already present in the fixed font use their own codes and keep all eight custom slots available. BASIC's cursor also uses native solid block 171. You can therefore display several accents alongside your own pictures on the same screen.
+
+### What the experiments established
+
+CGRAM writes and subsequent reads preserve all eight bits of the tested bytes, while **the five least significant bits** produce visible dots. Writes **64 bytes** apart reached the same cells: this wraparound explains the retained capacity. These observations helped refine Studio. [L2]
+
+The processor accesses LCD commands and status at hexadecimal address **&H0038**, and data at **&H0039**. The logical area for 32 characters and the lower strip have separate uses on the glass. BASIC provides PRINT, LCDCHAR, LCDTRI, LCDLINE and ICON to control them. [L2]
+
+The HD44780U data sheet describes horizontal display shifting. On the studied IC5, research established memory and indicator accesses; a hardware vertical-scroll command remains unknown. BASIC's console updates its content by rewriting characters. [L1] [L2]
+
 ## LCD codes 0 to 127
 
 ![LCD characters 0 to 127, from Studio's palette, with decimal and hexadecimal codes.](../images/lcd-catalogue-00-7f.png)
@@ -46,3 +81,7 @@ Common accents can also be entered directly into a Studio string, for example `P
 ```
 
 Prepare GLYPH patterns for accents and additional signs. A full LPRINT character list and a program to print it are in the [LPRINT reference](caracteres-lprint.md). Custom drawings are explained in [the paper chapter](08-papier-dessins.md#glyph).
+
+[P1]: https://ajd.sh/posts/canon-typestar-part-1/
+[L1]: https://cdn-shop.adafruit.com/datasheets/HD44780.pdf#page=18
+[L2]: references.md#lcd-ic5

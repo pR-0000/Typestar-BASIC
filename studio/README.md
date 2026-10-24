@@ -1,10 +1,10 @@
-# Typestar BASIC Studio 0.2.36
+# Typestar BASIC Studio 0.2.40
 
 [Français](#français) · [English](#english)
 
 ## Français
 
-Studio réunit l'éditeur BASIC, les transferts série, l'éditeur de glyphes, l'impression graphique, un émulateur HD6301, le papier virtuel et le débogueur. Firmware de référence : **Typestar BASIC 0.4.93-dev**.
+Studio réunit l'éditeur BASIC, les transferts série, l'éditeur de glyphes, l'impression graphique, un émulateur HD6301, le papier virtuel et le débogueur. Firmware de référence : **Typestar BASIC 0.4.100-dev**.
 
 ### Lancer Studio
 
@@ -17,6 +17,8 @@ python3 "studio/Typestar BASIC Studio.pyw"
 Le lanceur crée son environnement `studio/.venv`, vérifie silencieusement les dépendances et installe les paquets manquants avec pip. La première installation demande Internet et peut prendre quelques instants. Python et venv/pip doivent être disponibles. Un message apparaît seulement en cas d'erreur ; le détail se trouve dans `studio/studio-install.log`.
 
 Gardez `studio/` à côté de `tools/`, `src/`, `docs/` et `examples/`. Les modules partagés de `tools/` sont nécessaires au fonctionnement. Les tests et fichiers de recherche sont facultatifs.
+
+Les octets sans caractère Unicode habituel dans les DATA apparaissent comme de petits repères hexadécimaux **[B3]**. Ils restent chacun un octet à la sauvegarde et au transfert ; la police de repérage est fournie avec Studio.
 
 ### Utilisation
 
@@ -32,7 +34,15 @@ Cliquez sur le LCD pour utiliser le clavier. F7 ou Ctrl correspond à **CODE**, 
 
 Le mode **ROM générique** utilise le cœur de la machine sans injection de programme BASIC. Dans ce mode, F5 démarre ou reprend simplement le firmware sélectionné. La précision des moteurs, du son et des délais reste une simulation fonctionnelle ; la validation sur machine complète les essais dans Studio.
 
-### Nouveautés de Studio 0.2.36
+### Nouveautés de Studio 0.2.39
+
+Le profil BASIC 0.4.98 prend en charge le son continu et la lecture de BREAK à la fin du son, comme sur la Canon. Les rangées de glyphes et leur impression instantanée sont conservées.
+
+### Depuis Studio 0.2.38
+
+Le profil BASIC 0.4.97 prend en charge le pilote sonore étendu : rapport cyclique, motif pseudo-aléatoire et neuf modes de Piano. Le mode GLYPH 5 et les rangées continues de Quest sont également exécutés depuis le firmware sélectionné. Le son reste un aperçu approximatif du buzzer réel. Les correspondances du clavier suivent le nouveau format compact des tables ROM. Le cœur HD6301 gère également les instructions ADCA/ADCB utilisées par ces routines.
+
+### Depuis Studio 0.2.36
 
 Le cœur HD6301 utilise une table d'exécution préparée au lancement. Les essais locaux hors impression montrent un gain d'environ **×2 à ×2,7**, selon le programme ; la vitesse dépend aussi de l'ordinateur hôte. Le firmware exécute les mêmes instructions, avec les mêmes registres, flags et accès aux périphériques. L'adaptateur BASIC évite également des vérifications répétées entre les points de lecture du clavier, du LCD et du son. Cette accélération est automatique et conserve les temporisations sonores et les attentes de saisie.
 
@@ -69,7 +79,7 @@ Copyright © 2026 Pierre Raimbault. Les images ROM Canon sont fournies séparém
 
 ## English
 
-Studio combines the BASIC editor, serial transfers, glyph editor, graphical printing, an HD6301 emulator, virtual paper and debugger. Reference firmware: **Typestar BASIC 0.4.93-dev**.
+Studio combines the BASIC editor, serial transfers, glyph editor, graphical printing, an HD6301 emulator, virtual paper and debugger. Reference firmware: **Typestar BASIC 0.4.100-dev**.
 
 ### Launching Studio
 
@@ -82,6 +92,8 @@ python3 "studio/Typestar BASIC Studio.pyw"
 The launcher creates its environment in `studio/.venv`, silently checks dependencies and installs missing packages with pip. The first installation requires Internet access and may take a little while. Python and venv/pip must be available. A message appears only if an error occurs; details are recorded in `studio/studio-install.log`.
 
 Keep `studio/` alongside `tools/`, `src/`, `docs/` and `examples/`. Shared modules in `tools/` are required for the application to work. Tests and research files are optional.
+
+DATA bytes without a usual Unicode character appear as small hexadecimal badges **[B3]**. Each remains one byte when saved or transferred; the display font is bundled with Studio.
 
 ### Using Studio
 
@@ -97,7 +109,15 @@ Click the LCD to use the keyboard. F7 or Ctrl corresponds to **CODE**, F8 to **M
 
 **Generic ROM** mode uses the machine core without injecting a BASIC program. In this mode, F5 simply starts or resumes the selected firmware. Motor, sound and timing accuracy remains a functional simulation; testing on real hardware complements the trials in Studio.
 
-### New in Studio 0.2.36
+### New in Studio 0.2.39
+
+The BASIC 0.4.98 profile supports continuous sound and defers BREAK until the sound ends, matching the Canon. Glyph rows and instant printing remain available.
+
+### Since Studio 0.2.38
+
+The BASIC 0.4.97 profile supports the extended sound driver: duty ratio, pseudo-random pattern and nine Piano modes. GLYPH mode 5 and Quest’s continuous rows also execute from the selected firmware. Audio remains an approximate preview of the real buzzer. Keyboard mappings follow the new compact ROM table format. The HD6301 core also handles the ADCA/ADCB instructions used by these routines.
+
+### Since Studio 0.2.36
 
 The HD6301 core uses an execution table prepared at startup. Local non-printing tests show a speedup of about **2× to 2.7×**, depending on the program; speed also depends on the host computer. The firmware executes the same instructions, with the same registers, flags and peripheral accesses. The BASIC adapter also avoids repeated checks between keyboard, LCD and sound boundaries. Acceleration is automatic and preserves sound timing and input waits.
 

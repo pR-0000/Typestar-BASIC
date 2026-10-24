@@ -224,6 +224,25 @@ Le dernier nombre choisit **1 à 16 répétitions**. Le firmware prépare le des
 
 Un motif de **16 × 16 en mode 4** occupe 32 unités HEAD de large et deux bandes de 56 unités FEED. Dix copies demandent deux passes : leurs moitiés hautes, puis leurs moitiés basses. Les cadres de répétition sont arrondis à la largeur d'un bloc natif ; un petit motif peut donc laisser un espace entre les copies. Les dimensions indiquées restent celles de la source. Pour dessiner une rangée de murs, la forme complète est `GLYPH A(0),16,16,4,10`.
 
+### Une rangée de motifs différents
+
+Le **mode 5** imprime de **1 à 40 motifs de 8 × 8** en un passage, avec les grands pixels carrés du mode 4. Les cases vides gardent leur place dans la rangée et la tête reste engagée entre les dessins.
+
+Le tableau commence par une palette de **16 motifs**, chacun décrit par **quatre nombres de 16 bits** : les huit bits de gauche donnent une ligne, les huit suivants la ligne du dessous. Les **64 premiers éléments** contiennent cette palette. Les éléments suivants choisissent les motifs de la rangée, par leurs numéros **0 à 15**.
+
+```basic
+10 DIM G(67)
+20 G(4)=%1111111110000001
+30 G(5)=%1000000110000001
+40 G(6)=%1000000110000001
+50 G(7)=%1000000111111111
+60 G(64)=1:G(65)=0:G(66)=1:G(67)=1
+70 LSPACING 1:GLYPH G(0),4,8,5
+```
+
+DIM prépare les éléments à zéro : le motif **0** reste vide. Les lignes 20 à 50 dessinent un cadre dans le motif **1**. La dernière ligne imprime **cadre, vide, cadre, cadre**. Dans cette forme particulière de GLYPH, le deuxième argument compte les **motifs** ; le troisième vaut **8**. L'avance papier suit LSPACING : **1** rapproche les rangées en bandes de 56 unités, **1.5** ou **2** ajoutent de l'espace. Chaque rangée utilise un seul retour de tête. Le firmware adapte le cache à la RAM libre ; il emprunte au minimum 316 octets en plus du tableau et des variables.
+
+
 ### Une matrice pour les pixels
 
 Une matrice contient **0 ou 1 par pixel**, sur **1 à 31 colonnes** et **1 à 16 rangées**. La largeur donnée doit correspondre au tableau ; la colonne de départ est zéro.

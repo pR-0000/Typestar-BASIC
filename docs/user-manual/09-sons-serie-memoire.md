@@ -10,7 +10,7 @@ Un signal bref peut annoncer une bonne réponse. Une liaison série peut conserv
 
 `BEEP` joue un bip d'environ 100 millisecondes. Vous pouvez préciser sa durée, de **0 à 2000 millisecondes** : `BEEP 200` joue un signal de deux dixièmes de seconde.
 
-`SOUND modulation,duree` module le buzzer pendant la durée demandée. La modulation est un entier de **60 à 750 hertz**, la durée un entier de **0 à 2000 millisecondes**. La valeur spéciale zéro donne une pause silencieuse :
+`SOUND cadence,duree` module le buzzer pendant la durée demandée. La cadence est un entier de **50 à 31250 hertz**, la durée un entier de **0 à 2000 millisecondes**. La valeur spéciale zéro donne une pause silencieuse :
 
 ```basic
 10 SOUND 300,100
@@ -20,9 +20,17 @@ Un signal bref peut annoncer une bonne réponse. Une liaison série peut conserv
 
 Le programme joue un petit signal en deux parties. `SOUND 0,1000` attend environ une seconde sans produire de son ; c'est aussi un moyen simple de laisser lire un message. Pour attendre plus de deux secondes, enchaînez plusieurs pauses ou utilisez une boucle.
 
-Pendant BEEP et SOUND, le programme attend la fin du signal ou de la pause. Ces instructions sont **bloquantes** et peuvent être interrompues par BREAK. Les durées sont nominales, adaptées au rythme des messages et des bruitages.
+Pendant BEEP et SOUND, le programme attend la fin du signal ou de la pause. Ces instructions sont **bloquantes**, pendant au maximum deux secondes par commande. Le signal est produit en continu ; le clavier est de nouveau lu à la fin. Pour interrompre le programme, maintenez **BREAK** jusqu'à la fin du son. Les durées sont nominales, adaptées au rythme des messages et des bruitages.
 
-Le nombre de SOUND choisit la **modulation d’amplitude**. Le firmware ouvre et ferme la porte du buzzer, qui conserve sa fréquence sonore propre et son niveau matériel. Les sons brefs et les bruitages exploitent particulièrement bien ce mécanisme.
+`SOUND cadence,duree[,rapport[,texture]]` propose deux réglages supplémentaires. Le **rapport cyclique** va de 1 à 99 %, avec 50 % par défaut : il change le niveau et le timbre en réglant la proportion de temps où le buzzer est activé. La **texture** vaut 0 pour une onde carrée, ou 1 pour un motif pseudo-aléatoire de 31 bits. Ce dernier utilise une cadence de 1000 à 31250 bits/s, ignore le rapport et emprunte temporairement 672 octets libres.
+
+```basic
+10 SOUND 5500,180,50
+20 SOUND 8000,250,50,1
+30 FOR D=10 TO 90 STEP 10:SOUND 5890,30,D:NEXT D
+```
+
+Le premier son utilise une cadence rapide, le deuxième un motif de bruit et le troisième une enveloppe de niveau. Le firmware commande la porte du buzzer ; la résonance de la machine et les mélanges produisent différentes hauteurs perçues. Une cadence donnée caractérise cette commande électrique. L'accordage musical dépend aussi du transducteur. La durée suit un nombre entier de périodes, ou de motifs de 31 bits pour le bruit : la résolution atteint 20 ms aux cadences les plus lentes et 31 ms pour le bruit. Une demande très courte joue au minimum un cycle ; une durée zéro termine immédiatement la commande. Les rapports extrêmes sont arrondis aux durées réalisables. **Piano** propose neuf modes pour explorer ces effets.
 
 ## Conserver le programme sur un ordinateur
 

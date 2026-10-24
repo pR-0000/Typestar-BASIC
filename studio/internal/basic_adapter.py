@@ -11,7 +11,8 @@ from core import analyze, codec
 def basic_backend(realtime_sound=False, mask_path=None, firmware_path=None, cold_start=False, layout='auto'):
     from emulator_cpu import configure, StageCPU
     GameCPU, s = configure(mask_path, firmware_path, layout=layout)
-    traced = {0x76e7, s['LCDPUT'], 0x7563, s['GPWAIT'], s['RBJOB'], s['GPPRINT'], s['SNDPREP'], 0x8ee6}
+    sound_entry = s.get('SNDPLAYPREP', s['SNDPREP'])
+    traced = {0x76e7, s['LCDPUT'], 0x7563, s['GPWAIT'], s['RBJOB'], s['GPPRINT'], sound_entry, 0x8ee6}
 
     class InteractiveCPU(GameCPU):
         symbols = s
@@ -139,6 +140,23 @@ def basic_backend(realtime_sound=False, mask_path=None, firmware_path=None, cold
             if table is None or locale>=10:return None
             for shifted in (False,True):
                 for key in range(44):
+                    if 'KDDATA' in s:
+                        index=locale*4+int(shifted)
+                        for _ in range(40):
+                            ptr=s['KDDATA']+2*self.m[table+index]
+                            while self.m[ptr]<128:
+                                if self.m[ptr]==key:
+                                    char=self.m[ptr+1];break
+                                ptr+=2
+                            else:
+                                if self.m[ptr]==254:
+                                    index=self.m[ptr+1];continue
+                                char=97+key if key<26 else self.m[ptr+1+key-26]
+                            break
+                        else:continue
+                        if shifted and 97<=char<=122:char-=32
+                        if char==value:return key,shifted
+                        continue
                     ptr=self.word(table+2*(locale*4+int(shifted)))
                     for _ in range(2000):
                         tag=self.m[ptr]
@@ -197,17 +215,21 @@ def basic_backend(realtime_sound=False, mask_path=None, firmware_path=None, cold
                 if word:self.paper_events.append([self.xy[0],self.xy[1],word])
             if self.live and realtime_sound:
                 if self.sound_until:
-                    if self.break_requested:
+                    if self.break_requested and not s.get('SNDCONTINUOUS'):
                         self.sound_until=0;self.break_requested=False
                         self.audio_events.append({'stop':True})
                         self.pc=s['SNDBREAK']
                     elif time.monotonic()<self.sound_until:return
                     else:self.sound_until=0
-                if self.pc==s['SNDPREP']:
+                if self.pc==sound_entry:
                     hz=self.word(s['SNDHZ']);ms=self.word(s['SNDLEFT'])
                     ms=round(ms*self.sound_scale)
                     mode=self.m[s['SNDMODE']]
-                    self.audio_events.append(dict(hz=hz,ms=ms,mode=mode))
+                    if s.get('SNDHOLDMODE')==64 and mode in (0,64):
+                        mode=0 if mode==64 else 2
+                    event=dict(hz=hz,ms=ms,mode=mode)
+                    if 'SNDDUTY' in s:event.update(duty=self.m[s['SNDDUTY']],wave=int(mode==3),extended=True)
+                    self.audio_events.append(event)
                     self.sounds.append((hz,ms))
                     self.sound_until=time.monotonic()+ms/1000
                     self.pc=s['SNDSTOP']

@@ -23,6 +23,8 @@ The editor occupies the left side. **Line numbers**, **statements**, **numbers**
 
 Use **File → New**, **Open**, **Save** or **Save as** to organise programs. **Ctrl+F** searches; **Edit** provides copy, paste, undo and redo. `.bas` files are **UTF-8** text, allowing recognised LCD accents directly in messages.
 
+Packed game DATA may contain bytes with no usual text character. Studio displays them as small hexadecimal badges, such as **[B3]**. Each badge still represents **one byte**: opening, saving, copying and transferring preserve the original data and the 63-byte line limit. Normal letters and accents retain their usual appearance.
+
 **Program → Check limits**, or **F4**, checks line numbers, lengths, characters and tokenised program size. Click a diagnostic to reach the relevant line. The memory estimate precedes variable allocation: execution will also use RAM. Emulator experiments then check calculations and program flow.
 
 **Let's try it.** Create a new file and enter:

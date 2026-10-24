@@ -129,8 +129,14 @@ class GameCPU(StageCPU):
             if self.m[s['LPMODE']] == 0:
                 p = self.word(s['GXPATPTR'])
                 self.map_tiles.append(bytes(self.m[p:p+64]).hex())
-        if self.pc == s['SNDPREP']:
+        if self.pc == s['SNDPREP'] and 'SNDPLAYPREP' not in s:
             self.sounds.append((self.word(s['SNDHZ']), self.word(s['SNDLEFT'])))
+        if self.pc == s.get('SNDPLAYPREP'):
+            # Functional BASIC execution has no free-running hardware timer.
+            # Parsing, buffer validation and waveform compilation ran in ROM;
+            # the desktop adapter supplies the blocking real-time audio wait.
+            self.sounds.append((self.word(s['SNDHZ']), self.word(s['SNDLEFT'])))
+            self.pc=s['SNDSTOP']
         if self.pc == 0x8EE6 and self.keys:
             self.m[s['IKPENDING']] = self.keys.popleft()
         super().step()

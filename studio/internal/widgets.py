@@ -1,12 +1,22 @@
 """Qt widgets without serial or firmware side effects."""
 import re
+from pathlib import Path
 from PySide6.QtCore import Qt, Signal, QRectF
-from PySide6.QtGui import QColor, QPainter, QTextCharFormat, QSyntaxHighlighter, QFont
+from PySide6.QtGui import QColor, QPainter, QTextCharFormat, QSyntaxHighlighter, QFont, QFontDatabase
 from PySide6.QtWidgets import QWidget, QPlainTextEdit
 from core import KEYWORDS
 
 class BasicHighlighter(QSyntaxHighlighter):
     dark = False
+    byte_font = None
+
+    def __init__(self, document):
+        super().__init__(document)
+        if BasicHighlighter.byte_font is None:
+            handle=QFontDatabase.addApplicationFont(str(Path(__file__).parent/'assets/typestar-bytes.ttf'))
+            families=QFontDatabase.applicationFontFamilies(handle)
+            BasicHighlighter.byte_font=families[0] if families else ''
+
     def highlightBlock(self, text):
         def style(a, n, color, bold=False):
             fmt = QTextCharFormat()
@@ -31,6 +41,15 @@ class BasicHighlighter(QSyntaxHighlighter):
         m = re.match(r'\s*\d+', text)
         if m:
             style(0, m.end(), '#748595')
+        # These characters round-trip as single native bytes. Change only
+        # their appearance: replacing the document with '\\xNN' would expand
+        # DATA strings and break packed maps, offsets and the 63-byte limit.
+        for m in re.finditer('[\ue080-\ue0ff]',text):
+            fmt=self.format(m.start())
+            if self.byte_font:fmt.setFontFamilies([self.byte_font])
+            fmt.setFontWeight(QFont.Weight.Normal)
+            fmt.setToolTip(f'Byte / octet ${ord(m[0])-0xe000:02X}')
+            self.setFormat(m.start(),1,fmt)
 
 class CodeEditor(QPlainTextEdit):
     def __init__(self):

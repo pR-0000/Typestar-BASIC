@@ -224,6 +224,25 @@ The final number selects **1 to 16 repetitions**. The firmware prepares the draw
 
 A **16 × 16 motif in mode 4** occupies 32 HEAD units horizontally and two bands of 56 FEED units. Ten copies take two sweeps: their upper halves, then their lower halves. Repetition frames are rounded to a native block's width, so smaller motifs may leave space between copies. Dimensions always describe the source. A wall row uses the complete form `GLYPH A(0),16,16,4,10`.
 
+### A row of different tiles
+
+**Mode 5** prints **1–40 tiles of 8 × 8 pixels** in one sweep, using mode 4's large square pixels. Blank tiles retain their position, and the head stays engaged between tiles.
+
+The array begins with a palette of **16 tiles**, each described by **four 16-bit numbers**: the left eight bits describe one row, and the next eight describe the row below it. The **first 64 elements** hold this palette. Following elements select the row's tiles by number, **0–15**.
+
+```basic
+10 DIM G(67)
+20 G(4)=%1111111110000001
+30 G(5)=%1000000110000001
+40 G(6)=%1000000110000001
+50 G(7)=%1000000111111111
+60 G(64)=1:G(65)=0:G(66)=1:G(67)=1
+70 LSPACING 1:GLYPH G(0),4,8,5
+```
+
+DIM initializes elements to zero, leaving tile **0** blank. Lines 20–50 draw a frame in tile **1**. The last line prints **frame, blank, frame, frame**. In this particular GLYPH form, the second argument counts **tiles**; the third is **8**. Paper advance follows LSPACING: **1** places rows in adjacent 56-unit bands, while **1.5** or **2** adds space. Each row uses one carriage return. The firmware adjusts its cache to available RAM; it temporarily borrows at least 316 bytes in addition to the array and variables.
+
+
 ### A matrix for pixels
 
 A matrix holds **0 or 1 per pixel**, with **1 to 31 columns** and **1 to 16 rows**. The supplied width must match the array; the starting column is zero.

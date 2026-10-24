@@ -1,0 +1,8 @@
+Typestar Bytes 1.0
+
+Original hexadecimal badge outlines for U+E080 through U+E0FF.
+Each glyph labels one native byte; source text is never expanded or rewritten.
+Distributed under the same licence as Typestar BASIC Studio.
+
+Editable source: tools/examples/build_byte_font.py.
+fontTools is needed only to rebuild this asset, not to run Studio.

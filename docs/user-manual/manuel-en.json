@@ -2,9 +2,9 @@
   "title": "Typestar BASIC",
   "subtitle": "User's manual",
   "language": "en",
-  "version": "0.4.93-dev",
+  "version": "0.4.100-dev",
   "author": "Pierre Raimbault & Chat GPT",
-  "date": "20 October 2026",
+  "date": "24 October 2026",
   "cover_image": "images/illustration_BASIC_firmware.png",
   "image_layout": {
     "illustration.png": {
@@ -302,6 +302,30 @@
     "typestar7-tv-wor1986.png": {
       "max_width_mm": 135,
       "max_height_mm": 112
+    },
+    "atelier-tilemap.png": {
+      "max_width_mm": 95,
+      "max_height_mm": 70
+    },
+    "exemple-s70-quest-carte.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 100
+    },
+    "exemple-s70-quest-lcd.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 22
+    },
+    "exemple-s70-quest-bilan.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 22
+    },
+    "exemple-s70-quest-combat.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 22
+    },
+    "exemple-ruines-lcd.png": {
+      "max_width_mm": 166,
+      "max_height_mm": 22
     }
   },
   "chapters": [
@@ -318,8 +342,8 @@
     "06-fonctions-nombres-chaines.md",
     "07-ecran-clavier.md",
     "08-papier-dessins.md",
+    "08-atelier-tilemap.md",
     "09-sons-serie-memoire.md",
-    "09-terminal-papier.md",
     "10-erreurs-et-limites.md",
     "11-programmes-complets.md",
     "12-table-caracteres.md",
@@ -483,6 +507,7 @@
     "11-programmes-complets.md#pocket-duel",
     "11-programmes-complets.md#orbital-duel",
     "11-programmes-complets.md#ballistic-duel",
+    "11-programmes-complets.md#canon-s-70-quest",
     "12-table-caracteres.md#lcd-codes-128-to-255",
     "12-table-caracteres.md#using-a-drawing-from-the-table",
     "12-table-caracteres.md#what-about-paper",
@@ -501,8 +526,8 @@
     {
       "file": "piano-en.bas",
       "title": "Piano",
-      "description": "A little sound instrument controlled by keyboard letters. This short program is a good first complete listing. DATA assigns modulation to each letter; the buzzer makes effects rather than precisely pitched musical notes.",
-      "controls": "**To play:** press letters **A to Z**. **Return** ends the program. Try keys, then change a DATA value to compare sounds.",
+      "description": "Nine sound modes turn the keyboard into a small effects synthesizer: mixed pulses, pulse width, sweeps, envelopes and noise. DATA tables prepare the values used by SOUND; the buzzer and its resonances shape the result.",
+      "controls": "**To play:** letters **A to Z** produce sounds; **left/right arrows** choose the mode. **1, 2, 3** select the register, **4, 5, 6** select pulse width. **Space** plays an eight-sound MIX MINUS demonstration. **Return** ends the program. Each sound finishes before the next key is read.",
       "learning": "DIM reserves an array, READ fills it, INKEY reads keys and SOUND makes sound.",
       "illustrations": [
         {
@@ -529,7 +554,7 @@
       "title": "Orbital Duel",
       "description": "A space battle inspired by Battleship. Command three satellite formations of three, two and two cells on a six-by-six grid. Canon has the same fleet; the first to hit all seven enemy cells wins. Satellites and shots remain visible on paper.",
       "controls": "**To play:** Drawing starts as soon as you RUN. Enter a starting cell such as **A1**, then **H** for a formation extending right or **V** extending down. Enter shots **A1 to F6**, or **Q** to quit. The left grid holds your satellites; the right records shots. Let the program position the paper.",
-      "learning": "GLYPH repeats one cached grid fragment across both boards; mode 4 enlarges sprites. CLEAR releases construction buffers before the game arrays are created. Arrays, randomness and logical tests control positions and the opponent.",
+      "learning": "GLYPH mode 5 streams different tiles across both grids, including their right border, then the halves of satellites and impacts. Large pixels keep the pictures square. CLEAR releases construction buffers before game arrays are created. Arrays, randomness and logical tests control positions and the opponent.",
       "illustrations": [
         {
           "file": "exemple-duel-orbital-lcd.png",
@@ -562,12 +587,41 @@
       "file": "games/typestar-ruins-en.bas",
       "title": "Typestar Ruins",
       "description": "Explore a randomly generated temple on paper. Recover three guarded relics, then return to B2 within 48 moves. Partitions, seven monsters and healing supplies make route planning important. The LCD shows your current coordinates and the paper retains your footsteps.",
-      "controls": "**Controls:** left/right arrows turn, Return advances, Space displays help, Q ends the expedition. Each relic costs one health point against its guardian; chests and the spring restore health. A cross marks a used encounter. Drawing begins immediately after RUN.",
-      "learning": "DATA stores the tiles. GLYPH mode 4 prints large square pixels and repeats adjacent matching walls in a continuous band. The map array tracks terrain, consumed encounters and varying footstep positions; INKEY and LCDLINE control the menu.",
+      "controls": "**To play:** left/right keys select the underlined direction from **↑ ↓ ← →** (up, down, left, right), Return moves one cell, Space shows help, Q ends the expedition. Each relic costs one health point to its guardian; chests and the spring heal you. A cross marks a used encounter. RUN starts drawing immediately.",
+      "learning": "DATA keeps artwork compact. GLYPH mode 5 prints different tiles in one row with large square pixels. The map tracks terrain, used encounters and footsteps; INKEY and LCDLINE handle controls.",
       "illustrations": [
         {
           "file": "exemple-ruines-papier.png",
           "caption": "A glyph map with coordinates, landmarks and the goal, shown at nominal paper coordinates."
+        },
+        {
+          "file": "exemple-ruines-lcd.png",
+          "caption": "Up, down, left and right arrows use the same selector as Quest."
+        }
+      ]
+    },
+    {
+      "file": "games/canon-s70-quest-en.bas",
+      "title": "Canon S-70 Quest",
+      "description": "Adapted from [Canon X-07 Quest](https://github.com/pR-0000/Canon_X-07_RPG), this game retains its 30-by-16 kingdom and artwork. **The King sends the hero to find the sorcerer who has fled.** The map stays on paper and turn-based battles take place on the LCD. Explore the castle, graveyard, forest, ruins, Oasis and black tower. Five guardians guide progression; shops sell potions and sword/armor upgrades. The map is drawn in complete tile rows.",
+      "controls": "**Starting:** **Enter** prints the map; **BS skip** skips printing and starts on the LCD. An older printed map can be used as a reference; printed victory crosses are enabled when the map was printed during the current game. **Left/right arrows** select the underlined heading, **Enter** moves one cell, **Backspace** opens gold/potions/HP immediately, then the other numbered status pages. In battle choose **ATK, DEF, POT, FLEE** with arrows and Enter. Start with **20 gold and zero potions**; upgrades cost **40 then 80 gold**. **Five slimes (10 XP)** reach level 2. The Oasis guardian is at **26,6**, after the first three guardians and at level 8; that single water cell is walkable.",
+      "learning": "A temporary palette and GLYPH mode 5 print the map. CLEAR then releases that memory for battles. Packed DATA hold the map and sprites; keep these native bytes by loading the supplied file in Studio. Subroutines handle encounters, purchases, experience and rewards. The LCD combines native characters, custom sprites and an underlined direction.",
+      "illustrations": [
+        {
+          "file": "exemple-s70-quest-carte.png",
+          "caption": "The fixed kingdom map, drawn with fifteen tiles."
+        },
+        {
+          "file": "exemple-s70-quest-lcd.png",
+          "caption": "Position, HP, level and next objective on the LCD."
+        },
+        {
+          "file": "exemple-s70-quest-bilan.png",
+          "caption": "Backspace opens gold, potion count and HP on page 1/3."
+        },
+        {
+          "file": "exemple-s70-quest-combat.png",
+          "caption": "Turn-based combat: attack, defend, potion or flee."
         }
       ]
     }
@@ -761,14 +815,6 @@
       "label": "Koehler Paper, BPA-free and phenol-free thermal-paper ranges.",
       "url": "https://www.koehlerpaper.com/en/products/Thermal-paper/TH_POS_Cash-register-rolls.php"
     },
-    "T1": {
-      "label": "GNU C Library, canonical line-oriented and character-oriented terminal modes.",
-      "url": "https://ftp.gnu.org/old-gnu/Manuals/glibc/html_node/Canonical-or-Not.html"
-    },
-    "T2": {
-      "label": "pySerial, Serial API: character format, timeouts and RTS/CTS flow control.",
-      "url": "https://pyserial.readthedocs.io/en/latest/pyserial_api.html"
-    },
     "V3": {
       "label": "James S’ Kingdom, VTech Laser 50 overview and experiments: Z80A processor.",
       "url": "https://sites.google.com/site/jamesskingdom/Home/computers-exposed/vtech-computers"
@@ -836,6 +882,14 @@
     "M10": {
       "label": "RhinoPower, ROM Reader: reading internal memories in automotive controllers, 15 March 2010.",
       "url": "https://www.rhinopower.org/ECUs/RomReader/Romreader.html"
+    },
+    "L1": {
+      "label": "Hitachi, HD44780U (LCD-II), ADE-207-272(Z), September 1999: Table 4 (A02), Tables 5 and 6.",
+      "url": "https://cdn-shop.adafruit.com/datasheets/HD44780.pdf#page=18"
+    },
+    "L2": {
+      "label": "Typestar BASIC project, IC5 v1/v2 diagnostics and S-70 LCD catalogue observations, September 2026.",
+      "url": ""
     }
   },
   "citation_urls": {
@@ -883,8 +937,6 @@
     "https://newspapers.swco.ttu.edu/bitstream/handle/20.500.12255/193068/UD_1994_08_29.pdf?isAllowed=y&sequence=1": "The University Daily, 29 August 1994: thermal-transfer StarWriter 30 advertisement.",
     "https://shop.ansmann.de/en/li-ion-batteries-d-typ-6000-min-5400-mah-2pcs-cardboard-box": "ANSMANN, D lithium-ion USB-C batteries, regulated 1.5 V output, ref. 1314-0005.",
     "https://www.koehlerpaper.com/en/products/Thermal-paper/TH_POS_Cash-register-rolls.php": "Koehler Paper, BPA-free and phenol-free thermal-paper ranges.",
-    "https://ftp.gnu.org/old-gnu/Manuals/glibc/html_node/Canonical-or-Not.html": "GNU C Library, canonical line-oriented and character-oriented terminal modes.",
-    "https://pyserial.readthedocs.io/en/latest/pyserial_api.html": "pySerial, Serial API: character format, timeouts and RTS/CTS flow control.",
     "https://sites.google.com/site/jamesskingdom/Home/computers-exposed/vtech-computers": "James S’ Kingdom, VTech Laser 50 overview and experiments: Z80A processor.",
     "https://global.canon/en/sustainability/report/pdf/sustainability2006e.pdf": "Canon, Sustainability Report 2006, p. 8: 1996-2000 strategy and withdrawal from seven unprofitable businesses.",
     "https://global.canon/en/ir/business.html": "Canon, Segment Information, FY2025: Printing ¥2,494.4 billion, Imaging ¥1,054.9 billion, consolidated total ¥4,624.7 billion.",

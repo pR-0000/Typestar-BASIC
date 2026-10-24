@@ -309,6 +309,15 @@ class CPUBase:
                     self.b = result
                 else:
                     self.a = result
+            elif operation == 9:  # ADCA/ADCB: preserve incoming carry for the sum.
+                total = acc + value + int(self.c)
+                result = self.nz(total)
+                self.c = total > 255
+                self.v = bool((~(acc ^ value)) & (acc ^ result) & 128)
+                if bank_b:
+                    self.b = result
+                else:
+                    self.a = result
             elif operation in (0, 4, 6, 8, 10, 11):
                 result = self.sub(acc, value) if operation == 0 else self.nz(acc & value) if operation == 4 else self.nz(value) if operation == 6 else self.nz(acc ^ value) if operation == 8 else self.add(acc, value) if operation == 11 else self.nz(acc | value)
                 if bank_b:

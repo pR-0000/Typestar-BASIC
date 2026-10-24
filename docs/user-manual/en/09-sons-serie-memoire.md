@@ -10,7 +10,7 @@ A short signal can announce a correct answer. A serial connection can preserve a
 
 `BEEP` plays a beep lasting approximately 100 milliseconds. Supply a duration from **0 to 2000 milliseconds**: `BEEP 200` plays for two tenths of a second.
 
-`SOUND modulation,duration` modulates the buzzer for the requested time. Modulation is an integer from **60 to 750 hertz**, duration an integer from **0 to 2000 milliseconds**. The special value zero gives a silent pause:
+`SOUND rate,duration` modulates the buzzer for the requested time. Rate is an integer from **50 to 31250 hertz**, duration an integer from **0 to 2000 milliseconds**. The special value zero gives a silent pause:
 
 ```basic
 10 SOUND 300,100
@@ -20,9 +20,17 @@ A short signal can announce a correct answer. A serial connection can preserve a
 
 The program plays a little two-part signal. `SOUND 0,1000` waits approximately one second silently, a simple way to leave a message readable. Chain pauses or use a loop for waits longer than two seconds.
 
-During BEEP and SOUND, execution waits until the signal or pause ends. These are **blocking** statements, interruptible by BREAK. Durations are nominal, suitable for pacing messages and effects.
+During BEEP and SOUND, execution waits until the signal or pause ends. These are **blocking** statements, for a maximum of two seconds per command. The signal runs continuously; the keyboard is sampled again afterwards. To interrupt the program, hold **BREAK** until the sound ends. Durations are nominal, suitable for pacing messages and effects.
 
-SOUND's number selects **amplitude modulation**. The firmware opens and closes the buzzer gate; its hardware carrier frequency and sound level remain fixed. Short signals and effects make particularly good use of this mechanism.
+`SOUND rate,duration[,duty[,texture]]` offers two additional controls. **Duty** ranges from 1 to 99%, default 50%: it changes level and timbre by setting the proportion of time with the buzzer enabled. **Texture** is 0 for a square gate waveform or 1 for a pseudo-random 31-bit pattern. The latter uses 1000–31250 bits/s, ignores duty and temporarily borrows 672 free bytes.
+
+```basic
+10 SOUND 5500,180,50
+20 SOUND 8000,250,50,1
+30 FOR D=10 TO 90 STEP 10:SOUND 5890,30,D:NEXT D
+```
+
+The first sound uses a high gate rate, the second a noise pattern, and the third a level envelope. The firmware drives the buzzer gate; machine resonance and mixing produce different perceived pitches. Rate describes the electrical command. Musical tuning also depends on the transducer. Duration follows a whole number of periods, or 31-bit patterns for noise: resolution reaches 20 ms at the slowest rates and 31 ms for noise. Very short requests play at least one cycle; zero duration returns immediately. Extreme duty ratios are rounded to achievable timings. **Piano** offers nine modes to explore these effects.
 
 ## Keeping your program on a computer
 

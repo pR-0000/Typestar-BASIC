@@ -1,0 +1,318 @@
+; SOUND rate,ms[,duty[,wave]]: rate 0 or 60..31250, duty 1..99,
+; wave 0=square, 1=31-bit pseudo-random (rate >=1000, duty ignored).
+; Known gate only. Foreground SEI; no timer configuration or motor writes.
+; Exclusive LIST/printer scratch; square code uses GXPATTERN (64 bytes).
+; Noise code borrows 512 checked free heap bytes, never changes DHEAP/DFLOOR.
+SNDLEFT EQU $19EB
+SNDDUTY EQU $19EF
+SNDMODE EQU $19F0
+SNDHZ EQU $19F1
+SNDWIDE EQU $19F3
+SNDHIGH EQU $19F5
+SNDDIVISOR EQU $19F6
+SNDBASE EQU $1D80
+SNDWRITE EQU $1D82
+SNDPER EQU $1D84
+SNDON EQU $1D86
+SNDSTAMP EQU $1D88
+SNDFRAC EQU $1D8A
+SNDBATCH EQU $1D8C
+SNDLEVEL EQU $1D8D
+SNDCOUNT EQU $1D8E
+SNDN EQU $1D8F
+SNDSEED EQU $1D90
+SNDV0 EQU $1D94
+; @island parse
+BASICBEEP CLR SNDMODE
+        LDD #1000
+        STD SNDHZ
+        JSR SPACE
+        TSTA
+        BEQ SNDBEEPDEFAULT
+        CMPA #58
+        BNE SNDBEEPDURATION
+SNDBEEPDEFAULT LDD #100
+        BRA SNDBEEPVALID
+SNDBEEPDURATION JSR EXPR
+SNDBEEPVALID STD SNDLEFT
+        BRA SNDCHECKDURATION
+BASICSOUND LDAA #1
+        STAA SNDMODE
+        LDAA #50
+        STAA SNDDUTY
+        JSR EXPR
+        STD SNDHZ
+        BEQ SNDRATEOK
+        SUBD #60
+        BCS SNDRANGE
+        SUBD #31190
+        BHI SNDRANGE
+SNDRATEOK JSR SNDARG
+        STD SNDLEFT
+        JSR SPACE
+        CMPA #44
+        BNE SNDCHECKDURATION
+        JSR SNDARG
+        SUBD #1
+        SUBD #98
+        BHI SNDRANGE
+        ADDB #99
+        STAB SNDDUTY
+        JSR SPACE
+        CMPA #44
+        BNE SNDCHECKDURATION
+        JSR SNDARG
+        SUBD #1
+        BHI SNDRANGE
+        ADDB #1
+        ASLB
+        INCB
+        STAB SNDMODE
+SNDCHECKDURATION LDD SNDLEFT
+        SUBD #2000
+        BHI SNDRANGE
+        JSR EOS
+        LDD SNDLEFT
+        BEQ SNDSTOP
+        JMP SNDPREP
+SNDRANGE JMP RANGEERROR
+SNDARG JSR PTCOMMA
+        JMP EXPR
+SNDSTOP LDAA $1801
+        ANDA #$BF
+        STAA $1801
+        STAA $34
+        RTS
+SNDBREAK JSR SNDSTOP
+        JMP BREAK
+; @island prepare
+SNDPREP LDD SNDHZ
+        BNE SNDHAVERATE
+        LDAA #2
+        STAA SNDMODE
+SNDINTERNALRATE LDD #1000
+        STD SNDHZ
+SNDHAVERATE LDAA SNDMODE
+SNDNOISECHECK LDX #GXPATTERN
+        CMPA #3
+        BNE SNDBUFFEROK
+        LDD SNDHZ
+        SUBD #1000
+        BCC SNDNOISERATE
+        JMP SNDRANGE
+SNDNOISERATE LDD DHEAP
+        SUBD DFLOOR
+        SUBD #512
+        BCC SNDHASMEMORY
+        JMP PMEMERROR
+SNDHASMEMORY LDX DFLOOR
+SNDBUFFEROK STX SNDBASE
+        STX SNDWRITE
+        LDD SNDHZ
+        STD SNDDIVISOR
+        LSRD
+        ADDD #16960
+        STD SNDWIDE
+        LDAA #15
+        STAA SNDHIGH
+        JSR SNDDIV
+        STX SNDPER
+        LDAA $1801
+        ANDA #$BF
+        STAA SNDV0
+        CLR SNDLEVEL
+        LDAA SNDMODE
+        CMPA #1
+        BNE SNDOTHERJUMP
+        JMP SNDMAKEPWM
+SNDOTHERJUMP JMP SNDMAKEOTHER
+; @island pwm
+SNDMAKEPWM LDAA SNDDUTY
+        LDAB SNDPER+1
+        MUL
+        STD SNDWIDE
+        LDAA SNDDUTY
+        LDAB SNDPER
+        MUL
+        ADDB SNDWIDE
+        ADCA #0
+        STAB SNDWIDE
+        STAA SNDHIGH
+        LDD #100
+        STD SNDDIVISOR
+        JSR SNDDIV
+        XGDX
+        SUBD #5
+        BCC SNDONVALID
+        LDD #0
+SNDONVALID ADDD #5
+        STD SNDON
+        LDD SNDPER
+        SUBD SNDON
+        SUBD #12
+        BCC SNDOFFVALID
+        LDD SNDPER
+        SUBD #12
+        STD SNDON
+SNDOFFVALID LDAA #64
+        STAA SNDLEVEL
+        LDD SNDON
+        JSR SNDSEGMENT
+        CLR SNDLEVEL
+        LDD SNDPER
+        SUBD SNDON
+        JMP SNDLASTSEGMENT
+; @island other
+SNDMAKEOTHER CMPA #3
+        BEQ SNDMAKENOISE
+        CMPA #2
+        BEQ SNDONESTAGE
+        LDAA #64
+        STAA SNDLEVEL
+SNDONESTAGE LDD SNDPER
+SNDLASTSEGMENT SUBD #7
+        JSR SNDSEGMENT
+        JMP SNDTAIL
+SNDMAKENOISE LDD #$F8DD
+        STD SNDSEED
+        LDD #$4258
+        STD SNDSEED+2
+        LDAA #31
+        STAA SNDCOUNT
+SNDBIT ASL SNDSEED+3
+        ROL SNDSEED+2
+        ROL SNDSEED+1
+        ROL SNDSEED
+        LDAA #0
+        BCC SNDBITLEVEL
+        LDAA #64
+SNDBITLEVEL STAA SNDLEVEL
+        LDD SNDPER
+        DEC SNDCOUNT
+        BEQ SNDLASTSEGMENT
+        JSR SNDSEGMENT
+        BRA SNDBIT
+; @island compiler
+; Emit LDAA #cached-state / STAA $34, then an exact clock-counted delay.
+SNDSEGMENT PSHB
+        PSHA
+        LDAA #$86
+        JSR SNDEMIT
+        LDAA SNDV0
+        ORAA SNDLEVEL
+        JSR SNDEMIT
+        LDD #$9734
+        JSR SNDEMIT2
+        PULA
+        PULB
+        SUBD #5
+        JMP SNDDELAYCODE
+SNDTAIL LDD #$5A27
+        JSR SNDEMIT2
+        LDD #$037E
+        JSR SNDEMIT2
+        LDD SNDBASE
+        JSR SNDEMIT2
+        LDAA #$39
+        JSR SNDEMIT
+        JMP SNDPLAYPREP
+SNDEMIT2 JSR SNDEMIT
+        TBA
+SNDEMIT LDX SNDWRITE
+        STAA ,X
+        INX
+        STX SNDWRITE
+        RTS
+; @island delaycode
+; Exact delay D >=0: short NOP sequence, or 3+4*count plus 0..3 NOPs.
+SNDDELAYCODE SUBD #7
+        BCS SNDNOPSRESTORE
+        ADDD #4
+        PSHB
+        LSRD
+        LSRD
+        PSHB
+        PSHA
+        LDAA #$CE
+        JSR SNDEMIT
+        PULA
+        PULB
+        JSR SNDEMIT2
+        LDD #$0926
+        JSR SNDEMIT2
+        LDAA #$FD
+        JSR SNDEMIT
+        PULB
+        ANDB #3
+        BRA SNDNOPS
+SNDNOPSRESTORE ADDB #7
+SNDNOPS TSTB
+        BEQ SNDNOPSEND
+        LDAA #1
+SNDNOPLOOP JSR SNDEMIT
+        DECB
+        BNE SNDNOPLOOP
+SNDNOPSEND RTS
+; @island play
+SNDPLAYPREP LDAB #1
+        LDAA SNDMODE
+        CMPA #3
+        BEQ SNDBATCHREADY
+        LDD SNDHZ
+        LSRD
+        LSRD
+        LSRD
+        LSRD
+        LSRD
+        LSRD
+        LSRD
+
+SNDBATCHFITS INCB
+SNDBATCHREADY STAB SNDBATCH
+        LDD $09
+        STD SNDSTAMP
+SNDRUN LDAB SNDBATCH
+SNDCALL LDX SNDBASE
+        JSR ,X
+        LDD $09
+        SUBD SNDSTAMP
+SNDTICKS SUBD #1000
+        BCS SNDFRACTION
+        LDX SNDLEFT
+        DEX
+        STX SNDLEFT
+        BNE SNDADVANCE
+        JMP SNDSTOP
+SNDADVANCE PSHB
+        PSHA
+        LDD SNDSTAMP
+        ADDD #1000
+        STD SNDSTAMP
+        PULA
+        PULB
+        BRA SNDTICKS
+SNDFRACTION EQU *
+        ; Sample only physical BREAK. Other keys remain available to INKEY.
+        JSR RFASTBREAK
+        BNE SNDRUN
+        JMP SNDBREAK
+SNDPLAYPREPEND EQU *
+; @island divide
+; Sixteen rounds: high byte is the initial remainder; quotient fits 16 bits.
+SNDDIV CLRA
+        LDAB SNDHIGH
+        LDX #16
+SNDDIVLOOP ASL SNDWIDE+1
+        ROL SNDWIDE
+        ROLB
+        ROLA
+        SUBD SNDDIVISOR
+        BCS SNDDIVRESTORE
+        INC SNDWIDE+1
+        BRA SNDDIVNEXT
+SNDDIVRESTORE ADDD SNDDIVISOR
+SNDDIVNEXT DEX
+        BNE SNDDIVLOOP
+        LDX SNDWIDE
+        RTS
+SNDEND EQU *

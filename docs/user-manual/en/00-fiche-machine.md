@@ -4,7 +4,7 @@
 
 > **32 display characters - 5,951 bytes free - a built-in printer.** Calculate, write a game, create your characters, then give them a place on paper!
 
-| Resource | Typestar BASIC 0.4.93-dev on the S-70 |
+| Resource | Typestar BASIC 0.4.100-dev on the S-70 |
 |---|---|
 | **Processor** | 8-bit HD6301Y0P; system clock approximately **1 MHz**, derived from a 4 MHz crystal. |
 | **Memory** | **8 KB external RAM**; **5,951 bytes free when empty**, shared by the tokenised program and its data. **32 KB** BASIC ROM; original 16 KB internal Canon ROM retained. |
@@ -12,8 +12,8 @@
 | **Calculations** | Decimal numbers with **eight significant digits**; random numbers, PI, square roots, trigonometry, logarithms, exponentials and logical operators. |
 | **Display and keyboard** | **32 characters of 5 × 7 pixels**, eight custom patterns, triangles, lower pixel lines and indicators. Multilingual **44-key** keyboard, according to Canon's specification; INKEY reads keys. |
 | **Printed text** | Canon **Courier 10**, 72 columns and 95 ASCII characters; LLIST, adjustable line spacing and LLOCATE positioning. Plain paper with a ribbon, or direct printing on thermal paper. |
-| **Printed graphics** | Points, lines, rectangles, circles, outlines and filled shapes. Custom glyphs, large square pixels, 1–16 copies in continuous bands, print-head and paper movement. |
-| **Sound** | BEEP and SOUND: pauses, beeps and effects produced by amplitude modulation of the buzzer; modulation from 60 to 750 Hz, duration up to 2000 ms. |
+| **Printed graphics** | Points, lines, rectangles, circles, outlines and filled shapes. Custom glyphs, large square pixels, 1–16 copies in continuous bands, rows of 1–40 different 8 × 8 tiles, print-head and paper movement. |
+| **Sound** | BEEP and SOUND: pauses, beeps and effects; gate rates from 50 to 31250 Hz, adjustable duty, noise texture, duration up to 2000 ms. |
 | **Computer connection** | USB cable adapted to the 5 V TTL port; LOAD/SAVE, transmission and reception. Up to **31,250 baud**; default **31250 / 7E1**. |
 | **Typestar BASIC Studio** | Editor, transfers, glyph design, LCD, paper and sound emulation; monochrome image printing through CODE+P. |
 

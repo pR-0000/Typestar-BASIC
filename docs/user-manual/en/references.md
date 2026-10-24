@@ -47,8 +47,6 @@
 - **H33** : [The University Daily, 29 August 1994: thermal-transfer StarWriter 30 advertisement.](https://newspapers.swco.ttu.edu/bitstream/handle/20.500.12255/193068/UD_1994_08_29.pdf?isAllowed=y&sequence=1)
 - **C6** : [ANSMANN, D lithium-ion USB-C batteries, regulated 1.5 V output, ref. 1314-0005.](https://shop.ansmann.de/en/li-ion-batteries-d-typ-6000-min-5400-mah-2pcs-cardboard-box)
 - **C7** : [Koehler Paper, BPA-free and phenol-free thermal-paper ranges.](https://www.koehlerpaper.com/en/products/Thermal-paper/TH_POS_Cash-register-rolls.php)
-- **T1** : [GNU C Library, canonical line-oriented and character-oriented terminal modes.](https://ftp.gnu.org/old-gnu/Manuals/glibc/html_node/Canonical-or-Not.html)
-- **T2** : [pySerial, Serial API: character format, timeouts and RTS/CTS flow control.](https://pyserial.readthedocs.io/en/latest/pyserial_api.html)
 - **V3** : [James S’ Kingdom, VTech Laser 50 overview and experiments: Z80A processor.](https://sites.google.com/site/jamesskingdom/Home/computers-exposed/vtech-computers)
 - **H34** : [Canon, Sustainability Report 2006, p. 8: 1996-2000 strategy and withdrawal from seven unprofitable businesses.](https://global.canon/en/sustainability/report/pdf/sustainability2006e.pdf)
 - **H35** : [Canon, Segment Information, FY2025: Printing ¥2,494.4 billion, Imaging ¥1,054.9 billion, consolidated total ¥4,624.7 billion.](https://global.canon/en/ir/business.html)
@@ -67,3 +65,9 @@
 - **M9** : [RhinoPower, The 76xxx series processor: reverse-engineering analysis of the core and peripherals.](https://www.rhinopower.org/76xxx/76xxx.html)
 - **M10** : [RhinoPower, ROM Reader: reading internal memories in automotive controllers, 15 March 2010.](https://www.rhinopower.org/ECUs/RomReader/Romreader.html)
 - **H37** : [Diverse experiments, The Canon Typestar 90, 4 March 2024: 16 KB RAM, CR2032 and Cubic PSII cartridge.](https://silvergreen93.wordpress.com/2024/03/04/the-canon-typestar-90/)
+
+<a id="lcd-ic5"></a>
+## LCD display and IC5
+
+- **L1** : [Hitachi, HD44780U (LCD-II), ADE-207-272(Z), September 1999.](https://cdn-shop.adafruit.com/datasheets/HD44780.pdf#page=18) Table 4 includes European variant A02; Tables 5 and 6 describe custom patterns and commands. This document provides a comparison with the Canon's MB62H177.
+- **L2** : Typestar BASIC project, IC5 v1/v2 diagnostics on the S-70 dated 27 September 2026, supplemented by the LCD catalogue transcribed on hardware. Observations confirm DDRAM code readback, eight-bit CGRAM pattern storage, aliases 64 bytes apart and five visible bits per row. Codes 0 through 7 and 8 through 15 display the same eight patterns. Fixed characters are recorded visually; Studio's palette retains those pixels, with Ç at code 160 and the solid block at code 171. The tested sequences establish these behaviours, with partial timing characterisation.

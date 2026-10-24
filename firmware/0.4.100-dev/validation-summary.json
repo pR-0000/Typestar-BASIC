@@ -1,0 +1,107 @@
+{
+  "result": "PASS",
+  "firmware": "0.4.100-dev",
+  "cpu_sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec",
+  "reports": [
+    {
+      "name": "validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "graphics-validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "continuous-validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "tile-validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "compatibility-validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "scene-validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "games-validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "quest-startup-validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "quest-rules-validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "piano-registers-validation",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "rom-links",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "rom-data",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "core",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "memory",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "serial",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    },
+    {
+      "name": "state",
+      "result": "PASS",
+      "sha256": "e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec"
+    }
+  ],
+  "manuals": {
+    "fr": {
+      "result": "PASS",
+      "sha256": "ee28a344ffd099e21993bec1f82fc33c3798cc78c78307bfee0c39cc1a6c5fa3",
+      "pages": 167,
+      "links": 318,
+      "bookmarks": 165,
+      "indexed_symbols": 86,
+      "complete_listings": 6
+    },
+    "en": {
+      "result": "PASS",
+      "sha256": "fb1ab42ebd775eee4bbd19f039187d9bbe0eaf58cc90e94baefd8ec3601270b5",
+      "pages": 164,
+      "links": 321,
+      "bookmarks": 165,
+      "indexed_symbols": 86,
+      "complete_listings": 6
+    }
+  }
+}
