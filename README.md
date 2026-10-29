@@ -55,6 +55,7 @@ Pour une lecture paginée, avec illustrations, sommaire et index cliquables :
 
 ### Mises à jour de Studio et des exemples
 
+- **Labyrinthe 3D 0.9** : [jeu et guide bilingues](examples/guides/labyrinthe-3d.md), avec labyrinthe aléatoire de 10 × 10 cases, vue LCD en perspective, monstre à semer et quatre fragments de carte papier facultatifs. Le départ se fait à un carrefour.
 - **Studio 0.2.40** : cœur HD6301 accéléré et case **Impression instantanée** pour préparer plus rapidement les dessins papier. Voir le [guide Studio](studio/README.md).
 - **Pocket Duel 1.1** : **Entrée attaque**, les flèches déplacent et Espace téléporte. Tous les jeux sont regroupés dans [examples/games/](examples/games/).
 - **Jeux bilingues** : tous les jeux sont disponibles en français et en anglais, avec leurs notices et commandes adaptées. Voir le [catalogue des exemples](examples/README.md).
@@ -145,6 +146,7 @@ For paginated reading with illustrations, clickable contents and an index:
 
 ### Studio and example updates
 
+- **3D Maze 0.9**: [bilingual game and guide](examples/guides/labyrinthe-3d.md#english), with a random 10 × 10 maze, a perspective LCD view, a monster you can shake off and four optional printed map fragments. Every game starts at a junction.
 - **Studio 0.2.40**: faster HD6301 core and an **Instant printing** checkbox for faster paper-drawing development. See the [Studio guide](studio/README.md#english).
 - **Pocket Duel 1.1**: **Enter attacks**, arrows move and Space teleports. All games are grouped in [examples/games/](examples/games/).
 - **Bilingual games**: all games are available in French and English, with matching guides and localized controls. See the [example catalogue](examples/README.md#english).

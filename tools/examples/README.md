@@ -2,6 +2,7 @@
 
 The playable BASIC files are in [examples](../../examples/README.md). These helpers maintain their compact artwork, source code and illustrations.
 
+- `build_3d_maze.py` generates the French and English LCD maze with stackless random depth-first generation, confirmation-key timing as additional entropy, two drawing strings covering 148 corridor configurations, seven fixed LCD patterns and a shared wall/monster slot with three distance sprites. Every game starts at a junction with at least three internal passages. The monster follows the player within three passage steps and wanders outside that range; unseen monsters pause before contact at a blind bend. Fragments appear as a native dot two cells away or character 197 one cell away. All four fragments can be collected in LCD-only mode; optional printing labels the column/row borders, reuses the map array as a fast tile palette, then restores the world and LCD banks.
 - `build_s70_quest.py` generates the French and English Quest files from `s70-quest-assets.json` and the LCD sprite catalogue.
 - `update_paper_games.py` contains the shared native-byte encoding and Ruins direction selector, along with the paper-row conversion helpers.
 - `build_byte_font.py` generates Studio’s hexadecimal DATA-byte badge font.

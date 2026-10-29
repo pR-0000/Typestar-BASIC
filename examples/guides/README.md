@@ -6,6 +6,7 @@ Each guide explains the goal, controls and program features. Open the [BASIC fil
 
 | Programme / Program | Notice / Guide |
 |---|---|
+| Labyrinthe 3D / 3D Maze 0.9 | [Perspective LCD / LCD perspective](labyrinthe-3d.md) |
 | Pocket Duel | [Combat sur LCD / LCD combat](pocket-duel.md) |
 | Canon S-70 Quest 0.9 | [Carte papier et combats au tour par tour / Paper map and turn-based battles](canon-s70-quest.md) |
 | Les Ruines de Typestar / Typestar Ruins | [Exploration sur papier / Paper exploration](ruines-typestar.md) |
