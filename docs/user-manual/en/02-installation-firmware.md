@@ -3,16 +3,17 @@
 
 To install Typestar BASIC, we replace the external **IC8 ROM**, fitted in a socket. The replacement fits directly into that socket. The microcontroller and its internal Canon ROM stay in place. Keep the original chip: reinstalling it restores Canon's original operation.
 
-This illustrated guide shows the **Canon S-70 / Typestar 7** used for the project. One revision of the S-60 / Typestar 6 also runs this firmware, as explained below. The S-90 requires a BASIC binary adapted to its internal ROM.
+This illustrated guide shows the **Canon S-70 / Typestar 7** used for the project. The S-61 / Typestar 6-II also runs this firmware, as explained below. The S-90 requires a BASIC binary adapted to its internal ROM.
 
 <a id="s60-serial"></a>
-### A Typestar 6 can run BASIC too
+<a id="s61-serial"></a>
+### Typestar 6-II / S-61: BASIC and a serial port
 
-Typestar BASIC startup and **program loading with Studio at up to 31250 baud, using 7E1**, have been validated on a **Canon S-60 / Typestar 6** with PCB **NG3-0672 / NH1-0159-065**, dated **"86;06,12."**. This machine has a small serial-port hatch, glued shut at the factory, and a print-contrast control at the front. BASIC replaces its IC8 ROM while retaining the original microcontroller. Adding the serial circuit described below requires soldering; replacing IC8 remains a socketed-chip operation.
+Typestar BASIC startup and **program loading with Studio at up to 31250 baud, using 7E1**, have been validated on a **Canon S-61 / Typestar 6-II** with PCB **NG3-0672 / NH1-0159-065**, dated **"86;06,12."**. Identify this variant by its **front-mounted print-contrast control** and **serial-port cover on the right-hand side**, sometimes glued shut at the factory. The **“-II” suffix may be omitted after “Typestar 6”** on the front panel. BASIC replaces its IC8 ROM while retaining the original microcontroller. Adding the serial circuit described below requires soldering; replacing IC8 remains a socketed-chip operation.
 
-Other S-60 machines have a case without a hatch and a contrast control on the right side; their compatibility still needs checking on their own boards. **Check the PCB reference before undertaking this extension.**
+The **Typestar 6 / S-60**, with its right-side contrast control and no serial-port hatch, is a different hardware version. **This upgrade is validated on the 6-II / S-61: check the visual features and PCB reference before fitting components.**
 
-### S-60 serial-port components
+### S-61 serial-port components
 
 The connector on the reference S-70 is marked **AMP 8609 747109-1**. For CN7, **TE Connectivity / AMP 5745001-3** provides a reference for a **right-angle male DE-9 PCB connector**: compare its [manufacturer's drawing](https://www.te.com/en/product-5745001-3.html) with the board's holes and mountings. A new-old-stock equivalent was used on the tested machine.
 

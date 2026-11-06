@@ -16,7 +16,7 @@ from core import analyze
 from core import codec
 
 
-def compact(lines):
+def compact(lines, merge_before=2000):
     """Join untargeted fall-through lines; preserve literal and token bytes."""
     def signature(body):
         quote=False;result=bytearray()
@@ -32,7 +32,7 @@ def compact(lines):
         trial=''.join(parts)
         if signature(trial)==signature(body):body=trial
         previous=next(reversed(result)) if result else None
-        if previous and n not in targets and n<2000 and not body.startswith(('DATA','REM')):
+        if previous and n not in targets and n<merge_before and not body.startswith(('DATA','REM')):
             code=re.sub(r'"[^"]*"','""',result[previous])
             if not re.search(r'\b(IF|GOTO|RETURN|END|REM)\b',code) and len(str(previous))+2+len(result[previous])+len(body)<=63:
                 result[previous]+=':'+body;continue

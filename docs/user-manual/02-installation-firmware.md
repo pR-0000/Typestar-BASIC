@@ -3,16 +3,17 @@
 
 Pour installer Typestar BASIC, nous remplaçons la ROM extérieure **IC8**, enfichée dans un support. Le remplacement se fait directement sur ce support. Le microcontrôleur et sa ROM interne Canon restent en place. Conservez la puce d'origine : vous pourrez retrouver le fonctionnement Canon en la remettant dans son support.
 
-Ce guide illustré présente la **Canon S-70 / Typestar 7** photographiée pour le projet. Une révision de la S-60 / Typestar 6 accepte également ce firmware, comme le précise la section ci-dessous. La S-90 demande un binaire BASIC adapté à sa ROM interne.
+Ce guide illustré présente la **Canon S-70 / Typestar 7** photographiée pour le projet. La S-61 / Typestar 6-II accepte également ce firmware, comme le précise la section ci-dessous. La S-90 demande un binaire BASIC adapté à sa ROM interne.
 
 <a id="s60-serial"></a>
-### Une Typestar 6 peut aussi passer au BASIC
+<a id="s61-serial"></a>
+### La Typestar 6-II / S-61 : BASIC et port série
 
-Le démarrage de Typestar BASIC et le **chargement de programmes avec Studio jusqu'à 31250 bauds, en 7E1**, ont été validés sur une **Canon S-60 / Typestar 6**, équipée du PCB **NG3-0672 / NH1-0159-065**, daté **« 86;06,12. »**. Cet exemplaire possède une petite trappe de port série, collée en usine, et une molette de contraste d'impression à l'avant. Le BASIC remplace sa ROM IC8, avec le microcontrôleur d'origine conservé. L'ajout du circuit série décrit ci-dessous demande des soudures ; le remplacement d'IC8 reste une opération sur support.
+Le démarrage de Typestar BASIC et le **chargement de programmes avec Studio jusqu'à 31250 bauds, en 7E1**, ont été validés sur une **Canon S-61 / Typestar 6-II**, équipée du PCB **NG3-0672 / NH1-0159-065**, daté **« 86;06,12. »**. Cette variante se reconnaît à sa **molette de contraste d’impression à l’avant** et au **cache de prise série sur le côté droit**, parfois collé en usine. Le suffixe **« -II » peut être absent après « Typestar 6 »** sur la façade. Le BASIC remplace sa ROM IC8, avec le microcontrôleur d'origine conservé. L'ajout du circuit série décrit ci-dessous demande des soudures ; le remplacement d'IC8 reste une opération sur support.
 
-D'autres S-60 présentent une coque sans trappe et une molette sur le côté droit : leur compatibilité reste à vérifier sur leur propre carte. **La référence du PCB est le repère à contrôler avant d'entreprendre cette extension.**
+La **Typestar 6 / S-60**, avec molette sur le côté droit et coque sans trappe série, correspond à une autre version matérielle. **Cette extension est validée sur la 6-II / S-61 : vérifiez les critères visuels et la référence du PCB avant le montage.**
 
-### Les composants du port série S-60
+### Les composants du port série S-61
 
 La prise de la S-70 de référence porte le marquage **AMP 8609 747109-1**. Pour CN7, la **TE Connectivity / AMP 5745001-3** constitue une référence de **DE-9 mâle coudée pour circuit imprimé** : comparez son [plan constructeur](https://www.te.com/en/product-5745001-3.html) aux perçages et fixations de la carte. Un équivalent de stock ancien a été utilisé sur l'exemplaire testé.
 

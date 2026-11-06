@@ -7,6 +7,7 @@ Ouvrez un fichier dans **Typestar BASIC Studio**, puis choisissez **Exécuter (F
 | Jeu | Français | English | Affichage | Notice |
 |---|---|---|---|---|
 | Labyrinthe 3D — prototype 0.9 | [FR](games/labyrinthe-3d-fr.bas) | [EN](games/3d-maze-en.bas) | LCD + cartes papier facultatives | [Jouer](guides/labyrinthe-3d.md) |
+| Vol radar — simulateur de vol 0.5 | [FR](games/simulateur-de-vol-fr.bas) | [EN](games/flight-simulator-en.bas) | Carte papier + instruments LCD | [Piloter](guides/simulateur-de-vol.md) |
 | Pocket Duel | [FR](games/pocket-duel-fr.bas) | [EN](games/pocket-duel-en.bas) | LCD | [Jouer](guides/pocket-duel.md) |
 | Canon S-70 Quest — prototype 0.9 | [FR](games/canon-s70-quest-fr.bas) | [EN](games/canon-s70-quest-en.bas) | Carte papier + combats LCD | [Jouer](guides/canon-s70-quest.md) |
 | Les Ruines de Typestar | [FR](games/ruines-typestar-fr.bas) | [EN](games/typestar-ruins-en.bas) | Papier + LCD | [Jouer](guides/ruines-typestar.md) |
@@ -42,6 +43,7 @@ Open a file in **Typestar BASIC Studio**, then choose **Run (F5)** in the emulat
 | Game | Français | English | Display | Guide |
 |---|---|---|---|---|
 | 3D Maze — prototype 0.9 | [FR](games/labyrinthe-3d-fr.bas) | [EN](games/3d-maze-en.bas) | LCD + optional paper maps | [Play](guides/labyrinthe-3d.md#english) |
+| Radar Flight — flight simulator 0.5 | [FR](games/simulateur-de-vol-fr.bas) | [EN](games/flight-simulator-en.bas) | Paper map + LCD instruments | [Fly](guides/simulateur-de-vol.md#english) |
 | Pocket Duel | [FR](games/pocket-duel-fr.bas) | [EN](games/pocket-duel-en.bas) | LCD | [Play](guides/pocket-duel.md) |
 | Canon S-70 Quest — prototype 0.9 | [FR](games/canon-s70-quest-fr.bas) | [EN](games/canon-s70-quest-en.bas) | Paper map + LCD combat | [Play](guides/canon-s70-quest.md#english) |
 | Typestar Ruins | [FR](games/ruines-typestar-fr.bas) | [EN](games/typestar-ruins-en.bas) | Paper + LCD | [Play](guides/ruines-typestar.md) |

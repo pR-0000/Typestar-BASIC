@@ -157,7 +157,7 @@ La **Typestar 3** possède un manuel daté de **1989**. Il décrit un LCD de **q
 
 Le suffixe **II** accompagne plusieurs évolutions de la gamme. Canon répertorie la **Typestar 5-II sous la référence S-51** dans sa liste de documentation technique. La **Typestar 6-II correspond à la S-61**, explicitement ajoutée au règlement européen en février 1987. Une annonce britannique de mars 1988 les propose ensemble, aux côtés de la 7 et de la 90. Ces modèles occupent donc plusieurs places dans un même catalogue. [H17] [H4] [H12]
 
-Les noms sur les façades et les références sur les plaques se complètent. Pour reconnaître une machine, le couple **nom commercial / référence de modèle** est particulièrement utile : Typestar 5-II / S-51, Typestar 6-II / S-61, Typestar 7 / S-70.
+Les noms sur les façades et les références sur les plaques se complètent. Pour reconnaître une machine, le couple **nom commercial / référence de modèle** est particulièrement utile : Typestar 5-II / S-51, Typestar 6-II / S-61, Typestar 7 / S-70. Sur certaines 6-II, la façade porte simplement « Typestar 6 ». La molette de contraste d’impression à l’avant et le cache série sur le côté droit, parfois collé en usine, permettent de reconnaître la variante décrite dans le [guide d’installation](02-installation-firmware.md#s61-serial).
 
 ### Typestar 10 et 10-II : une autre formule
 
@@ -179,7 +179,7 @@ La **machine à écrire électronique** privilégie la saisie sur papier, imméd
 
 La **StarWriter 80**, présentée dans la presse en 1991, imprime par **jet d’encre Bubble Jet**. Les modèles 80 et 85 proposent un LCD de **16 lignes de 80 caractères**, 60 000 octets de mémoire interne et un stockage sur disquette de 720 000 octets. Cet équipement représente environ **7,2 à 7,4 kg** à transporter. La Typestar 7, donnée pour 2,7 kg avec piles et ruban, conserve l’avantage du petit format. [H32] [H31] [H9]
 
-La famille StarWriter réunit plusieurs techniques d’impression : la **StarWriter 30** est encore proposée à **transfert thermique** dans une publicité de 1994. Ces machines à grand écran constituent une piste intéressante pour un autre projet BASIC, à condition d’étudier leur processeur, leurs ROM et leurs périphériques. Cette possibilité reste à explorer ; le présent firmware utilise le matériel des Typestar 6 et 7. [H33]
+La famille StarWriter réunit plusieurs techniques d’impression : la **StarWriter 30** est encore proposée à **transfert thermique** dans une publicité de 1994. Ces machines à grand écran constituent une piste intéressante pour un autre projet BASIC, à condition d’étudier leur processeur, leurs ROM et leurs périphériques. Cette possibilité reste à explorer ; le présent firmware est validé sur les Typestar 6-II / S-61 et 7 / S-70. [H33]
 
 ### Choisir les bons critères de comparaison
 

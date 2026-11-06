@@ -4,7 +4,7 @@
 
 ## Français
 
-Version du **19 octobre 2026**, accompagnée de **Studio 0.2.34**. Images prêtes pour IC8 sur Canon S-70 / Typestar 7 et sur la révision S-60 / Typestar 6 décrite dans le [guide matériel](../../docs/hardware/typestar-6-serial-upgrade.md).
+Version du **19 octobre 2026**, accompagnée de **Studio 0.2.34**. Images prêtes pour IC8 sur Canon S-70 / Typestar 7 et sur la S-61 / Typestar 6-II décrite dans le [guide matériel](../../docs/hardware/typestar-6-serial-upgrade.md).
 
 | Ressource | Valeur |
 |---|---:|
@@ -25,7 +25,7 @@ Les deux binaires utilisent l'ordre physique d'IC8. [SHA256SUMS.txt](SHA256SUMS.
 
 ## English
 
-Release dated **19 October 2026**, accompanied by **Studio 0.2.34**. Ready-to-program IC8 images for Canon S-70 / Typestar 7 and the S-60 / Typestar 6 revision described in the [hardware guide](../../docs/hardware/typestar-6-serial-upgrade.md#english).
+Release dated **19 October 2026**, accompanied by **Studio 0.2.34**. Ready-to-program IC8 images for Canon S-70 / Typestar 7 and the S-61 / Typestar 6-II described in the [hardware guide](../../docs/hardware/typestar-6-serial-upgrade.md#english).
 
 | Resource | Value |
 |---|---:|

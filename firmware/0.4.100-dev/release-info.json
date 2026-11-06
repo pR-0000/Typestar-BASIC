@@ -21,7 +21,7 @@
   },
   "supported_hardware": [
     "Canon S-70 / Typestar 7",
-    "Canon S-60 / Typestar 6, PCB NG3-0672 / NH1-0159-065"
+    "Canon S-61 / Typestar 6-II, PCB NG3-0672 / NH1-0159-065"
   ],
   "validation": {
     "rom_reports": 16,

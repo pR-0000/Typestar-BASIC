@@ -180,7 +180,7 @@ ORIGIN:HEAD 8:HEAD -8
 ORIGIN:FEED 112:FEED -112
 ```
 
-Le firmware applique automatiquement une **compensation fractionnaire des reculs du papier**, commune à FEED, MOVE et LLOCATE. Les essais sur S-60 et S-70 ont retenu une petite avance séparée répartie à raison d'une unité toutes les quatre opérations de recul admissibles. Le repère logique reste celui du programme. L'état des rouleaux et le maintien de la feuille déterminent aussi la précision des retours.
+Le firmware applique automatiquement une **compensation fractionnaire des reculs du papier**, commune à FEED, MOVE et LLOCATE. Les essais sur S-61 et S-70 ont retenu une petite avance séparée répartie à raison d'une unité toutes les quatre opérations de recul admissibles. Le repère logique reste celui du programme. L'état des rouleaux et le maintien de la feuille déterminent aussi la précision des retours.
 
 Le premier essai décale la tête et la ramène. Le second effectue un aller-retour du papier. Préparez la feuille pour qu’elle reste engagée pendant les deux mouvements. Ces commandes entraînent seulement les moteurs ; la chauffe est commandée par l’impression.
 

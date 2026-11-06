@@ -1,19 +1,21 @@
-# Typestar 6 / S-60 : BASIC et port série / BASIC and serial upgrade
+# Typestar 6-II / S-61 : BASIC et port série / BASIC and serial upgrade
 
 [Français](#français) · [English](#english)
 
 ## Français
 
-Le firmware **Typestar BASIC 0.4.93-dev** fonctionne sur la **Canon S-60 / Typestar 6** testée. L'ajout de l'interface série permet les transferts de programmes avec **Typestar BASIC Studio jusqu'à 31250 bauds, 7E1**, avec le même câble USB-TTL que la S-70. Le remplacement de la ROM IC8 se fait sur support ; l'ajout du circuit série demande des soudures.
+Le firmware **Typestar BASIC**, validé dès la **0.4.93-dev**, fonctionne sur la **Canon S-61 / Typestar 6-II** testée. L'ajout de l'interface série permet les transferts de programmes avec **Typestar BASIC Studio jusqu'à 31250 bauds, 7E1**, avec le même câble USB-TTL que la S-70. Le remplacement de la ROM IC8 se fait sur support ; l'ajout du circuit série demande des soudures.
 
-### Reconnaître la carte validée
+### Reconnaître la machine et la carte validées
+
+L’extension concerne la **Typestar 6-II, équivalente à la Canon S-61**. Le suffixe **« -II » est parfois absent après « Typestar 6 »** sur la façade : les critères visuels ci-dessous permettent de reconnaître la variante concernée.
 
 - PCB **NG3-0672 / NH1-0159-065**, daté **« 86;06,12. »**.
-- Petite trappe prévue pour le port série, **collée en usine** sur cet exemplaire.
+- Cache du port série sur le **côté droit**, parfois **collé en usine**, comme sur cet exemplaire.
 - Molette de contraste d'impression placée à l'avant, comme sur la S-70.
 - Microcontrôleur d'origine **HD6301Y0P**, marqué **NH7-0815**, conservé en IC9 ; **IC8 reçoit directement le firmware BASIC**.
 
-Des S-60 avec une coque sans trappe et une molette sur la tranche droite ont également été observées. La validation concerne la carte ci-dessus ; les autres révisions et la S-61 restent à caractériser.
+La **Typestar 6 / S-60**, avec sa molette sur la tranche droite et sa coque sans trappe série, relève d’une autre version matérielle. Le montage décrit ici est validé sur la **6-II / S-61** avec la carte ci-dessus ; contrôlez ces repères avant de commander les composants.
 
 ### Composants
 
@@ -49,20 +51,22 @@ Des S-60 avec une coque sans trappe et une molette sur la tranche droite ont ég
 
 RA1 assure **à la fois des liaisons série et des rappels**. Un réseau de six résistances en étoile autour d'un point commun fournit seulement les rappels : il manque les trois paires série 1–2, 3–4 et 5–6. Le montage ci-dessus est une reconstruction fonctionnelle validée sur cette carte, plutôt qu'une identification du réseau Canon marqué « 7071 63 ».
 
-Effectuer le montage hors tension, secteur, piles et câble USB retirés. Isoler les connexions puis vérifier les liaisons, l'orientation d'IC4 et les résistances avant remise sous tension. Le port et le câble travaillent en **TTL 5 V**. Le [chapitre d'installation illustré](../user-manual/02-installation-firmware.md#s60-serial) complète ce relevé ; le [câblage du câble USB](../user-manual/02-presentation-firmware.md#serial-cable) précise les contacts Canon et les deux résistances de détection dans le câble.
+Effectuer le montage hors tension, secteur, piles et câble USB retirés. Isoler les connexions puis vérifier les liaisons, l'orientation d'IC4 et les résistances avant remise sous tension. Le port et le câble travaillent en **TTL 5 V**. Le [chapitre d'installation illustré](../user-manual/02-installation-firmware.md#s61-serial) complète ce relevé ; le [câblage du câble USB](../user-manual/02-presentation-firmware.md#serial-cable) précise les contacts Canon et les deux résistances de détection dans le câble.
 
 ## English
 
-**Typestar BASIC 0.4.93-dev** runs on the tested **Canon S-60 / Typestar 6**. Adding the serial interface enables program transfers with **Typestar BASIC Studio at up to 31250 baud, 7E1**, using the same USB-TTL cable as the S-70. IC8 ROM replacement is socketed; adding the serial components requires soldering.
+**Typestar BASIC**, validated since **0.4.93-dev**, runs on the tested **Canon S-61 / Typestar 6-II**. Adding the serial interface enables program transfers with **Typestar BASIC Studio at up to 31250 baud, 7E1**, using the same USB-TTL cable as the S-70. IC8 ROM replacement is socketed; adding the serial components requires soldering.
 
-### Identifying the tested board
+### Identifying the tested machine and board
+
+This upgrade applies to the **Typestar 6-II, equivalent to the Canon S-61**. The **“-II” suffix is sometimes omitted after “Typestar 6”** on the front panel: use the visual features below to identify the relevant variant.
 
 - PCB **NG3-0672 / NH1-0159-065**, dated **"86;06,12."**.
-- A small factory-provided serial-port hatch, **glued shut** on this machine.
+- A serial-port cover on the **right-hand side**, sometimes **factory-glued**, as on this machine.
 - Print-contrast control at the front, as on the S-70.
 - Original **HD6301Y0P** MCU marked **NH7-0815** retained at IC9; **IC8 receives the BASIC firmware directly**.
 
-S-60 machines with no hatch and a contrast control on the right-hand side have also been observed. Validation applies to the board above; other revisions and the S-61 remain to be characterized.
+The **Typestar 6 / S-60**, with its contrast control on the right-hand side and no serial-port hatch, uses a different hardware version. The arrangement described here is validated on the **6-II / S-61** with the board above; check these identifying features before ordering components.
 
 ### Components
 
@@ -98,4 +102,4 @@ S-60 machines with no hatch and a contrast control on the right-hand side have a
 
 RA1 provides **both series connections and pull-ups**. A six-resistor star network around one common pin supplies only pull-ups: it omits the three series pairs 1–2, 3–4 and 5–6. This is a functional reconstruction validated on the tested board, rather than an identification of the Canon network marked "7071 63".
 
-Fit components with mains, batteries and USB disconnected. Insulate connections and check continuity, IC4 orientation and resistor values before applying power. The port and cable use **5 V TTL** levels. The [illustrated installation chapter](../user-manual/en/02-installation-firmware.md#s60-serial) supplements these measurements; the [USB cable wiring](../user-manual/en/02-presentation-firmware.md#serial-cable) identifies the Canon contacts and the two detection resistors inside the cable.
+Fit components with mains, batteries and USB disconnected. Insulate connections and check continuity, IC4 orientation and resistor values before applying power. The port and cable use **5 V TTL** levels. The [illustrated installation chapter](../user-manual/en/02-installation-firmware.md#s61-serial) supplements these measurements; the [USB cable wiring](../user-manual/en/02-presentation-firmware.md#serial-cable) identifies the Canon contacts and the two detection resistors inside the cable.

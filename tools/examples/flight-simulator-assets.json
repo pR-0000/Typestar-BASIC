@@ -1,0 +1,279 @@
+{
+  "title": "Flight simulator / Vol radar",
+  "source": "Inspired by Charles Caron, Simulateur de vol, Sharp PC-1500 + CE-150, Hebdogiciel 37 (1984).",
+  "artwork": "User-supplied water (inverted for radar legibility), asphalt, hill and paired large-peak pixels; project forest, other mountains and runway markings.",
+  "tile_size": [
+    8,
+    8
+  ],
+  "tiles": [
+    {
+      "id": 0,
+      "name": "Sol vide",
+      "rows": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Eau en négatif",
+      "rows": [
+        0,
+        76,
+        50,
+        0,
+        0,
+        76,
+        50,
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Asphalte fourni",
+      "rows": [
+        85,
+        170,
+        85,
+        170,
+        85,
+        170,
+        85,
+        170
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Sapin",
+      "rows": [
+        16,
+        56,
+        124,
+        16,
+        56,
+        124,
+        254,
+        16
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bosquet",
+      "rows": [
+        34,
+        119,
+        34,
+        119,
+        255,
+        34,
+        34,
+        0
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Colline",
+      "rows": [
+        0,
+        0,
+        8,
+        20,
+        38,
+        71,
+        6,
+        0
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Montagne",
+      "rows": [
+        16,
+        24,
+        44,
+        44,
+        78,
+        78,
+        159,
+        0
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Sommet enneigé",
+      "rows": [
+        16,
+        24,
+        36,
+        52,
+        78,
+        78,
+        159,
+        0
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Grand pic, gauche",
+      "rows": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        72,
+        18
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Grand pic, droite",
+      "rows": [
+        128,
+        192,
+        160,
+        240,
+        248,
+        252,
+        254,
+        104
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Piste verticale",
+      "rows": [
+        69,
+        162,
+        69,
+        170,
+        69,
+        162,
+        69,
+        170
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Piste horizontale",
+      "rows": [
+        170,
+        85,
+        170,
+        0,
+        136,
+        85,
+        170,
+        85
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Seuil vertical",
+      "rows": [
+        85,
+        0,
+        85,
+        170,
+        85,
+        170,
+        85,
+        170
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Seuil horizontal",
+      "rows": [
+        168,
+        85,
+        168,
+        85,
+        168,
+        85,
+        168,
+        85
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Libre",
+      "rows": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Libre",
+      "rows": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "map": {
+    "width": 24,
+    "height": 20,
+    "generation": "Standalone BASIC row routine 1400; seed 1..999; shared by paper and flight. Five reusable mountain profiles, placed lake/forest spans, no stored 480-cell map.",
+    "departure": {
+      "column": 21,
+      "rows": [
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "arrival": {
+      "row": 2,
+      "columns": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "clear_corridors": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        21,
+        22,
+        23
+      ],
+      "rows": [
+        0,
+        1,
+        2,
+        3,
+        17,
+        18,
+        19
+      ]
+    }
+  },
+  "new_reference_sha256": "a8cbbe0e62529a2d82aa5987fc91c677e3c248864ec2e3a9e76a3fb8eed4d5a3"
+}

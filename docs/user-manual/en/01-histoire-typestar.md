@@ -158,7 +158,7 @@ For **Typestar 4**, a Canon manual preview reproduces a letter dated **17 Februa
 
 The suffix **II** accompanies several developments. Canon's technical documentation list identifies **Typestar 5-II as S-51**. **Typestar 6-II is S-61**, explicitly added to the European regulation in February 1987. A March 1988 British advertisement offers both beside the 7 and 90. These models occupied several positions within one catalogue. [H17] [H4] [H12]
 
-Front-panel names and model-plate references complement each other. The **commercial name / model reference** pair is especially useful: Typestar 5-II / S-51, Typestar 6-II / S-61, Typestar 7 / S-70.
+Front-panel names and model-plate references complement each other. The **commercial name / model reference** pair is especially useful: Typestar 5-II / S-51, Typestar 6-II / S-61, Typestar 7 / S-70. Some 6-II front panels simply say “Typestar 6”. A front print-contrast control and a right-side serial-port cover, sometimes factory-glued, identify the variant described in the [installation guide](02-installation-firmware.md#s61-serial).
 
 ### Typestar 10 and 10-II: another formula
 
@@ -180,7 +180,7 @@ An **electronic typewriter** centres on typing onto paper, immediately or after 
 
 The **StarWriter 80**, reported in 1991, uses **Bubble Jet inkjet** printing. Models 80 and 85 offer **16 lines of 80 characters**, 60,000 bytes of internal memory and 720,000-byte floppy storage. This equipment weighs **7.2–7.4 kg**. Typestar 7, specified at 2.7 kg with batteries and ribbon, retains its compact advantage. [H32] [H31] [H9]
 
-The StarWriter family includes several printing technologies: a **StarWriter 30** is advertised with **thermal transfer** in 1994. These large-display machines could be interesting for another BASIC project, after studying their processors, ROMs and peripherals. That remains unexplored; this firmware uses Typestar 6 and 7 hardware. [H33]
+The StarWriter family includes several printing technologies: a **StarWriter 30** is advertised with **thermal transfer** in 1994. These large-display machines could be interesting for another BASIC project, after studying their processors, ROMs and peripherals. That remains unexplored; this firmware is validated on the Typestar 6-II / S-61 and 7 / S-70. [H33]
 
 ### Choosing useful comparisons
 

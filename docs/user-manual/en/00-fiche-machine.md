@@ -31,7 +31,7 @@ These are the main specifications of the Typestar 7 running Canon's software. BA
 
 The physical head, the glyphs used by BASIC and the LCD cells are three distinct things.
 
-The machine accepts BASIC through a programmed ROM in IC8. The cable and Studio make communication with a computer easier. BASIC startup and serial program loading at up to 31250 baud are also validated on an S-60 / Typestar 6 with PCB NG3-0672 / NH1-0159-065, after fitting its interface components: see [the tested revision in the Installation chapter](02-installation-firmware.md#s60-serial). The S-90 / Typestar 7-II requires a BASIC version adapted to its ROMs.
+The machine accepts BASIC through a programmed ROM in IC8. The cable and Studio make communication with a computer easier. BASIC startup and serial program loading at up to 31250 baud are also validated on an S-61 / Typestar 6-II with PCB NG3-0672 / NH1-0159-065, after fitting its interface components: see [the tested revision in the Installation chapter](02-installation-firmware.md#s61-serial). The S-90 / Typestar 7-II requires a BASIC version adapted to its ROMs.
 
 ## An unusual processor for a personal computer
 

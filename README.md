@@ -14,7 +14,7 @@
 
 ## Français
 
-**Un ordinateur BASIC dans une machine à écrire Canon.** Typestar BASIC remplace la ROM externe sur support IC8 d'une **Canon S-70 / Typestar 7**. Sur une **S-60 / Typestar 6**, PCB **NG3-0672 / NH1-0159-065**, le démarrage et le chargement série avec Studio jusqu'à **31250 bauds / 7E1** sont également validés après ajout des composants de l'interface ; [le manuel précise la révision testée](docs/user-manual/02-installation-firmware.md#s60-serial). Les autres révisions de S-60 restent à vérifier. Les différences matérielles de la S-90 / Typestar 7-II restent à prendre en compte pour le firmware BASIC.
+**Un ordinateur BASIC dans une machine à écrire Canon.** Typestar BASIC remplace la ROM externe sur support IC8 d'une **Canon S-70 / Typestar 7**. Sur une **S-61 / Typestar 6-II**, PCB **NG3-0672 / NH1-0159-065**, le démarrage et le chargement série avec Studio jusqu'à **31250 bauds / 7E1** sont également validés après ajout des composants de l'interface ; [le manuel précise la révision testée](docs/user-manual/02-installation-firmware.md#s61-serial). Cette variante se reconnaît à la **molette de contraste d’impression à l’avant** et au **cache série sur le côté droit**, parfois collé en usine. Le suffixe **« -II » peut manquer sur la façade**. Le guide concerne cette variante matérielle ; la Typestar 6 / S-60 relève d’une autre version matérielle. Les différences matérielles de la S-90 / Typestar 7-II restent à prendre en compte pour le firmware BASIC.
 
 **Version publiée :** firmware **0.4.100-dev** · Studio **0.2.40** · Copyright © 2026 Pierre Raimbault · Projet indépendant de Canon.
 
@@ -51,9 +51,11 @@ Pour une lecture paginée, avec illustrations, sommaire et index cliquables :
 - **Sons et Piano** : SOUND propose fréquence, rapport cyclique et bruit ; Piano offre **neuf modes**, trois registres et une démonstration MIX MINUS sur Espace. Les sons utilisent une boucle assembleur continue, jusqu’à deux secondes par appel.
 - **Jeux** : Quest associe carte papier, combats LCD, magasins et progression. Les Ruines reprend son sélecteur **↑ ↓ ← →**. Duel Orbital dessine ses deux grilles, bordure droite comprise, en bandes communes, puis regroupe satellites et impacts.
 - **Fiabilité** : correctifs du tracé LINE, des compositions graphiques et du message `?FOR/NEXT`. **Seize rapports logiciels** vérifient le hash exact du firmware, la mémoire, les transferts, les graphismes, les sons et les jeux. Les [notes de version](docs/releases/0.4.100-dev.md) précisent leur portée.
-- **Manuels et matériel** : six listings complets, atelier tilemap commenté, captures LCD actualisées, documentation de l’extension série S-60 et PDF de **167 pages en français / 164 en anglais**.
+- **Manuels et matériel** : six listings complets, atelier tilemap commenté, captures LCD actualisées, documentation de l’extension série S-61 / Typestar 6-II et PDF de **167 pages en français / 164 en anglais**.
 
 ### Mises à jour de Studio et des exemples
+
+- **Vol radar 0.5** : [simulateur de vol et guide bilingues](examples/guides/simulateur-de-vol.md), avec carte papier procédurale, instruments LCD, relevés radar, météo et consignes de la tour.
 
 - **Labyrinthe 3D 0.9** : [jeu et guide bilingues](examples/guides/labyrinthe-3d.md), avec labyrinthe aléatoire de 10 × 10 cases, vue LCD en perspective, monstre à semer et quatre fragments de carte papier facultatifs. Le départ se fait à un carrefour.
 - **Studio 0.2.40** : cœur HD6301 accéléré et case **Impression instantanée** pour préparer plus rapidement les dessins papier. Voir le [guide Studio](studio/README.md).
@@ -105,7 +107,7 @@ Les contributions originales sont sous [licence MIT](LICENSE). Les éléments is
 
 ## English
 
-**Turn a Canon typewriter into a BASIC computer.** Typestar BASIC replaces the socketed IC8 external ROM in a **Canon S-70 / Typestar 7**. On an **S-60 / Typestar 6** with PCB **NG3-0672 / NH1-0159-065**, startup and serial program loading with Studio at up to **31250 baud / 7E1** are also validated after fitting the interface components; [the manual identifies the tested revision](docs/user-manual/en/02-installation-firmware.md#s60-serial). Other S-60 revisions still need checking. The S-90 / Typestar 7-II has hardware differences that still need to be addressed by the BASIC firmware.
+**Turn a Canon typewriter into a BASIC computer.** Typestar BASIC replaces the socketed IC8 external ROM in a **Canon S-70 / Typestar 7**. On an **S-61 / Typestar 6-II** with PCB **NG3-0672 / NH1-0159-065**, startup and serial program loading with Studio at up to **31250 baud / 7E1** are also validated after fitting the interface components; [the manual identifies the tested revision](docs/user-manual/en/02-installation-firmware.md#s61-serial). Identify this variant by its **front print-contrast control** and **right-side serial-port cover**, sometimes factory-glued. The **“-II” suffix may be absent from the front panel**. The guide applies to this hardware variant; the Typestar 6 / S-60 is a different hardware version. The S-90 / Typestar 7-II has hardware differences that still need to be addressed by the BASIC firmware.
 
 **Published release:** firmware **0.4.100-dev** · Studio **0.2.40** · Copyright © 2026 Pierre Raimbault · Independent project, unaffiliated with Canon.
 
@@ -142,9 +144,11 @@ For paginated reading with illustrations, clickable contents and an index:
 - **Sound and Piano**: SOUND provides frequency, duty cycle and noise; Piano offers **nine modes**, three registers and a MIX MINUS demonstration on Space. Sounds use a continuous assembly loop, with up to two seconds per call.
 - **Games**: Quest combines a paper map, LCD battles, shops and progression. Ruins adopts its **↑ ↓ ← →** selector. Orbital Duel draws both grids, including their right border, in shared bands, then batches satellites and impacts.
 - **Reliability**: fixes to LINE drawing, graphic compositions and the `?FOR/NEXT` message. **Sixteen software reports** check the exact firmware hash, memory, transfers, graphics, sound and games. The [release notes](docs/releases/0.4.100-dev.md#english) describe their scope.
-- **Manuals and hardware**: six complete listings, a commented tilemap workshop, updated LCD captures, the S-60 serial-upgrade guide and PDFs with **167 French / 164 English pages**.
+- **Manuals and hardware**: six complete listings, a commented tilemap workshop, updated LCD captures, the S-61 / Typestar 6-II serial-upgrade guide and PDFs with **167 French / 164 English pages**.
 
 ### Studio and example updates
+
+- **Radar Flight 0.5**: [bilingual flight simulator and guide](examples/guides/simulateur-de-vol.md#english), featuring procedural paper maps, LCD instruments, radar fixes, weather and tower requests.
 
 - **3D Maze 0.9**: [bilingual game and guide](examples/guides/labyrinthe-3d.md#english), with a random 10 × 10 maze, a perspective LCD view, a monster you can shake off and four optional printed map fragments. Every game starts at a junction.
 - **Studio 0.2.40**: faster HD6301 core and an **Instant printing** checkbox for faster paper-drawing development. See the [Studio guide](studio/README.md#english).

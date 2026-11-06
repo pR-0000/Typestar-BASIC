@@ -27,6 +27,6 @@ python docs/user-manual/validate_manual.py --config docs/user-manual/manuel-en.j
 
 `manuel-en.json` defines reading order, image sizes, bibliography and examples. The selected-program chapter is generated from the supplied source files. Both editions share the renderer and fonts; output files and page maps remain separate. Canon ROM images are supplied by the user and are not copied into this manual.
 
-The [tested S-60 serial upgrade](../../hardware/typestar-6-serial-upgrade.md#english) is documented with the board revision, connector references and RA1 wiring. The current edition covers GLYPH rows of 1 to 40 tiles, nine Piano modes, Orbital Duel 2.0, Typestar Ruins 0.6 and Canon S-70 Quest 0.9. In Quest, **RET passer / BS skip** skips printing; the Oasis pool is at **26,6**, and five slimes reach level 2.
+The [tested Typestar 6-II / S-61 serial upgrade](../../hardware/typestar-6-serial-upgrade.md#english) is documented with the board revision, connector references and RA1 wiring. The current edition covers GLYPH rows of 1 to 40 tiles, nine Piano modes, Orbital Duel 2.0, Typestar Ruins 0.6 and Canon S-70 Quest 0.9. In Quest, **RET passer / BS skip** skips printing; the Oasis pool is at **26,6**, and five slimes reach level 2.
 
 [Tilemap workshop: a commented four-pass map.](08-atelier-tilemap.md)

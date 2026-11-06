@@ -35,7 +35,7 @@ L’installation suit immédiatement la présentation des capacités. Le chapitr
 
 La [table de caractères LPRINT](caracteres-lprint.md) fournit une référence supplémentaire de la police papier.
 
-Le projet est indépendant de Canon et s'inspire de Microsoft BASIC sans en promettre une compatibilité totale. Le fonctionnement du câble avec le firmware Canon sur S-90 ne vaut pas validation de ce firmware BASIC sur cette machine. La S-70 reste la machine de référence ; le guide d’installation détaille la révision S-60 validée et le câblage de son extension série.
+Le projet est indépendant de Canon et s'inspire de Microsoft BASIC sans en promettre une compatibilité totale. Le fonctionnement du câble avec le firmware Canon sur S-90 ne vaut pas validation de ce firmware BASIC sur cette machine. La S-70 reste la machine de référence ; le guide d’installation détaille la Typestar 6-II / S-61 validée et le câblage de son extension série.
 
 ## Version paginée
 
@@ -49,4 +49,4 @@ Pour découvrir les outils, suivez le [chapitre illustré de Studio](02-studio.m
 
 Le [guide de construction](BUILDING.md) explique comment régénérer les éditions PDF.
 
-Le [guide de conversion série de la S-60](../hardware/typestar-6-serial-upgrade.md) précise la révision testée, les références de prise et le câblage de RA1. L’édition actuelle décrit les rangées GLYPH de 1 à 40 motifs, les neuf modes du Piano, Duel Orbital 2.0, les Ruines de Typestar 0.6 et Canon S-70 Quest 0.9. Dans Quest, **RET passer / BS skip** passe l’impression ; le bassin de l’Oasis est en **26,6** et cinq slimes suffisent pour le niveau 2.
+Le [guide de conversion série de la Typestar 6-II / S-61](../hardware/typestar-6-serial-upgrade.md) précise la révision testée, les références de prise et le câblage de RA1. L’édition actuelle décrit les rangées GLYPH de 1 à 40 motifs, les neuf modes du Piano, Duel Orbital 2.0, les Ruines de Typestar 0.6 et Canon S-70 Quest 0.9. Dans Quest, **RET passer / BS skip** passe l’impression ; le bassin de l’Oasis est en **26,6** et cinq slimes suffisent pour le niveau 2.

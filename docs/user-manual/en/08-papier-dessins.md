@@ -180,7 +180,7 @@ ORIGIN:HEAD 8:HEAD -8
 ORIGIN:FEED 112:FEED -112
 ```
 
-The firmware automatically applies **fractional compensation for paper reversals**, shared by FEED, MOVE and LLOCATE. S-60 and S-70 trials selected a small separate forward movement distributed at one unit per four eligible reverse operations. The logical coordinates remain those of the program. Roller condition and paper grip also affect return accuracy.
+The firmware automatically applies **fractional compensation for paper reversals**, shared by FEED, MOVE and LLOCATE. S-61 and S-70 trials selected a small separate forward movement distributed at one unit per four eligible reverse operations. The logical coordinates remain those of the program. Roller condition and paper grip also affect return accuracy.
 
 The first experiment moves the head away and back. The second makes a paper round trip. Load the sheet so it remains gripped throughout both movements. These commands drive motors only; printing controls heating.
 
