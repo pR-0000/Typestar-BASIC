@@ -21,6 +21,9 @@ def _call(c, address, return_pc):
 def _phase(c):
     # $7563: exactly one observed motor phase, including the native ring pointer.
     c.xy[bool(c.m[0x41] & 32)] += -1 if c.m[0x41] & 16 else 1
+    if not c.m[0x41] & 32 and 'JGX' in c.symbols:
+        a = c.symbols['JGX']
+        c.putword(a, (c.word(a) + (-1 if c.m[0x41] & 16 else 1)) & 65535)
     c.push(c.x & 255)
     c.push(c.x >> 8)
     c.a = c.nz(c.read(0x41))
@@ -194,6 +197,8 @@ def _travel(c, s):
             phase = first + (phase - first + direction * moves) % 8
             c.putword(address, phase)
             c.xy[axis] += direction * moves
+            if not axis and 'JGX' in s:
+                c.putword(s['JGX'], (c.word(s['JGX']) + direction * moves) & 65535)
             c.write(0x49, 2 - partial)
             c.putword(0x52, 1)
             c.write(0x17, c.read(phase))
@@ -352,6 +357,13 @@ def kernels(memory, symbols):
     }
     result = {pc: fn for pc, (fn, code) in blocks.items()
               if memory[pc:pc + len(bytes.fromhex(code))] == bytes.fromhex(code)}
+    # .101 keeps the same native phase transitions and adds an absolute X
+    # counter. Check both the gateway and its complete instruction body.
+    phase = bytes.fromhex('3c37964185202613fe1b8e8510270309200108ff1b8ece004e2003ce0050e601851027025a5a5cc0e9c40785202702cb08cbe9e701c0e9c407851027015f50ee00333839')
+    if 'JGPHASE' in symbols and symbols.get('JGX') == 0x1b8e:
+        p = symbols['JGPHASE']
+        if memory[0x7563:0x7566] == b'\x7e' + p.to_bytes(2, 'big') and memory[p:p+len(phase)] == phase:
+            result[0x7563] = _phase
     # The countdown calls the phase helper internally; guard both as a unit.
     if 0x7563 not in result:
         result.pop(0x752c, None)

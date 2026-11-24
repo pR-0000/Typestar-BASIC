@@ -1,0 +1,1189 @@
+{
+  "problem": {
+    "bins": [
+      [
+        16689,
+        16737
+      ],
+      [
+        16836,
+        16896
+      ],
+      [
+        17082,
+        17084
+      ],
+      [
+        17743,
+        17768
+      ],
+      [
+        18178,
+        18180
+      ],
+      [
+        18201,
+        18259
+      ],
+      [
+        18471,
+        18508
+      ],
+      [
+        19132,
+        19140
+      ],
+      [
+        19143,
+        19154
+      ],
+      [
+        19395,
+        19399
+      ],
+      [
+        19400,
+        19428
+      ],
+      [
+        19489,
+        19496
+      ],
+      [
+        19503,
+        19536
+      ],
+      [
+        19539,
+        19861
+      ],
+      [
+        20037,
+        20047
+      ],
+      [
+        20153,
+        20188
+      ],
+      [
+        20203,
+        20245
+      ],
+      [
+        20331,
+        20374
+      ],
+      [
+        20691,
+        20748
+      ],
+      [
+        20866,
+        20909
+      ],
+      [
+        20933,
+        20940
+      ],
+      [
+        21317,
+        21397
+      ],
+      [
+        21445,
+        21453
+      ],
+      [
+        21538,
+        21545
+      ],
+      [
+        21551,
+        21582
+      ],
+      [
+        21957,
+        21960
+      ],
+      [
+        22278,
+        22309
+      ],
+      [
+        22641,
+        22643
+      ],
+      [
+        22678,
+        22686
+      ],
+      [
+        22770,
+        22773
+      ],
+      [
+        22783,
+        22832
+      ],
+      [
+        22936,
+        23084
+      ],
+      [
+        23149,
+        23158
+      ],
+      [
+        23444,
+        23614
+      ],
+      [
+        23618,
+        24419
+      ],
+      [
+        24822,
+        24829
+      ],
+      [
+        25003,
+        25067
+      ],
+      [
+        25470,
+        25476
+      ],
+      [
+        25555,
+        25569
+      ],
+      [
+        26031,
+        26045
+      ],
+      [
+        26102,
+        26103
+      ],
+      [
+        26381,
+        26384
+      ],
+      [
+        26394,
+        26404
+      ],
+      [
+        27013,
+        27051
+      ],
+      [
+        27058,
+        27224
+      ],
+      [
+        27821,
+        27837
+      ],
+      [
+        28166,
+        28167
+      ],
+      [
+        30054,
+        30126
+      ],
+      [
+        31243,
+        31248
+      ],
+      [
+        31306,
+        31312
+      ],
+      [
+        31634,
+        31652
+      ],
+      [
+        31670,
+        31673
+      ],
+      [
+        31763,
+        31934
+      ],
+      [
+        31975,
+        32041
+      ],
+      [
+        32241,
+        32251
+      ],
+      [
+        32284,
+        32293
+      ],
+      [
+        32646,
+        32653
+      ],
+      [
+        32750,
+        32898
+      ],
+      [
+        32929,
+        32945
+      ],
+      [
+        33020,
+        33025
+      ],
+      [
+        33399,
+        33512
+      ],
+      [
+        33560,
+        33691
+      ],
+      [
+        33705,
+        33912
+      ],
+      [
+        33917,
+        33940
+      ],
+      [
+        33954,
+        34295
+      ],
+      [
+        34313,
+        34320
+      ],
+      [
+        34555,
+        34595
+      ],
+      [
+        34767,
+        34885
+      ],
+      [
+        36636,
+        36638
+      ],
+      [
+        36665,
+        36675
+      ],
+      [
+        36782,
+        36784
+      ],
+      [
+        36843,
+        36850
+      ],
+      [
+        36948,
+        36956
+      ],
+      [
+        36966,
+        36974
+      ],
+      [
+        36986,
+        36994
+      ],
+      [
+        37009,
+        37017
+      ],
+      [
+        37038,
+        37041
+      ],
+      [
+        37123,
+        37152
+      ],
+      [
+        37235,
+        37237
+      ],
+      [
+        37452,
+        37453
+      ],
+      [
+        37614,
+        37616
+      ],
+      [
+        37851,
+        37870
+      ],
+      [
+        37875,
+        37915
+      ],
+      [
+        38193,
+        38210
+      ],
+      [
+        38340,
+        38342
+      ],
+      [
+        38371,
+        38383
+      ],
+      [
+        38485,
+        38517
+      ],
+      [
+        38969,
+        39168
+      ],
+      [
+        39541,
+        39545
+      ],
+      [
+        39548,
+        39552
+      ],
+      [
+        41198,
+        41200
+      ],
+      [
+        41925,
+        41984
+      ],
+      [
+        42287,
+        42292
+      ],
+      [
+        42464,
+        42496
+      ],
+      [
+        42697,
+        42752
+      ],
+      [
+        42859,
+        42864
+      ],
+      [
+        42949,
+        43008
+      ],
+      [
+        43895,
+        44000
+      ],
+      [
+        44112,
+        44127
+      ],
+      [
+        44301,
+        44308
+      ],
+      [
+        44708,
+        44715
+      ],
+      [
+        44916,
+        45033
+      ],
+      [
+        45750,
+        45815
+      ],
+      [
+        45828,
+        45879
+      ],
+      [
+        45885,
+        45917
+      ],
+      [
+        46056,
+        46136
+      ],
+      [
+        46295,
+        46359
+      ],
+      [
+        46373,
+        46443
+      ],
+      [
+        46514,
+        46538
+      ],
+      [
+        46553,
+        46571
+      ],
+      [
+        46647,
+        46749
+      ],
+      [
+        47477,
+        47497
+      ],
+      [
+        47528,
+        47536
+      ],
+      [
+        48377,
+        48449
+      ],
+      [
+        48456,
+        48459
+      ],
+      [
+        48860,
+        48861
+      ],
+      [
+        49033,
+        49075
+      ]
+    ],
+    "cut": 15,
+    "items": [
+      {
+        "name": "code-keyboard",
+        "size": 99
+      },
+      {
+        "name": "code-font",
+        "size": 246
+      },
+      {
+        "name": "code-dispatch",
+        "size": 53
+      },
+      {
+        "name": "code-keys",
+        "size": 66
+      },
+      {
+        "name": "code-stage",
+        "size": 190
+      },
+      {
+        "name": "code-render",
+        "size": 31
+      },
+      {
+        "name": "code-origin",
+        "size": 82
+      },
+      {
+        "name": "code-console-head-chords-0",
+        "size": 66
+      },
+      {
+        "name": "code-console-head-chords-1",
+        "size": 18
+      },
+      {
+        "name": "code-keyboard-console-compact-0",
+        "size": 96
+      },
+      {
+        "name": "code-keyboard-console-compact-1",
+        "size": 14
+      },
+      {
+        "name": "code-console-head-jog-0",
+        "size": 63
+      },
+      {
+        "name": "code-console-head-jog-1",
+        "size": 68
+      },
+      {
+        "name": "code-console-head-jog-2",
+        "size": 15
+      },
+      {
+        "name": "code-console-head-jog-3",
+        "size": 27
+      },
+      {
+        "name": "code-console-head-jog-4",
+        "size": 18
+      },
+      {
+        "name": "code-jog-origin",
+        "size": 13
+      },
+      {
+        "name": "code-jog-motor",
+        "size": 146
+      },
+      {
+        "name": "code-jog-band-save",
+        "size": 20
+      },
+      {
+        "name": "code-jog-band-restore",
+        "size": 35
+      },
+      {
+        "name": "code-jog-history-save",
+        "size": 41
+      },
+      {
+        "name": "code-jog-history-show",
+        "size": 40
+      },
+      {
+        "name": "code-clear-entry",
+        "size": 6
+      },
+      {
+        "name": "code-clear-check",
+        "size": 6
+      },
+      {
+        "name": "code-clear-reset",
+        "size": 10
+      },
+      {
+        "name": "code-snd-parse",
+        "size": 146
+      },
+      {
+        "name": "code-snd-prepare",
+        "size": 170
+      },
+      {
+        "name": "code-snd-pwm",
+        "size": 86
+      },
+      {
+        "name": "code-snd-compiler",
+        "size": 119
+      },
+      {
+        "name": "code-snd-play",
+        "size": 71
+      },
+      {
+        "name": "code-snd-divide",
+        "size": 35
+      },
+      {
+        "name": "code-snd-arg",
+        "size": 6
+      },
+      {
+        "name": "code-snd-multiply",
+        "size": 7
+      },
+      {
+        "name": "code-snd-multiplylow",
+        "size": 7
+      },
+      {
+        "name": "code-snd-multiplyhigh",
+        "size": 15
+      },
+      {
+        "name": "code-tile-route",
+        "size": 123
+      },
+      {
+        "name": "code-tile-decode",
+        "size": 74
+      },
+      {
+        "name": "code-tile-select",
+        "size": 20
+      },
+      {
+        "name": "code-tile-format",
+        "size": 14
+      },
+      {
+        "name": "word-46699",
+        "size": 5
+      },
+      {
+        "name": "word-42861",
+        "size": 3
+      },
+      {
+        "name": "word-24399",
+        "size": 5
+      },
+      {
+        "name": "word-43995",
+        "size": 5
+      },
+      {
+        "name": "word-27047",
+        "size": 4
+      },
+      {
+        "name": "word-39548",
+        "size": 4
+      },
+      {
+        "name": "word-34243",
+        "size": 4
+      },
+      {
+        "name": "word-19395",
+        "size": 4
+      },
+      {
+        "name": "hf-table",
+        "size": 6
+      },
+      {
+        "name": "key-table",
+        "size": 40
+      },
+      {
+        "name": "hf-2",
+        "size": 51
+      },
+      {
+        "name": "hf-0",
+        "size": 49
+      },
+      {
+        "name": "hf-1",
+        "size": 116
+      },
+      {
+        "name": "key-data",
+        "size": 424
+      },
+      {
+        "name": "font-38371",
+        "size": 12
+      },
+      {
+        "name": "font-43958",
+        "size": 38
+      },
+      {
+        "name": "font-39085",
+        "size": 33
+      },
+      {
+        "name": "font-24390",
+        "size": 9
+      },
+      {
+        "name": "font-34247",
+        "size": 20
+      },
+      {
+        "name": "font-24372",
+        "size": 9
+      },
+      {
+        "name": "font-19143",
+        "size": 11
+      },
+      {
+        "name": "font-31243",
+        "size": 5
+      },
+      {
+        "name": "font-42725",
+        "size": 27
+      },
+      {
+        "name": "font-37123",
+        "size": 29
+      },
+      {
+        "name": "font-42949",
+        "size": 26
+      },
+      {
+        "name": "font-45008",
+        "size": 25
+      },
+      {
+        "name": "font-20331",
+        "size": 22
+      },
+      {
+        "name": "font-42697",
+        "size": 28
+      },
+      {
+        "name": "font-23588",
+        "size": 26
+      },
+      {
+        "name": "font-19788",
+        "size": 29
+      },
+      {
+        "name": "font-24381",
+        "size": 9
+      },
+      {
+        "name": "font-49033",
+        "size": 14
+      },
+      {
+        "name": "font-47477",
+        "size": 20
+      },
+      {
+        "name": "font-42287",
+        "size": 5
+      },
+      {
+        "name": "font-16689",
+        "size": 24
+      },
+      {
+        "name": "font-45750",
+        "size": 40
+      },
+      {
+        "name": "font-31978",
+        "size": 27
+      },
+      {
+        "name": "font-27171",
+        "size": 28
+      },
+      {
+        "name": "font-19837",
+        "size": 19
+      },
+      {
+        "name": "font-20037",
+        "size": 10
+      },
+      {
+        "name": "font-16836",
+        "size": 31
+      },
+      {
+        "name": "font-33926",
+        "size": 14
+      },
+      {
+        "name": "font-48377",
+        "size": 39
+      },
+      {
+        "name": "font-19817",
+        "size": 20
+      },
+      {
+        "name": "font-34816",
+        "size": 35
+      },
+      {
+        "name": "font-16867",
+        "size": 29
+      },
+      {
+        "name": "font-34854",
+        "size": 31
+      },
+      {
+        "name": "font-18474",
+        "size": 17
+      },
+      {
+        "name": "font-20353",
+        "size": 21
+      },
+      {
+        "name": "font-27013",
+        "size": 35
+      },
+      {
+        "name": "font-22281",
+        "size": 28
+      },
+      {
+        "name": "font-25559",
+        "size": 10
+      },
+      {
+        "name": "font-45885",
+        "size": 17
+      },
+      {
+        "name": "font-45905",
+        "size": 6
+      },
+      {
+        "name": "font-23149",
+        "size": 9
+      },
+      {
+        "name": "font-38485",
+        "size": 26
+      },
+      {
+        "name": "font-27201",
+        "size": 23
+      },
+      {
+        "name": "font-46331",
+        "size": 28
+      },
+      {
+        "name": "font-32009",
+        "size": 23
+      },
+      {
+        "name": "font-18491",
+        "size": 17
+      },
+      {
+        "name": "font-49054",
+        "size": 21
+      },
+      {
+        "name": "font-34226",
+        "size": 16
+      },
+      {
+        "name": "font-45790",
+        "size": 25
+      },
+      {
+        "name": "font-36665",
+        "size": 10
+      },
+      {
+        "name": "font-22811",
+        "size": 21
+      },
+      {
+        "name": "font-42985",
+        "size": 23
+      },
+      {
+        "name": "font-42464",
+        "size": 26
+      },
+      {
+        "name": "font-46107",
+        "size": 29
+      },
+      {
+        "name": "font-17743",
+        "size": 17
+      },
+      {
+        "name": "font-16713",
+        "size": 24
+      },
+      {
+        "name": "font-38193",
+        "size": 17
+      },
+      {
+        "name": "font-19607",
+        "size": 38
+      },
+      {
+        "name": "font-46295",
+        "size": 33
+      },
+      {
+        "name": "font-48416",
+        "size": 22
+      },
+      {
+        "name": "font-23068",
+        "size": 16
+      },
+      {
+        "name": "font-27821",
+        "size": 8
+      },
+      {
+        "name": "font-37851",
+        "size": 19
+      },
+      {
+        "name": "error-for-pair",
+        "size": 47
+      },
+      {
+        "name": "version-banner",
+        "size": 62
+      },
+      {
+        "name": "error-gosub-pair",
+        "size": 41
+      },
+      {
+        "name": "font-43895",
+        "size": 63
+      },
+      {
+        "name": "font-46514",
+        "size": 24
+      },
+      {
+        "name": "font-46056",
+        "size": 45
+      },
+      {
+        "name": "font-46647",
+        "size": 52
+      },
+      {
+        "name": "font-32826",
+        "size": 72
+      },
+      {
+        "name": "font-34767",
+        "size": 49
+      },
+      {
+        "name": "font-33645",
+        "size": 46
+      },
+      {
+        "name": "font-19543",
+        "size": 94
+      },
+      {
+        "name": "font-34205",
+        "size": 21
+      },
+      {
+        "name": "font-46703",
+        "size": 46
+      },
+      {
+        "name": "font-41929",
+        "size": 55
+      },
+      {
+        "name": "catalogue-0",
+        "size": 8
+      },
+      {
+        "name": "catalogue-1",
+        "size": 8
+      },
+      {
+        "name": "catalogue-2",
+        "size": 8
+      },
+      {
+        "name": "catalogue-3",
+        "size": 8
+      },
+      {
+        "name": "catalogue-4",
+        "size": 8
+      },
+      {
+        "name": "catalogue-5",
+        "size": 8
+      },
+      {
+        "name": "catalogue-6",
+        "size": 7
+      },
+      {
+        "name": "catalogue-7",
+        "size": 8
+      },
+      {
+        "name": "catalogue-8",
+        "size": 8
+      },
+      {
+        "name": "catalogue-9",
+        "size": 8
+      },
+      {
+        "name": "catalogue-10",
+        "size": 117
+      },
+      {
+        "name": "catalogue-11",
+        "size": 206
+      }
+    ]
+  },
+  "origins": {
+    "code-jog-history-show": 16689,
+    "catalogue-0": 16729,
+    "font-31978": 16836,
+    "font-46295": 16863,
+    "font-45790": 17743,
+    "font-19817": 18201,
+    "font-19607": 18221,
+    "font-47477": 18471,
+    "font-38193": 18491,
+    "catalogue-9": 19132,
+    "font-19143": 19143,
+    "word-19395": 19395,
+    "font-46331": 19400,
+    "catalogue-6": 19489,
+    "font-39085": 19503,
+    "code-snd-prepare": 19539,
+    "code-tile-route": 19709,
+    "font-46107": 19832,
+    "font-36665": 20037,
+    "font-27013": 20153,
+    "font-49054": 20203,
+    "font-22811": 20224,
+    "font-20353": 20331,
+    "font-48416": 20352,
+    "code-console-head-jog-3": 20691,
+    "font-34205": 20718,
+    "font-23149": 20739,
+    "code-jog-band-restore": 20866,
+    "font-27821": 20901,
+    "code-snd-multiplylow": 20933,
+    "code-dispatch": 21317,
+    "font-42725": 21370,
+    "catalogue-8": 21445,
+    "code-snd-multiply": 21538,
+    "font-34854": 21551,
+    "word-42861": 21957,
+    "font-16836": 22278,
+    "catalogue-7": 22678,
+    "font-34767": 22783,
+    "code-origin": 22936,
+    "code-console-head-chords-0": 23018,
+    "font-24381": 23149,
+    "code-console-head-jog-1": 23444,
+    "error-for-pair": 23512,
+    "font-37123": 23559,
+    "font-42464": 23588,
+    "code-snd-pwm": 23618,
+    "key-data": 23704,
+    "font-20331": 24128,
+    "font-43895": 24150,
+    "catalogue-11": 24213,
+    "font-45905": 24822,
+    "code-jog-history-save": 25003,
+    "font-42985": 25044,
+    "hf-table": 25470,
+    "font-33926": 25555,
+    "font-49033": 26031,
+    "font-25559": 26394,
+    "font-43958": 27013,
+    "code-snd-parse": 27058,
+    "font-34247": 27204,
+    "font-23068": 27821,
+    "font-38485": 30054,
+    "font-46703": 30080,
+    "font-42287": 31243,
+    "code-snd-arg": 31306,
+    "code-console-head-jog-4": 31634,
+    "code-keyboard": 31763,
+    "font-23588": 31862,
+    "font-33645": 31888,
+    "code-keys": 31975,
+    "font-20037": 32241,
+    "font-24372": 32284,
+    "code-clear-check": 32646,
+    "code-snd-compiler": 32750,
+    "font-16867": 32869,
+    "font-34226": 32929,
+    "font-31243": 33020,
+    "code-keyboard-console-compact-0": 33399,
+    "font-18491": 33495,
+    "code-snd-multiplyhigh": 33560,
+    "hf-1": 33575,
+    "code-stage": 33705,
+    "font-45885": 33895,
+    "font-32009": 33917,
+    "code-font": 33954,
+    "code-snd-play": 34200,
+    "font-46514": 34271,
+    "code-clear-entry": 34313,
+    "code-tile-format": 34555,
+    "font-42949": 34569,
+    "font-16713": 34767,
+    "font-19543": 34791,
+    "code-clear-reset": 36665,
+    "word-43995": 36843,
+    "catalogue-5": 36948,
+    "catalogue-4": 36966,
+    "catalogue-3": 36986,
+    "catalogue-2": 37009,
+    "font-19788": 37123,
+    "font-37851": 37851,
+    "font-45750": 37875,
+    "font-18474": 38193,
+    "font-38371": 38371,
+    "font-24390": 38485,
+    "font-27201": 38494,
+    "code-jog-motor": 38969,
+    "font-46647": 39115,
+    "word-34243": 39541,
+    "word-39548": 39548,
+    "font-46056": 41925,
+    "code-keyboard-console-compact-1": 41970,
+    "word-24399": 42287,
+    "code-jog-origin": 42464,
+    "font-19837": 42477,
+    "font-41929": 42697,
+    "word-46699": 42859,
+    "code-tile-select": 42949,
+    "font-48377": 42969,
+    "hf-0": 43895,
+    "font-42697": 43944,
+    "font-27171": 43972,
+    "code-console-head-jog-2": 44112,
+    "word-27047": 44301,
+    "catalogue-10": 44916,
+    "key-table": 45750,
+    "font-45008": 45790,
+    "hf-2": 45828,
+    "code-render": 45885,
+    "code-console-head-chords-1": 46056,
+    "version-banner": 46074,
+    "code-console-head-jog-0": 46295,
+    "code-snd-divide": 46373,
+    "font-34816": 46408,
+    "font-16689": 46514,
+    "font-17743": 46553,
+    "code-tile-decode": 46647,
+    "font-22281": 46721,
+    "code-jog-band-save": 47477,
+    "catalogue-1": 47528,
+    "font-32826": 48377,
+    "error-gosub-pair": 49033
+  }
+}

@@ -12,10 +12,10 @@ ROOT=base.ROOT
 OUT=ROOT/'build/tile-stream'
 BASE_SHA='f2804c2a09c95483584246c01e918050d944326eaad8a8622b28027368ec5ab8'
 
-def main(*, continuous_sound=False, paper_grid=False, release_audit=False):
+def main(*, continuous_sound=False, paper_grid=False, release_audit=False, head_jog=False):
     global OUT
-    version='0.4.100-dev' if release_audit else ('0.4.99-dev' if paper_grid else ('0.4.98-dev' if continuous_sound else '0.4.97-dev'))
-    OUT=ROOT/'build'/('release-candidate' if release_audit else ('paper-grid' if paper_grid else ('sound-continuous' if continuous_sound else 'tile-stream')))
+    version='0.4.101-dev' if head_jog else ('0.4.100-dev' if release_audit else ('0.4.99-dev' if paper_grid else ('0.4.98-dev' if continuous_sound else '0.4.97-dev')))
+    OUT=ROOT/'build'/('head-jog' if head_jog else ('release-candidate' if release_audit else ('paper-grid' if paper_grid else ('sound-continuous' if continuous_sound else 'tile-stream'))))
     OUT.mkdir(exist_ok=True);base.OUT=OUT
     old=(ROOT/'build/sound-steady/EXPERIMENT-NOT-FOR-FLASH-cpu.bin').read_bytes()
     assert hashlib.sha256(old).hexdigest()==BASE_SHA
@@ -92,6 +92,61 @@ def main(*, continuous_sound=False, paper_grid=False, release_audit=False):
     at=s['OYENTRY'];data,_=base.assemble('origin-y-old',(ROOT/'src/paper-origin-y.asm').read_text(),at,s)
     assert old[at-0x4000:at-0x4000+len(data)]==data
     retired.append([at,at+len(data)])
+    if head_jog:
+        assert continuous_sound and paper_grid and release_audit
+        # The old GOSUB/RETURN error shared RETURN's keyword suffix. Only its
+        # seven-byte prefix survived earlier keyword packing; replace it as
+        # an independently owned immutable message, like FOR/NEXT in .100.
+        assert old[s['GPAIRMSG']-0x4000:s['GPAIRMSG']-0x4000+7]==b'?GOSUB/'
+        retired.append([s['GPAIRMSG'],s['GPAIRMSG']+7])
+        # Reclaim only exact, verified keyboard bodies and the phase helper.
+        # Entry gateways stay fixed for existing relative callers.
+        chunks=re.split(r'; @island \w+\n',(ROOT/'src/console-chords.asm').read_text())
+        for i in (0,1,2):
+            body=chunks[i];names=re.findall(r'^([A-Z][A-Z0-9_]*)\s+(?!EQU\b)',body,re.M)
+            at=s[names[0]];data,_=base.assemble('jog-chords-old-'+str(i),body,at,s)
+            assert old[at-0x4000:at-0x4000+len(data)]==data
+            retired.append([at,at+len(data)])
+        for label,pointer,restore in [('PMSAVE',s['PMPTR'],False),('PMRESTORE',s['PMPTR'],True),
+                                       ('RBSAVELOOP',s['RBSOURCE'],False),('RBRESTORE',s['RBSOURCE'],True)]:
+            at=s[label]
+            body=('X PSHX\n        LDX PTR\n        LDAA ,X\n        INX\n        STX PTR\n        PULX\n        STAA ,X\n        INX\n        DECB\n        BNE X\n' if restore else
+                  'X LDAA ,X\n        PSHX\n        LDX PTR\n        STAA ,X\n        INX\n        STX PTR\n        PULX\n        INX\n        DECB\n        BNE X\n')
+            body=body.replace('X PSHX','JCO PSHX').replace('X LDAA','JCO LDAA').replace('BNE X','BNE JCO')
+            data,_=base.assemble('jog-copy-old-'+label,body,at,s|{'PTR':pointer})
+            assert len(data)==17 and old[at-0x4000:at-0x4000+17]==data,label
+        motor_body='PMSTART '+(ROOT/'src/paper-position.asm').read_text().split('\nPMSTART ',1)[1]
+        motor_body=motor_body.replace('LDX #$7154','LDX #PRPREP').replace('PMCOMMIT LDD PMTX','PMCOMMIT JMP YPPOST')
+        data,_=base.assemble('jog-motor-old',motor_body,s['PMSTART'],s)
+        assert len(data)==s['PMEND']-s['PMSTART'] and old[s['PMSTART']-0x4000:s['PMEND']-0x4000]==data
+        retired.append([s['PMSTART']+3,s['PMEND']])
+        assert old[s['RBSAVELOOP']-0x4000+17:s['RBSAVELOOP']-0x4000+20]==b'\x7e'+s['RBINIT'].to_bytes(2,'big')
+        retired.append([s['RBSAVE']+3,s['RBSAVELOOP']+20])
+        retired.append([s['RBCLEAN']+3,s['RBMARK']])
+        body='JCO LDAA ,X\n        PSHX\n        LDX HDEST\n        STAA ,X\n        INX\n        STX HDEST\n        PULX\n        INX\n        CPX #LCDBUF+32\n        BNE JCO\n'
+        at=s['HISTCOPY'];data,_=base.assemble('jog-history-copy-old',body,at,s)
+        assert len(data)==19 and old[at-0x4000:at-0x4000+19]==data
+        history_bodies={}
+        console=(ROOT/'src/console-editor.inc').read_text()
+        for name,end in [('HISTSAVE','UICLEAR'),('HISTSHOW','RESULTWAIT')]:
+            body=name+' '+console.split('\n'+name+' ',1)[1].split('\n'+end+' ',1)[0]
+            at=s[name];data,_=base.assemble('jog-history-old-'+name,body,at,s)
+            assert old[at-0x4000:at-0x4000+len(data)]==data,name
+            retired.append([at,at+len(data)]);history_bodies[name]=body
+        # The poller/fast entry save B/X before this common decoder. Its first
+        # three bytes become a gateway; the old special-key chain is removed.
+        assert old[s['KBDREAD']-0x4000:s['KBDREAD']-0x4000+3]==b'\xbd'+s['CXSCAN'].to_bytes(2,'big')
+        assert old[s['KBDCHAR']-0x4000:s['KBDCHAR']-0x4000+3]==b'\x7e'+s['CXCHAR'].to_bytes(2,'big')
+        assert s['KBDCHAR']-s['KBDREAD']==134
+        retired.append([s['KBDREAD']+3,s['KBDCHAR']+7])
+        assert old[0x3563:0x35ae]==bytes.fromhex('3c964185202622de4e8510260d8c6ef02703082003ce6ee9200b8c6ee92703092003ce6ef0df4e3839de508510260d8c6ef82703082003ce6ef1200b8c6ef12703092003ce6ef8df503839')
+        retired.append([0x7566,0x75ae])
+        for name,body in [('MOTORBOOT','MOTORBOOT CLR PMVALID\n        CLR GPRAN\n        CLR SACTIVE\n        RTS\n'),
+                          ('PMORIGIN',(ROOT/'src/paper-position.asm').read_text().split('\nPMORIGIN ',1)[1].split('\nPMMOVE ',1)[0])]:
+            if name=='PMORIGIN':body='PMORIGIN '+body
+            at=s[name];data,_=base.assemble('jog-'+name+'-old',body,at,s)
+            assert old[at-0x4000:at-0x4000+len(data)]==data
+            retired.append([at,at+len(data)])
     free=[]
     for a,z in sorted(retired+m['explicit_free_regions']):
         if free and a<=free[-1][1]:free[-1][1]=max(z,free[-1][1])
@@ -112,6 +167,25 @@ def main(*, continuous_sound=False, paper_grid=False, release_audit=False):
         'render':render,
         'origin':(ROOT/'src/paper-origin-compact.asm').read_text(),
         'clear':re.sub(r'^        JMP CL(?:CHECK|RESET|APPLY)\n','',clear,flags=re.M)}
+    if head_jog:
+        s['JGX']=0x1b8e
+        for filename in ('console-head-chords','keyboard-console-compact','console-head-jog'):
+            source=(ROOT/'src'/f'{filename}.asm').read_text()
+            for i,body in enumerate(re.split(r'; @island \w+\n',source)):
+                bodies[filename+'-'+str(i)]=body
+        bodies['jog-origin']='PMORIGIN CLRA\n        CLRB\n        STD PMX\n        STD PMY\n        INCA\n        STAA PMVALID\n        RTS\n'
+        motor_body=motor_body.replace('PMSTART STS','JGPMSTART STS')
+        motor_body=re.sub(r'PMSAVE LDAA ,X.*?        BNE PMSAVE\n','PMSAVE JSR JGCOPY\n',motor_body,flags=re.S)
+        motor_body=motor_body.replace('LDX PMBACKUP\n        STX PMPTR\n        LDX #$1DCB','LDX #$1DCB\n        STX PMPTR\n        LDX PMBACKUP')
+        motor_body=re.sub(r'PMRESTORE PSHX.*?        BNE PMRESTORE\n','PMRESTORE JSR JGCOPY\n',motor_body,flags=re.S)
+        bodies['jog-motor']=motor_body
+        bodies['jog-band-save']='JGBSAVE STS RBSP\n        LDX RBBACKUP\n        STX PMPTR\n        LDX #$1DCB\n        LDAB #220\n        JSR JGCOPY\n        JMP RBINIT\n'
+        bodies['jog-band-restore']='JGBCLEAN JSR GPOFF\n        LDX #$1DCB\n        STX PMPTR\n        LDX RBBACKUP\n        LDAB #220\n        JSR JGCOPY\n        LDAA RBRESULT\n        BEQ JGBOK\n        CLR GPRAN\n        TSTA\n        SEC\n        RTS\nJGBOK LDAA #1\n        STAA GPRAN\n        CLRA\n        RTS\n'
+        history=history_bodies['HISTSAVE'].replace('        ASLB\n'*5,'        LDAA #32\n        MUL\n')
+        history=history.replace('STX HDEST','STX PMPTR')
+        history=re.sub(r'HISTCOPY LDAA ,X.*?        BNE HISTCOPY\n','HISTCOPY LDAB #32\n        JSR JGCOPY\n',history,flags=re.S)
+        bodies['jog-history-save']=history
+        bodies['jog-history-show']=history_bodies['HISTSHOW'].replace('        TAB\n'+'        ASLB\n'*5,'        LDAB #32\n        MUL\n')
     bodies['clear']=bodies['clear'].replace('CLAPPLY JSR DECIMAL_INIT\n        CLR DFDEPTH\n        RTS','CLAPPLY CLR DFDEPTH\n        JMP DECIMAL_INIT')
     if paper_grid:
         # Small CLEAR gateways make use of seven-byte islands, leaving the
@@ -189,6 +263,7 @@ def main(*, continuous_sound=False, paper_grid=False, release_audit=False):
     if release_audit:
         groups += [dict(name='error-for-pair',data=b'?FOR/NEXT\0',members={'FORPAIRMSG':0}),
                    dict(name='version-banner',data=('Typestar BASIC '+version+'\r\n\0').encode(),members={'AUDITBANNER':0})]
+        if head_jog:groups.append(dict(name='error-gosub-pair',data=b'?GOSUB/RETURN\0',members={'GPAIRMSG':0}))
     command_names={c['name'] for c in commands}
     for a,data in words.items():
         if data[:-1] not in command_names:groups.append(dict(name='word-'+str(a),data=data,members={'word-'+str(a):0}))
@@ -258,6 +333,30 @@ def main(*, continuous_sound=False, paper_grid=False, release_audit=False):
     for cut in range(12,len(rest)-10):
         chunks=[[c] for c in short]+[rest[:cut],rest[cut:]]
         cg=[dict(name='catalogue-'+str(i),data=bytes(sum(len(c['name'])+2 for c in rows)+3),members={},commands=rows) for i,rows in enumerate(chunks)]
+        if head_jog:
+            layout_path=ROOT/'src/head-jog-layout.json'
+            problem=dict(bins=initial,cut=cut,items=[dict(name=g['name'],size=len(g['data'])) for g in groups+cg])
+            (OUT/'packing-problem.json').write_text(json.dumps(problem))
+            if not layout_path.exists():raise RuntimeError('Create the checked head-jog packing layout for packing-problem.json')
+            layout=json.loads(layout_path.read_text())
+            if layout['problem']['cut']!=cut:continue
+            assert layout['problem']==problem,'Head-jog sources changed; regenerate the packing layout'
+            placements=layout['origins'];placed=[g|dict(origin=placements[g['name']]) for g in groups+cg]
+            holes=[]
+            for a,z in initial:
+                here=sorted((g for g in placed if a<=g['origin']<z),key=lambda g:g['origin'])
+                p=a
+                for g in here:
+                    assert g['origin']==p and p+len(g['data'])<=z,(g['name'],hex(p))
+                    p+=len(g['data'])
+                holes.append([p,z])
+            assert sum(len(g['data']) for g in placed)+sum(z-a for a,z in holes)==sum(z-a for a,z in initial)
+            tables=[]
+            for g in sorted((g for g in placed if g['name'].startswith('catalogue-')),key=lambda g:int(g['name'].split('-')[1])):
+                at=g['origin'];rows=[]
+                for c in g['commands']:rows.append((at,c));at+=len(c['name'])+2
+                tables.append((g['origin'],at,rows))
+            solution=(placed,holes,tables);seed='checked-layout';break
         for trial in range(100):
             rng=random.Random(trial);holes=[v[:] for v in initial];pending=groups+cg;pending=pending[:];rng.shuffle(pending)
             pending.sort(key=lambda g:-(len(g['data'])+rng.randrange(1+trial//5)));placed=[]
@@ -316,6 +415,35 @@ def main(*, continuous_sound=False, paper_grid=False, release_audit=False):
     def patch(at,new):
         assert not inside(at),hex(at)
         b[at-0x4000:at-0x4000+len(new)]=new;patches.append([at,len(new)])
+    if head_jog:
+        for at,name in ((s['KBDREAD'],'JGKREAD'),(0x7563,'JGPHASE')):
+            patch(at,b'\x7e'+links[name].to_bytes(2,'big'))
+        # Replace the old scanner call and every remaining direct reference
+        # to its private translator. The new decoder owns synthetic chords.
+        for name,newname in (('CXSCAN','CXSCAN'),('CXCHAR','JGKSPECIAL')):
+            needle=s[name].to_bytes(2,'big')
+            for i in range(len(old)-2):
+                if old[i] in (0x7e,0xbd) and old[i+1:i+3]==needle and not inside(i+0x4000) and i+0x4000 not in (s['KBDREAD'],s['KBDCHAR']):
+                    patch(i+0x4001,links[newname].to_bytes(2,'big'))
+        for name in ('PMORIGIN','MOTORBOOT'):
+            needle=s[name].to_bytes(2,'big')
+            for i in range(len(old)-2):
+                if old[i] in (0x7e,0xbd) and old[i+1:i+3]==needle and not inside(i+0x4000):
+                    patch(i+0x4001,links[name].to_bytes(2,'big'))
+        assert old[s['GPPRINT']-0x4000:s['GPPRINT']-0x4000+3]==b'\x7e'+s['MOTORPRINT'].to_bytes(2,'big')
+        patch(s['GPPRINT']+1,links['JGPRINT'].to_bytes(2,'big'))
+        for name,newname in [('PMSTART','JGPMSTART'),('RBSAVE','JGBSAVE'),('RBCLEAN','JGBCLEAN')]:
+            patch(s[name],b'\x7e'+links[newname].to_bytes(2,'big'))
+        for name,offset in [('PMABORT',0),('PMFEED',8),('PMCOMMIT',3)]:
+            needle=(s[name]+offset).to_bytes(2,'big')
+            for i in range(len(old)-2):
+                if old[i] in (0x7e,0xbd) and old[i+1:i+3]==needle and not inside(i+0x4000):
+                    patch(i+0x4001,(links[name]+offset).to_bytes(2,'big'))
+        for name in ('HISTSAVE','HISTSHOW'):
+            needle=s[name].to_bytes(2,'big')
+            for i in range(len(old)-2):
+                if old[i] in (0x7e,0xbd) and old[i+1:i+3]==needle and not inside(i+0x4000):
+                    patch(i+0x4001,links[name].to_bytes(2,'big'))
     # Three private keyword readers accept both NUL and a negative tagged
     # handler byte as the end marker. BASIC strings and tokens stay unchanged.
     assert old[s['MATCH1']-0x4000:s['MATCH1']-0x4000+7]==b'\xfe'+s['KEY'].to_bytes(2,'big')+b'\xe6\x00\x27'+old[s['MATCH1']-0x4000+6:s['MATCH1']-0x4000+7]
@@ -365,9 +493,11 @@ def main(*, continuous_sound=False, paper_grid=False, release_audit=False):
     q=old.index(b'\xb3'+s['DFLOOR'].to_bytes(2,'big'),s['SGRCOLUMN']-0x4000)
     assert q+0x4000<s['SGRENDEREND'];patch(q+0x4001,s['SGDEST'].to_bytes(2,'big'))
     if release_audit:
-        for before,after,sites in [(old_symbols['FORPAIRMSG'],positions['FORPAIRMSG'],
+        error_relinks=[(old_symbols['FORPAIRMSG'],positions['FORPAIRMSG'],
                                     [old_symbols['FORPAIRERROR']-0x4000,old_symbols['GLOOPERROR']-0x4000]),
-                                   (banner_at,positions['AUDITBANNER'],None)]:
+                                   (banner_at,positions['AUDITBANNER'],None)]
+        if head_jog:error_relinks.append((old_symbols['GPAIRMSG'],positions['GPAIRMSG'],[old_symbols['GPAIRERROR']-0x4000]))
+        for before,after,sites in error_relinks:
             refs=[i for i in range(len(old)-2) if old[i:i+3]==b'\xce'+before.to_bytes(2,'big') and not inside(i+0x4000)]
             assert refs==sorted(sites) if sites is not None else len(refs)==1,(hex(before),refs)
             for i in refs:patch(i+0x4001,after.to_bytes(2,'big'))
@@ -378,6 +508,9 @@ def main(*, continuous_sound=False, paper_grid=False, release_audit=False):
     for k in own|{'KDDATA','KDTABLE','HFTABLES','CMDTABLE','MCORIGIN','LPDECODEONE','SGSELECT'}:
         s[k]=links[k]
     s['SNDHOLDMODE']=64
+    if head_jog:
+        s['JGX']=0x1b8e
+        s['GPAIRMSG']=positions['GPAIRMSG']
     if release_audit:
         s['FORPAIRMSG']=positions['FORPAIRMSG'];s['BANNER']=positions['AUDITBANNER']
     if continuous_sound:
@@ -397,6 +530,14 @@ def main(*, continuous_sound=False, paper_grid=False, release_audit=False):
                           duty_rounding='nearest, ties to even',duration_rounding='whole cycles, floor, minimum one')
         m.pop('steady_sound',None)
         m['sound_playback']='Continuous counted periods; no BREAK/timer polling during a sound, requested duration <= 2000 ms'
+    if head_jog:
+        m['head_jog']=dict(keys=['CODE + LEFT MARGIN','CODE + RIGHT MARGIN'],
+            step_native_units=16,limit_native_units=1152,position_ram=0x1b8e,
+            print_limit_phases=2304,width_error=9,print_preflight='whole band, including repeats, before native approach',
+            native_phase_gateway=[0x7563,0x7566],native_phase_reclaimed=[0x7566,0x75ae],
+            console_only=True,repeat_while_held=True)
+        m['working_ram_additions']=[dict(name='absolute carriage phase position',start=0x1b8e,end=0x1b90)]
+        m['status']='Console head positioning candidate; hardware validation pending'
     (OUT/'EXPERIMENT-NOT-FOR-FLASH-cpu.bin').write_bytes(b)
     (OUT/'symbols.json').write_text(json.dumps(s,indent=2)+'\n');(OUT/'manifest.json').write_text(json.dumps(m,indent=2)+'\n')
     (ROOT/('studio/internal/profiles/basic-'+version.removesuffix('-dev')+'-symbols.json')).write_text(json.dumps(s,indent=2)+'\n')

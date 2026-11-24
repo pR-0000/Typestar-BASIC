@@ -4,7 +4,7 @@ Run from the repository with a Python environment containing the Studio and
 diagnostic dependencies. The incremental firmware build must exist first.
 """
 from pathlib import Path
-import argparse,subprocess,sys
+import argparse,json,subprocess,sys
 
 ROOT=Path(__file__).resolve().parents[2]
 SUITES=(
@@ -28,7 +28,9 @@ SUITES=(
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--build',default='release-candidate');args=parser.parse_args()
-    for script in SUITES:
+    manifest=json.loads((ROOT/'build'/args.build/'manifest.json').read_text())
+    suites=SUITES+ (('tools/diagnostics/validate_head_jog.py',) if 'head_jog' in manifest else ())
+    for script in suites:
         print('\nRunning',script,flush=True)
         subprocess.run([sys.executable,str(ROOT/script),'--build',args.build],cwd=ROOT,check=True)
     print('\nPASS all release suites; exact-image reports are ready for packaging.',flush=True)

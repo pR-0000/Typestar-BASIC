@@ -1,12 +1,12 @@
 # Typestar BASIC - User's manual
 
-Pierre Raimbault & Chat GPT - English edition, 24 October 2026. Reference firmware: **0.4.100-dev**, Canon S-70 / Typestar 7.
+Pierre Raimbault & Chat GPT - English edition, 24 November 2026. Reference firmware: **0.4.101-dev**, Canon S-70 / Typestar 7.
 
 This edition translates the complete French manual: installation, Studio, history, processor and firmware, beginner lessons, language reference, glossary and the six complete program listings: Piano, Pocket Duel, Orbital Duel, Ballistic Duel, Typestar Ruins and Canon S-70 Quest. The original BASIC keywords and machine error messages stay unchanged. English example sources are supplied in **examples/** (names ending in **-en.bas**).
 
 Start with [capabilities](00-fiche-machine.md), [installation](02-installation-firmware.md) and [Studio](02-studio.md). Then try [your first instructions](03-premiers-pas.md). Later, consult [the quick reference](98-reference-rapide.md), [glossary](99-lexique.md) or [command index](index-commandes.md).
 
-The paginated [English PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-en.pdf) has its own clickable contents, bookmarks, source notes and calculated glossary/index page references. Edit the UTF-8 Markdown sources to revise it. Each paragraph occupies one source line. This edition accompanies published **0.4.100-dev**; both PDFs are attached to the GitHub release. Local rebuilds are produced under `output/pdf/`.
+The paginated [English PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-en.pdf) has its own clickable contents, bookmarks, source notes and calculated glossary/index page references. Edit the UTF-8 Markdown sources to revise it. Each paragraph occupies one source line. This edition accompanies published **0.4.101-dev**; both PDFs are attached to the GitHub release. Local rebuilds are produced under `output/pdf/`.
 
 ## Illustrations and original documents
 

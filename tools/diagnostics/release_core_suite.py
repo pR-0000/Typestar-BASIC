@@ -109,7 +109,7 @@ def main():
       ('GOSUB depth guard','10 GOSUB 10','?GOSUB DEPTH'),
       ('high line numbers','1000 GOSUB 60000:END\n60000 PRINT "HIGH";:RETURN','HIGH'),
       ('missing line','10 GOTO 12345','?'),
-      ('RETURN underflow','10 RETURN','?'),
+      ('RETURN underflow','10 RETURN','?GOSUB/RETURN @10'),
       ('NEXT underflow','10 NEXT I','?FOR/NEXT @10'),
       ('READ exhaustion','10 DATA 1\n20 READ A,B','?'),
       ('array bounds','10 DIM A(1)\n20 A(2)=9','?RANGE'),

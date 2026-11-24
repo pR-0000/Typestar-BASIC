@@ -2,9 +2,11 @@
 
 These suites exercise the BASIC ROM and HD6301 core. Generated binaries, disassembly maps and reports belong in the ignored `build/` directory. Original Canon ROMs are supplied locally by the developer.
 
-Run `run_release_audit.py` after the incremental firmware build. It runs ROM layout/data checks, BASIC, memory, serial and state suites, followed by waveform, glyph, tile-row and game checks. `tools/firmware/prepare_release_candidate.py` requires sixteen passing reports for the exact 0.4.100 CPU-image hash before packaging socket images.
+Run `run_release_audit.py` after the incremental firmware build. It runs ROM layout/data checks, BASIC, memory, serial and state suites, followed by waveform, glyph, tile-row and game checks. `tools/firmware/prepare_head_jog.py` requires 17 passing reports for the exact 0.4.101 CPU-image hash before packaging socket images. The previous `prepare_release_candidate.py` packages .100 from its sixteen reports.
 
 `validate_buzzer_survey_v3.py` also provides the instruction-timing oracle used by the sound regressions. `validate_quest_*.py` drives actual tokenized game rules with controlled fixtures. The [audit notes](../../docs/firmware-test-0.4.100.md) describe coverage and physical-test boundaries.
+
+`validate_head_jog.py --build head-jog` checks .101: 64 phase transitions with identical registers/flags, 2,600 physical-key comparisons against .100, held CODE/margin repeat and release, both course limits, preservation of the editor/program/variables, low-memory rejection, INPUT/RUN exclusion and subsequent LPRINT/LLIST/graphics and RUN at the selected origin. Normal and instant paper paths are exercised. The full audit runner includes this suite automatically for a build whose manifest declares head positioning.
 
 Exploratory recording analyses and standalone sound-survey firmware are archived in the ignored local development tree. They are separate from the regression entry point.
 

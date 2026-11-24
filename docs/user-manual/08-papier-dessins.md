@@ -163,6 +163,8 @@ La composition réduit aussi les déplacements et les impressions répétées su
 <a id="feed"></a>
 ## ORIGIN, MOVE, HEAD et FEED : commander les moteurs
 
+Pour choisir le départ d'un dessin sur une feuille déjà utilisée, positionnez d'abord la tête **au prompt BASIC** : maintenez **CODE + LEFT MARGIN** ou **CODE + RIGHT MARGIN**, puis relâchez l'une des touches. Chaque pas correspond à un caractère Courier 10 ; le papier reste à la même hauteur. Lancez ensuite RUN ou votre commande d'impression : LPRINT, LLIST et les dessins partent du nouveau repère. Gardez assez de largeur libre à droite pour votre dessin ; le pilote signale `?PAPER` si une bande dépasse la course disponible.
+
 Ces commandes servent au positionnement. **ORIGIN déclare les coordonnées de la position physique courante**. MOVE, HEAD et FEED effectuent les mouvements ; c’est vous qui choisissez le point de départ du repère.
 
 | Commande | Signification | Limites |

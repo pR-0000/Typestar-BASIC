@@ -14,7 +14,7 @@ ERROR_TEXTS={
     'PMEMMSG':'?PROGRAM FULL', 'PRAMMSG':'?PROGRAM RAM',
     'SACKMSG':'?BAD ACK', 'SFAILMSG':'?SERIAL', 'SRXMSG':'?RX',
     'SSTATUSMSG':'?RX STATUS ', 'STEXTMSG':'?RX TEXT', 'STXMSG':'?TX TIMEOUT',
-    'FORDEPTHMSG':'?FOR DEPTH', 'FORPAIRMSG':'?FOR/NEXT',
+    'FORDEPTHMSG':'?FOR DEPTH', 'FORPAIRMSG':'?FOR/NEXT', 'GPAIRMSG':'?GOSUB/RETURN',
     'FORVARMSG':'?FOR VARIABLE', 'GDEPTHMSG':'?GOSUB DEPTH',
     'TRICHARMSG':'?LCD CHAR', 'TRIFULLMSG':'?LCD SLOTS',
     'RBPAPERMSG':'?PAPER', 'MCMESSAGE':'?MOTOR',
@@ -57,7 +57,13 @@ def main():
     allowed=reclaimed|patches
     assert all(x==y or i+0x4000 in allowed for i,(x,y) in enumerate(zip(base,image)))
     # Includes the three indirect GPCALL targets and their motor helpers.
-    assert image[0x2e00:0x3800]==base[0x2e00:0x3800]
+    native_exceptions=set()
+    if 'head_jog' in m:
+        assert m['head_jog']['native_phase_gateway']==[0x7563,0x7566]
+        assert m['head_jog']['native_phase_reclaimed']==[0x7566,0x75ae]
+        assert image[0x3563:0x3566]==b'\x7e'+s['JGPHASE'].to_bytes(2,'big')
+        native_exceptions=set(range(0x7563,0x75ae))
+    assert all(image[a-0x4000]==base[a-0x4000] for a in range(0x6e00,0x7800) if a not in native_exceptions)
     messages=[]
     for label,text in ERROR_TEXTS.items():
         a=s[label];expected=text.encode('ascii')+b'\0'
@@ -66,12 +72,12 @@ def main():
         messages.append(dict(symbol=label,address=a,text=text))
     banner=('Typestar BASIC '+m['version']+'\r\n\0').encode('ascii');a=s['BANNER']
     assert image[a-0x4000:a-0x4000+len(banner)]==banner
-    for label in ('FORPAIRERROR','GLOOPERROR'):
+    for label,message in (('FORPAIRERROR','FORPAIRMSG'),('GLOOPERROR','FORPAIRMSG'),('GPAIRERROR','GPAIRMSG')):
         a=s[label]
-        assert image[a-0x4000:a-0x4000+3]==b'\xce'+s['FORPAIRMSG'].to_bytes(2,'big')
+        assert image[a-0x4000:a-0x4000+3]==b'\xce'+s[message].to_bytes(2,'big')
     result=dict(result='PASS',sha256=digest,allocations=len(m['allocations']),
                 reclaimed_bytes=len(reclaimed),explicit_free_bytes=len(free),
-                patch_sites=len(m['patches']),native_motor_bytes_unchanged=2560,
+                patch_sites=len(m['patches']),native_motor_bytes_unchanged=2560-len(native_exceptions),
                 error_messages=messages,banner=banner[:-1].decode())
     dest=ROOT/'build'/('release-audit-'+m['version'].removesuffix('-dev'));dest.mkdir(exist_ok=True)
     (dest/'rom-data.json').write_text(json.dumps(result,indent=2)+'\n')

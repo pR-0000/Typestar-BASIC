@@ -36,6 +36,10 @@ To remove the beginning of the line at once, place the cursor after the text to 
 
 In the BASIC editor, **CODE + left arrow** inserts `<` and **CODE + right arrow** inserts `>`. These signs will help compare numbers. **KB - I/II** switches the keyboard character table.
 
+Starting with firmware **0.4.101-dev**, you can also choose where the next printout will begin: at the BASIC prompt, hold **CODE + LEFT MARGIN** to move the head left, or **CODE + RIGHT MARGIN** to move it right. Each step is one Courier 10 character pitch. Release either key to stop moving.
+
+The paper stays at the same height, and both your program and the line being edited remain in memory. Subsequent LPRINT, LLIST and drawings use the selected position as their new starting point. The margin keys alone retain their history browsing role. During a program or an INPUT prompt, the keyboard keeps its usual behavior.
+
 ## Interrupting an experiment
 
 **MARGIN RELEASE**, at the upper left, acts as **BREAK**. If a program keeps running, press it. It also interrupts input and some lengthy operations. A mechanical operation may need to finish its current step before stopping.

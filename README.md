@@ -1,8 +1,8 @@
 # Typestar BASIC & Studio
 
-**Firmware 0.4.100-dev : [32 Ko / 32 KiB](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-32k.bin) · [64 Ko / 64 KiB — W27C512](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-64k-mirror.bin)**
+**Firmware 0.4.101-dev : [32 Ko / 32 KiB](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-32k.bin) · [64 Ko / 64 KiB — W27C512](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-64k-mirror.bin)**
 
-**[Manuel français (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-fr.pdf) · [English manual (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-en.pdf)**
+**[Manuel français (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-fr.pdf) · [English manual (PDF)](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-en.pdf)**
 
 <p align="center">
   <img src="docs/images/typestar-basic-0.4.100.png" width="800" alt="Canon S-70 avec Typestar BASIC et cartes de jeux imprimées / Canon S-70 running Typestar BASIC with printed game maps">
@@ -16,49 +16,48 @@
 
 **Un ordinateur BASIC dans une machine à écrire Canon.** Typestar BASIC remplace la ROM externe sur support IC8 d'une **Canon S-70 / Typestar 7**. Sur une **S-61 / Typestar 6-II**, PCB **NG3-0672 / NH1-0159-065**, le démarrage et le chargement série avec Studio jusqu'à **31250 bauds / 7E1** sont également validés après ajout des composants de l'interface ; [le manuel précise la révision testée](docs/user-manual/02-installation-firmware.md#s61-serial). Cette variante se reconnaît à la **molette de contraste d’impression à l’avant** et au **cache série sur le côté droit**, parfois collé en usine. Le suffixe **« -II » peut manquer sur la façade**. Le guide concerne cette variante matérielle ; la Typestar 6 / S-60 relève d’une autre version matérielle. Les différences matérielles de la S-90 / Typestar 7-II restent à prendre en compte pour le firmware BASIC.
 
-**Version publiée :** firmware **0.4.100-dev** · Studio **0.2.40** · Copyright © 2026 Pierre Raimbault · Projet indépendant de Canon.
+**Version publiée :** firmware **0.4.101-dev** · Studio **0.2.41** · Copyright © 2026 Pierre Raimbault · Projet indépendant de Canon.
 
 ### Téléchargements
 
-La [version 0.4.100-dev](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.100-dev) réunit les images BASIC de 32 Ko et 64 Ko, leurs empreintes, **Studio 0.2.40** et les manuels PDF français/anglais. Elle inclut **Canon S-70 Quest 0.9**, **Les Ruines de Typestar 0.6** et **Duel Orbital 2.0**. L’émulateur utilise une maskROM Canon fournie par l’utilisateur.
+La [version 0.4.101-dev](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.101-dev) réunit les images BASIC de 32 Ko et 64 Ko, leurs empreintes, **Studio 0.2.41** et les manuels PDF français/anglais. Elle inclut **Canon S-70 Quest 0.9**, **Les Ruines de Typestar 0.6** et **Duel Orbital 2.0**. L’émulateur utilise une maskROM Canon fournie par l’utilisateur.
 
-**Firmware prêt à programmer — 0.4.100-dev**
+**Firmware prêt à programmer — 0.4.101-dev**
 
 | Image | Utilisation | Téléchargement |
 |---|---|---|
-| 32 Ko | OneROM configurée en 27C256, 27C256 compatible, ou émulateur Studio | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-32k.bin) |
-| 64 Ko, miroir | W27C512 compatible ; deux copies identiques de l'image 32 Ko | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-64k-mirror.bin) |
+| 32 Ko | OneROM configurée en 27C256, 27C256 compatible, ou émulateur Studio | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-32k.bin) |
+| 64 Ko, miroir | W27C512 compatible ; deux copies identiques de l'image 32 Ko | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-64k-mirror.bin) |
 
-Ces fichiers sont également conservés dans [firmware/0.4.100-dev/](firmware/0.4.100-dev/). Les [empreintes SHA-256](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/SHA256SUMS.txt) permettent de vérifier les téléchargements. Le [guide du firmware](firmware/README.md) précise les formats ; le manuel décrit le remplacement d'IC8.
+Ces fichiers sont également conservés dans [firmware/0.4.101-dev/](firmware/0.4.101-dev/). Les [empreintes SHA-256](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/SHA256SUMS.txt) permettent de vérifier les téléchargements. Le [guide du firmware](firmware/README.md) précise les formats ; le manuel décrit le remplacement d'IC8.
 
 Pour une lecture paginée, avec illustrations, sommaire et index cliquables :
 
 | Manuel utilisateur | Téléchargement |
 |---|---|
-| Français | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-fr.pdf) |
-| English | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-en.pdf) |
+| Français | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-fr.pdf) |
+| English | [Lire ou télécharger le PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-en.pdf) |
 
 ### Commencer
 
-1. Consultez le [manuel français en PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-fr.pdf), notamment l'installation du mod. Les [chapitres Markdown](docs/user-manual/README.md) restent disponibles pour la consultation en ligne et les contributions.
+1. Consultez le [manuel français en PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-fr.pdf), notamment l'installation du mod. Les [chapitres Markdown](docs/user-manual/README.md) restent disponibles pour la consultation en ligne et les contributions.
 2. Installez Python 3.12 ou plus récent et lancez **[Typestar BASIC Studio.pyw](studio/Typestar%20BASIC%20Studio.pyw)**. Le lanceur prépare son environnement Python local et installe les dépendances manquantes. Voir le [guide Studio](studio/README.md) pour Windows, Linux et macOS.
 3. Ouvrez l'un des [programmes fournis](examples/README.md). Les suffixes **-fr** et **-en** indiquent leur langue.
 4. Dans Studio, utilisez **Exécuter (F5)** pour l'émulateur ou **Envoyer → LOAD** pour une Canon équipée du firmware et du câble USB appropriés.
 
-### Nouveautés de la 0.4.100-dev
+### Nouveautés de la 0.4.101-dev
 
-- **Cartes papier rapides** : `GLYPH` en **mode 5** imprime de 1 à **40 motifs différents ou vides** par rangée continue, avec de grands pixels carrés. Le cache s’adapte à la RAM disponible. Les modes précédents et la répétition restent disponibles.
-- **Sons et Piano** : SOUND propose fréquence, rapport cyclique et bruit ; Piano offre **neuf modes**, trois registres et une démonstration MIX MINUS sur Espace. Les sons utilisent une boucle assembleur continue, jusqu’à deux secondes par appel.
-- **Jeux** : Quest associe carte papier, combats LCD, magasins et progression. Les Ruines reprend son sélecteur **↑ ↓ ← →**. Duel Orbital dessine ses deux grilles, bordure droite comprise, en bandes communes, puis regroupe satellites et impacts.
-- **Fiabilité** : correctifs du tracé LINE, des compositions graphiques et du message `?FOR/NEXT`. **Seize rapports logiciels** vérifient le hash exact du firmware, la mémoire, les transferts, les graphismes, les sons et les jeux. Les [notes de version](docs/releases/0.4.100-dev.md) précisent leur portée.
-- **Manuels et matériel** : six listings complets, atelier tilemap commenté, captures LCD actualisées, documentation de l’extension série S-61 / Typestar 6-II et PDF de **167 pages en français / 164 en anglais**.
+- **Positionnement de la tête** : au prompt BASIC, maintenez **CODE + LEFT MARGIN** ou **CODE + RIGHT MARGIN**. La tête avance par pas d'un caractère Courier 10 et s'arrête au relâchement. Le papier, le programme et la ligne en cours sont conservés ; les prochaines impressions utilisent le point de départ choisi.
+- **Fiabilité de l'impression** : contrôle de la largeur complète des bandes, répétitions comprises, et remise à disposition du pilote après une erreur. Le message `?GOSUB/RETURN` est également corrigé.
+- **Studio 0.2.41** : reconnaissance du nouveau firmware et suivi de position cohérent en impression normale ou instantanée.
+- **Validation et manuels** : déplacement confirmé sur machine le **24 novembre 2026**, **17 rapports logiciels** sur le hash exact du firmware et manuels PDF actualisés de **168 pages en français / 164 en anglais**. Voir les [notes de version](docs/releases/0.4.101-dev.md).
 
 ### Mises à jour de Studio et des exemples
 
 - **Vol radar 0.5** : [simulateur de vol et guide bilingues](examples/guides/simulateur-de-vol.md), avec carte papier procédurale, instruments LCD, relevés radar, météo et consignes de la tour.
 
 - **Labyrinthe 3D 0.9** : [jeu et guide bilingues](examples/guides/labyrinthe-3d.md), avec labyrinthe aléatoire de 10 × 10 cases, vue LCD en perspective, monstre à semer et quatre fragments de carte papier facultatifs. Le départ se fait à un carrefour.
-- **Studio 0.2.40** : cœur HD6301 accéléré et case **Impression instantanée** pour préparer plus rapidement les dessins papier. Voir le [guide Studio](studio/README.md).
+- **Studio 0.2.41** : cœur HD6301 accéléré et case **Impression instantanée** pour préparer plus rapidement les dessins papier. Voir le [guide Studio](studio/README.md).
 - **Pocket Duel 1.1** : **Entrée attaque**, les flèches déplacent et Espace téléporte. Tous les jeux sont regroupés dans [examples/games/](examples/games/).
 - **Jeux bilingues** : tous les jeux sont disponibles en français et en anglais, avec leurs notices et commandes adaptées. Voir le [catalogue des exemples](examples/README.md).
 - **Canon S-70 Quest** : [adaptation de Canon X-07 Quest](examples/guides/canon-s70-quest.md), avec carte papier et combats LCD. Le Roi charge le héros de retrouver le sorcier qui a fui.
@@ -109,49 +108,48 @@ Les contributions originales sont sous [licence MIT](LICENSE). Les éléments is
 
 **Turn a Canon typewriter into a BASIC computer.** Typestar BASIC replaces the socketed IC8 external ROM in a **Canon S-70 / Typestar 7**. On an **S-61 / Typestar 6-II** with PCB **NG3-0672 / NH1-0159-065**, startup and serial program loading with Studio at up to **31250 baud / 7E1** are also validated after fitting the interface components; [the manual identifies the tested revision](docs/user-manual/en/02-installation-firmware.md#s61-serial). Identify this variant by its **front print-contrast control** and **right-side serial-port cover**, sometimes factory-glued. The **“-II” suffix may be absent from the front panel**. The guide applies to this hardware variant; the Typestar 6 / S-60 is a different hardware version. The S-90 / Typestar 7-II has hardware differences that still need to be addressed by the BASIC firmware.
 
-**Published release:** firmware **0.4.100-dev** · Studio **0.2.40** · Copyright © 2026 Pierre Raimbault · Independent project, unaffiliated with Canon.
+**Published release:** firmware **0.4.101-dev** · Studio **0.2.41** · Copyright © 2026 Pierre Raimbault · Independent project, unaffiliated with Canon.
 
 ### Downloads
 
-The [0.4.100-dev release](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.100-dev) brings together the 32 KiB and 64 KiB BASIC images, their checksums, **Studio 0.2.40** and the French/English PDF manuals. It includes **Canon S-70 Quest 0.9**, **Typestar Ruins 0.6** and **Orbital Duel 2.0**. The emulator uses a Canon maskROM supplied by the user.
+The [0.4.101-dev release](https://github.com/pR-0000/Typestar-BASIC/releases/tag/v0.4.101-dev) brings together the 32 KiB and 64 KiB BASIC images, their checksums, **Studio 0.2.41** and the French/English PDF manuals. It includes **Canon S-70 Quest 0.9**, **Typestar Ruins 0.6** and **Orbital Duel 2.0**. The emulator uses a Canon maskROM supplied by the user.
 
-**Ready-to-program firmware — 0.4.100-dev**
+**Ready-to-program firmware — 0.4.101-dev**
 
 | Image | Use | Download |
 |---|---|---|
-| 32 KiB | OneROM configured as a 27C256, compatible 27C256, or Studio emulator | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-32k.bin) |
-| 64 KiB, mirrored | Compatible W27C512; two identical copies of the 32 KiB image | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-64k-mirror.bin) |
+| 32 KiB | OneROM configured as a 27C256, compatible 27C256, or Studio emulator | [typestar-basic-32k.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-32k.bin) |
+| 64 KiB, mirrored | Compatible W27C512; two identical copies of the 32 KiB image | [typestar-basic-64k-mirror.bin](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-64k-mirror.bin) |
 
-These files are also kept in [firmware/0.4.100-dev/](firmware/0.4.100-dev/). Use the [SHA-256 checksums](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/SHA256SUMS.txt) to verify downloads. The [firmware guide](firmware/README.md) explains the formats; the manual covers replacing IC8.
+These files are also kept in [firmware/0.4.101-dev/](firmware/0.4.101-dev/). Use the [SHA-256 checksums](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/SHA256SUMS.txt) to verify downloads. The [firmware guide](firmware/README.md) explains the formats; the manual covers replacing IC8.
 
 For paginated reading with illustrations, clickable contents and an index:
 
 | User manual | Download |
 |---|---|
-| Français | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-fr.pdf) |
-| English | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-en.pdf) |
+| Français | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-fr.pdf) |
+| English | [Read or download the PDF](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-en.pdf) |
 
 ### Getting started
 
-1. Read the [English PDF manual](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-en.pdf), particularly the firmware installation instructions. The [Markdown chapters](docs/user-manual/en/README.md) remain available for online reading and contributions.
+1. Read the [English PDF manual](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-en.pdf), particularly the firmware installation instructions. The [Markdown chapters](docs/user-manual/en/README.md) remain available for online reading and contributions.
 2. Install Python 3.12 or later and launch **[Typestar BASIC Studio.pyw](studio/Typestar%20BASIC%20Studio.pyw)**. The launcher creates a local Python environment and installs missing packages. See the [Studio guide](studio/README.md) for Windows, Linux and macOS.
 3. Open a [supplied program](examples/README.md). File suffixes **-fr** and **-en** identify French and English versions.
 4. In Studio, choose **Run (F5)** for the emulator or **Send → LOAD** for a Canon equipped with the replacement firmware and a suitable USB cable.
 
-### New in 0.4.100-dev
+### New in 0.4.101-dev
 
-- **Fast paper maps**: `GLYPH` **mode 5** prints **1 to 40 different or blank tiles** in one continuous row, using large square pixels. The cache adapts to available RAM. Earlier modes and repeated motifs remain available.
-- **Sound and Piano**: SOUND provides frequency, duty cycle and noise; Piano offers **nine modes**, three registers and a MIX MINUS demonstration on Space. Sounds use a continuous assembly loop, with up to two seconds per call.
-- **Games**: Quest combines a paper map, LCD battles, shops and progression. Ruins adopts its **↑ ↓ ← →** selector. Orbital Duel draws both grids, including their right border, in shared bands, then batches satellites and impacts.
-- **Reliability**: fixes to LINE drawing, graphic compositions and the `?FOR/NEXT` message. **Sixteen software reports** check the exact firmware hash, memory, transfers, graphics, sound and games. The [release notes](docs/releases/0.4.100-dev.md#english) describe their scope.
-- **Manuals and hardware**: six complete listings, a commented tilemap workshop, updated LCD captures, the S-61 / Typestar 6-II serial-upgrade guide and PDFs with **167 French / 164 English pages**.
+- **Head positioning**: at the BASIC prompt, hold **CODE + LEFT MARGIN** or **CODE + RIGHT MARGIN**. The head moves one Courier 10 character pitch at a time and stops on release. Paper height, program and editor line are preserved; subsequent printouts use the selected starting point.
+- **Printing reliability**: complete band-width checks, including repeats, and driver recovery after an error. The `?GOSUB/RETURN` message is also fixed.
+- **Studio 0.2.41**: recognition of the new firmware and consistent position tracking in normal and instant printing.
+- **Validation and manuals**: head movement confirmed on hardware on **24 November 2026**, **17 software reports** for the exact firmware hash and updated PDF manuals with **168 French / 164 English pages**. See the [release notes](docs/releases/0.4.101-dev.md#english).
 
 ### Studio and example updates
 
 - **Radar Flight 0.5**: [bilingual flight simulator and guide](examples/guides/simulateur-de-vol.md#english), featuring procedural paper maps, LCD instruments, radar fixes, weather and tower requests.
 
 - **3D Maze 0.9**: [bilingual game and guide](examples/guides/labyrinthe-3d.md#english), with a random 10 × 10 maze, a perspective LCD view, a monster you can shake off and four optional printed map fragments. Every game starts at a junction.
-- **Studio 0.2.40**: faster HD6301 core and an **Instant printing** checkbox for faster paper-drawing development. See the [Studio guide](studio/README.md#english).
+- **Studio 0.2.41**: faster HD6301 core and an **Instant printing** checkbox for faster paper-drawing development. See the [Studio guide](studio/README.md#english).
 - **Pocket Duel 1.1**: **Enter attacks**, arrows move and Space teleports. All games are grouped in [examples/games/](examples/games/).
 - **Bilingual games**: all games are available in French and English, with matching guides and localized controls. See the [example catalogue](examples/README.md#english).
 - **Canon S-70 Quest**: [an adaptation of Canon X-07 Quest](examples/guides/canon-s70-quest.md#english), with a paper map and LCD battles. The King sends the hero to find the sorcerer who has fled.
@@ -173,8 +171,9 @@ firmware/           Published BASIC binaries and SHA-256 checksums
 studio/             Launcher and desktop application
 src/                HD6301 firmware sources
 examples/           Main programs in French and English
-  games/            Other games
+  games/            All games
   terminal/         BASIC terminal and Python counterpart
+  remote-keyboard/  BASIC remote keyboard and Python counterpart
   guides/           Program guides
 tools/              Shared codecs, transfers and graphics
   firmware/         Firmware assembly and build tools

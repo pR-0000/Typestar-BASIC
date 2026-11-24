@@ -1,8 +1,8 @@
 # Typestar BASIC - manuel de l'utilisateur
 
-Pierre Raimbault & Chat GPT - rédaction française du 24 octobre 2026.
+Pierre Raimbault & Chat GPT - rédaction française du 24 novembre 2026.
 
-Référence du langage : **Typestar BASIC 0.4.100-dev**, sur Canon S-70 / Typestar 7. Ce manuel accompagne vos premières instructions, puis vos programmes utilisant le clavier, le LCD, l'imprimante, le buzzer et la liaison série. Aucune connaissance de l'assembleur ni de l'électronique n'est nécessaire pour suivre les ateliers.
+Référence du langage : **Typestar BASIC 0.4.101-dev**, sur Canon S-70 / Typestar 7. Ce manuel accompagne vos premières instructions, puis vos programmes utilisant le clavier, le LCD, l'imprimante, le buzzer et la liaison série. Aucune connaissance de l'assembleur ni de l'électronique n'est nécessaire pour suivre les ateliers.
 
 Chaque leçon propose une idée simple, quelques lignes à essayer, une explication du résultat et une modification personnelle. Sauvegardez votre programme avant de saisir un nouvel exercice. L’[édition anglaise](en/README.md) reprend les chapitres, les exemples et les illustrations localisées.
 
@@ -41,7 +41,7 @@ Le projet est indépendant de Canon et s'inspire de Microsoft BASIC sans en prom
 
 Le **Markdown UTF-8 reste le source de référence**, avec un fichier par chapitre et une seule ligne par paragraphe. Les fichiers ne contiennent pas de retours forcés au milieu des phrases pour adapter le texte à une largeur particulière. Photos, schémas et légendes restent dans le dossier `images`.
 
-Le [PDF français](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.100-dev/typestar-basic-manuel-fr.pdf) réunit les chapitres historiques et pratiques. Il possède des pages numérotées, un sommaire cliquable, des signets, les renvois de page du lexique et un index alphabétique des 86 mots-clés, fonctions et constante recensés. Sa pagination est recalculée après chaque modification ; aucune page n'est écrite à la main dans le Markdown. Cette édition accompagne la version publiée **0.4.100-dev** ; les deux PDF sont joints à la release GitHub. Les reconstructions locales sont produites dans `output/pdf/`.
+Le [PDF français](https://github.com/pR-0000/Typestar-BASIC/releases/download/v0.4.101-dev/typestar-basic-manuel-fr.pdf) réunit les chapitres historiques et pratiques. Il possède des pages numérotées, un sommaire cliquable, des signets, les renvois de page du lexique et un index alphabétique des 86 mots-clés, fonctions et constante recensés. Sa pagination est recalculée après chaque modification ; aucune page n'est écrite à la main dans le Markdown. Cette édition accompagne la version publiée **0.4.101-dev** ; les deux PDF sont joints à la release GitHub. Les reconstructions locales sont produites dans `output/pdf/`.
 
 ## Utiliser Studio
 

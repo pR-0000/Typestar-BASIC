@@ -2,9 +2,9 @@
   "title": "Typestar BASIC",
   "subtitle": "Manuel de l'utilisateur",
   "language": "fr",
-  "version": "0.4.100-dev",
+  "version": "0.4.101-dev",
   "author": "Pierre Raimbault & Chat GPT",
-  "date": "6 novembre 2026",
+  "date": "24 novembre 2026",
   "cover_image": "images/illustration_BASIC_firmware.png",
   "image_layout": {
     "illustration.png": {

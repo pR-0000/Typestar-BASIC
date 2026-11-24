@@ -23,7 +23,8 @@ PROFILES = {CPU_SHA:'0.4.82', NATIVE_SHA:'0.4.83',
     '67e4911e3d580d43ab278cfea28c432568982a83f99e463c67350cfac1275430':'0.4.97',
     '876929dd11fcc763bc69c786ae0c8e6a2c41110cb3b9d03b9ba494dda73da449':'0.4.98',
     '228f692be2c7aabb835ab21ee7eef6ca0b2064d11ce4a6b2450e1a2bf27facde':'0.4.99',
-    'e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec':'0.4.100'}
+    'e864a52bec0d7caab2db0e9c87d6aa0afeee6e5d74ca0424e7c25589a84336ec':'0.4.100',
+    'ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149':'0.4.101'}
 MASK_SHA = '9679e78d87398c918818aa76f608cdd72132075fe7286cf1333cf6d1a8f1cf3d'
 
 def load_roms(mask_path, firmware_path, mode='auto', layout='auto'):

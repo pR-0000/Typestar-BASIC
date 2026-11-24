@@ -1,0 +1,2 @@
+1d0ea97fe9213a9fb715e351793e4c73c37831f17c94c15b16ce1f71372e2032  typestar-basic-32k.bin
+a7e1abb7946019f3e873f6ac5e2c6cf5cf23a8c992d2a3b3f8d871ebf420a8bb  typestar-basic-64k-mirror.bin

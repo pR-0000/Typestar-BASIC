@@ -36,6 +36,10 @@ Les touches **LEFT MARGIN** et **RIGHT MARGIN** permettent de revoir, respective
 
 Dans l'éditeur BASIC, **CODE + flèche gauche** insère `<` et **CODE + flèche droite** insère `>`. Ces deux signes seront utiles pour comparer des nombres. La touche **KB - I/II** change la table de caractères du clavier.
 
+À partir du firmware **0.4.101-dev**, vous pouvez aussi choisir où commencera la prochaine impression : au prompt BASIC, maintenez **CODE + LEFT MARGIN** pour déplacer la tête vers la gauche, ou **CODE + RIGHT MARGIN** pour la déplacer vers la droite. Chaque pas correspond à la largeur d'un caractère Courier 10. Relâchez l'une des touches pour arrêter le déplacement.
+
+La feuille conserve sa hauteur, et le programme ainsi que la ligne en cours restent en mémoire. LPRINT, LLIST et les dessins suivants utilisent la position choisie comme nouveau point de départ. Les touches de marge seules conservent leur rôle de consultation de l'historique. Pendant un programme ou une saisie INPUT, le clavier conserve son fonctionnement habituel.
+
 ## Interrompre un essai
 
 La touche **MARGIN RELEASE**, en haut à gauche, joue le rôle de **BREAK**. Si un programme semble tourner sans fin, appuyez dessus. Elle sert aussi à interrompre une saisie ou certaines opérations longues. Une opération mécanique peut avoir besoin de terminer son étape en cours avant de s'arrêter.

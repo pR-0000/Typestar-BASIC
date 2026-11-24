@@ -1,10 +1,10 @@
-# Typestar BASIC Studio 0.2.40
+# Typestar BASIC Studio 0.2.41
 
 [Français](#français) · [English](#english)
 
 ## Français
 
-Studio réunit l'éditeur BASIC, les transferts série, l'éditeur de glyphes, l'impression graphique, un émulateur HD6301, le papier virtuel et le débogueur. Firmware de référence : **Typestar BASIC 0.4.100-dev**.
+Studio réunit l'éditeur BASIC, les transferts série, l'éditeur de glyphes, l'impression graphique, un émulateur HD6301, le papier virtuel et le débogueur. Firmware de référence : **Typestar BASIC 0.4.101-dev**.
 
 ### Lancer Studio
 
@@ -33,6 +33,10 @@ Les octets sans caractère Unicode habituel dans les DATA apparaissent comme de 
 Cliquez sur le LCD pour utiliser le clavier. F7 ou Ctrl correspond à **CODE**, F8 à **MODE** et F9 à **KB - I/II**. Les boutons sous l'écran donnent accès aux autres touches spéciales. Les outils de glyphes acceptent les motifs LCD et papier ; la table des caractères permet d'insérer un caractère dans le programme.
 
 Le mode **ROM générique** utilise le cœur de la machine sans injection de programme BASIC. Dans ce mode, F5 démarre ou reprend simplement le firmware sélectionné. La précision des moteurs, du son et des délais reste une simulation fonctionnelle ; la validation sur machine complète les essais dans Studio.
+
+### Nouveautés de Studio 0.2.41
+
+Le profil BASIC 0.4.101 reconnaît les raccourcis **CODE + LEFT MARGIN / RIGHT MARGIN** au prompt. Maintenez les deux touches pour déplacer la tête ; relâchez-en une pour l'arrêter. Le nouveau point de départ est conservé pour les prochaines impressions, en mode normal comme en impression instantanée. Utilisez les boutons de marge sous le LCD avec CODE maintenu au clavier.
 
 ### Nouveautés de Studio 0.2.39
 
@@ -79,7 +83,7 @@ Copyright © 2026 Pierre Raimbault. Les images ROM Canon sont fournies séparém
 
 ## English
 
-Studio combines the BASIC editor, serial transfers, glyph editor, graphical printing, an HD6301 emulator, virtual paper and debugger. Reference firmware: **Typestar BASIC 0.4.100-dev**.
+Studio combines the BASIC editor, serial transfers, glyph editor, graphical printing, an HD6301 emulator, virtual paper and debugger. Reference firmware: **Typestar BASIC 0.4.101-dev**.
 
 ### Launching Studio
 
@@ -108,6 +112,10 @@ DATA bytes without a usual Unicode character appear as small hexadecimal badges 
 Click the LCD to use the keyboard. F7 or Ctrl corresponds to **CODE**, F8 to **MODE**, and F9 to **KB - I/II**. Buttons below the display provide the other special keys. Glyph tools accept LCD and paper patterns; the character table lets you insert a character into your program.
 
 **Generic ROM** mode uses the machine core without injecting a BASIC program. In this mode, F5 simply starts or resumes the selected firmware. Motor, sound and timing accuracy remains a functional simulation; testing on real hardware complements the trials in Studio.
+
+### New in Studio 0.2.41
+
+The BASIC 0.4.101 profile recognizes **CODE + LEFT MARGIN / RIGHT MARGIN** at the prompt. Hold both keys to move the head; release either to stop. The new starting point is retained for subsequent printing in normal and instant modes. Use the margin buttons below the LCD while holding CODE on the keyboard.
 
 ### New in Studio 0.2.39
 

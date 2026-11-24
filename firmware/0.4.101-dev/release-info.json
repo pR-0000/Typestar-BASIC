@@ -1,0 +1,46 @@
+{
+  "version": "0.4.101-dev",
+  "date": "2026-11-24",
+  "cpu_sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+  "images": [
+    {
+      "file": "typestar-basic-32k.bin",
+      "bytes": 32768,
+      "sha256": "1d0ea97fe9213a9fb715e351793e4c73c37831f17c94c15b16ce1f71372e2032"
+    },
+    {
+      "file": "typestar-basic-64k-mirror.bin",
+      "bytes": 65536,
+      "sha256": "a7e1abb7946019f3e873f6ac5e2c6cf5cf23a8c992d2a3b3f8d871ebf420a8bb"
+    }
+  ],
+  "occupied_rom_bytes": 32711,
+  "explicit_free_bytes": 57,
+  "basic_free_ram_bytes": 5951,
+  "tokens": 37,
+  "commands": 54,
+  "head_jog": {
+    "keys": [
+      "CODE + LEFT MARGIN",
+      "CODE + RIGHT MARGIN"
+    ],
+    "step_native_units": 16,
+    "limit_native_units": 1152,
+    "position_ram": 7054,
+    "print_limit_phases": 2304,
+    "width_error": 9,
+    "print_preflight": "whole band, including repeats, before native approach",
+    "native_phase_gateway": [
+      30051,
+      30054
+    ],
+    "native_phase_reclaimed": [
+      30054,
+      30126
+    ],
+    "console_only": true,
+    "repeat_while_held": true
+  },
+  "software_reports": 17,
+  "hardware_status": "Head-positioning shortcuts confirmed on hardware by user on 2026-11-24"
+}

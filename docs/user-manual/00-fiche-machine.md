@@ -4,7 +4,7 @@
 
 > **32 caractères à l'écran - 5 951 octets libres - une imprimante intégrée.** Calculez, composez un jeu, créez vos personnages, puis donnez-leur une place sur le papier !
 
-| Ressource | Typestar BASIC 0.4.100-dev sur S-70 |
+| Ressource | Typestar BASIC 0.4.101-dev sur S-70 |
 |---|---|
 | **Processeur** | HD6301Y0P, 8 bits ; horloge système d'environ **1 MHz**, à partir d'un quartz de 4 MHz. |
 | **Mémoires** | **8 Ko de RAM externe** ; **5 951 octets libres à vide**, partagés entre programme tokenisé et données. ROM BASIC de **32 Ko**, ROM Canon interne de 16 Ko conservée. |

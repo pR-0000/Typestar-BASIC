@@ -1,0 +1,2348 @@
+{
+  "result": "PASS",
+  "cpu_sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+  "reports": {
+    "validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "font_characters": 95,
+      "keyboard_cases": 1760,
+      "divisions": 160,
+      "sound_cases": [
+        {
+          "rate": 50,
+          "duty": 1,
+          "wave": 0,
+          "kernel_bytes": 36,
+          "elapsed_us": 80713
+        },
+        {
+          "rate": 50,
+          "duty": 99,
+          "wave": 0,
+          "kernel_bytes": 36,
+          "elapsed_us": 80713
+        },
+        {
+          "rate": 60,
+          "duty": 50,
+          "wave": 0,
+          "kernel_bytes": 47,
+          "elapsed_us": 67381
+        },
+        {
+          "rate": 131,
+          "duty": 20,
+          "wave": 0,
+          "kernel_bytes": 46,
+          "elapsed_us": 77057
+        },
+        {
+          "rate": 750,
+          "duty": 50,
+          "wave": 0,
+          "kernel_bytes": 41,
+          "elapsed_us": 80705
+        },
+        {
+          "rate": 1963,
+          "duty": 10,
+          "wave": 0,
+          "kernel_bytes": 41,
+          "elapsed_us": 80642
+        },
+        {
+          "rate": 1963,
+          "duty": 90,
+          "wave": 0,
+          "kernel_bytes": 41,
+          "elapsed_us": 80642
+        },
+        {
+          "rate": 5000,
+          "duty": 50,
+          "wave": 0,
+          "kernel_bytes": 44,
+          "elapsed_us": 80721
+        },
+        {
+          "rate": 5889,
+          "duty": 50,
+          "wave": 0,
+          "kernel_bytes": 46,
+          "elapsed_us": 80633
+        },
+        {
+          "rate": 8000,
+          "duty": 33,
+          "wave": 0,
+          "kernel_bytes": 41,
+          "elapsed_us": 80717
+        },
+        {
+          "rate": 31250,
+          "duty": 50,
+          "wave": 0,
+          "kernel_bytes": 29,
+          "elapsed_us": 80729
+        },
+        {
+          "rate": 31250,
+          "duty": 1,
+          "wave": 0,
+          "kernel_bytes": 29,
+          "elapsed_us": 80729
+        },
+        {
+          "rate": 31250,
+          "duty": 99,
+          "wave": 0,
+          "kernel_bytes": 29,
+          "elapsed_us": 80729
+        },
+        {
+          "rate": 1000,
+          "duty": 50,
+          "wave": 1,
+          "kernel_bytes": 442,
+          "elapsed_us": 62745
+        },
+        {
+          "rate": 2000,
+          "duty": 50,
+          "wave": 1,
+          "kernel_bytes": 566,
+          "elapsed_us": 78249
+        },
+        {
+          "rate": 8000,
+          "duty": 50,
+          "wave": 1,
+          "kernel_bytes": 597,
+          "elapsed_us": 78249
+        },
+        {
+          "rate": 31250,
+          "duty": 50,
+          "wave": 1,
+          "kernel_bytes": 442,
+          "elapsed_us": 80109
+        }
+      ],
+      "free_basic_bytes": 5951,
+      "parser_cases": 20,
+      "noise_heap_guard": true,
+      "break_cleanup": true,
+      "piano": [
+        {
+          "language": "fr",
+          "sound_commands": 21
+        },
+        {
+          "language": "en",
+          "sound_commands": 21
+        }
+      ],
+      "continuous_sound": true,
+      "noise_temporary_bytes": 672
+    },
+    "graphics-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "legacy_cases": 6,
+      "wide_cases": [
+        {
+          "mode": 1,
+          "tiles": 2,
+          "steps": 179858,
+          "instant_steps": 38340
+        },
+        {
+          "mode": 2,
+          "tiles": 6,
+          "steps": 416121,
+          "instant_steps": 71658
+        },
+        {
+          "mode": 3,
+          "tiles": 3,
+          "steps": 226555,
+          "instant_steps": 43978
+        },
+        {
+          "mode": 4,
+          "tiles": 8,
+          "steps": 554626,
+          "instant_steps": 82931
+        }
+      ],
+      "continuous_cases": [
+        {
+          "width": 16,
+          "repeat": 10,
+          "tiles": 40,
+          "steps": 1098379,
+          "native_head_returns": 2,
+          "buffer_bytes": 348
+        },
+        {
+          "width": 16,
+          "repeat": 3,
+          "tiles": 12,
+          "steps": 527377,
+          "native_head_returns": 2,
+          "buffer_bytes": 348
+        },
+        {
+          "width": 1,
+          "repeat": 16,
+          "tiles": 16,
+          "steps": 425517,
+          "native_head_returns": 1,
+          "buffer_bytes": 284
+        },
+        {
+          "width": 31,
+          "repeat": 2,
+          "tiles": 8,
+          "steps": 347230,
+          "native_head_returns": 1,
+          "buffer_bytes": 476
+        }
+      ],
+      "font_characters": 95,
+      "tokens": 37,
+      "commands": 54,
+      "break_cleanup": true,
+      "blank_skip": true,
+      "invalid_no_motion": [
+        "16,16,4,0",
+        "16,16,4,17",
+        "16,16,4,-1",
+        "16,16,5",
+        "16,16,4,1.5"
+      ],
+      "public_syntax_and_decimal": true,
+      "free_basic_bytes": 5951,
+      "scope": "Actual ROM routines and representative interpreter runs; physical validation pending"
+    },
+    "continuous-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "v3_reference": [
+        {
+          "rate": 5365,
+          "period_cycles": 186,
+          "on_cycles": 93,
+          "continuous_periods": 100
+        },
+        {
+          "rate": 5301,
+          "period_cycles": 189,
+          "on_cycles": 94,
+          "continuous_periods": 100
+        },
+        {
+          "rate": 5229,
+          "period_cycles": 191,
+          "on_cycles": 96,
+          "continuous_periods": 100
+        },
+        {
+          "rate": 5190,
+          "period_cycles": 193,
+          "on_cycles": 96,
+          "continuous_periods": 100
+        },
+        {
+          "rate": 5105,
+          "period_cycles": 196,
+          "on_cycles": 98,
+          "continuous_periods": 100
+        },
+        {
+          "rate": 5009,
+          "period_cycles": 200,
+          "on_cycles": 100,
+          "continuous_periods": 100
+        },
+        {
+          "rate": 4901,
+          "period_cycles": 204,
+          "on_cycles": 102,
+          "continuous_periods": 100
+        },
+        {
+          "rate": 4842,
+          "period_cycles": 207,
+          "on_cycles": 104,
+          "continuous_periods": 100
+        }
+      ],
+      "counter_cases": [
+        {
+          "rate": 50,
+          "mode": 1,
+          "durations": 90
+        },
+        {
+          "rate": 53,
+          "mode": 1,
+          "durations": 90
+        },
+        {
+          "rate": 131,
+          "mode": 1,
+          "durations": 90
+        },
+        {
+          "rate": 1963,
+          "mode": 1,
+          "durations": 90
+        },
+        {
+          "rate": 4842,
+          "mode": 1,
+          "durations": 90
+        },
+        {
+          "rate": 5365,
+          "mode": 1,
+          "durations": 90
+        },
+        {
+          "rate": 5889,
+          "mode": 1,
+          "durations": 90
+        },
+        {
+          "rate": 31250,
+          "mode": 1,
+          "durations": 90
+        },
+        {
+          "rate": 1000,
+          "mode": 3,
+          "durations": 90
+        },
+        {
+          "rate": 1001,
+          "mode": 3,
+          "durations": 90
+        },
+        {
+          "rate": 8000,
+          "mode": 3,
+          "durations": 90
+        },
+        {
+          "rate": 31250,
+          "mode": 3,
+          "durations": 90
+        },
+        {
+          "rate": 1000,
+          "mode": 0,
+          "durations": 90
+        },
+        {
+          "rate": 1000,
+          "mode": 64,
+          "durations": 90
+        }
+      ],
+      "noise_periods_checked": 969,
+      "noise_max_kernel_bytes": 651,
+      "noise_temporary_bytes": 672,
+      "noise_buffers": [
+        {
+          "rate": 31250,
+          "period": 32,
+          "kernel_bytes": 442
+        },
+        {
+          "rate": 25641,
+          "period": 39,
+          "kernel_bytes": 651
+        },
+        {
+          "rate": 21277,
+          "period": 47,
+          "kernel_bytes": 651
+        },
+        {
+          "rate": 8000,
+          "period": 125,
+          "kernel_bytes": 597
+        },
+        {
+          "rate": 7874,
+          "period": 127,
+          "kernel_bytes": 651
+        },
+        {
+          "rate": 3922,
+          "period": 255,
+          "kernel_bytes": 651
+        },
+        {
+          "rate": 1001,
+          "period": 999,
+          "kernel_bytes": 651
+        },
+        {
+          "rate": 1000,
+          "period": 1000,
+          "kernel_bytes": 442
+        }
+      ],
+      "playback": [
+        {
+          "rate": 50,
+          "mode": 1,
+          "ms": 2000,
+          "periods": 100,
+          "counted_waveform_us": 2000000
+        },
+        {
+          "rate": 5365,
+          "mode": 1,
+          "ms": 320,
+          "periods": 1720,
+          "counted_waveform_us": 319920
+        },
+        {
+          "rate": 31250,
+          "mode": 1,
+          "ms": 2000,
+          "periods": 62500,
+          "counted_waveform_us": 2000000
+        },
+        {
+          "rate": 8000,
+          "mode": 3,
+          "ms": 80,
+          "periods": 20,
+          "counted_waveform_us": 77500
+        },
+        {
+          "rate": 1000,
+          "mode": 64,
+          "ms": 2000,
+          "periods": 2000,
+          "counted_waveform_us": 2000000
+        },
+        {
+          "rate": 0,
+          "mode": 0,
+          "ms": 80,
+          "periods": 80,
+          "counted_waveform_us": 80000
+        }
+      ],
+      "keyboard_timer_reads_during_sound": 0,
+      "studio_deferred_break": true
+    },
+    "tile-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "rows": [
+        {
+          "steps": 351294,
+          "tiles": 5,
+          "stopped": false,
+          "native_head_returns": 1,
+          "cache": 4,
+          "columns": 5,
+          "small_cache": false,
+          "instant": false
+        },
+        {
+          "steps": 1237650,
+          "tiles": 32,
+          "stopped": false,
+          "native_head_returns": 1,
+          "cache": 16,
+          "columns": 32,
+          "small_cache": false,
+          "instant": false
+        },
+        {
+          "steps": 1685054,
+          "tiles": 32,
+          "stopped": false,
+          "native_head_returns": 1,
+          "cache": 1,
+          "columns": 32,
+          "small_cache": true,
+          "instant": false
+        },
+        {
+          "steps": 75393,
+          "tiles": 5,
+          "stopped": false,
+          "native_head_returns": 1,
+          "cache": 4,
+          "columns": 5,
+          "small_cache": false,
+          "instant": true
+        },
+        {
+          "steps": 327471,
+          "tiles": 8,
+          "stopped": false,
+          "native_head_returns": 1,
+          "cache": 1,
+          "columns": 8,
+          "small_cache": false,
+          "instant": false
+        },
+        {
+          "steps": 265789,
+          "tiles": 37,
+          "stopped": false,
+          "native_head_returns": 1,
+          "cache": 3,
+          "columns": 37,
+          "small_cache": false,
+          "instant": true
+        },
+        {
+          "steps": 327467,
+          "tiles": 40,
+          "stopped": false,
+          "native_head_returns": 1,
+          "cache": 1,
+          "columns": 40,
+          "small_cache": true,
+          "instant": true
+        }
+      ],
+      "commands": 54,
+      "tokens": 37,
+      "invalid_no_motion": [
+        [
+          "",
+          "2,8,5"
+        ],
+        [
+          "G(64)=16",
+          "2,8,5"
+        ],
+        [
+          "G(0)=-1",
+          "2,8,5"
+        ],
+        [
+          "G(0)=1.5",
+          "2,8,5"
+        ],
+        [
+          "G(0)=65536",
+          "2,8,5"
+        ],
+        [
+          "",
+          "2,16,5"
+        ],
+        [
+          "",
+          "2,8,5,1"
+        ],
+        [
+          "",
+          "41,8,5"
+        ],
+        [
+          "",
+          "33,8,1"
+        ],
+        [
+          "",
+          "33,8,2"
+        ],
+        [
+          "",
+          "33,8,3"
+        ],
+        [
+          "",
+          "33,8,4"
+        ]
+      ],
+      "physical_break": true,
+      "free_basic_bytes": 5951,
+      "unchanged_array_and_heap": true,
+      "native_tokenizer": true
+    },
+    "compatibility-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "identical_lprint": true,
+      "origin_boundaries": true,
+      "clear_variables": true,
+      "hex_digits": 16,
+      "audio_gate_modes": [
+        0,
+        2,
+        1
+      ]
+    },
+    "scene-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "cases": [
+        {
+          "statement": "BOX 0,0,3,255,1,1",
+          "jobs": 3,
+          "tiles": 13
+        },
+        {
+          "statement": "LINE 0,0,20,20,1",
+          "jobs": 3,
+          "tiles": 6
+        },
+        {
+          "statement": "CIRCLE 20,20,10,1,0",
+          "jobs": 3,
+          "tiles": 6
+        }
+      ],
+      "invalid_before_motion": [
+        "LINE -1,0,20,20,1",
+        "LINE 0,0,248,20,1",
+        "LINE 0,0,20,256,1",
+        "LINE 0,0,20,20,0",
+        "LINE 0,0,20,20,17"
+      ]
+    },
+    "games-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "cases": {
+        "quest-reuse-fr": {
+          "steps": 160680,
+          "seconds": 0.83,
+          "minimum_free": 721,
+          "jobs": 0,
+          "tiles": 0,
+          "screen": "Trouvez le sorcier !"
+        },
+        "quest-reuse-en": {
+          "steps": 159040,
+          "seconds": 0.86,
+          "minimum_free": 737,
+          "jobs": 0,
+          "tiles": 0,
+          "screen": "Find the sorcerer!"
+        },
+        "quest-print": {
+          "steps": 45493225,
+          "seconds": 222.26,
+          "minimum_free": 320,
+          "jobs": 35,
+          "tiles": 602,
+          "screen": "Trouvez le sorcier !",
+          "paper_view_y": 1736.0
+        },
+        "quest-first-battle-after-print": {
+          "steps": 14843016,
+          "screen": "19,14 PV42 NV3 >For\u00f1t   \u00a9 \u00aa \u00c9 \u00c8",
+          "guardian": 1,
+          "jobs": 36
+        },
+        "orbital-grid-fr": {
+          "steps": 42088845,
+          "seconds": 180.0,
+          "minimum_free": 1042,
+          "jobs": 37,
+          "tiles": 642,
+          "screen": "CASE?"
+        },
+        "orbital-grid-en": {
+          "steps": 42072645,
+          "seconds": 165.36,
+          "minimum_free": 1053,
+          "jobs": 37,
+          "tiles": 641,
+          "screen": "CELL?"
+        }
+      }
+    },
+    "quest-startup-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "source_sha256": {
+        "fr": "fa52c5b29a305ff5feb0d21eb95a56101d79b1461c259e4bd87b6c0596c2becf",
+        "en": "f478668110726af609442eaf259b1471dc3907dd3fab71a9b30ffc943c7aa625"
+      },
+      "cases": {
+        "quest-reuse-fr": {
+          "steps": 160680,
+          "seconds": 0.83,
+          "minimum_free": 721,
+          "jobs": 0,
+          "tiles": 0,
+          "screen": "Trouvez le sorcier !"
+        },
+        "quest-reuse-en": {
+          "steps": 159040,
+          "seconds": 0.86,
+          "minimum_free": 737,
+          "jobs": 0,
+          "tiles": 0,
+          "screen": "Find the sorcerer!"
+        },
+        "quest-print": {
+          "steps": 45493225,
+          "seconds": 222.26,
+          "minimum_free": 320,
+          "jobs": 35,
+          "tiles": 602,
+          "screen": "Trouvez le sorcier !",
+          "paper_view_y": 1736.0
+        },
+        "quest-first-battle-after-print": {
+          "steps": 14843016,
+          "screen": "19,14 PV42 NV3 >For\u00f1t   \u00a9 \u00aa \u00c9 \u00c8",
+          "guardian": 1,
+          "jobs": 36
+        }
+      }
+    },
+    "quest-rules-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "source_sha256": {
+        "fr": "fa52c5b29a305ff5feb0d21eb95a56101d79b1461c259e4bd87b6c0596c2becf",
+        "en": "f478668110726af609442eaf259b1471dc3907dd3fab71a9b30ffc943c7aa625"
+      },
+      "cases": [
+        {
+          "case": "fr reused map: seven enemy sprites",
+          "steps": 3547107,
+          "minimum_free": 607,
+          "screen": "\u0000EST     6                     \u0001"
+        },
+        {
+          "case": "fr printed map: seven enemy sprites",
+          "steps": 3604219,
+          "minimum_free": 517,
+          "screen": "\u0000EST     6                     \u0001"
+        },
+        {
+          "case": "fr movement, paged inventory, zero starting potions and shop prices",
+          "steps": 9740817,
+          "minimum_free": 568,
+          "screen": "5,14 PV30 NV1 >Cimet.   \u00a9 \u00aa \u00c9 \u00c8"
+        },
+        {
+          "case": "fr uppercase ghost name",
+          "steps": 332626,
+          "minimum_free": 716,
+          "screen": "FANT\u00f3ME"
+        },
+        {
+          "case": "en reused map: seven enemy sprites",
+          "steps": 3540819,
+          "minimum_free": 621,
+          "screen": "\u0000EST     6                     \u0001"
+        },
+        {
+          "case": "en printed map: seven enemy sprites",
+          "steps": 3594787,
+          "minimum_free": 530,
+          "screen": "\u0000EST     6                     \u0001"
+        },
+        {
+          "case": "en movement, paged inventory, zero starting potions and shop prices",
+          "steps": 9732024,
+          "minimum_free": 574,
+          "screen": "5,14 HP30 LV1 >Grave    \u00a9 \u00aa \u00c9 \u00c8"
+        },
+        {
+          "case": "en uppercase ghost name",
+          "steps": 331032,
+          "minimum_free": 722,
+          "screen": "GHOST"
+        },
+        {
+          "case": "five ordinary fights unlock level 2; one paid rest; damage feedback",
+          "steps": 9493685,
+          "minimum_free": 589,
+          "screen": "7,14 PV36 NV2 >Cimet.   \u00a9 \u00aa \u00c9 \u00c8"
+        },
+        {
+          "case": "DEF, potion and ordinary FLEE",
+          "steps": 2228381,
+          "minimum_free": 614,
+          "screen": "6,14 PV26 NV1 >Cimet.   \u00a9 \u00aa \u00c9 \u00c8"
+        },
+        {
+          "case": "defeat",
+          "steps": 1104687,
+          "minimum_free": 613,
+          "screen": "Aventure termin\u00e1e"
+        },
+        {
+          "case": "first guardian level gate",
+          "steps": 463817,
+          "minimum_free": 664,
+          "screen": "6,14 PV30 NV1 >Cimet.   \u00a9 \u00aa \u00c9 \u00c8"
+        },
+        {
+          "case": "five guardians, crosses, rewards and ending",
+          "steps": 43370740,
+          "minimum_free": 531,
+          "screen": "Victoire ! Royaume sauv\u00e1 !"
+        }
+      ]
+    },
+    "piano-registers-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "notes": 26,
+      "registers": 3,
+      "modes": 6,
+      "noise_keys_per_register": 26,
+      "commands": 468,
+      "steps": 16456330
+    },
+    "head-jog-validation": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "cases": [
+        {
+          "case": "64 native phase transitions, registers and flags",
+          "pass_count": 64
+        },
+        {
+          "case": "all physical keys, 10 layouts, I/II and Shift unchanged",
+          "pass_count": 2600
+        },
+        {
+          "case": "repeat/release/left bound, editor and program intact",
+          "instant": false,
+          "right_phases": 96
+        },
+        {
+          "case": "next print keeps selected origin",
+          "producer": "LPRINT \"AB\"",
+          "instant": false,
+          "columns": 55
+        },
+        {
+          "case": "next print keeps selected origin",
+          "producer": "POINT 1,1",
+          "instant": false,
+          "columns": 1
+        },
+        {
+          "case": "next print keeps selected origin",
+          "producer": "LLIST",
+          "instant": false,
+          "columns": 225
+        },
+        {
+          "case": "next print keeps selected origin",
+          "producer": "RUN",
+          "instant": false,
+          "columns": 55
+        },
+        {
+          "case": "absolute right limit after HEAD; printing bound and recovery",
+          "instant": false
+        },
+        {
+          "case": "whole text/repeat/scene width checked before heat; recovery, exact fit and open-line jog",
+          "instant": false
+        },
+        {
+          "case": "repeat/release/left bound, editor and program intact",
+          "instant": true,
+          "right_phases": 96
+        },
+        {
+          "case": "next print keeps selected origin",
+          "producer": "LPRINT \"AB\"",
+          "instant": true,
+          "columns": 55
+        },
+        {
+          "case": "next print keeps selected origin",
+          "producer": "POINT 1,1",
+          "instant": true,
+          "columns": 1
+        },
+        {
+          "case": "next print keeps selected origin",
+          "producer": "LLIST",
+          "instant": true,
+          "columns": 225
+        },
+        {
+          "case": "next print keeps selected origin",
+          "producer": "RUN",
+          "instant": true,
+          "columns": 55
+        },
+        {
+          "case": "absolute right limit after HEAD; printing bound and recovery",
+          "instant": true
+        },
+        {
+          "case": "whole text/repeat/scene width checked before heat; recovery, exact fit and open-line jog",
+          "instant": true
+        },
+        {
+          "case": "plain margin history, CODE alone and CODE+arrows retained"
+        },
+        {
+          "case": "jog excluded from direct INPUT"
+        },
+        {
+          "case": "jog excluded from running INKEY"
+        },
+        {
+          "case": "insufficient motor workspace leaves program and variables intact",
+          "free_bytes": 198
+        }
+      ],
+      "seconds": 37.86
+    },
+    "rom-links": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "roots": {
+        "20480": "BOOT",
+        "20529": "READY",
+        "21311": "EXECUTE",
+        "20578": "DIRECT",
+        "23429": "KBDPOLL",
+        "23439": "KBDFAST",
+        "20603": "GETC",
+        "23275": "LCDPUT",
+        "36784": "command SERCFG",
+        "36956": "command BAUD",
+        "36974": "command SEROPEN",
+        "36994": "command SERCLOSE",
+        "37017": "command SEROUT",
+        "39369": "command DIM",
+        "21804": "command PRINT",
+        "23084": "command LOCATE",
+        "23137": "command CLS",
+        "42285": "command LET",
+        "21444": "command DATA",
+        "42112": "command RUN",
+        "41776": "command LIST",
+        "22336": "command NEW",
+        "42942": "command GOTO",
+        "16914": "command IF",
+        "21432": "command END",
+        "17007": "command LLOCATE",
+        "31975": "command KEYS",
+        "32898": "command LPRINT",
+        "32653": "command POINT",
+        "32293": "command CIRCLE",
+        "22936": "command ORIGIN",
+        "32041": "command MOVE",
+        "32069": "command HEAD",
+        "32115": "command FEED",
+        "31248": "command DRAW",
+        "24829": "command LINE",
+        "16737": "command BOX",
+        "36638": "command RANDOMIZE",
+        "19154": "command LCDCHAR",
+        "18569": "command LCDTRI",
+        "18578": "command LCDLINE",
+        "27058": "command BEEP",
+        "27092": "command SOUND",
+        "40195": "command FOR",
+        "42499": "command NEXT",
+        "18067": "command GOSUB",
+        "18115": "command RETURN",
+        "42752": "command INPUT",
+        "19861": "command CURSOR",
+        "26404": "command POKE",
+        "42339": "command MEM",
+        "26133": "command SAVE",
+        "26244": "command LOAD",
+        "25476": "command ICON",
+        "45325": "command READ",
+        "25457": "command RESTORE",
+        "38811": "command GLYPH",
+        "38708": "command ELSE",
+        "34313": "command CLEAR",
+        "26672": "command LSPACING",
+        "41779": "command LLIST",
+        "29012": "native carriage setup",
+        "29039": "native carriage move",
+        "29323": "native paper move"
+      },
+      "instructions": 10083,
+      "reachable_bytes": 22718,
+      "findings": [],
+      "overlaps": [],
+      "indirect": [
+        {
+          "pc": 36042,
+          "instruction": "jmp 0, x"
+        },
+        {
+          "pc": 21355,
+          "instruction": "jmp 0, x"
+        }
+      ],
+      "mask_services": {
+        "C824": [
+          40087
+        ],
+        "C896": [
+          40092
+        ],
+        "CC5A": [
+          40097
+        ],
+        "CDEA": [
+          40082
+        ]
+      }
+    },
+    "rom-data": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "allocations": 142,
+      "reclaimed_bytes": 5627,
+      "explicit_free_bytes": 57,
+      "patch_sites": 190,
+      "native_motor_bytes_unchanged": 2485,
+      "error_messages": [
+        {
+          "symbol": "MBREAK",
+          "address": 23158,
+          "text": "?BREAK"
+        },
+        {
+          "symbol": "MLONG",
+          "address": 46538,
+          "text": "?LINE TOO LONG"
+        },
+        {
+          "symbol": "MMODE",
+          "address": 32120,
+          "text": "?MODE"
+        },
+        {
+          "symbol": "MRANGE",
+          "address": 47497,
+          "text": "?RANGE"
+        },
+        {
+          "symbol": "MSYNTAX",
+          "address": 38383,
+          "text": "?SYNTAX"
+        },
+        {
+          "symbol": "MUNDEF",
+          "address": 46136,
+          "text": "?UNDEFINED LINE"
+        },
+        {
+          "symbol": "PMEMMSG",
+          "address": 46359,
+          "text": "?PROGRAM FULL"
+        },
+        {
+          "symbol": "PRAMMSG",
+          "address": 45815,
+          "text": "?PROGRAM RAM"
+        },
+        {
+          "symbol": "SACKMSG",
+          "address": 32920,
+          "text": "?BAD ACK"
+        },
+        {
+          "symbol": "SFAILMSG",
+          "address": 22832,
+          "text": "?SERIAL"
+        },
+        {
+          "symbol": "SRXMSG",
+          "address": 26059,
+          "text": "?RX"
+        },
+        {
+          "symbol": "SSTATUSMSG",
+          "address": 26072,
+          "text": "?RX STATUS "
+        },
+        {
+          "symbol": "STEXTMSG",
+          "address": 37842,
+          "text": "?RX TEXT"
+        },
+        {
+          "symbol": "STXMSG",
+          "address": 46502,
+          "text": "?TX TIMEOUT"
+        },
+        {
+          "symbol": "FORDEPTHMSG",
+          "address": 38182,
+          "text": "?FOR DEPTH"
+        },
+        {
+          "symbol": "FORPAIRMSG",
+          "address": 23512,
+          "text": "?FOR/NEXT"
+        },
+        {
+          "symbol": "GPAIRMSG",
+          "address": 49033,
+          "text": "?GOSUB/RETURN"
+        },
+        {
+          "symbol": "FORVARMSG",
+          "address": 17768,
+          "text": "?FOR VARIABLE"
+        },
+        {
+          "symbol": "GDEPTHMSG",
+          "address": 27808,
+          "text": "?GOSUB DEPTH"
+        },
+        {
+          "symbol": "TRICHARMSG",
+          "address": 19012,
+          "text": "?LCD CHAR"
+        },
+        {
+          "symbol": "TRIFULLMSG",
+          "address": 19001,
+          "text": "?LCD SLOTS"
+        },
+        {
+          "symbol": "RBPAPERMSG",
+          "address": 22662,
+          "text": "?PAPER"
+        },
+        {
+          "symbol": "MCMESSAGE",
+          "address": 32234,
+          "text": "?MOTOR"
+        },
+        {
+          "symbol": "SDMESSAGE",
+          "address": 31390,
+          "text": "?DRAW"
+        },
+        {
+          "symbol": "SDPENDING",
+          "address": 31396,
+          "text": "?DRAW PENDING"
+        },
+        {
+          "symbol": "TRCOEFFEND",
+          "address": 37222,
+          "text": "?OUT OF DATA"
+        }
+      ],
+      "banner": "Typestar BASIC 0.4.101-dev\r\n"
+    },
+    "core": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "cases": [
+        {
+          "case": "0.1+0.2",
+          "evidence": {
+            "screen": "0.3",
+            "steps": 33633
+          }
+        },
+        {
+          "case": "1/8",
+          "evidence": {
+            "screen": "0.125",
+            "steps": 49305
+          }
+        },
+        {
+          "case": "12.5*2",
+          "evidence": {
+            "screen": "25",
+            "steps": 43286
+          }
+        },
+        {
+          "case": "-2^2",
+          "evidence": {
+            "screen": "-4",
+            "steps": 54588
+          }
+        },
+        {
+          "case": "(-2)^2",
+          "evidence": {
+            "screen": "4",
+            "steps": 57360
+          }
+        },
+        {
+          "case": "2^3^2",
+          "evidence": {
+            "screen": "512",
+            "steps": 135877
+          }
+        },
+        {
+          "case": "2+3*4",
+          "evidence": {
+            "screen": "14",
+            "steps": 46374
+          }
+        },
+        {
+          "case": "(2+3)*4",
+          "evidence": {
+            "screen": "20",
+            "steps": 50702
+          }
+        },
+        {
+          "case": "2^-3",
+          "evidence": {
+            "screen": "0.125",
+            "steps": 90914
+          }
+        },
+        {
+          "case": "ABS(-12.5)",
+          "evidence": {
+            "screen": "12.5",
+            "steps": 35174
+          }
+        },
+        {
+          "case": "SGN(-0.25)",
+          "evidence": {
+            "screen": "-1",
+            "steps": 33773
+          }
+        },
+        {
+          "case": "SGN(0)",
+          "evidence": {
+            "screen": "0",
+            "steps": 27551
+          }
+        },
+        {
+          "case": "SGN(0.25)",
+          "evidence": {
+            "screen": "1",
+            "steps": 31759
+          }
+        },
+        {
+          "case": "INT(-1.2)",
+          "evidence": {
+            "screen": "-2",
+            "steps": 32358
+          }
+        },
+        {
+          "case": "FIX(-1.2)",
+          "evidence": {
+            "screen": "-1",
+            "steps": 32570
+          }
+        },
+        {
+          "case": "INT(1.9)",
+          "evidence": {
+            "screen": "1",
+            "steps": 30350
+          }
+        },
+        {
+          "case": "FIX(1.9)",
+          "evidence": {
+            "screen": "1",
+            "steps": 30570
+          }
+        },
+        {
+          "case": "SQR(0)",
+          "evidence": {
+            "screen": "0",
+            "steps": 27644
+          }
+        },
+        {
+          "case": "SQR(144)",
+          "evidence": {
+            "screen": "12",
+            "steps": 901573
+          }
+        },
+        {
+          "case": "PI",
+          "evidence": {
+            "screen": "3.1415927",
+            "steps": 27115
+          }
+        },
+        {
+          "case": "17 MOD 5",
+          "evidence": {
+            "screen": "2",
+            "steps": 32480
+          }
+        },
+        {
+          "case": "-17 MOD 5",
+          "evidence": {
+            "screen": "-2",
+            "steps": 34488
+          }
+        },
+        {
+          "case": "17 MOD -5",
+          "evidence": {
+            "screen": "2",
+            "steps": 33748
+          }
+        },
+        {
+          "case": "-17 MOD -5",
+          "evidence": {
+            "screen": "-2",
+            "steps": 35770
+          }
+        },
+        {
+          "case": "-32768 MOD -1",
+          "evidence": {
+            "screen": "0",
+            "steps": 104987
+          }
+        },
+        {
+          "case": "65535 MOD 256",
+          "evidence": {
+            "screen": "255",
+            "steps": 41756
+          }
+        },
+        {
+          "case": "NOT 0",
+          "evidence": {
+            "screen": "-1",
+            "steps": 28175
+          }
+        },
+        {
+          "case": "NOT -1",
+          "evidence": {
+            "screen": "0",
+            "steps": 28659
+          }
+        },
+        {
+          "case": "65535 AND 255",
+          "evidence": {
+            "screen": "255",
+            "steps": 41190
+          }
+        },
+        {
+          "case": "32768 OR 1",
+          "evidence": {
+            "screen": "-32767",
+            "steps": 39065
+          }
+        },
+        {
+          "case": "5 AND 3",
+          "evidence": {
+            "screen": "1",
+            "steps": 31002
+          }
+        },
+        {
+          "case": "5 OR 3",
+          "evidence": {
+            "screen": "7",
+            "steps": 29666
+          }
+        },
+        {
+          "case": "1<2",
+          "evidence": {
+            "screen": "-1",
+            "steps": 26252
+          }
+        },
+        {
+          "case": "1>2",
+          "evidence": {
+            "screen": "0",
+            "steps": 25521
+          }
+        },
+        {
+          "case": "1<=1",
+          "evidence": {
+            "screen": "-1",
+            "steps": 27674
+          }
+        },
+        {
+          "case": "2>=3",
+          "evidence": {
+            "screen": "0",
+            "steps": 26772
+          }
+        },
+        {
+          "case": "2<>3",
+          "evidence": {
+            "screen": "-1",
+            "steps": 27461
+          }
+        },
+        {
+          "case": "NOT 1=1",
+          "evidence": {
+            "screen": "0",
+            "steps": 33270
+          }
+        },
+        {
+          "case": "1=1 AND 2=2",
+          "evidence": {
+            "screen": "-1",
+            "steps": 43541
+          }
+        },
+        {
+          "case": "1=2 OR 2=2",
+          "evidence": {
+            "screen": "-1",
+            "steps": 41975
+          }
+        },
+        {
+          "case": "%101010",
+          "evidence": {
+            "screen": "42",
+            "steps": 29921
+          }
+        },
+        {
+          "case": "&HFFFF",
+          "evidence": {
+            "screen": "65535",
+            "steps": 30840
+          }
+        },
+        {
+          "case": "(&H8000 OR 1)",
+          "evidence": {
+            "screen": "-32767",
+            "steps": 45324
+          }
+        },
+        {
+          "case": "LEN(\"\")",
+          "evidence": {
+            "screen": "0",
+            "steps": 29121
+          }
+        },
+        {
+          "case": "LEN(\"ABC\")",
+          "evidence": {
+            "screen": "3",
+            "steps": 33315
+          }
+        },
+        {
+          "case": "ASC(\"A\")",
+          "evidence": {
+            "screen": "65",
+            "steps": 31271
+          }
+        },
+        {
+          "case": "LEN(CHR$(0))",
+          "evidence": {
+            "screen": "1",
+            "steps": 37255
+          }
+        },
+        {
+          "case": "ASC(CHR$(255))",
+          "evidence": {
+            "screen": "255",
+            "steps": 41749
+          }
+        },
+        {
+          "case": "VAL(\"-12.5\")",
+          "evidence": {
+            "screen": "-12.5",
+            "steps": 39032
+          }
+        },
+        {
+          "case": "LEN(STR$(12.5))",
+          "evidence": {
+            "screen": "4",
+            "steps": 41857
+          }
+        },
+        {
+          "case": "INKEY(0)",
+          "evidence": {
+            "screen": "0",
+            "steps": 31895
+          }
+        },
+        {
+          "case": "LEFT$(\"ABCDE\",2)",
+          "evidence": {
+            "screen": "AB",
+            "steps": 41715
+          }
+        },
+        {
+          "case": "RIGHT$(\"ABCDE\",2)",
+          "evidence": {
+            "screen": "DE",
+            "steps": 43225
+          }
+        },
+        {
+          "case": "MID$(\"ABCDE\",2,3)",
+          "evidence": {
+            "screen": "BCD",
+            "steps": 45105
+          }
+        },
+        {
+          "case": "MID$(\"ABCDE\",3)",
+          "evidence": {
+            "screen": "CDE",
+            "steps": 41006
+          }
+        },
+        {
+          "case": "\"[\"+LEFT$(\"ABCDE\",0)+\"]\"",
+          "evidence": {
+            "screen": "[]",
+            "steps": 53771
+          }
+        },
+        {
+          "case": "RIGHT$(\"ABCDE\",8)",
+          "evidence": {
+            "screen": "ABCDE",
+            "steps": 45437
+          }
+        },
+        {
+          "case": "\"ABC\"+\"DEF\"",
+          "evidence": {
+            "screen": "ABCDEF",
+            "steps": 35934
+          }
+        },
+        {
+          "case": "STR$(-0.125)",
+          "evidence": {
+            "screen": "-0.125",
+            "steps": 38685
+          }
+        },
+        {
+          "case": "SIN(PI/6)",
+          "evidence": {
+            "screen": "0.4999998",
+            "expected": 0.5,
+            "tolerance": 1e-05,
+            "steps": 374457
+          }
+        },
+        {
+          "case": "COS(PI)",
+          "evidence": {
+            "screen": "-1",
+            "expected": -1,
+            "tolerance": 1e-05,
+            "steps": 48791
+          }
+        },
+        {
+          "case": "SIN(-PI/2)",
+          "evidence": {
+            "screen": "-1",
+            "expected": -1,
+            "tolerance": 1e-05,
+            "steps": 125698
+          }
+        },
+        {
+          "case": "TAN(PI/4)",
+          "evidence": {
+            "screen": "0.9999997",
+            "expected": 1,
+            "tolerance": 0.0001,
+            "steps": 947002
+          }
+        },
+        {
+          "case": "ATN(1)",
+          "evidence": {
+            "screen": "0.7853981",
+            "expected": 0.7853981633974483,
+            "tolerance": 0.0001,
+            "steps": 124846
+          }
+        },
+        {
+          "case": "LOG(1)",
+          "evidence": {
+            "screen": "0",
+            "expected": 0,
+            "tolerance": 1e-05,
+            "steps": 107652
+          }
+        },
+        {
+          "case": "LOG(2)",
+          "evidence": {
+            "screen": "0.6931472",
+            "expected": 0.6931471805599453,
+            "tolerance": 0.0001,
+            "steps": 130955
+          }
+        },
+        {
+          "case": "EXP(0)",
+          "evidence": {
+            "screen": "1",
+            "expected": 1,
+            "tolerance": 1e-05,
+            "steps": 116975
+          }
+        },
+        {
+          "case": "EXP(1)",
+          "evidence": {
+            "screen": "2.7182809",
+            "expected": 2.718281828459045,
+            "tolerance": 0.0001,
+            "steps": 582305
+          }
+        },
+        {
+          "case": "LOG(EXP(.5))",
+          "evidence": {
+            "screen": "0.5000002",
+            "expected": 0.5,
+            "tolerance": 0.0001,
+            "steps": 1004010
+          }
+        },
+        {
+          "case": "2^0.5",
+          "evidence": {
+            "screen": "1.4142134",
+            "expected": 1.4142135623730951,
+            "tolerance": 0.0001,
+            "steps": 725457
+          }
+        },
+        {
+          "case": "SIN(PI/6)^2+COS(PI/6)^2",
+          "evidence": {
+            "screen": "0.9999999",
+            "expected": 1,
+            "tolerance": 0.0001,
+            "steps": 900389
+          }
+        },
+        {
+          "case": "error/recovery 1/0",
+          "evidence": {
+            "error": "?DECIMAL MATH",
+            "recovered": true,
+            "steps": 84425
+          }
+        },
+        {
+          "case": "error/recovery SQR(-1)",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 82296
+          }
+        },
+        {
+          "case": "error/recovery LOG(0)",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 81278
+          }
+        },
+        {
+          "case": "error/recovery LOG(-1)",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 82471
+          }
+        },
+        {
+          "case": "error/recovery 1 MOD 0",
+          "evidence": {
+            "error": "?DECIMAL MATH",
+            "recovered": true,
+            "steps": 88311
+          }
+        },
+        {
+          "case": "error/recovery 1.5 MOD 1",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 85672
+          }
+        },
+        {
+          "case": "error/recovery NOT .5",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 80769
+          }
+        },
+        {
+          "case": "error/recovery 1 AND .1",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 84359
+          }
+        },
+        {
+          "case": "error/recovery RND(0)",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 81159
+          }
+        },
+        {
+          "case": "error/recovery CHR$(256)",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 84706
+          }
+        },
+        {
+          "case": "error/recovery ASC(\"\")",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 81249
+          }
+        },
+        {
+          "case": "error/recovery MID$(\"ABC\",0,1)",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 94563
+          }
+        },
+        {
+          "case": "error/recovery ABS()",
+          "evidence": {
+            "error": "?SYNTAX",
+            "recovered": true,
+            "steps": 79825
+          }
+        },
+        {
+          "case": "error/recovery (1+2",
+          "evidence": {
+            "error": "?SYNTAX",
+            "recovered": true,
+            "steps": 83029
+          }
+        },
+        {
+          "case": "error/recovery 1+",
+          "evidence": {
+            "error": "?SYNTAX",
+            "recovered": true,
+            "steps": 76280
+          }
+        },
+        {
+          "case": "error/recovery FOO(1)",
+          "evidence": {
+            "error": "?SYNTAX",
+            "recovered": true,
+            "steps": 82427
+          }
+        },
+        {
+          "case": "error/recovery PEEK(1.5)",
+          "evidence": {
+            "error": "?RANGE",
+            "recovered": true,
+            "steps": 85152
+          }
+        },
+        {
+          "case": "program colon/GOSUB",
+          "evidence": {
+            "screen": "13",
+            "steps": 39862
+          }
+        },
+        {
+          "case": "program FOR fractional",
+          "evidence": {
+            "screen": "5",
+            "steps": 94055
+          }
+        },
+        {
+          "case": "program FOR negative",
+          "evidence": {
+            "screen": "6",
+            "steps": 77449
+          }
+        },
+        {
+          "case": "program FOR empty",
+          "evidence": {
+            "screen": "0",
+            "steps": 19759
+          }
+        },
+        {
+          "case": "program nested FOR",
+          "evidence": {
+            "screen": "18",
+            "steps": 267517
+          }
+        },
+        {
+          "case": "program IF true ELSE",
+          "evidence": {
+            "screen": "5",
+            "steps": 28877
+          }
+        },
+        {
+          "case": "program IF false ELSE",
+          "evidence": {
+            "screen": "10",
+            "steps": 27002
+          }
+        },
+        {
+          "case": "program IF quoted colon",
+          "evidence": {
+            "screen": "YES",
+            "steps": 19475
+          }
+        },
+        {
+          "case": "program REM tokens",
+          "evidence": {
+            "screen": "1",
+            "steps": 14465
+          }
+        },
+        {
+          "case": "program DATA/RESTORE",
+          "evidence": {
+            "screen": "-2.5A:B10-2.5",
+            "steps": 40894
+          }
+        },
+        {
+          "case": "program array 1D/2D",
+          "evidence": {
+            "screen": "12",
+            "steps": 41654
+          }
+        },
+        {
+          "case": "program array DATA",
+          "evidence": {
+            "screen": "9",
+            "steps": 32235
+          }
+        },
+        {
+          "case": "program string assignments and numeric array stay bounded",
+          "evidence": {
+            "screen": "100:100100",
+            "steps": 2945460
+          }
+        },
+        {
+          "case": "program random seed is repeatable and values lie in [0,1)",
+          "evidence": {
+            "screen": "-1-1-1",
+            "steps": 62263
+          }
+        },
+        {
+          "case": "program eight nested FOR levels",
+          "evidence": {
+            "screen": "EIGHT",
+            "steps": 121278
+          }
+        },
+        {
+          "case": "program FOR depth guard",
+          "evidence": {
+            "screen": "?FOR DEPTH @30",
+            "steps": 109825
+          }
+        },
+        {
+          "case": "program GOSUB depth guard",
+          "evidence": {
+            "screen": "?GOSUB DEPTH @10",
+            "steps": 101676
+          }
+        },
+        {
+          "case": "program high line numbers",
+          "evidence": {
+            "screen": "HIGH",
+            "steps": 17499
+          }
+        },
+        {
+          "case": "program missing line",
+          "evidence": {
+            "screen": "?UNDEFINED LINE @10",
+            "steps": 72865
+          }
+        },
+        {
+          "case": "program RETURN underflow",
+          "evidence": {
+            "screen": "?GOSUB/RETURN @10",
+            "steps": 70818
+          }
+        },
+        {
+          "case": "program NEXT underflow",
+          "evidence": {
+            "screen": "?FOR/NEXT @10",
+            "steps": 67787
+          }
+        },
+        {
+          "case": "program READ exhaustion",
+          "evidence": {
+            "screen": "?OUT OF DATA @20",
+            "steps": 74627
+          }
+        },
+        {
+          "case": "program array bounds",
+          "evidence": {
+            "screen": "?RANGE @20",
+            "steps": 70280
+          }
+        },
+        {
+          "case": "program array fraction",
+          "evidence": {
+            "screen": "?RANGE @20",
+            "steps": 70103
+          }
+        },
+        {
+          "case": "program zero FOR step",
+          "evidence": {
+            "screen": "?RANGE @10",
+            "steps": 68272
+          }
+        },
+        {
+          "case": "string overflow preserves previous value",
+          "evidence": {
+            "overflow_error": "?RANGE",
+            "preserved": true
+          }
+        }
+      ],
+      "failures": [],
+      "seconds": 76.38
+    },
+    "memory": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "cases": [
+        {
+          "case": "random insert/replace/delete",
+          "edits": 96,
+          "bytes": 1004
+        },
+        {
+          "case": "invalid line numbers are atomic",
+          "count": 2
+        },
+        {
+          "case": "full arena and failed growth are atomic",
+          "bytes": 5949,
+          "free": 3
+        }
+      ],
+      "boots": [
+        {
+          "case": "valid",
+          "steps": 1720659,
+          "kept_bytes": 5949,
+          "mechanical_irqs": {
+            "65526": 45,
+            "65524": 423
+          }
+        },
+        {
+          "case": "valid-ff",
+          "steps": 1720659,
+          "kept_bytes": 5949,
+          "mechanical_irqs": {
+            "65526": 45,
+            "65524": 423
+          }
+        },
+        {
+          "case": "bad-crc",
+          "steps": 942810,
+          "kept_bytes": 1,
+          "mechanical_irqs": {
+            "65526": 45,
+            "65524": 423
+          }
+        },
+        {
+          "case": "bad-record",
+          "steps": 166077,
+          "kept_bytes": 1,
+          "mechanical_irqs": {
+            "65526": 45,
+            "65524": 423
+          }
+        },
+        {
+          "case": "missing-signature",
+          "steps": 165060,
+          "kept_bytes": 1,
+          "mechanical_irqs": {
+            "65526": 45,
+            "65524": 423
+          }
+        }
+      ],
+      "seconds": 335.36
+    },
+    "serial": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "cases": [
+        {
+          "case": "session",
+          "baud": 1200,
+          "format": "7N1",
+          "divider": 25
+        },
+        {
+          "case": "session",
+          "baud": 1200,
+          "format": "7N2",
+          "divider": 25
+        },
+        {
+          "case": "session",
+          "baud": 1200,
+          "format": "7E1",
+          "divider": 25
+        },
+        {
+          "case": "session",
+          "baud": 1200,
+          "format": "7E2",
+          "divider": 25
+        },
+        {
+          "case": "session",
+          "baud": 1200,
+          "format": "7O1",
+          "divider": 25
+        },
+        {
+          "case": "session",
+          "baud": 1200,
+          "format": "7O2",
+          "divider": 25
+        },
+        {
+          "case": "session",
+          "baud": 2400,
+          "format": "7N1",
+          "divider": 12
+        },
+        {
+          "case": "session",
+          "baud": 2400,
+          "format": "7N2",
+          "divider": 12
+        },
+        {
+          "case": "session",
+          "baud": 2400,
+          "format": "7E1",
+          "divider": 12
+        },
+        {
+          "case": "session",
+          "baud": 2400,
+          "format": "7E2",
+          "divider": 12
+        },
+        {
+          "case": "session",
+          "baud": 2400,
+          "format": "7O1",
+          "divider": 12
+        },
+        {
+          "case": "session",
+          "baud": 2400,
+          "format": "7O2",
+          "divider": 12
+        },
+        {
+          "case": "session",
+          "baud": 7812,
+          "format": "7N1",
+          "divider": 3
+        },
+        {
+          "case": "session",
+          "baud": 7812,
+          "format": "7N2",
+          "divider": 3
+        },
+        {
+          "case": "session",
+          "baud": 7812,
+          "format": "7E1",
+          "divider": 3
+        },
+        {
+          "case": "session",
+          "baud": 7812,
+          "format": "7E2",
+          "divider": 3
+        },
+        {
+          "case": "session",
+          "baud": 7812,
+          "format": "7O1",
+          "divider": 3
+        },
+        {
+          "case": "session",
+          "baud": 7812,
+          "format": "7O2",
+          "divider": 3
+        },
+        {
+          "case": "session",
+          "baud": 15625,
+          "format": "7N1",
+          "divider": 1
+        },
+        {
+          "case": "session",
+          "baud": 15625,
+          "format": "7N2",
+          "divider": 1
+        },
+        {
+          "case": "session",
+          "baud": 15625,
+          "format": "7E1",
+          "divider": 1
+        },
+        {
+          "case": "session",
+          "baud": 15625,
+          "format": "7E2",
+          "divider": 1
+        },
+        {
+          "case": "session",
+          "baud": 15625,
+          "format": "7O1",
+          "divider": 1
+        },
+        {
+          "case": "session",
+          "baud": 15625,
+          "format": "7O2",
+          "divider": 1
+        },
+        {
+          "case": "session",
+          "baud": 31250,
+          "format": "7N1",
+          "divider": 0
+        },
+        {
+          "case": "session",
+          "baud": 31250,
+          "format": "7N2",
+          "divider": 0
+        },
+        {
+          "case": "session",
+          "baud": 31250,
+          "format": "7E1",
+          "divider": 0
+        },
+        {
+          "case": "session",
+          "baud": 31250,
+          "format": "7E2",
+          "divider": 0
+        },
+        {
+          "case": "session",
+          "baud": 31250,
+          "format": "7O1",
+          "divider": 0
+        },
+        {
+          "case": "session",
+          "baud": 31250,
+          "format": "7O2",
+          "divider": 0
+        },
+        {
+          "case": "LOAD",
+          "steps": 51072,
+          "records": 4,
+          "native_accents": true,
+          "maximum_line_bytes": 63
+        },
+        {
+          "case": "SAVE",
+          "steps": 28814,
+          "records": 4,
+          "native_accents": true,
+          "maximum_line_bytes": 63
+        },
+        {
+          "case": "bad initial ACK",
+          "error": "?BAD ACK",
+          "closed": true
+        },
+        {
+          "case": "incomplete final line",
+          "error": "?RX TEXT",
+          "closed": true
+        },
+        {
+          "case": "oversized line",
+          "error": "?RX TEXT",
+          "closed": true
+        },
+        {
+          "case": "unquoted native byte",
+          "error": "?PROGRAM RAM",
+          "closed": true
+        },
+        {
+          "case": "RX timeout",
+          "error": "?RX00 C34 S3A/04 P00/00",
+          "closed": true,
+          "steps": 2252392
+        },
+        {
+          "case": "TX timeout",
+          "error": "?TX TIMEOUT",
+          "closed": true,
+          "steps": 408576
+        },
+        {
+          "case": "BREAK during RX",
+          "error": "?BREAK",
+          "closed": true,
+          "steps": 77288
+        },
+        {
+          "case": "parity error",
+          "error": "?RX STATUS 3A 14",
+          "closed": true,
+          "steps": 84588
+        }
+      ],
+      "seconds": 56.73
+    },
+    "state": {
+      "result": "PASS",
+      "sha256": "ffa65c30760da9a2d7abcff8ea3e3e84c5e04012b0e74ecffb6f95f10019a149",
+      "cases": [
+        {
+          "case": "numeric INPUT retries empty/text/division/colon",
+          "screen": "12.5"
+        },
+        {
+          "case": "empty string INPUT is accepted",
+          "screen": "[]"
+        },
+        {
+          "case": "string INPUT preserves spaces, quotes and colons",
+          "screen": "[ A:B\"C ]"
+        },
+        {
+          "case": "LCD clear/default cursor and parser recovery after error",
+          "screen": "?DECIMAL MATH"
+        },
+        {
+          "case": "font/tile/glyph/scene/motors/sound/DATA preserve variables",
+          "jobs": 5,
+          "tiles": 11,
+          "screen": "KEEP12.542OK65535"
+        },
+        {
+          "case": "LLIST full/single/empty/reversed range and accent fallback",
+          "program_unchanged": true
+        }
+      ],
+      "seconds": 9.27
+    }
+  },
+  "hardware": "Head-positioning shortcuts confirmed on hardware by user on 2026-11-24"
+}

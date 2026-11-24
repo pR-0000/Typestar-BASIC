@@ -163,6 +163,8 @@ Composition also reduces movement and repeated printing of the same bands. Empty
 <a id="feed"></a>
 ## ORIGIN, MOVE, HEAD and FEED: controlling the motors
 
+To choose a starting point on a partly used sheet, first position the head **at the BASIC prompt**: hold **CODE + LEFT MARGIN** or **CODE + RIGHT MARGIN**, then release either key. Each step is one Courier 10 character pitch; paper height stays the same. Then use RUN or your printing command: LPRINT, LLIST and graphics start from the new reference. Leave enough width on the right for your drawing; the driver reports `?PAPER` if a band exceeds the available travel.
+
 These commands position things. **ORIGIN declares the coordinates of the current physical position**. MOVE, HEAD and FEED perform movements; you choose the reference's starting point.
 
 | Command | Meaning | Limits |

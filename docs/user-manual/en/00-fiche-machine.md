@@ -4,7 +4,7 @@
 
 > **32 display characters - 5,951 bytes free - a built-in printer.** Calculate, write a game, create your characters, then give them a place on paper!
 
-| Resource | Typestar BASIC 0.4.100-dev on the S-70 |
+| Resource | Typestar BASIC 0.4.101-dev on the S-70 |
 |---|---|
 | **Processor** | 8-bit HD6301Y0P; system clock approximately **1 MHz**, derived from a 4 MHz crystal. |
 | **Memory** | **8 KB external RAM**; **5,951 bytes free when empty**, shared by the tokenised program and its data. **32 KB** BASIC ROM; original 16 KB internal Canon ROM retained. |
